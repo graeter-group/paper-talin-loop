@@ -8,9 +8,6 @@ csl: biophysical-journal.csl
 format:
   html:
     html-math-method: katex
-    code-fold: true
-    code-tools:
-      source: https://github.com/hits-mbm-dev/paper-talin-loop
     self-contained: false
     theme:
       light:
@@ -43,9 +40,13 @@ abstract: |
 
 ---
 
+:::callout-warning
+This is a draft and as such subject to change.
+:::
+
 :::callout-tip
-You can find the poster for this paper presented at the [Annual Meeting of the Biophysical Society 2022](https://www.biophysics.org/2022meeting#)
-in your favorite format here: [html](./poster-bps-2022.html), [pdf](./poster-jannik-buhr-bps-2022.pdf)
+You can find the poster that goes along with the paper presented at the [Annual Meeting of the Biophysical Society 2022](https://www.biophysics.org/2022meeting#)
+in your favorite format here: [web/html](./poster-bps-2022.html), [print/pdf](./poster-jannik-buhr-bps-2022.pdf)
 :::
 
 # Introduction
@@ -54,12 +55,21 @@ It is critical for cells to mechanically
 sense their surroundings at cell adhesion sites for a multitude
 of biological processes.
 Contact with the extracellular matrix and surroundin cells regulates growth, differentiation,
-motility and even apoptosis [@vogelLocalForceGeometry2006; @oakesStressingLimitsFocal2014; @schillerMechanosensitivityCompositionalDynamics2013].
+motility and even apoptosis [@vogelLocalForceGeometry2006; @oakesStressingLimitsFocal2014; @schillerMechanosensitivityCompositionalDynamics2013; @miroshnikovaAdhesionForcesCortical2018].
 The multiprotein focal adhesion complex is responsible for translating
-between biochemical and mechanical signals, where both directions
---- outside--in and inside--out activation are being investigated [@thamilselvanPressureActivatesColon2004; @pelletierActivationStateIntegrin1995].
+between biochemical and mechanical signals, where both directions,
+outside--in and inside--out activation, are being investigated [@thamilselvanPressureActivatesColon2004; @pelletierActivationStateIntegrin1995].
 
-[@miroshnikovaAdhesionForcesCortical2018]
+At the center of the focal adhesion complex sits the adaptorprotein talin,
+which dynamically unfolds and refolds under force [@yaoMechanicalResponseTalin2016].
+A schematic of Talin can be seen in @fig-tln-schema-long.
+Through direct interaction with integrin tails (dark green),
+which interact with collagen fibers via their heads,
+it links the extracellular matrix to the intracellular cytoskeleton
+by directly interacting with acting and increasing integrins
+affinity for ligands, thereby activating it [@tadokoroTalinBindingIntegrin2003].
+
+
 
 ::::{#fig-structure layout="[[1], [1,1], [1]]" .column-body-outset}
 
@@ -75,7 +85,6 @@ between biochemical and mechanical signals, where both directions
 We modelled with MODELLER and are find the expected flexibility of the loop in simulations using RMSF as a measure, see supplementary @fig-loop-rmsf.
 ::::
 
-
 # Materials and Methods
 
 ## Molecular dynamics with GROMACS
@@ -85,15 +94,15 @@ We modelled with MODELLER and are find the expected flexibility of the loop in s
 Molecular dynamics simulations where performed with GROMACS
 [@berendsenGROMACSMessagepassingParallel1995; @abrahamGROMACSHighPerformance2015]
 version 2020.03 [@lindahlGROMACS2020Source2020].
-
-A crystal structure of the Talin FERM domain by @elliottStructureTalinHead2010 with the PDB-ID 3IVF was used as the basis of all simulations.
+A crystal structure of the Talin FERM domain by 
+Goult et al. [@elliottStructureTalinHead2010] with the PDB-ID 3IVF was used as the basis of all simulations.
 
 <!-- :::video-container -->
 <!-- [FERM]{#app1 .app} -->
 <!-- ::: -->
 
 The missing F1 domain loop between residues L133 and W144 was modeled using MODELLER [@marti-renomComparativeProteinStructure2000; @webbComparativeProteinStructure2016] via the interface to Chimera [@pettersenUCSFChimeraVisualization2004], followed by equilibration with GROMACS.
-The resulting conformation was compared to an NMR structure of the F1 domain (PDB-ID 2KC2) by @goultStructureDoubleUbiquitinlike2010.
+The resulting conformation was compared to an NMR structure of the F1 domain (PDB-ID 2KC2) by Goult et al. [@goultStructureDoubleUbiquitinlike2010].
 
 The missing residue M1 was also added.
 The missing residues I399 and L400 where not modeled, leaving us with with a continuous sequence from residue 1 to 398.
@@ -110,16 +119,19 @@ This entailed placing the protein 1.5 nm away from a 1-palmitoyl-2-oleoyl-glycer
 However, due to a hardware failure, 6 of these 360 runs are only 50 to 150\ ns long.
 Of the 119 lipids in the upper leaflet of the POPC membrane, 12 lipids were replaced with PIP~2~, which results in a physiological concentration of 10% PIP~2~.
 
-From this rotational sampling we selected representative conformations with high protein-membrane interaction as the basis of 6 equilibrium simulations of the complete FERM domain over a POPC membrane with 26 PIP~2~ lipids out of a total of 273 lipids in the upper leaflet.
+From this rotational sampling,
+we selected representative conformations with high protein-membrane interaction as the basis of 6 equilibrium simulations of the complete FERM domain over a POPC membrane with 26 PIP~2~ lipids out of a total of 273 lipids in the upper leaflet.
 Each simulation ran for 400\ ns.
+The initial conformations for perpendicular pulling simulations of the F0F1
+subdomains to gauge interaction strength where also chose from the rotational sampling set.
 
-To compare the effects of PIP~2~ on the dynamics, a system containing only 1\ %\ PIP~2~ (3 PIP~2~ molecules in 273 lipids) was created from the enriched system by programmatically exchanging lipid head groups via a `python` script.
+To compare the effects of PIP~2~ on the dynamics, a system containing only 1\ %\ PIP~2~ (3 PIP~2~ molecules in 273 lipids) was created from the enriched system by programmatically exchanging lipid head groups via a python script.
 The enriched and non-enriched systems where then subjected to force-probe MD simulations.
 
 ## Automation, Data Analysis and Availability
 
-Setup scripts written in `bash` are available for all simulations shown in this work.
-Plots were generated with `R` using ggplot2 [@ggplot].
+Setup scripts written in bash are available for all simulations shown in this work.
+Plots were generated with R using ggplot2 [@ggplot].
 Interactive structure representations are embedded using Mol\* [@molstar].
 Schematic visualizations were rendered with blender [@blender] and VMD [@vmd].
 Files relevant to this paper that are too big to be uploaded to
