@@ -1,59 +1,6 @@
-@Article{matplotlib,
-  Author    = {Hunter, J. D.},
-  Title     = {Matplotlib: A 2D graphics environment},
-  Journal   = {Computing in Science \& Engineering},
-  Volume    = {9},
-  Number    = {3},
-  Pages     = {90--95},
-  abstract  = {Matplotlib is a 2D graphics package used for Python for
-  application development, interactive scripting, and publication-quality
-  image generation across user interfaces and operating systems.},
-  publisher = {IEEE COMPUTER SOC},
-  doi       = {10.1109/MCSE.2007.55},
-  year      = 2007
-}
-
-@article{molstar,
-    author = {Sehnal, David and Bittrich, Sebastian and Deshpande, Mandar and Svobodová, Radka and Berka, Karel and Bazgier, Václav and Velankar, Sameer and Burley, Stephen K and Koča, Jaroslav and Rose, Alexander S},
-    title = "{Mol* Viewer: modern web app for 3D visualization and analysis of large biomolecular structures}",
-    journal = {Nucleic Acids Research},
-    volume = {49},
-    number = {W1},
-    pages = {W431-W437},
-    year = {2021},
-    month = {05},
-    abstract = "{Large biomolecular structures are being determined experimentally on a daily basis using established techniques such as crystallography and electron microscopy. In addition, emerging integrative or hybrid methods (I/HM) are producing structural models of huge macromolecular machines and assemblies, sometimes containing 100s of millions of non-hydrogen atoms. The performance requirements for visualization and analysis tools delivering these data are increasing rapidly. Significant progress in developing online, web-native three-dimensional (3D) visualization tools was previously accomplished with the introduction of the LiteMol suite and NGL Viewers. Thereafter, Mol* development was jointly initiated by PDBe and RCSB PDB to combine and build on the strengths of LiteMol (developed by PDBe) and NGL (developed by RCSB PDB). The web-native Mol* Viewer enables 3D visualization and streaming of macromolecular coordinate and experimental data, together with capabilities for displaying structure quality, functional, or biological context annotations. High-performance graphics and data management allows users to simultaneously visualise up to hundreds of (superimposed) protein structures, stream molecular dynamics simulation trajectories, render cell-level models, or display huge I/HM structures. It is the primary 3D structure viewer used by PDBe and RCSB PDB. It can be easily integrated into third-party services. Mol* Viewer is open source and freely available at https://molstar.org/.}",
-    issn = {0305-1048},
-    doi = {10.1093/nar/gkab314},
-    url = {https://doi.org/10.1093/nar/gkab314},
-    eprint = {https://academic.oup.com/nar/article-pdf/49/W1/W431/38842088/gkab314.pdf},
-}
-
-@article{seaborn,
-    doi = {10.21105/joss.03021},
-    url = {https://doi.org/10.21105/joss.03021},
-    year = {2021},
-    publisher = {The Open Journal},
-    volume = {6},
-    number = {60},
-    pages = {3021},
-    author = {Michael L. Waskom},
-    title = {seaborn: statistical data visualization},
-    journal = {Journal of Open Source Software}
- }
-
-@Book{ggplot,
-  author = {Hadley Wickham},
-  title = {ggplot2: Elegant Graphics for Data Analysis},
-  publisher = {Springer-Verlag New York},
-  year = {2016},
-  isbn = {978-3-319-24277-4},
-  url = {https://ggplot2.tidyverse.org},
-}
-
 
 @article{abrahamGROMACSHighPerformance2015,
-  title = {{{GROMACS}}: High Performance Molecular Simulations through Multi-Level Parallelism from Laptops to Supercomputers},
+  title = {{{GROMACS}}: {{High}} Performance Molecular Simulations through Multi-Level Parallelism from Laptops to Supercomputers},
   shorttitle = {{{GROMACS}}},
   author = {Abraham, Mark James and Murtola, Teemu and Schulz, Roland and P{\'a}ll, Szil{\'a}rd and Smith, Jeremy C. and Hess, Berk and Lindahl, Erik},
   year = {2015},
@@ -65,11 +12,12 @@
   doi = {10.1016/j.softx.2015.06.001},
   abstract = {GROMACS is one of the most widely used open-source and free software codes in chemistry, used primarily for dynamical simulations of biomolecules. It provides a rich set of calculation types, preparation and analysis tools. Several advanced techniques for free-energy calculations are supported. In version 5, it reaches new performance heights, through several new and enhanced parallelization algorithms. These work on every level; SIMD registers inside cores, multithreading, heterogeneous CPU\textendash GPU acceleration, state-of-the-art 3D domain decomposition, and ensemble-level parallelization through built-in replica exchange and the separate Copernicus framework. The latest best-in-class compressed trajectory storage format is supported.},
   langid = {english},
-  keywords = {Free energy,GPU,Molecular dynamics,SIMD}
+  keywords = {Free energy,GPU,Molecular dynamics,SIMD},
+  file = {/home/jannik/Zotero/storage/7CHWC7MM/abraham2015.pdf.pdf}
 }
 
 @article{berendsenGROMACSMessagepassingParallel1995,
-  title = {{{GROMACS}}: A Message-Passing Parallel Molecular Dynamics Implementation},
+  title = {{{GROMACS}}: {{A}} Message-Passing Parallel Molecular Dynamics Implementation},
   shorttitle = {{{GROMACS}}},
   author = {Berendsen, H. J. C. and {van der Spoel}, D. and {van Drunen}, R.},
   year = {1995},
@@ -83,11 +31,36 @@
   abstract = {A parallel message-passing implementation of a molecular dynamics (MD) program that is useful for bio(macro)molecules in aqueous environment is described. The software has been developed for a custom-designed 32-processor ring GROMACS (GROningen MAchine for Chemical Simulation) with communication to and from left and right neighbours, but can run on any parallel system onto which a a ring of processors can be mapped and which supports PVM-like block send and receive calls. The GROMACS software consists of a preprocessor, a parallel MD and energy minimization program that can use an arbitrary number of processors (including one), an optional monitor, and several analysis tools. The programs are written in ANSI C and available by ftp (information: gromacs@chem.rug.nl). The functionality is based on the GROMOS (GROningen MOlecular Simulation) package (van Gunsteren and Berendsen, 1987; BIOMOS B.V., Nijenborgh 4, 9747 AG Groningen). Conversion programs between GROMOS and GROMACS formats are included. The MD program can handle rectangular periodic boundary conditions with temperature and pressure scaling. The interactions that can be handled without modification are variable non-bonded pair interactions with Coulomb and Lennard-Jones or Buckingham potentials, using a twin-range cut-off based on charge groups, and fixed bonded interactions of either harmonic or constraint type for bonds and bond angles and either periodic or cosine power series interactions for dihedral angles. Special forces can be added to groups of particles (for non-equilibrium dynamics or for position restraining) or between particles (for distance restraints). The parallelism is based on particle decomposition. Interprocessor communication is largely limited to position and force distribution over the ring once per time step.},
   langid = {english},
   keywords = {Molecular dynamics,Parallel computing},
-  file = {/home/buhrjk/Zotero/storage/IKZTG9KN/berendsen1995.pdf;/home/buhrjk/Zotero/storage/8JBRADVV/001046559500042E.html}
+  file = {/home/jannik/Zotero/storage/IKZTG9KN/berendsen1995.pdf;/home/jannik/Zotero/storage/8JBRADVV/001046559500042E.html}
+}
+
+@misc{blender,
+  title = {Blender - a {{3D}} Modelling and Rendering Package},
+  author = {Community, Blender Online},
+  year = {2018},
+  address = {{Stichting Blender Foundation, Amsterdam}},
+  organization = {{Blender Foundation}}
+}
+
+@article{braunPIP2inducedMembraneBinding2021,
+  title = {{{PIP2-induced}} Membrane Binding of the Vinculin Tail Competes with Its Other Binding Partners},
+  author = {Braun, Lukas and Schoen, Ingmar and Vogel, Viola},
+  year = {2021},
+  month = oct,
+  journal = {Biophysical Journal},
+  volume = {120},
+  number = {20},
+  pages = {4608--4622},
+  publisher = {{Elsevier}},
+  issn = {0006-3495},
+  doi = {10.1016/j.bpj.2021.08.018},
+  langid = {english},
+  pmid = {34411575},
+  file = {/home/jannik/Zotero/storage/MWHENGR9/S0006349521006846.pdf.pdf;/home/jannik/Zotero/storage/RFWPKAZQ/S0006-3495(21)00684-6.html}
 }
 
 @article{brooksCHARMMBiomolecularSimulation2009,
-  title = {{{CHARMM}}: The Biomolecular Simulation Program},
+  title = {{{CHARMM}}: {{The}} Biomolecular Simulation Program},
   shorttitle = {{{CHARMM}}},
   author = {Brooks, B. R. and Brooks, C. L. and Mackerell, A. D. and Nilsson, L. and Petrella, R. J. and Roux, B. and Won, Y. and Archontis, G. and Bartels, C. and Boresch, S. and Caflisch, A. and Caves, L. and Cui, Q. and Dinner, A. R. and Feig, M. and Fischer, S. and Gao, J. and Hodoscek, M. and Im, W. and Kuczera, K. and Lazaridis, T. and Ma, J. and Ovchinnikov, V. and Paci, E. and Pastor, R. W. and Post, C. B. and Pu, J. Z. and Schaefer, M. and Tidor, B. and Venable, R. M. and Woodcock, H. L. and Wu, X. and Yang, W. and York, D. M. and Karplus, M.},
   year = {2009},
@@ -102,7 +75,87 @@
   langid = {english},
   keywords = {biomolecular simulation,biophysical computation,CHARMM program,energy function,molecular dynamics,molecular mechanics,molecular modeling},
   annotation = {\_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1002/jcc.21287},
-  file = {/home/buhrjk/Zotero/storage/24GBFUDL/Brooks et al. - 2009 - CHARMM The biomolecular simulation program.pdf;/home/buhrjk/Zotero/storage/ETQBYGIR/jcc.html}
+  file = {/home/jannik/Zotero/storage/24GBFUDL/Brooks et al. - 2009 - CHARMM The biomolecular simulation program.pdf;/home/jannik/Zotero/storage/ETQBYGIR/jcc.html}
+}
+
+@article{brooksCHARMMBiomolecularSimulation2009,
+  title = {{{CHARMM}}: {{The}} Biomolecular Simulation Program},
+  shorttitle = {{{CHARMM}}},
+  author = {Brooks, B. R. and Brooks, C. L. and Mackerell, A. D. and Nilsson, L. and Petrella, R. J. and Roux, B. and Won, Y. and Archontis, G. and Bartels, C. and Boresch, S. and Caflisch, A. and Caves, L. and Cui, Q. and Dinner, A. R. and Feig, M. and Fischer, S. and Gao, J. and Hodoscek, M. and Im, W. and Kuczera, K. and Lazaridis, T. and Ma, J. and Ovchinnikov, V. and Paci, E. and Pastor, R. W. and Post, C. B. and Pu, J. Z. and Schaefer, M. and Tidor, B. and Venable, R. M. and Woodcock, H. L. and Wu, X. and Yang, W. and York, D. M. and Karplus, M.},
+  year = {2009},
+  journal = {Journal of Computational Chemistry},
+  volume = {30},
+  number = {10},
+  pages = {1545--1614},
+  issn = {1096-987X},
+  doi = {10.1002/jcc.21287},
+  abstract = {CHARMM (Chemistry at HARvard Molecular Mechanics) is a highly versatile and widely used molecular simulation program. It has been developed over the last three decades with a primary focus on molecules of biological interest, including proteins, peptides, lipids, nucleic acids, carbohydrates, and small molecule ligands, as they occur in solution, crystals, and membrane environments. For the study of such systems, the program provides a large suite of computational tools that include numerous conformational and path sampling methods, free energy estimators, molecular minimization, dynamics, and analysis techniques, and model-building capabilities. The CHARMM program is applicable to problems involving a much broader class of many-particle systems. Calculations with CHARMM can be performed using a number of different energy functions and models, from mixed quantum mechanical-molecular mechanical force fields, to all-atom classical potential energy functions with explicit solvent and various boundary conditions, to implicit solvent and membrane models. The program has been ported to numerous platforms in both serial and parallel architectures. This article provides an overview of the program as it exists today with an emphasis on developments since the publication of the original CHARMM article in 1983. \textcopyright{} 2009 Wiley Periodicals, Inc.J Comput Chem, 2009.},
+  copyright = {Copyright \textcopyright{} 2009 Wiley Periodicals, Inc.},
+  langid = {english},
+  keywords = {biomolecular simulation,biophysical computation,CHARMM program,energy function,molecular dynamics,molecular mechanics,molecular modeling}
+}
+
+@misc{CASReferenceLinkinga,
+  title = {{{CAS Reference Linking}}},
+  howpublished = {https://chemport.cas.org/cgi-bin/sdcgi?APP=ftslink\&action=reflink\&origin=npg\&version=1.0\&coi=1\%3ACAS\%3A528\%3ADC\%2BC2cXhtFOjtrjN\&md5=c457d3108c84c2cc22dbc46e5466c8aa},
+  file = {/home/jannik/Zotero/storage/86LLKBAU/sdcgi.html}
+}
+
+@article{chinthalapudiInteractionTalinCell2018a,
+  title = {The Interaction of Talin with the Cell Membrane Is Essential for Integrin Activation and Focal Adhesion Formation},
+  author = {Chinthalapudi, Krishna and Rangarajan, Erumbi S. and Izard, Tina},
+  year = {2018},
+  month = oct,
+  journal = {Proceedings of the National Academy of Sciences of the United States of America},
+  volume = {115},
+  number = {41},
+  pages = {10339--10344},
+  issn = {1091-6490},
+  doi = {10.1073/pnas.1806275115},
+  abstract = {Multicellular organisms have well-defined, tightly regulated mechanisms for cell adhesion. Heterodimeric {$\alpha\beta$} integrin receptors play central roles in this function and regulate processes for normal cell functions, including signaling, cell migration, and development, binding to the extracellular matrix, and senescence. They are involved in hemostasis and the immune response, participate in leukocyte function, and have biological implications in angiogenesis and cancer. Proper control of integrin activation for cellular communication with the external environment requires several physiological processes. Perturbation of these equilibria may lead to constitutive integrin activation that results in bleeding disorders. Furthermore, integrins play key roles in cancer progression and metastasis in which certain tumor types exhibit higher levels of various integrins. Thus, the integrin-associated signaling complex is important for cancer therapy development. During inside-out signaling, the cytoskeletal protein talin plays a key role in regulating integrin affinity whereby the talin head domain activates integrin by binding to the cytoplasmic tail of {$\beta$}-integrin and acidic membrane phospholipids. To understand the mechanism of integrin activation by talin, we determined the crystal structure of the talin head domain bound to the acidic phospholipid phosphatidylinositol 4,5-bisphosphate (PIP2), allowing us to design a lipid-binding-deficient talin mutant. Our confocal microscopy with talin knockout cells suggests that the talin-cell membrane interaction seems essential for focal adhesion formation and stabilization. Basal integrin activation in Chinese hamster ovary cells suggests that the lipid-binding-deficient talin mutant inhibits integrin activation. Thus, membrane attachment of talin seems necessary for integrin activation and focal adhesion formation.},
+  langid = {english},
+  pmcid = {PMC6187153},
+  pmid = {30254158},
+  keywords = {Allosteric Regulation,angiogenesis,Animals,Binding Sites,cell adhesion,Cell Membrane,CHO Cells,Cricetulus,Crystallography; X-Ray,Focal Adhesions,integrin activation,Integrins,Models; Molecular,Phosphatidylinositol 4;5-Diphosphate,phospholipids,Protein Conformation,Protein Domains,Talin,talin activation},
+  file = {/home/jannik/Zotero/storage/9VH8VAZW/chinthalapudi2018.pdf.pdf;/home/jannik/Zotero/storage/Q9CQLHMF/Chinthalapudi et al. - 2018 - The interaction of talin with the cell membrane is.pdf}
+}
+
+@article{chinthalapudiInteractionTalinCell2018a,
+  title = {The Interaction of Talin with the Cell Membrane Is Essential for Integrin Activation and Focal Adhesion Formation},
+  author = {Chinthalapudi, Krishna and Rangarajan, Erumbi S. and Izard, Tina},
+  year = {2018},
+  month = oct,
+  journal = {Proceedings of the National Academy of Sciences of the United States of America},
+  volume = {115},
+  number = {41},
+  pages = {10339--10344},
+  issn = {1091-6490},
+  doi = {10.1073/pnas.1806275115},
+  abstract = {Multicellular organisms have well-defined, tightly regulated mechanisms for cell adhesion. Heterodimeric {$\alpha\beta$} integrin receptors play central roles in this function and regulate processes for normal cell functions, including signaling, cell migration, and development, binding to the extracellular matrix, and senescence. They are involved in hemostasis and the immune response, participate in leukocyte function, and have biological implications in angiogenesis and cancer. Proper control of integrin activation for cellular communication with the external environment requires several physiological processes. Perturbation of these equilibria may lead to constitutive integrin activation that results in bleeding disorders. Furthermore, integrins play key roles in cancer progression and metastasis in which certain tumor types exhibit higher levels of various integrins. Thus, the integrin-associated signaling complex is important for cancer therapy development. During inside-out signaling, the cytoskeletal protein talin plays a key role in regulating integrin affinity whereby the talin head domain activates integrin by binding to the cytoplasmic tail of {$\beta$}-integrin and acidic membrane phospholipids. To understand the mechanism of integrin activation by talin, we determined the crystal structure of the talin head domain bound to the acidic phospholipid phosphatidylinositol 4,5-bisphosphate (PIP2), allowing us to design a lipid-binding-deficient talin mutant. Our confocal microscopy with talin knockout cells suggests that the talin-cell membrane interaction seems essential for focal adhesion formation and stabilization. Basal integrin activation in Chinese hamster ovary cells suggests that the lipid-binding-deficient talin mutant inhibits integrin activation. Thus, membrane attachment of talin seems necessary for integrin activation and focal adhesion formation.},
+  langid = {english},
+  pmcid = {PMC6187153},
+  pmid = {30254158},
+  keywords = {5-Diphosphate,Allosteric Regulation,angiogenesis,Animals,Binding Sites,cell adhesion,Cell Membrane,CHO Cells,Cricetulus,Crystallography,Focal Adhesions,integrin activation,Integrins,Models,Molecular,Phosphatidylinositol 4,phospholipids,Protein Conformation,Protein Domains,Talin,talin activation,X-Ray},
+  file = {/home/jannik/Zotero/storage/33YZZGWU/chinthalapudi2018.pdf.pdf;/home/jannik/Zotero/storage/XBLTV8HP/Chinthalapudi et al. - 2018 - The interaction of talin with the cell membrane is.pdf}
+}
+
+@article{dasMolecularMechanotransductionPathway2015,
+  title = {A Molecular Mechanotransduction Pathway Regulates Collective Migration of Epithelial Cells},
+  author = {Das, Tamal and Safferling, Kai and Rausch, Sebastian and Grabe, Niels and Boehm, Heike and Spatz, Joachim P.},
+  year = {2015},
+  month = mar,
+  journal = {Nature Cell Biology},
+  volume = {17},
+  number = {3},
+  pages = {276--287},
+  publisher = {{Nature Publishing Group}},
+  issn = {1476-4679},
+  doi = {10.1038/ncb3115},
+  abstract = {Collective movement of epithelial cells drives essential multicellular organization during various fundamental physiological processes encompassing embryonic morphogenesis, cancer and wound healing. Yet the molecular mechanism that ensures the coordinated movement of many cells remains elusive. Here we show that a tumour suppressor protein, merlin, coordinates collective migration of tens of cells, by acting as a mechanochemical transducer. In a stationary epithelial monolayer and also in three-dimensional human skin, merlin localizes to cortical cell\textendash cell junctions. During migration initiation, a fraction of cortical merlin relocalizes to the cytoplasm. This relocalization is triggered by the intercellular pulling force of the leading cell and depends on the actomyosin-based cell contractility. Then in migrating cells, taking its cue from the intercellular pulling forces, which show long-distance ordering, merlin coordinates polarized Rac1 activation and lamellipodium formation on the multicellular length scale. Together, these results provide a distinct molecular mechanism linking intercellular forces to collective cell movements in migrating epithelia.},
+  copyright = {2014 Nature Publishing Group},
+  langid = {english},
+  keywords = {Cell polarity,Collective cell migration,Mechanotransduction,RHO signalling},
+  file = {/home/jannik/Zotero/storage/AZQ65CMX/das2015.pdf.pdf;/home/jannik/Zotero/storage/XI7YP7FX/ncb3115.html}
 }
 
 @article{deddenArchitectureTalin1Reveals2019a,
@@ -120,7 +173,7 @@
   abstract = {{$<$}h2{$>$}Summary{$<$}/h2{$><$}p{$>$}Focal adhesions (FAs) are protein machineries essential for cell adhesion, migration, and differentiation. Talin is an integrin-activating and tension-sensing FA component directly connecting integrins in the plasma membrane with the actomyosin cytoskeleton. To understand how talin function is regulated, we determined a cryoelectron microscopy (cryo-EM) structure of full-length talin1 revealing a two-way mode of autoinhibition. The actin-binding rod domains fold into a 15-nm globular arrangement that is interlocked by the integrin-binding FERM head. In turn, the rod domains R9 and R12 shield access of the FERM domain to integrin and the phospholipid PIP\textsubscript{2} at the membrane. This mechanism likely ensures synchronous inhibition of integrin, membrane, and cytoskeleton binding. We also demonstrate that compacted talin1 reversibly unfolds to an {$\sim$}60-nm string-like conformation, revealing interaction sites for vinculin and actin. Our data explain how fast switching between active and inactive conformations of talin could regulate FA turnover, a process critical for cell adhesion and signaling.{$<$}/p{$>$}},
   langid = {english},
   pmid = {31539492},
-  file = {/home/buhrjk/Zotero/storage/SGJ85QSE/dedden2019.pdf;/home/buhrjk/Zotero/storage/XFS87B32/Dedden et al. - 2019 - The Architecture of Talin1 Reveals an Autoinhibiti.pdf;/home/buhrjk/Zotero/storage/8LF6PRAQ/S0092-8674(19)30953-5.html}
+  file = {/home/jannik/Zotero/storage/7RK7NYH3/10.1016@j.cell.2019.08.034.pdf.pdf;/home/jannik/Zotero/storage/8LF6PRAQ/S0092-8674(19)30953-5.html}
 }
 
 @article{elliottStructureTalinHead2010,
@@ -137,7 +190,30 @@
   abstract = {FERM domains are found in a diverse superfamily of signaling and adaptor proteins at membrane interfaces. They typically consist of three separately folded domains (F1, F2, F3) in a compact cloverleaf structure. The crystal structure of the N-terminal head of the integrin-associated cytoskeletal protein talin reported here reveals a novel FERM domain with a linear domain arrangement, plus an additional domain F0 packed against F1. While F3 binds {$\beta$}-integrin tails, basic residues in F1 and F2 are required for membrane association and for integrin activation. We show that these same residues are also required for cell spreading and focal adhesion assembly in cells. We suggest that the extended conformation of the talin head allows simultaneous binding to integrins via F3 and to PtdIns(4,5)P2-enriched microdomains via basic residues distributed along one surface of the talin head, and that these multiple interactions are required to stabilize integrins in the activated state.},
   pmcid = {PMC2977851},
   pmid = {20947018},
-  file = {/home/buhrjk/Zotero/storage/EYSFYF74/Elliott et al. - 2010 - The Structure of the Talin Head Reveals a Novel Ex.pdf}
+  file = {/home/jannik/Zotero/storage/EYSFYF74/Elliott et al. - 2010 - The Structure of the Talin Head Reveals a Novel Ex.pdf}
+}
+
+@book{ggplot,
+  title = {Ggplot2: {{Elegant}} Graphics for Data Analysis},
+  author = {Wickham, Hadley},
+  year = {2016},
+  publisher = {{Springer-Verlag New York}},
+  isbn = {978-3-319-24277-4}
+}
+
+@article{goughTaleTwoTalins2018,
+  title = {The Tale of Two Talins \textendash{} Two Isoforms to Fine-Tune Integrin Signalling},
+  author = {Gough, Rosemarie E. and Goult, Benjamin T.},
+  year = {2018},
+  journal = {FEBS Letters},
+  volume = {592},
+  number = {12},
+  pages = {2108--2125},
+  issn = {1873-3468},
+  doi = {10.1002/1873-3468.13081},
+  copyright = {\textcopyright{} 2018 Federation of European Biochemical Societies},
+  langid = {english},
+  keywords = {integrin,mechanobiology,talin}
 }
 
 @article{goultStructureDoubleUbiquitinlike2010,
@@ -155,11 +231,27 @@
   doi = {10.1038/emboj.2010.4},
   abstract = {Talin is a 270-kDa protein that activates integrins and couples them to cytoskeletal actin. Talin contains an N-terminal FERM domain comprised of F1, F2 and F3 domains, but it is atypical in that F1 contains a large insert and is preceded by an extra domain F0. Although F3 contains the binding site for ?-integrin tails, F0 and F1 are also required for activation of ?1-integrins. Here, we report the solution structures of F0, F1 and of the F0F1 double domain. Both F0 and F1 have ubiquitin-like folds joined in a novel fixed orientation by an extensive charged interface. The F1 insert forms a loop with helical propensity, and basic residues predicted to reside on one surface of the helix are required for binding to acidic phospholipids and for talin-mediated activation of ?1-integrins. This and the fact that basic residues on F2 and F3 are also essential for integrin activation suggest that extensive interactions between the talin FERM domain and acidic membrane phospholipids are required to orientate the FERM domain such that it can activate integrins.},
   keywords = {focal adhesions,integrins,NMR,phospholipids,talin},
-  file = {/home/buhrjk/Zotero/storage/6WV5YYEF/goult2010.pdf;/home/buhrjk/Zotero/storage/JU6Y243G/Goult et al. - 2010 - Structure of a double ubiquitin-like domain in the.pdf;/home/buhrjk/Zotero/storage/YT8V97XY/emboj.2010.html}
+  file = {/home/jannik/Zotero/storage/6WV5YYEF/goult2010.pdf;/home/jannik/Zotero/storage/JU6Y243G/Goult et al. - 2010 - Structure of a double ubiquitin-like domain in the.pdf;/home/jannik/Zotero/storage/YT8V97XY/emboj.2010.html}
+}
+
+@article{hainingAllSubdomainsTalin2016,
+  title = {All {{Subdomains}} of the {{Talin Rod Are Mechanically Vulnerable}} and {{May Contribute To Cellular Mechanosensing}}},
+  author = {Haining, Alexander William M. and {von Essen}, Magdal{\'e}na and Attwood, Simon J. and Hyt{\"o}nen, Vesa P. and {del R{\'i}o Hern{\'a}ndez}, Armando},
+  year = {2016},
+  month = jul,
+  journal = {ACS Nano},
+  volume = {10},
+  number = {7},
+  pages = {6648--6658},
+  publisher = {{American Chemical Society}},
+  issn = {1936-0851},
+  doi = {10.1021/acsnano.6b01658},
+  abstract = {Although the relevance of mechanotransduction in cell signaling is currently appreciated, the mechanisms that drive this process remain largely unknown. Mechanical unfolding of proteins may trigger distinct downstream signals in cells, providing a mechanism for cellular mechanotransduction. Force-induced unfolding of talin, a prominent focal adhesion protein, has been demonstrated previously for a small portion of its rod domain. Here, using single-molecule atomic force microscopy (smAFM), we show that the entire talin rod can be unfolded by mechanical extension, over a physiological range of forces between 10 and 40 pN. We also demonstrate, through a combination of smAFM and steered molecular dynamics, that the different bundles within the talin rod exhibit a distinct hierarchy of mechanical stability. These results provide a mechanism by which different force conditions within the cell control a graduated unfolding of the talin rod. Mechanical unfolding of the rod subdomains, and the subsequent effect on talin's binding interactions, would allow for a finely tuned cellular response to internally or externally applied forces.},
+  file = {/home/jannik/Zotero/storage/GABWYV8H/haining2016.pdf.pdf;/home/jannik/Zotero/storage/IVLSJMVJ/Haining et al. - 2016 - All Subdomains of the Talin Rod Are Mechanically V.pdf;/home/jannik/Zotero/storage/26MBQV3J/acsnano.html}
 }
 
 @article{hooverCanonicalDynamicsEquilibrium1985,
-  title = {Canonical Dynamics: Equilibrium Phase-Space Distributions},
+  title = {Canonical Dynamics: {{Equilibrium}} Phase-Space Distributions},
   shorttitle = {Canonical Dynamics},
   author = {Hoover, William G.},
   year = {1985},
@@ -171,7 +263,7 @@
   publisher = {{American Physical Society}},
   doi = {10.1103/PhysRevA.31.1695},
   abstract = {Nos\'e has modified Newtonian dynamics so as to reproduce both the canonical and the isothermal-isobaric probability densities in the phase space of an N-body system. He did this by scaling time (with s) and distance (with V1/D in D dimensions) through Lagrangian equations of motion. The dynamical equations describe the evolution of these two scaling variables and their two conjugate momenta ps and pv. Here we develop a slightly different set of equations, free of time scaling. We find the dynamical steady-state probability density in an extended phase space with variables x, px, V, {$\epsilon\dot$}, and {$\zeta$}, where the x are reduced distances and the two variables {$\epsilon\dot$} and {$\zeta$} act as thermodynamic friction coefficients. We find that these friction coefficients have Gaussian distributions. From the distributions the extent of small-system non-Newtonian behavior can be estimated. We illustrate the dynamical equations by considering their application to the simplest possible case, a one-dimensional classical harmonic oscillator.},
-  file = {/home/buhrjk/Zotero/storage/DURLGZA9/Hoover - 1985 - Canonical dynamics Equilibrium phase-space distri.pdf;/home/buhrjk/Zotero/storage/RP5XJ9RC/PhysRevA.31.html}
+  file = {/home/jannik/Zotero/storage/DURLGZA9/Hoover - 1985 - Canonical dynamics Equilibrium phase-space distri.pdf;/home/jannik/Zotero/storage/RP5XJ9RC/PhysRevA.31.html}
 }
 
 @article{ismerSL2InteractiveWebtool2016,
@@ -189,12 +281,12 @@
   doi = {10.1093/nar/gkw297},
   abstract = {Abstract.  SuperLooper2 (SL2) (http://proteinformatics.charite.de/sl2) is the updated version of our previous web-server SuperLooper, a fragment based tool for},
   langid = {english},
-  file = {/home/buhrjk/Zotero/storage/IHYVLJH9/Ismer et al. - 2016 - SL2 an interactive webtool for modeling of missin.pdf;/home/buhrjk/Zotero/storage/2P5PMD6C/2499317.html}
+  file = {/home/jannik/Zotero/storage/IHYVLJH9/Ismer et al. - 2016 - SL2 an interactive webtool for modeling of missin.pdf;/home/jannik/Zotero/storage/2P5PMD6C/2499317.html}
 }
 
 @article{joCHARMMGUIWebbasedGraphical2008,
-  title = {{{CHARMM}}-{{GUI}}: A Web-Based Graphical User Interface for {{CHARMM}}},
-  shorttitle = {{{CHARMM}}-{{GUI}}},
+  title = {{{CHARMM-GUI}}: A Web-Based Graphical User Interface for {{CHARMM}}},
+  shorttitle = {{{CHARMM-GUI}}},
   author = {Jo, Sunhwan and Kim, Taehoon and Iyer, Vidyashankara G. and Im, Wonpil},
   year = {2008},
   month = aug,
@@ -227,11 +319,29 @@
   copyright = {\textcopyright{} 2017. Published by The Company of Biologists Ltd},
   langid = {english},
   pmid = {28701514},
-  file = {/home/buhrjk/Zotero/storage/5DP7D4PP/Klapholz and Brown - 2017 - Talin – the master of integrin adhesions.pdf;/home/buhrjk/Zotero/storage/7HSE9N5F/klapholz2017.pdf;/home/buhrjk/Zotero/storage/W9N6USAT/2435.html}
+  file = {/home/jannik/Zotero/storage/VUJN8IFR/klapholz2017.pdf.pdf;/home/jannik/Zotero/storage/W9N6USAT/2435.html}
+}
+
+@book{knitr,
+  title = {Dynamic Documents with {{R}} and Knitr},
+  author = {Xie, Yihui},
+  year = {2015},
+  edition = {Second},
+  publisher = {{Chapman and Hall/CRC}},
+  address = {{Boca Raton, Florida}}
+}
+
+@incollection{knitr2014,
+  title = {Knitr: {{A}} Comprehensive Tool for Reproducible Research in {{R}}},
+  booktitle = {Implementing Reproducible Computational Research},
+  author = {Xie, Yihui},
+  editor = {Stodden, Victoria and Leisch, Friedrich and Peng, Roger D.},
+  year = {2014},
+  publisher = {{Chapman and Hall/CRC}}
 }
 
 @article{leeCHARMMGUIInputGenerator2016,
-  title = {{{CHARMM}}-{{GUI Input Generator}} for {{NAMD}}, {{GROMACS}}, {{AMBER}}, {{OpenMM}}, and {{CHARMM}}/{{OpenMM Simulations Using}} the {{CHARMM36 Additive Force Field}}},
+  title = {{{CHARMM-GUI Input Generator}} for {{NAMD}}, {{GROMACS}}, {{AMBER}}, {{OpenMM}}, and {{CHARMM}}/{{OpenMM Simulations Using}} the {{CHARMM36 Additive Force Field}}},
   author = {Lee, Jumin and Cheng, Xi and Swails, Jason M. and Yeom, Min Sun and Eastman, Peter K. and Lemkul, Justin A. and Wei, Shuai and Buckner, Joshua and Jeong, Jong Cheol and Qi, Yifei and Jo, Sunhwan and Pande, Vijay S. and Case, David A. and Brooks, Charles L. and MacKerell, Alexander D. and Klauda, Jeffery B. and Im, Wonpil},
   year = {2016},
   month = jan,
@@ -243,7 +353,15 @@
   issn = {1549-9618},
   doi = {10.1021/acs.jctc.5b00935},
   abstract = {Proper treatment of nonbonded interactions is essential for the accuracy of molecular dynamics (MD) simulations, especially in studies of lipid bilayers. The use of the CHARMM36 force field (C36 FF) in different MD simulation programs can result in disagreements with published simulations performed with CHARMM due to differences in the protocols used to treat the long-range and 1-4 nonbonded interactions. In this study, we systematically test the use of the C36 lipid FF in NAMD, GROMACS, AMBER, OpenMM, and CHARMM/OpenMM. A wide range of Lennard-Jones (LJ) cutoff schemes and integrator algorithms were tested to find the optimal simulation protocol to best match bilayer properties of six lipids with varying acyl chain saturation and head groups. MD simulations of a 1,2-dipalmitoyl-sn-phosphatidylcholine (DPPC) bilayer were used to obtain the optimal protocol for each program. MD simulations with all programs were found to reasonably match the DPPC bilayer properties (surface area per lipid, chain order parameters, and area compressibility modulus) obtained using the standard protocol used in CHARMM as well as from experiments. The optimal simulation protocol was then applied to the other five lipid simulations and resulted in excellent agreement between results from most simulation programs as well as with experimental data. AMBER compared least favorably with the expected membrane properties, which appears to be due to its use of the hard-truncation in the LJ potential versus a force-based switching function used to smooth the LJ potential as it approaches the cutoff distance. The optimal simulation protocol for each program has been implemented in CHARMM-GUI. This protocol is expected to be applicable to the remainder of the additive C36 FF including the proteins, nucleic acids, carbohydrates, and small molecules.},
-  file = {/home/buhrjk/Zotero/storage/IDHV5BGC/Lee et al. - 2016 - CHARMM-GUI Input Generator for NAMD, GROMACS, AMBE.pdf;/home/buhrjk/Zotero/storage/BP3BCGFZ/acs.jctc.html}
+  file = {/home/jannik/Zotero/storage/IDHV5BGC/Lee et al. - 2016 - CHARMM-GUI Input Generator for NAMD, GROMACS, AMBE.pdf;/home/jannik/Zotero/storage/BP3BCGFZ/acs.jctc.html}
+}
+
+@book{lindahlGROMACS2020Source2020,
+  title = {{{GROMACS}} 2020 Source Code},
+  author = {{Lindahl} and {Abraham} and {Hess} and {der Spoel}, van},
+  year = {2020-01-01, 2020-01},
+  publisher = {{Zenodo}},
+  doi = {10.5281/zenodo.3562495}
 }
 
 @article{marti-renomComparativeProteinStructure2000,
@@ -259,7 +377,46 @@
   langid = {english},
   pmid = {10940251},
   keywords = {Animals,Computer Simulation,Databases; Factual,Genome,Genomics,Humans,Models; Biological,Models; Genetic,Models; Molecular,Proteins},
-  file = {/home/buhrjk/Zotero/storage/UBEHJKK7/Martí-Renom et al. - 2000 - Comparative protein structure modeling of genes an.pdf}
+  file = {/home/jannik/Zotero/storage/HGNW83FX/10.1146@annurev.biophys.29.1.291.pdf.pdf;/home/jannik/Zotero/storage/UBEHJKK7/Martí-Renom et al. - 2000 - Comparative protein structure modeling of genes an.pdf}
+}
+
+@article{matplotlib,
+  title = {Matplotlib: {{A 2D}} Graphics Environment},
+  author = {Hunter, J. D.},
+  year = {2007},
+  journal = {Computing in Science \& Engineering},
+  volume = {9},
+  number = {3},
+  pages = {90--95},
+  publisher = {{IEEE COMPUTER SOC}},
+  doi = {10.1109/MCSE.2007.55},
+  abstract = {Matplotlib is a 2D graphics package used for Python for application development, interactive scripting, and publication-quality image generation across user interfaces and operating systems.},
+  file = {/home/jannik/Zotero/storage/C8X45CIF/hunter2007.pdf.pdf}
+}
+
+@article{miroshnikovaAdhesionForcesCortical2018,
+  title = {Adhesion Forces and Cortical Tension Couple Cell Proliferation and Differentiation to Drive Epidermal Stratification},
+  author = {Miroshnikova, Yekaterina A. and Le, Huy Q. and Schneider, David and Thalheim, Torsten and R{\"u}bsam, Matthias and Bremicker, Nadine and Polleux, Julien and Kamprad, Nadine and Tarantola, Marco and Wang, Ir{\`e}ne and Balland, Martial and Niessen, Carien M. and Galle, Joerg and Wickstr{\"o}m, Sara A.},
+  year = {2018},
+  month = jan,
+  journal = {Nature Cell Biology},
+  volume = {20},
+  number = {1},
+  pages = {69--80},
+  publisher = {{Nature Publishing Group}},
+  issn = {1476-4679},
+  doi = {10.1038/s41556-017-0005-z},
+  abstract = {To establish and maintain organ structure and function, tissues need to balance stem cell proliferation and differentiation rates and coordinate cell fate with position. By quantifying and modelling tissue stress and deformation in the mammalian epidermis, we find that this balance is coordinated through local mechanical forces generated by cell division and delamination. Proliferation within the basal stem/progenitor layer, which displays features of a jammed, solid-like state, leads to crowding, thereby locally distorting cell shape and stress distribution. The resulting decrease in cortical tension and increased cell\textendash cell adhesion trigger differentiation and subsequent delamination, reinstating basal cell layer density. After delamination, cells establish a high-tension state as they increase myosin II activity and convert to E-cadherin-dominated adhesion, thereby reinforcing the boundary between basal and suprabasal layers. Our results uncover how biomechanical signalling integrates single-cell behaviours to couple proliferation, cell fate and positioning to generate a multilayered tissue.},
+  copyright = {2017 The Author(s)},
+  langid = {english},
+  keywords = {Cadherins,Mechanotransduction,Myosin,Skin stem cells},
+  file = {/home/jannik/Zotero/storage/VD7CIMF8/miroshnikova2017.pdf.pdf;/home/jannik/Zotero/storage/Q2CEFMZF/s41556-017-0005-z.html}
+}
+
+@misc{MolViewerModern,
+  title = {Mol* {{Viewer}}: Modern Web App for {{3D}} Visualization and Analysis of Large Biomolecular Structures | {{Nucleic Acids Research}} | {{Oxford Academic}}},
+  howpublished = {https://academic.oup.com/nar/article/49/W1/W431/6270780},
+  file = {/home/jannik/Zotero/storage/DDBB84E2/6270780.html}
 }
 
 @article{noseUnifiedFormulationConstant1984,
@@ -274,11 +431,27 @@
   publisher = {{American Institute of Physics}},
   issn = {0021-9606},
   doi = {10.1063/1.447334},
-  file = {/home/buhrjk/Zotero/storage/2HJZS58L/Nosé - 1984 - A unified formulation of the constant temperature .pdf;/home/buhrjk/Zotero/storage/LMP7Z2ZY/1.html;/home/buhrjk/Zotero/storage/ZUGKJFR7/1.html}
+  file = {/home/jannik/Zotero/storage/2HJZS58L/Nosé - 1984 - A unified formulation of the constant temperature .pdf;/home/jannik/Zotero/storage/LMP7Z2ZY/1.html;/home/jannik/Zotero/storage/ZUGKJFR7/1.html}
+}
+
+@article{oakesStressingLimitsFocal2014,
+  title = {Stressing the Limits of Focal Adhesion Mechanosensitivity},
+  author = {Oakes, Patrick W and Gardel, Margaret L},
+  year = {2014},
+  month = oct,
+  journal = {Current Opinion in Cell Biology},
+  series = {Cell Adhesion and Migration},
+  volume = {30},
+  pages = {68--73},
+  issn = {0955-0674},
+  doi = {10.1016/j.ceb.2014.06.003},
+  abstract = {Focal adhesion assembly and maturation often occurs concomitantly with changes in force generated within the cytoskeleton or extracellular matrix. To coordinate focal adhesion dynamics with force, it has been suggested that focal adhesion dynamics are mechanosensitive. This review discusses current understanding of the regulation of focal adhesion assembly and force transmission, and the limits to which we can consider focal adhesion plaques as mechanosensitive entities.},
+  langid = {english},
+  file = {/home/jannik/Zotero/storage/596IS4LC/Oakes and Gardel - 2014 - Stressing the limits of focal adhesion mechanosens.pdf;/home/jannik/Zotero/storage/VJV9NLYJ/oakes2014.pdf.pdf;/home/jannik/Zotero/storage/XH9DSR6J/S095506741400074X.html}
 }
 
 @article{parrinelloPolymorphicTransitionsSingle1981,
-  title = {Polymorphic Transitions in Single Crystals: A New Molecular Dynamics Method},
+  title = {Polymorphic Transitions in Single Crystals: {{A}} New Molecular Dynamics Method},
   shorttitle = {Polymorphic Transitions in Single Crystals},
   author = {Parrinello, M. and Rahman, A.},
   year = {1981},
@@ -290,11 +463,29 @@
   publisher = {{American Institute of Physics}},
   issn = {0021-8979},
   doi = {10.1063/1.328693},
-  file = {/home/buhrjk/Zotero/storage/EC4YTXYN/1.html}
+  file = {/home/jannik/Zotero/storage/EC4YTXYN/1.html}
+}
+
+@article{pelletierActivationStateIntegrin1995,
+  title = {The {{Activation State}} of the {{Integrin $\alpha$IIb$\beta$3 Affects Outside-in Signals Leading}} to {{Cell Spreading}} and {{Focal Adhesion Kinase Phosphorylation}} *},
+  author = {Pelletier, Anthony J. and Kunicki, Thomas and Ruggeri, Zaverio M. and Quaranta, Vito},
+  year = {1995},
+  month = jul,
+  journal = {Journal of Biological Chemistry},
+  volume = {270},
+  number = {30},
+  pages = {18133--18140},
+  publisher = {{Elsevier}},
+  issn = {0021-9258, 1083-351X},
+  doi = {10.1074/jbc.270.30.18133},
+  abstract = {{$<$}p{$>$}Integrins bind extracellular matrix and transduce signals mediating cell adhesion, spreading, and migration. It is unclear how these distinct responses follow from a common event: integrin clustering. We examined the relationship between integrin-mediated signals and the integrin's activation state using a cell line expressing {$\alpha$}\textsubscript{IIb}{$\beta$}\textsubscript{3} (Clone B) and a panel of monoclonal antibodies against this integrin. Nonactivating antibodies used to cluster {$\alpha$}\textsubscript{IIb}{$\beta$}\textsubscript{3} stimulated focal adhesion kinase (FAK) phosphorylation, regardless of affinity, subunit specificity, or ligand-blocking phenotype. Coated on plastic, these antibodies supported cell adhesion, spreading, and FAK phosphorylation. In contrast, clustering of {$\alpha$}\textsubscript{IIb}{$\beta$}\textsubscript{3} induced with activating antibodies, or binding of soluble fibrinogen to antibody-activated {$\alpha$}\textsubscript{IIb}{$\beta$}\textsubscript{3}, did not induce FAK phosphorylation. Thus, clustering of {$\alpha$}\textsubscript{IIb}{$\beta$}\textsubscript{3} on Clone B does not necessarily result in FAK phosphorylation. Coated on plastic, activating antibodies supported cell adhesion, but not spreading or FAK phosphorylation. Therefore, it appears the resting, not the active form of {$\alpha$}\textsubscript{IIb}{$\beta$}\textsubscript{3}, induces cell spreading and FAK phosphorylation in Clone B. These data indicate that "inside-out" signals may alter not only the binding specificity of an integrin, but the "outside-in" biochemical signals that integrin initiates as well. This activation state-linked signaling represents a novel mechanism, which may explain how diverse cellular responses are induced by integrin-matrix interactions.{$<$}/p{$>$}},
+  langid = {english},
+  pmid = {7543096},
+  file = {/home/jannik/Zotero/storage/36F28DHE/kunicki1995.pdf.pdf;/home/jannik/Zotero/storage/BP5XTYAJ/Pelletier et al. - 1995 - The Activation State of the Integrin αIIbβ3 Affect.pdf;/home/jannik/Zotero/storage/WX69RNYJ/fulltext.html}
 }
 
 @article{pettersenUCSFChimeraVisualization2004,
-  title = {{{UCSF Chimera}}--a Visualization System for Exploratory Research and Analysis},
+  title = {{{UCSF Chimera--a}} Visualization System for Exploratory Research and Analysis},
   author = {Pettersen, Eric F. and Goddard, Thomas D. and Huang, Conrad C. and Couch, Gregory S. and Greenblatt, Daniel M. and Meng, Elaine C. and Ferrin, Thomas E.},
   year = {2004},
   month = oct,
@@ -308,7 +499,142 @@
   langid = {english},
   pmid = {15264254},
   keywords = {Amino Acid Sequence,Computer Graphics,Models; Molecular,Molecular Conformation,Molecular Sequence Data,Research,Sequence Alignment,Software,Thermodynamics},
-  file = {/home/buhrjk/Zotero/storage/PG6Y7J8S/Pettersen et al. - 2004 - UCSF Chimera--a visualization system for explorato.pdf}
+  file = {/home/jannik/Zotero/storage/MZXIQUN2/pettersen2004.pdf.pdf;/home/jannik/Zotero/storage/PG6Y7J8S/Pettersen et al. - 2004 - UCSF Chimera--a visualization system for explorato.pdf}
+}
+
+@misc{quarto,
+  title = {Quarto},
+  author = {Allaire, J.J. and Teague, Charles and Scheidegger, Carlos and Xie, Yihui and Dervieux, Christophe},
+  year = {2022},
+  month = jan,
+  doi = {10.5281/zenodo.5960048}
+}
+
+@manual{R-knitr,
+  type = {Manual},
+  title = {Knitr: {{A}} General-Purpose Package for Dynamic Report Generation in r},
+  author = {Xie, Yihui},
+  year = {2021}
+}
+
+@manual{R-rmarkdown,
+  type = {Manual},
+  title = {Rmarkdown: {{Dynamic}} Documents for r},
+  author = {Allaire, JJ and Xie, Yihui and McPherson, Jonathan and Luraschi, Javier and Ushey, Kevin and Atkins, Aron and Wickham, Hadley and Cheng, Joe and Chang, Winston and Iannone, Richard},
+  year = {2021}
+}
+
+@manual{rbetterposter,
+  type = {Manual},
+  title = {Betterposter: {{A}} Better Scientific Poster},
+  author = {{Aden-Buie}, Garrick},
+  year = {2022}
+}
+
+@book{rmarkdown2018,
+  title = {R Markdown: {{The}} Definitive Guide},
+  author = {Xie, Yihui and Allaire, J.J. and Grolemund, Garrett},
+  year = {2018},
+  publisher = {{Chapman and Hall/CRC}},
+  address = {{Boca Raton, Florida}}
+}
+
+@book{rmarkdown2020,
+  title = {R Markdown Cookbook},
+  author = {Xie, Yihui and Dervieux, Christophe and Riederer, Emily},
+  year = {2020},
+  publisher = {{Chapman and Hall/CRC}},
+  address = {{Boca Raton, Florida}}
+}
+
+@article{schillerMechanosensitivityCompositionalDynamics2013,
+  title = {Mechanosensitivity and Compositional Dynamics of Cell\textendash Matrix Adhesions},
+  author = {Schiller, Herbert B and F{\"a}ssler, Reinhard},
+  year = {2013},
+  month = jun,
+  journal = {EMBO reports},
+  volume = {14},
+  number = {6},
+  pages = {509--519},
+  publisher = {{John Wiley \& Sons, Ltd}},
+  issn = {1469-221X},
+  doi = {10.1038/embor.2013.49},
+  abstract = {Cells perceive information about the biochemical and biophysical properties of their tissue microenvironment through integrin-mediated cell?matrix adhesions, which connect the cytoskeleton with the extracellular matrix and thereby allow cohesion and long-range mechanical connections within tissues. The formation of cell?matrix adhesions and integrin signalling involves the dynamic recruitment and assembly of an inventory of proteins, collectively termed the ?adhesome?, at the adhesive site. The recruitment of some adhesome proteins, most notably the Lin11-, Isl1- and Mec3-domain-containing proteins, depends on mechanical tension generated by myosin II-mediated contractile forces exerted on cell?matrix adhesions. When exposed to force, mechanosensitive adhesome proteins can change their conformation or expose cryptic-binding sites leading to the recruitment of proteins, rearrangement of the cytoskeleton, reinforcement of the adhesive site and signal transduction. Biophysical methods and proteomics revealed force ranges within the adhesome and cytoskeleton, and also force-dependent changes in adhesome composition. In this review, we provide an overview of the compositional dynamics of cell?matrix adhesions, discuss the most prevalent functional domains in adhesome proteins and review literature and concepts about mechanosensing mechanisms that operate at the adhesion site.},
+  keywords = {adhesome,extracellular matrix,focal adhesion,integrins,quantitative proteomics},
+  file = {/home/jannik/Zotero/storage/DVLLHBJK/2013 - Mechanosensitivity and compositional dynamics of c.pdf;/home/jannik/Zotero/storage/WFEQGZHI/schiller2013.pdf.pdf}
+}
+
+@article{seaborn,
+  title = {Seaborn: Statistical Data Visualization},
+  author = {Waskom, Michael L.},
+  year = {2021},
+  journal = {Journal of Open Source Software},
+  volume = {6},
+  number = {60},
+  pages = {3021},
+  publisher = {{The Open Journal}},
+  doi = {10.21105/joss.03021}
+}
+
+@article{thamilselvanPressureActivatesColon2004,
+  title = {Pressure Activates Colon Cancer Cell Adhesion by Inside-out Focal Adhesion Complex and Actin Cytoskeletal Signaling},
+  author = {Thamilselvan, Vijayalakshmi and Basson, Marc D.},
+  year = {2004},
+  month = jan,
+  journal = {Gastroenterology},
+  volume = {126},
+  number = {1},
+  pages = {8--18},
+  issn = {0016-5085},
+  doi = {10.1053/j.gastro.2003.10.078},
+  abstract = {Background \& Aims: Few circulating tumor cells implant or cause metastasis. We hypothesized that venous or lymphatic pressure or iatrogenic pressure during resection activates signals governing malignant colonocyte adhesion. Methods: We studied the effect of 15 mm Hg increased pressure for 30 minutes on adhesion of primary human colon cancer cells and SW620 colonocytes to collagen and endothelial cells. We modulated integrin affinity with extracellular cations. We assessed binding affinity by detachment assay; integrin surface expression by flow cytometry; and focal adhesion kinase (FAK), Src, and extracellular signal-regulated kinase (ERK) activation by Western analysis and Src in vitro kinase assay. We inhibited Src (PP2), FAK (small RNA interference, SiRNA, or FRNK transfection), MEK (PD98059), PKC (calphostin C), and actin destabilization (phalloidin). Results: Pressure and manganese stimulated primary and SW620 colonocyte adhesion to collagen. Pressure also stimulated SW620 adhesion to endothelial monolayers. Pressure strengthened SW620 binding force to matrix without changing integrin surface expression. Pressure activated SW620 FAK and Src, but not ERK. Manganese did not. Calcium-inhibited adhesion but stimulated FAK (but not Src). PP2 prevented pressure activation of Src, Src phosphorylation of FAK576, and pressure-stimulated adhesion but not FAK397 autophosphorylation. FRNK transfection or FAK SiRNA also prevented pressure-stimulated adhesion. FAK SiRNA ablated pressure-activated FAK397, Src, and FAK576 phosphorylation. Neither Src nor FAK inhibition blocked cation effects. Phalloidin prevented pressure-stimulated adhesion. PD98059 or calphostin C did not. Conclusions: In contrast to divalent cations, extracellular pressure may increase integrin affinity and promote colon cancer adhesion via actin dependent inside-out FAK and Src signals. This mechanotransduced pathway may regulate metastasizing tumor cell adhesion.},
+  langid = {english},
+  file = {/home/jannik/Zotero/storage/3AFHDLUU/thamilselvan2004.pdf.pdf;/home/jannik/Zotero/storage/7TW93S3F/S0016508503017736.html}
+}
+
+@article{twissVinculindependentCadherinMechanosensing2012,
+  title = {Vinculin-Dependent {{Cadherin}} Mechanosensing Regulates Efficient Epithelial Barrier Formation},
+  author = {Twiss, Floor and Le Duc, Quint and Van Der Horst, Suzanne and Tabdili, Hamid and Van Der Krogt, Gerard and Wang, Ning and Rehmann, Holger and Huveneers, Stephan and Leckband, Deborah E. and De Rooij, Johan},
+  year = {2012},
+  month = sep,
+  journal = {Biology Open},
+  volume = {1},
+  number = {11},
+  pages = {1128--1140},
+  issn = {2046-6390},
+  doi = {10.1242/bio.20122428},
+  abstract = {Proper regulation of the formation and stabilization of epithelial cell\textendash cell adhesion is crucial in embryonic morphogenesis and tissue repair processes. Defects in this process lead to organ malformation and defective epithelial barrier function. A combination of chemical and mechanical cues is used by cells to drive this process. We have investigated the role of the actomyosin cytoskeleton and its connection to cell\textendash cell junction complexes in the formation of an epithelial barrier in MDCK cells. We find that the E-cadherin complex is sufficient to mediate a functional link between cell\textendash cell contacts and the actomyosin cytoskeleton. This link involves the actin binding capacity of {$\alpha$}-catenin and the recruitment of the mechanosensitive protein Vinculin to tensile, punctate cell\textendash cell junctions that connect to radial F-actin bundles, which we name Focal Adherens Junctions (FAJ). When cell\textendash cell adhesions mature, these FAJs disappear and linear junctions are formed that do not contain Vinculin. The rapid phase of barrier establishment (as measured by Trans Epithelial Electrical Resistance (TER)) correlates with the presence of FAJs. Moreover, the rate of barrier establishment is delayed when actomyosin contraction is blocked or when Vinculin recruitment to the Cadherin complex is prevented. Enhanced presence of Vinculin increases the rate of barrier formation. We conclude that E-cadherin-based FAJs connect forming cell\textendash cell adhesions to the contractile actomyosin cytoskeleton. These specialized junctions are sites of Cadherin mechanosensing, which, through the recruitment of Vinculin, is a driving force in epithelial barrier formation.},
+  file = {/home/jannik/Zotero/storage/U2PYWWT7/twiss2012.pdf.pdf;/home/jannik/Zotero/storage/X723CKIY/Twiss et al. - 2012 - Vinculin-dependent Cadherin mechanosensing regulat.pdf;/home/jannik/Zotero/storage/VVRM3IHX/Vinculin-dependent-Cadherin-mechanosensing.html}
+}
+
+@article{vmd,
+  title = {{{VMD}} \textendash{} {{Visual Molecular Dynamics}}},
+  author = {Humphrey, William and Dalke, Andrew and Schulten, Klaus},
+  year = {1996},
+  journal = {Journal of Molecular Graphics},
+  volume = {14},
+  pages = {33--38},
+  tbreference = {222},
+  tbstatus = {Published.}
+}
+
+@article{vogelLocalForceGeometry2006,
+  title = {Local Force and Geometry Sensing Regulate Cell Functions},
+  author = {Vogel, Viola and Sheetz, Michael},
+  year = {2006},
+  month = apr,
+  journal = {Nature Reviews Molecular Cell Biology},
+  volume = {7},
+  number = {4},
+  pages = {265--275},
+  publisher = {{Nature Publishing Group}},
+  issn = {1471-0080},
+  doi = {10.1038/nrm1890},
+  abstract = {The shapes of eukaryotic cells and, ultimately, the organisms that they form are defined by cycles of mechanosensing, mechanotransduction and mechanoresponse. Recent studies have shed light into the molecular mechanisms of local mechanosensing and how transduction into biochemical signals could result in whole-cell responses to substrate rigidity.Cellular mechanical phenomena can be described by sequential events: first, mechanosensing that involves a local molecular change in response to changes in force or in geometry (architecture of recognition sites); second, mechanotransduction that involves the conversion of force- or geometry-induced changes into biochemical signals; and third, mechanoresponses, which are changes in cellular function that involve integrated signal responses by motile systems in the short term, and by changes in the molecular composition of the cell in the long term.Force sensing involves the detection of local changes in protein conformation, including protein unfolding. Known mechanisms that are affected by force include opening ion channels, unfolding matrix proteins, cytoplasmic protein unfolding, alterations of enzyme kinetics and catch-bond formation.Geometry sensing involves the detection of the proper spacing of protein sites in clusters, as well as sensing changes in membrane curvature, or in the overall size of protein complexes.Mechanotransduction involves the activation of several signalling pathways, including, but not limited to, the small G proteins, trimeric G proteins, tyrosine phosphorylation, inositol lipid metabolism and calcium level.In tissue engineering, artificial environments have to be designed such that cells will go through different phases with time; however, modifications of the environment by cells pose an important, and complex, problem. The dynamic interplay between cells and their biological matrices over many cycles of mechanosensing, transduction, integrated cell response and matrix remodelling make it difficult to understand how cells know whether to grow, differentiate or undergo apoptosis.},
+  copyright = {2006 Nature Publishing Group},
+  langid = {english},
+  keywords = {Biochemistry,Cancer Research,Cell Biology,Developmental Biology,general,Life Sciences,Stem Cells},
+  file = {/home/jannik/Zotero/storage/9NL2THI4/vogel2006.pdf.pdf;/home/jannik/Zotero/storage/GV9NTFBW/nrm1890.html}
 }
 
 @article{webbComparativeProteinStructure2016,
@@ -326,111 +652,60 @@
   langid = {english},
   keywords = {comparative modeling,ModBase,MODELLER,protein fold,protein structure,structure prediction},
   annotation = {\_eprint: https://currentprotocols.onlinelibrary.wiley.com/doi/pdf/10.1002/cpps.20},
-  file = {/home/buhrjk/Zotero/storage/W6JC3L6S/Webb and Sali - 2016 - Comparative Protein Structure Modeling Using MODEL.pdf;/home/buhrjk/Zotero/storage/3SNRLLAX/cpps.html;/home/buhrjk/Zotero/storage/IZUAJMUB/cpps.html}
+  file = {/home/jannik/Zotero/storage/W6JC3L6S/Webb and Sali - 2016 - Comparative Protein Structure Modeling Using MODEL.pdf;/home/jannik/Zotero/storage/3SNRLLAX/cpps.html;/home/jannik/Zotero/storage/IZUAJMUB/cpps.html}
 }
 
-
-
-@book{lindahlGROMACS2020Source2020,
-	title = {GROMACS 2020 Source code},
-	author = {Lindahl,  and Abraham,  and Hess,  and van der Spoel, },
-	year = {2020},
-	month = {01},
-	date = {2020-01-01},
-	publisher = {Zenodo},
-	doi = {10.5281/zenodo.3562495},
-	url = {https://zenodo.org/record/3562495},
-	note = {DOI: 10.5281/zenodo.3562495
-Citation Key: lindahlGROMACS2020Source2020}
-}
-
-
-@Article{goughTaleTwoTalins2018,
-  title = {The Tale of Two Talins \textendash{} Two Isoforms to Fine-Tune Integrin Signalling},
-  author = {Rosemarie E. Gough and Benjamin T. Goult},
-  year = {2018},
-  volume = {592},
-  pages = {2108--2125},
-  issn = {1873-3468},
-  doi = {10.1002/1873-3468.13081},
-  annotation = {\_eprint: https://febs.onlinelibrary.wiley.com/doi/pdf/10.1002/1873-3468.13081},
-  copyright = {\textcopyright{} 2018 Federation of European Biochemical Societies},
-  file = {/home/jannik/Zotero/storage/ZBVRBEXA/Gough and Goult - 2018 - The tale of two talins – two isoforms to fine-tune.pdf;/home/jannik/Zotero/storage/2WCMW6QA/1873-3468.html},
-  journal = {FEBS Letters},
-  keywords = {integrin,mechanobiology,talin},
-  language = {en},
-  number = {12},
-}
-
-
-@article{chinthalapudiInteractionTalinCell2018a,
-  title = {The Interaction of Talin with the Cell Membrane Is Essential for Integrin Activation and Focal Adhesion Formation},
-  author = {Chinthalapudi, Krishna and Rangarajan, Erumbi S. and Izard, Tina},
-  year = {2018},
-  month = oct,
-  journal = {Proceedings of the National Academy of Sciences of the United States of America},
-  volume = {115},
-  number = {41},
-  pages = {10339--10344},
-  issn = {1091-6490},
-  doi = {10.1073/pnas.1806275115},
-  abstract = {Multicellular organisms have well-defined, tightly regulated mechanisms for cell adhesion. Heterodimeric {$\alpha\beta$} integrin receptors play central roles in this function and regulate processes for normal cell functions, including signaling, cell migration, and development, binding to the extracellular matrix, and senescence. They are involved in hemostasis and the immune response, participate in leukocyte function, and have biological implications in angiogenesis and cancer. Proper control of integrin activation for cellular communication with the external environment requires several physiological processes. Perturbation of these equilibria may lead to constitutive integrin activation that results in bleeding disorders. Furthermore, integrins play key roles in cancer progression and metastasis in which certain tumor types exhibit higher levels of various integrins. Thus, the integrin-associated signaling complex is important for cancer therapy development. During inside-out signaling, the cytoskeletal protein talin plays a key role in regulating integrin affinity whereby the talin head domain activates integrin by binding to the cytoplasmic tail of {$\beta$}-integrin and acidic membrane phospholipids. To understand the mechanism of integrin activation by talin, we determined the crystal structure of the talin head domain bound to the acidic phospholipid phosphatidylinositol 4,5-bisphosphate (PIP2), allowing us to design a lipid-binding-deficient talin mutant. Our confocal microscopy with talin knockout cells suggests that the talin-cell membrane interaction seems essential for focal adhesion formation and stabilization. Basal integrin activation in Chinese hamster ovary cells suggests that the lipid-binding-deficient talin mutant inhibits integrin activation. Thus, membrane attachment of talin seems necessary for integrin activation and focal adhesion formation.},
+@article{webbComparativeProteinStructure2016,
+  title = {Comparative {{Protein Structure Modeling Using MODELLER}}},
+  author = {Webb, Benjamin and Sali, Andrej},
+  year = {2016},
+  journal = {Current Protocols in Protein Science},
+  volume = {86},
+  number = {1},
+  pages = {2.9.1-2.9.37},
+  issn = {1934-3663},
+  doi = {10.1002/cpps.20},
+  abstract = {Comparative protein structure modeling predicts the three-dimensional structure of a given protein sequence (target) based primarily on its alignment to one or more proteins of known structure (templates). The prediction process consists of fold assignment, target-template alignment, model building, and model evaluation. This unit describes how to calculate comparative models using the program MODELLER and how to use the ModBase database of such models, and discusses all four steps of comparative modeling, frequently observed errors, and some applications. Modeling lactate dehydrogenase from Trichomonas vaginalis (TvLDH) is described as an example. The download and installation of the MODELLER software is also described. \textcopyright{} 2016 by John Wiley \& Sons, Inc.},
+  copyright = {Copyright \textcopyright{} 2016 John Wiley \& Sons, Inc.},
   langid = {english},
-  pmcid = {PMC6187153},
-  pmid = {30254158},
-  keywords = {Allosteric Regulation,angiogenesis,Animals,Binding Sites,cell adhesion,Cell Membrane,CHO Cells,Cricetulus,Crystallography; X-Ray,Focal Adhesions,integrin activation,Integrins,Models; Molecular,Phosphatidylinositol 4;5-Diphosphate,phospholipids,Protein Conformation,Protein Domains,Talin,talin activation},
-  file = {/home/jannik/Zotero/storage/9VH8VAZW/chinthalapudi2018.pdf.pdf;/home/jannik/Zotero/storage/Q9CQLHMF/Chinthalapudi et al. - 2018 - The interaction of talin with the cell membrane is.pdf}
+  keywords = {comparative modeling,ModBase,MODELLER,protein fold,protein structure,structure prediction}
 }
 
-@Book{knitr,
-  title = {Dynamic Documents with {R} and knitr},
-  author = {Yihui Xie},
-  publisher = {Chapman and Hall/CRC},
-  address = {Boca Raton, Florida},
+@article{yaoMechanicalResponseTalin2016,
+  title = {The Mechanical Response of Talin},
+  author = {Yao, Mingxi and Goult, Benjamin T. and Klapholz, Benjamin and Hu, Xian and Toseland, Christopher P. and Guo, Yingjian and Cong, Peiwen and Sheetz, Michael P. and Yan, Jie},
+  year = {2016},
+  month = jul,
+  journal = {Nature Communications},
+  volume = {7},
+  number = {1},
+  pages = {11966},
+  publisher = {{Nature Publishing Group}},
+  issn = {2041-1723},
+  doi = {10.1038/ncomms11966},
+  abstract = {Talin, a force-bearing cytoplasmic adapter essential for integrin-mediated cell adhesion, links the actin cytoskeleton to integrin-based cell\textendash extracellular matrix adhesions at the plasma membrane. Its C-terminal rod domain, which contains 13 helical bundles, plays important roles in mechanosensing during cell adhesion and spreading. However, how the structural stability and transition kinetics of the 13 helical bundles of talin are utilized in the diverse talin-dependent mechanosensing processes remains poorly understood. Here we report the force-dependent unfolding and refolding kinetics of all talin rod domains. Using experimentally determined kinetics parameters, we determined the dynamics of force fluctuation during stretching of talin under physiologically relevant pulling speeds and experimentally measured extension fluctuation trajectories. Our results reveal that force-dependent stochastic unfolding and refolding of talin rod domains make talin a very effective force buffer that sets a physiological force range of only a few pNs in the talin-mediated force transmission pathway.},
+  copyright = {2016 The Author(s)},
+  langid = {english},
+  keywords = {Kinetics,Structural biology},
+  file = {/home/jannik/Zotero/storage/7RNCKEBG/yao2016.pdf.pdf;/home/jannik/Zotero/storage/ME4Q5CWC/Yao et al. - 2016 - The mechanical response of talin.pdf;/home/jannik/Zotero/storage/2AD3Y8CJ/ncomms11966.html}
+}
+
+@article{zhouMechanismFocalAdhesion2015,
+  title = {Mechanism of {{Focal Adhesion Kinase Mechanosensing}}},
+  author = {Zhou, Jing and {Aponte-Santamar{\'i}a}, Camilo and Sturm, Sebastian and Bullerjahn, Jakob T{\'o}mas and Bronowska, Agnieszka and Gr{\"a}ter, Frauke},
   year = {2015},
-  edition = {2nd},
-  note = {ISBN 978-1498716963},
-  url = {https://yihui.org/knitr/},
-}
-
-@Manual{rbetterposter,
-  title = {betterposter: A Better Scientific Poster},
-  author = {Garrick Aden-Buie},
-  year = {2022},
-  note = {R package version 0.0.1},
-  url = {https://gerkelab.github.io/betterposter/index.html},
-}
-
-@software{quarto,
-  author = {Allaire, J.J. and Teague, Charles and Scheidegger, Carlos and Xie, Yihui and Dervieux, Christophe},
-  doi = {10.5281/zenodo.5960048},
-  month = {1},
-  title = {{Quarto}},
-  url = {https://github.com/quarto-dev/quarto-cli},
-  version = {0.3},
-  year = {2022}
-}
-
-@software{blender,
-   title = {Blender - a 3D modelling and rendering package},
-   author = {Blender Online Community},
-   organization = {Blender Foundation},
-   address = {Stichting Blender Foundation, Amsterdam},
-   year = {2018},
-   url = {http://www.blender.org},
- }
-
-@article{vmd,
-  author={William Humphrey and Andrew Dalke and Klaus Schulten},
-  title={{VMD} -- {V}isual {M}olecular {D}ynamics},
-  journal={Journal of Molecular Graphics},
-  year=1996,
-  volume=14,
-  pages={33-38},
-  note={},
-  tbstatus={Published.},
-  techrep={},
-  tbreference={222}
+  month = nov,
+  journal = {PLOS Computational Biology},
+  volume = {11},
+  number = {11},
+  pages = {e1004593},
+  publisher = {{Public Library of Science}},
+  issn = {1553-7358},
+  doi = {10.1371/journal.pcbi.1004593},
+  abstract = {Mechanosensing at focal adhesions regulates vital cellular processes. Here, we present results from molecular dynamics (MD) and mechano-biochemical network simulations that suggest a direct role of Focal Adhesion Kinase (FAK) as a mechano-sensor. Tensile forces, propagating from the membrane through the PIP2 binding site of the FERM domain and from the cytoskeleton-anchored FAT domain, activate FAK by unlocking its central phosphorylation site (Tyr576/577) from the autoinhibitory FERM domain. Varying loading rates, pulling directions, and membrane PIP2 concentrations corroborate the specific opening of the FERM-kinase domain interface, due to its remarkably lower mechanical stability compared to the individual alpha-helical domains and the PIP2-FERM link. Analyzing downstream signaling networks provides further evidence for an intrinsic mechano-signaling role of FAK in broadcasting force signals through Ras to the nucleus. This distinguishes FAK from hitherto identified focal adhesion mechano-responsive molecules, allowing a new interpretation of cell stretching experiments.},
+  langid = {english},
+  keywords = {Biochemical simulations,Cell membranes,Fats,Focal adhesions,Lipids,Phosphorylation,Protein kinase signaling cascade,Ras signaling},
+  file = {/home/jannik/Zotero/storage/7S589LKK/zhou2015.pdf.pdf;/home/jannik/Zotero/storage/TYA9ERCC/Zhou et al. - 2015 - Mechanism of Focal Adhesion Kinase Mechanosensing.pdf;/home/jannik/Zotero/storage/YFUFUL93/article.html}
 }
 
 
