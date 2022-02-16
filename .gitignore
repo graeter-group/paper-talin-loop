@@ -1,0 +1,15 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+/.quarto/
+
+assets/results/videos/*
+*.xtc
+*.gro
+*.blend
+*.wrl
+.nfs*
+
+

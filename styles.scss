@@ -1,0 +1,65 @@
+/*-- scss:defaults --*/
+
+
+/*-- scss:rules --*/
+.anchored .figure-caption {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: black;
+  font-style: normal;
+  position: absolute;
+  top: 0px;
+  left: -10px;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+}
+
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.sidebar {
+  z-index: 1;
+}
+
+.quarto-layout-panel {
+  padding: 1rem;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+}
+
+.noborder {
+  border-style: none;
+}
+
+@media print {
+  pre, blockquote {page-break-inside: avoid;}
+}
+
+@media print {
+  .quarto-layout-panel {
+    page-break-inside: avoid;
+    // page-break-before: always;
+  }
+}
+
+@media print {
+  #TOC {
+    display: none;
+  }
+}
+
+// @media print {
+//   h1 {page-break-before: always;}
+// }
+

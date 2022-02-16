@@ -1,0 +1,397 @@
+---
+title: |
+  Intrinsically disordered region of talin’s FERM domain functions as an initial PIP2 recognition site
+date: 2021-09-07
+author: Jannik Buhr, Florian Franz, Frauke Gräter
+bibliography: references.bib
+format:
+  html:
+    html-math-method: katex
+    code-fold: true
+    code-tools:
+      source: https://github.com/hits-mbm-dev/paper-talin-loop
+    self-contained: false
+    theme:
+      light:
+        - default
+        - styles.scss
+      dark:
+        - darkly
+        - styles.scss
+    mainfont: Roboto
+    monofont: Fira Mono
+    toc-depth: 2
+    toc: true
+    linkcolor: "#1E4287"
+  pdf:
+    pdf-engine: lualatex
+    colorlinks: true
+  docx:
+    colorlinks: true
+abstract: |
+  Focal adhesions mediate the interaction of the cytoskeleton with the extracellular matrix (ECM).
+  Cell-ECM adhesion is used by almost all cells both during development and homeostasis and ranges from dynamic to permanent.
+  As such, it is an important process in health and disease alike.
+  Talin is a central regulator and adaptorprotein of the multiprotein focal adhesion complexes and is responsible for integrin activation and force-sensing.
+  We evaluated direct interactions of talin with the membrane lipid phosphatidylinositol 4,5-bisphosphate (PIP~2~) by means of molecular dynamics simulations.
+  A newly published autoinhibitory structure of talin, where common PIP~2~ interaction sites are covered up, sparked our curiosity for a hitherto less examined loop as a potential site of first contact.
+  We show that this unstructured loop in the F1 subdomain of the talin1 FERM domain is able to interact with PIP~2~ and can facilitate further interactions by serving as a flexible membrane anchor.
+  This work presents the dynamics of the interaction and identifies key residues.
+  Further, we surveyed the effect of a physiological PIP~2~ enrichment at focal adhesion sites on the dynamics of talin through force-probe molecular dynamics simulations.
+  The results provide backing for the direct involvement of PIP~2~ in the localization and activation of talin.
+
+---
+
+
+:::callout-tip
+You can find the poster for this paper presented at the Annual Meeting of the Biophysical Society 2022
+in your favorite format here: [html](./poster-bps-2022.html), [pdf](./poster-jannik-buhr-bps-2022.pdf)
+:::
+
+# Introduction
+
+::::{#fig-structure layout="[[1], [1,1], [1]]" .column-body-outset}
+
+![ ](./assets/blender/render/frame0000.png){#fig-tln-schema-long}
+
+![ ](./assets/blender/render/frame0001.png){#fig-tln-schema-autoinhib}
+
+![ ](./assets/blender/render-align/frame0000.png){#fig-tln-align-autoinhib}
+
+**a\)** TODO: This is what full-length talin is made up of, these are the important sites, notice integrin binding site and pip2 binding surface. A stylized representation of the Talin1 (sub-)domains over the inner leaflet of a POPC membrane containing PIP~2~. The two main PIP~2~-binding sites are indicated with red dots. Tails of an integrin $\alpha$ and $\beta$ heterodimer are represented in green.
+**b\)** TODO: Dedden et all found this autoinhibited structure, pip2 binding surface if covered by R12. Additionally R9 covers up Integrin bindin site. The same stylized representation as a), this time depicting the autoinhibited state of Talin. The main PIP~2~-binding sites in F2 and F3 are occluded by rod domain 12
+**c\)** TODO: Same as b) but with more detail as a cartoon representation. This is the structure found by Dedden et all with the addition of F0 F1, which are not in the initial crystal structure, due to their flexibility. For the complete extended conformation of the FERM domain we used the structure by @elliottStructureTalinHead2010 <https://www.rcsb.org/structure/3IVF>. However, once again due to flexibility it is missing the F1 loop.
+We modelled with MODELLER and are find the expected flexibility of the loop in simulations using RMSF as a measure, see supplementary @fig-loop-rmsf.
+::::
+
+
+# Materials and Methods
+
+## Molecular dynamics with GROMACS
+
+<!-- TODO: Add reference scripts for supplementary materials. -->
+
+Molecular dynamics simulations where performed with GROMACS
+[@berendsenGROMACSMessagepassingParallel1995; @abrahamGROMACSHighPerformance2015]
+version 2020.03 [@lindahlGROMACS2020Source2020].
+
+A crystal structure of the Talin FERM domain by @elliottStructureTalinHead2010 with the PDB-ID 3IVF was used as the basis of all simulations.
+
+<!-- :::video-container -->
+<!-- [FERM]{#app1 .app} -->
+<!-- ::: -->
+
+The missing F1 domain loop between residues L133 and W144 was modeled using MODELLER [@marti-renomComparativeProteinStructure2000; @webbComparativeProteinStructure2016] via the interface to Chimera [@pettersenUCSFChimeraVisualization2004], followed by equilibration with GROMACS.
+The resulting conformation was compared to an NMR structure of the F1 domain (PDB-ID 2KC2) by @goultStructureDoubleUbiquitinlike2010.
+
+The missing residue M1 was also added.
+The missing residues I399 and L400 where not modeled, leaving us with with a continuous sequence from residue 1 to 398.
+Simulations where performed with the CHARM36 force field.
+Topologies, including the membrane, where generated with the CHARM-GUI web app [@brooksCHARMMBiomolecularSimulation2009; @joCHARMMGUIWebbasedGraphical2008; @leeCHARMMGUIInputGenerator2016] and GROMACS tools. All simulations used the TIP3P water model and where neutralized with 0.15 mol/L of NaCl. A a 6-step equilibration was performed after gradient decent energy minimization while gradually relieving restraints on protein and membrane atoms. Production runs use a timestep of 2 fs, a Verlet cut-off scheme for Van-der-Waals interactions and the Particle Mesh Ewald (PME) method for long-range electrostatics. NTP-ensembles where achieved by Nosé-Hoover temperature coupling [@hooverCanonicalDynamicsEquilibrium1985; @noseUnifiedFormulationConstant1984] and Parinello-Rahman pressure coupling [@parrinelloPolymorphicTransitionsSingle1981].
+An example `.mdp`-file can be found in the supplementary materials at @sec-prod-mdp.
+
+The initial equilibrium simulation of the completed FERM domain was run for 75 ns.
+Subsequently, the root mean squared fluctuation (RMSF) was calculated with GROMACS tools.
+
+The F0F1 FERM sub domains (residues 1 to 197) were simulated to evaluate protein-membrane association using a rotational sampling approach.
+This entailed placing the protein 1.5 nm away from a 1-palmitoyl-2-oleoyl-glycero-3-phosphocholine (POPC) membrane in a total of 60 orientations spanning a rotation of 360 degrees.
+6 replicates of each orientation where run for 200 ns each.
+However, due to a hardware failure, 6 of these 360 runs are only 50 to 150 ns long.
+Of the 119 lipids in the upper leaflet of the POPC membrane, 12 lipids were replaced with PIP~2~, which results in a physiological concentration of 10% PIP~2~.
+
+From this rotational sampling we selected representative conformations with high protein-membrane interaction as the basis of 6 equilibrium simulations of the complete FERM domain over a POPC membrane with 26 PIP~2~ lipids out of a total of 273 lipids in the upper leaflet.
+Each simulation ran for 400\ ns.
+
+To compare the effects of PIP~2~ on the dynamics, a system containing only 1\ %\ PIP~2~ (3 PIP~2~ molecules in 273 lipids) was created from the enriched system by programmatically exchanging lipid head groups via a `python` script.
+The enriched and non-enriched systems where then subjected to force-probe MD simulations.
+
+## Automation, Data Analysis and Availability
+
+Setup scripts written in `bash` are available for all simulations shown in this work.
+Plots were generated with `R` using ggplot2
+[@ggplot].
+Interactive structure representations are embedded using
+Mol\* [@molstar].
+Schematic visualizations were rendered with blender [@blender]
+and VMD [@vmd].
+Files relevant to this paper that are too big to be uploaded to
+this repository, such as trajectories and blender files,
+will be uploaded to a separate location.
+
+<!-- TODO: upload trajectories -->
+
+# Results
+
+## Setup TODO:
+
+<!-- pip2 recognition via loop (2 & 3) -->
+
+
+## The F1 loop can act as a point of first contact TODO: 
+
+::::: {#fig-loop-importance layout="[[1,1,1],[1],[1,1],[1],[1]]"}
+
+![ ](./assets/vmd/f0f1/unbound.png){#fig-f0f1-unbound}
+
+![ ](./assets/vmd/f0f1/anchored.png){#fig-f0f1-anchored}
+
+![ ](./assets/vmd/f0f1/bound.png){#fig-f0f1-bound}
+
+![ ](./assets/results/plots/f0f1-ri-angle-npip-1.png){#fig-f0f1-ri-angle}
+
+![ ](./assets/results/plots/f0f1-angle-frame-npip-1.png){#fig-f0f1-angle-frame}
+
+![ ](./assets/results/plots/f0f1-retention-1.png){#fig-f0f1-retention}
+
+![ ](./assets/results/plots/f0f1-ri-npip-1.png){#fig-f0f1-ri-npip}
+
+![ ](./assets/vmd/f0f1/residues.mp4)
+
+**a\)** TODO: The F1-loop interacts with PIP~2~ and can anchor the subdomain to the membrane due to its high flexibility.
+But in order to test if this interaction of the loop with the membrane is just the result of a biased starting position with the loop already
+pointing downwards we sampled 60 different starting positions, rotating around the x-axis, with 6 replicates each.
+**a\)** TODO: Regardless of the angle the loop is almost always involved in the contact residues
+**b\)** TODO: And angles in which the loop is already favored towards the membrane tend to make contact faster. A heatmap of the first 100 ns of all 360 simulation s, summarized per angle, showing the average number of residues in contact with at least one PIP~2~ for that frame. The F1-loop finds the membrane faster than other parts of F0F1 can due to it's high flexibility.
+**c\)** TODO: f0f1 retention
+**d\)** TODO: Mean interaction scores of the individual residues across all 6 simulations. Color represents the PI of the amino acid in isolation. A number of very prominent lysines can be observed.
+:::::
+
+
+## The F1 loop can facilitate further contacts TODO:
+
+:::: {#fig-loop-further-interactions layout="[[1],[1, 1.3],[1],[1]]"}
+
+![ ](./assets/vmd/f0f1-pulling/f0f1-run1.mp4)
+
+![ ](./assets/vmd/f0f1-pulling/vert-pull.png){#fig-f0f1-vert-pull-vmd}
+
+![ ](./assets/results/plots/f0f1-vert-pull-1.png){#fig-f0f1-vert-pull}
+
+![ ](./assets/results/plots/ferm-ri-npip-1.png){#fig-ferm-ri-npip}
+
+![ ](./assets/vmd/ferm/ferm-residues-transparent-arrows.png){#fig-ferm-memb-system}
+
+**a\)** TODO:
+**b\)** TODO: see K272 of F2 and K316, K324, E342, and K343 of F3 [@chinthalapudiInteractionTalinCell2018a].
+**c\)** TODO: The complete simulation system with the talin1 FERM domain over a POPC membrane containing 10 % PIP~2~ in the upper leaflet (26 PIP2 molecules for simulations with the full-length ferm domain, 12 for F0F1 simulations).
+::::
+
+## Lateral Pulling of the FERM domain
+
+:::callout-note
+Additional simulations pulling the whole FERM domain at a physiological
+angle of 30° laterally over a membrane with differing concentrations of PIP~2~
+are currently running.
+:::
+
+<!-- - force probing / lateral pulling (compare to vertical only-loop pulling) -->
+<!--   - many interactions important vs. single strong site -->
+<!--   - loop itself only recognition -->
+
+<!-- :::: {#fig-pulling layout="[[1],[1,1]]"} -->
+<!---->
+<!---->
+<!-- ![ ](./assets/results/plots/tln-ferm-lat-pull-1.png){#fig-ferm-lat-pull} -->
+<!---->
+<!-- ![ ](./assets/results/plots/tln-ferm-lat-pull_mean_se-1.png){#fig-ferm-lat-pull-mean-se} -->
+<!---->
+<!---->
+<!-- **a\)** TODO: -->
+<!-- **b\)** TODO: -->
+<!-- **c\)** TODO: -->
+<!-- :::: -->
+
+# Discussion and Outlook
+
+<!-- TODO: -->
+
+# Conclusion
+
+<!-- TODO: -->
+
+# Author Contributions
+
+<!-- TODO: -->
+
+# Acknowledgments
+
+<!-- TODO: -->
+
+# Supplementary Material
+
+<!-- TODO: -->
+
+
+<!-- ![ ](./assets/results/plots/ferm-time-ri-npip-single-run-1.png){#fig-ferm-time-ri-npip-single} -->
+
+::: {#fig-suppl layout="[[1,1],[1],[1,1,1]]"}
+
+![ ](./assets/results/figures/loop-rmsf.png){#fig-loop-rmsf}
+
+![ ](./assets/results/plots/rot-sample-r-hist-1.png){#fig-r-hist}
+
+![ ](./assets/results/plots/ferm-time-ri-npip-all-1.png){#fig-ferm-time-ri-npip-all}
+
+
+| Domain | From | To |
+|------|------|------|
+|   F0 | 1| 84|
+|   F1 | 85| 207|
+|   F2 | 208| 309|
+|   F3 | 310| 400|
+
+Table: Talin1 FERM domain boundaries {#tbl-ferm-domains}
+
+Table: Top residues interacting with F0F1 {#tbl-f0f1-top-interacting}
+
+|Residue | Mean #PIP~2~|
+|:-------|----------:|
+|M 1     |      0.188|
+|K 15    |      0.184|
+|R 30    |      0.173|
+|R 35    |      0.245|
+|R 74    |      0.124|
+|K 98    |      0.176|
+|R 118   |      0.209|
+|T 144   |      0.299|
+|L 145   |      0.168|
+|K 147   |      0.263|
+|L 151   |      0.325|
+|D 154   |      0.248|
+|E 155   |      0.261|
+|M 158   |      0.272|
+|K 160   |      0.254|
+|K 162   |      0.181|
+|L 193   |      0.200|
+|R 194   |      0.101|
+
+
+Table: Top residues interacting with FERM {#tbl-ferm-top-interacting}
+
+|Residue | Mean #PIP~2~|
+|:-------|----------:|
+|M 1     |      0.118|
+|T 144   |      0.322|
+|L 145   |      0.129|
+|K 147   |      0.412|
+|L 151   |      0.204|
+|D 154   |      0.293|
+|E 155   |      0.257|
+|M 158   |      0.246|
+|K 160   |      0.459|
+|K 162   |      0.195|
+|Y 270   |      0.156|
+|K 272   |      0.180|
+|G 275   |      0.222|
+|L 314   |      0.141|
+|K 316   |      0.304|
+|K 318   |      0.148|
+|K 320   |      0.552|
+|G 321   |      0.174|
+|K 322   |      0.442|
+|D 341   |      0.142|
+|S 362   |      0.363|
+
+
+**a\)** RMSF [nm] of the c$\alpha$ of individual residues in an equilibrium simulation shown by coloring the backbone. The loop is highly flexible.
+**b\)** A density plot of distances between PIP~2~ and the protein residues to decide on a cutoff for defining interactions. A distance of 0.25 nm was chosen.
+:::
+
+
+## Trajectories
+
+<!-- :::video-container -->
+<!-- [Tln1 trajectory]{#app2 .app} -->
+<!-- ::: -->
+
+## Scripts
+
+### Production run parameters {#sec-prod-mdp}
+
+```bash
+integrator              = md
+dt                      = 0.002
+nsteps                  = 100000000
+nstxout                 = 5000
+nstvout                 = 5000
+nstfout                 = 50000
+nstcalcenergy           = 100
+nstenergy               = 1000
+nstlog                  = 1000
+cutoff-scheme           = Verlet
+nstlist                 = 20
+rlist                   = 1.2
+coulombtype             = pme
+rcoulomb                = 1.2
+vdwtype                 = Cut-off
+vdw-modifier            = Force-switch
+rvdw_switch             = 1.0
+rvdw                    = 1.2
+tcoupl                  = Nose-Hoover
+tc_grps                 = SYSTEM
+tau_t                   = 1.0
+ref_t                   = 303.15
+pcoupl                  = Parrinello-Rahman
+pcoupltype              = semiisotropic
+tau_p                   = 5.0
+compressibility         = 4.5e-5  4.5e-5
+ref_p                   = 1.0     1.0
+constraints             = h-bonds
+constraint_algorithm    = LINCS
+continuation            = yes
+nstcomm                 = 100
+comm_mode               = linear
+comm_grps               = SYSTEM
+refcoord_scaling        = com
+```
+
+# References {.unnumbered}
+
+<!-- ```{=html} -->
+<!-- <script type="text/javascript" src="./www/molstar.js"></script> -->
+<!-- <link rel="stylesheet" type="text/css" href="./www/molstar.css" /> -->
+<!-- <script type="text/javascript"> -->
+<!-- var viewer1 = new molstar.Viewer('app1', { -->
+<!-- layoutIsExpanded: false, -->
+<!-- layoutShowControls: false, -->
+<!-- layoutShowRemoteState: false, -->
+<!-- layoutShowSequence: true, -->
+<!-- layoutShowLog: false, -->
+<!-- layoutShowLeftPanel: true, -->
+<!-- viewportShowExpand: true, -->
+<!-- viewportShowSelectionMode: false, -->
+<!-- viewportShowAnimation: false, -->
+<!-- pdbProvider: "rcsb", -->
+<!-- emdbProvider: "rcsb", -->
+<!-- }); -->
+<!-- // viewer1.loadPdb("3IVF"); -->
+<!-- viewer1.loadStructureFromUrl('www/3IVF.pdb', format='pdb') -->
+<!-- </script> -->
+<!-- ``` -->
+
+
+<!-- ```{=html} -->
+<!-- <script type="text/javascript" src="./www/molstar.js"></script> -->
+<!-- <link rel="stylesheet" type="text/css" href="./www/molstar.css" /> -->
+<!-- <script type="text/javascript"> -->
+<!-- var viewer2 = new molstar.Viewer('app2', { -->
+<!-- layoutIsExpanded: false, -->
+<!-- layoutShowControls: false, -->
+<!-- layoutShowRemoteState: false, -->
+<!-- layoutShowSequence: true, -->
+<!-- layoutShowLog: false, -->
+<!-- layoutShowLeftPanel: true, -->
+<!-- viewportShowExpand: true, -->
+<!-- viewportShowSelectionMode: false, -->
+<!-- viewportShowAnimation: true, -->
+<!-- pdbProvider: "rcsb", -->
+<!-- emdbProvider: "rcsb", -->
+<!-- }); -->
+<!-- viewer2.loadTrajectory({ -->
+<!--     model: { kind: 'model-url', url: './www/f0f1_rot_sample_center.gro', format: 'gro' }, -->
+<!--     coordinates: { kind: 'coordinates-url', url: './www/f0f1_rot_sample_run5_angl150.xtc', format: 'xtc', isBinary: true } -->
+<!-- }); -->
+<!-- anim = viewer2.plugin.managers.animation.animations[0] -->
+<!-- viewer2.plugin.managers.animation.play(anim, { duration: { name: 'computed', params: { targetFps: 30 } } }) -->
+<!-- </script> -->
+<!-- ``` -->

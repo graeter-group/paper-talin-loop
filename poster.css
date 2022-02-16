@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Miriam+Libre&display=swap');
+
+h1, h2, #hero h1 {
+  font-family: Miriam Libre;
+}
+
+body {
+  grid-template-areas: "T H R"
+"L H R"
+"L H F";
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 5fr 1fr;
+  counter-reset: css-counter 0; /* initializes counter to 0; use -1 for zero-based numbering */
+}
+
+#hero {
+    padding-top: 10%;
+    font-family: Roboto;
+}
+
+
+h1, h2, #hero h1 {
+  font-family: Miriam Libre;
+}
+
+#hero h1 {
+  font-size: 2.25em;
+}
+
+#left-bar {
+    background-size: 50% !important;
+}
+
+.multifigure {
+    display: table;
+}
+
+.figure > p.caption, .multifigure > p.caption {
+  counter-increment: css-counter 1; /* Increase the counter by 1. */
+}
+
+.figure > p.caption:before, .multifigure > p.caption:before {
+  content: "Figure " counter(css-counter) ". "; /* Apply counter before children's content. */
+  font-weight: bold;
+}
+
+.center {
+  display: block;
+  margin: auto;
+}
+
+
+.wrapping {
+  float: right;
+  shape-outside: url("assets/blender/render-align/frame0000.png");
+  shape-margin: 50px;
+  width: 80%;
+}
+
+.wrapping + p.caption {
+   float: right;
+}
+
+
+#logo-hbigs {
+    width: 22%;
+    position: absolute;
+    bottom: 1.5%;
+    right: 5%;
+}
+
+#logo-hits {
+    width: 40%;
+    position: absolute;
+    bottom: 7%;
+    right: 30%;
+}
+
+#logo-uni-hd {
+    width: 25%;
+    position: absolute;
+    bottom: 8%;
+    right: 3%;
+}
+
+#hero > p:first-of-type {
+    padding-top: 1em;
+}
+
+#hero .call-to-action {
+    font-size: 1.3rem;
+}
+

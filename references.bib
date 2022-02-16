@@ -1,0 +1,436 @@
+@Article{matplotlib,
+  Author    = {Hunter, J. D.},
+  Title     = {Matplotlib: A 2D graphics environment},
+  Journal   = {Computing in Science \& Engineering},
+  Volume    = {9},
+  Number    = {3},
+  Pages     = {90--95},
+  abstract  = {Matplotlib is a 2D graphics package used for Python for
+  application development, interactive scripting, and publication-quality
+  image generation across user interfaces and operating systems.},
+  publisher = {IEEE COMPUTER SOC},
+  doi       = {10.1109/MCSE.2007.55},
+  year      = 2007
+}
+
+@article{molstar,
+    author = {Sehnal, David and Bittrich, Sebastian and Deshpande, Mandar and Svobodová, Radka and Berka, Karel and Bazgier, Václav and Velankar, Sameer and Burley, Stephen K and Koča, Jaroslav and Rose, Alexander S},
+    title = "{Mol* Viewer: modern web app for 3D visualization and analysis of large biomolecular structures}",
+    journal = {Nucleic Acids Research},
+    volume = {49},
+    number = {W1},
+    pages = {W431-W437},
+    year = {2021},
+    month = {05},
+    abstract = "{Large biomolecular structures are being determined experimentally on a daily basis using established techniques such as crystallography and electron microscopy. In addition, emerging integrative or hybrid methods (I/HM) are producing structural models of huge macromolecular machines and assemblies, sometimes containing 100s of millions of non-hydrogen atoms. The performance requirements for visualization and analysis tools delivering these data are increasing rapidly. Significant progress in developing online, web-native three-dimensional (3D) visualization tools was previously accomplished with the introduction of the LiteMol suite and NGL Viewers. Thereafter, Mol* development was jointly initiated by PDBe and RCSB PDB to combine and build on the strengths of LiteMol (developed by PDBe) and NGL (developed by RCSB PDB). The web-native Mol* Viewer enables 3D visualization and streaming of macromolecular coordinate and experimental data, together with capabilities for displaying structure quality, functional, or biological context annotations. High-performance graphics and data management allows users to simultaneously visualise up to hundreds of (superimposed) protein structures, stream molecular dynamics simulation trajectories, render cell-level models, or display huge I/HM structures. It is the primary 3D structure viewer used by PDBe and RCSB PDB. It can be easily integrated into third-party services. Mol* Viewer is open source and freely available at https://molstar.org/.}",
+    issn = {0305-1048},
+    doi = {10.1093/nar/gkab314},
+    url = {https://doi.org/10.1093/nar/gkab314},
+    eprint = {https://academic.oup.com/nar/article-pdf/49/W1/W431/38842088/gkab314.pdf},
+}
+
+@article{seaborn,
+    doi = {10.21105/joss.03021},
+    url = {https://doi.org/10.21105/joss.03021},
+    year = {2021},
+    publisher = {The Open Journal},
+    volume = {6},
+    number = {60},
+    pages = {3021},
+    author = {Michael L. Waskom},
+    title = {seaborn: statistical data visualization},
+    journal = {Journal of Open Source Software}
+ }
+
+@Book{ggplot,
+  author = {Hadley Wickham},
+  title = {ggplot2: Elegant Graphics for Data Analysis},
+  publisher = {Springer-Verlag New York},
+  year = {2016},
+  isbn = {978-3-319-24277-4},
+  url = {https://ggplot2.tidyverse.org},
+}
+
+
+@article{abrahamGROMACSHighPerformance2015,
+  title = {{{GROMACS}}: High Performance Molecular Simulations through Multi-Level Parallelism from Laptops to Supercomputers},
+  shorttitle = {{{GROMACS}}},
+  author = {Abraham, Mark James and Murtola, Teemu and Schulz, Roland and P{\'a}ll, Szil{\'a}rd and Smith, Jeremy C. and Hess, Berk and Lindahl, Erik},
+  year = {2015},
+  month = sep,
+  journal = {SoftwareX},
+  volume = {1--2},
+  pages = {19--25},
+  issn = {2352-7110},
+  doi = {10.1016/j.softx.2015.06.001},
+  abstract = {GROMACS is one of the most widely used open-source and free software codes in chemistry, used primarily for dynamical simulations of biomolecules. It provides a rich set of calculation types, preparation and analysis tools. Several advanced techniques for free-energy calculations are supported. In version 5, it reaches new performance heights, through several new and enhanced parallelization algorithms. These work on every level; SIMD registers inside cores, multithreading, heterogeneous CPU\textendash GPU acceleration, state-of-the-art 3D domain decomposition, and ensemble-level parallelization through built-in replica exchange and the separate Copernicus framework. The latest best-in-class compressed trajectory storage format is supported.},
+  langid = {english},
+  keywords = {Free energy,GPU,Molecular dynamics,SIMD}
+}
+
+@article{berendsenGROMACSMessagepassingParallel1995,
+  title = {{{GROMACS}}: A Message-Passing Parallel Molecular Dynamics Implementation},
+  shorttitle = {{{GROMACS}}},
+  author = {Berendsen, H. J. C. and {van der Spoel}, D. and {van Drunen}, R.},
+  year = {1995},
+  month = sep,
+  journal = {Computer Physics Communications},
+  volume = {91},
+  number = {1},
+  pages = {43--56},
+  issn = {0010-4655},
+  doi = {10.1016/0010-4655(95)00042-E},
+  abstract = {A parallel message-passing implementation of a molecular dynamics (MD) program that is useful for bio(macro)molecules in aqueous environment is described. The software has been developed for a custom-designed 32-processor ring GROMACS (GROningen MAchine for Chemical Simulation) with communication to and from left and right neighbours, but can run on any parallel system onto which a a ring of processors can be mapped and which supports PVM-like block send and receive calls. The GROMACS software consists of a preprocessor, a parallel MD and energy minimization program that can use an arbitrary number of processors (including one), an optional monitor, and several analysis tools. The programs are written in ANSI C and available by ftp (information: gromacs@chem.rug.nl). The functionality is based on the GROMOS (GROningen MOlecular Simulation) package (van Gunsteren and Berendsen, 1987; BIOMOS B.V., Nijenborgh 4, 9747 AG Groningen). Conversion programs between GROMOS and GROMACS formats are included. The MD program can handle rectangular periodic boundary conditions with temperature and pressure scaling. The interactions that can be handled without modification are variable non-bonded pair interactions with Coulomb and Lennard-Jones or Buckingham potentials, using a twin-range cut-off based on charge groups, and fixed bonded interactions of either harmonic or constraint type for bonds and bond angles and either periodic or cosine power series interactions for dihedral angles. Special forces can be added to groups of particles (for non-equilibrium dynamics or for position restraining) or between particles (for distance restraints). The parallelism is based on particle decomposition. Interprocessor communication is largely limited to position and force distribution over the ring once per time step.},
+  langid = {english},
+  keywords = {Molecular dynamics,Parallel computing},
+  file = {/home/buhrjk/Zotero/storage/IKZTG9KN/berendsen1995.pdf;/home/buhrjk/Zotero/storage/8JBRADVV/001046559500042E.html}
+}
+
+@article{brooksCHARMMBiomolecularSimulation2009,
+  title = {{{CHARMM}}: The Biomolecular Simulation Program},
+  shorttitle = {{{CHARMM}}},
+  author = {Brooks, B. R. and Brooks, C. L. and Mackerell, A. D. and Nilsson, L. and Petrella, R. J. and Roux, B. and Won, Y. and Archontis, G. and Bartels, C. and Boresch, S. and Caflisch, A. and Caves, L. and Cui, Q. and Dinner, A. R. and Feig, M. and Fischer, S. and Gao, J. and Hodoscek, M. and Im, W. and Kuczera, K. and Lazaridis, T. and Ma, J. and Ovchinnikov, V. and Paci, E. and Pastor, R. W. and Post, C. B. and Pu, J. Z. and Schaefer, M. and Tidor, B. and Venable, R. M. and Woodcock, H. L. and Wu, X. and Yang, W. and York, D. M. and Karplus, M.},
+  year = {2009},
+  journal = {Journal of Computational Chemistry},
+  volume = {30},
+  number = {10},
+  pages = {1545--1614},
+  issn = {1096-987X},
+  doi = {10.1002/jcc.21287},
+  abstract = {CHARMM (Chemistry at HARvard Molecular Mechanics) is a highly versatile and widely used molecular simulation program. It has been developed over the last three decades with a primary focus on molecules of biological interest, including proteins, peptides, lipids, nucleic acids, carbohydrates, and small molecule ligands, as they occur in solution, crystals, and membrane environments. For the study of such systems, the program provides a large suite of computational tools that include numerous conformational and path sampling methods, free energy estimators, molecular minimization, dynamics, and analysis techniques, and model-building capabilities. The CHARMM program is applicable to problems involving a much broader class of many-particle systems. Calculations with CHARMM can be performed using a number of different energy functions and models, from mixed quantum mechanical-molecular mechanical force fields, to all-atom classical potential energy functions with explicit solvent and various boundary conditions, to implicit solvent and membrane models. The program has been ported to numerous platforms in both serial and parallel architectures. This article provides an overview of the program as it exists today with an emphasis on developments since the publication of the original CHARMM article in 1983. \textcopyright{} 2009 Wiley Periodicals, Inc.J Comput Chem, 2009.},
+  copyright = {Copyright \textcopyright{} 2009 Wiley Periodicals, Inc.},
+  langid = {english},
+  keywords = {biomolecular simulation,biophysical computation,CHARMM program,energy function,molecular dynamics,molecular mechanics,molecular modeling},
+  annotation = {\_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1002/jcc.21287},
+  file = {/home/buhrjk/Zotero/storage/24GBFUDL/Brooks et al. - 2009 - CHARMM The biomolecular simulation program.pdf;/home/buhrjk/Zotero/storage/ETQBYGIR/jcc.html}
+}
+
+@article{deddenArchitectureTalin1Reveals2019a,
+  title = {The {{Architecture}} of {{Talin1 Reveals}} an {{Autoinhibition Mechanism}}},
+  author = {Dedden, Dirk and Schumacher, Stephanie and Kelley, Charlotte F. and Zacharias, Martin and Biert{\"u}mpfel, Christian and F{\"a}ssler, Reinhard and Mizuno, Naoko},
+  year = {2019},
+  month = sep,
+  journal = {Cell},
+  volume = {179},
+  number = {1},
+  pages = {120-131.e13},
+  publisher = {{Elsevier}},
+  issn = {0092-8674, 1097-4172},
+  doi = {10.1016/j.cell.2019.08.034},
+  abstract = {{$<$}h2{$>$}Summary{$<$}/h2{$><$}p{$>$}Focal adhesions (FAs) are protein machineries essential for cell adhesion, migration, and differentiation. Talin is an integrin-activating and tension-sensing FA component directly connecting integrins in the plasma membrane with the actomyosin cytoskeleton. To understand how talin function is regulated, we determined a cryoelectron microscopy (cryo-EM) structure of full-length talin1 revealing a two-way mode of autoinhibition. The actin-binding rod domains fold into a 15-nm globular arrangement that is interlocked by the integrin-binding FERM head. In turn, the rod domains R9 and R12 shield access of the FERM domain to integrin and the phospholipid PIP\textsubscript{2} at the membrane. This mechanism likely ensures synchronous inhibition of integrin, membrane, and cytoskeleton binding. We also demonstrate that compacted talin1 reversibly unfolds to an {$\sim$}60-nm string-like conformation, revealing interaction sites for vinculin and actin. Our data explain how fast switching between active and inactive conformations of talin could regulate FA turnover, a process critical for cell adhesion and signaling.{$<$}/p{$>$}},
+  langid = {english},
+  pmid = {31539492},
+  file = {/home/buhrjk/Zotero/storage/SGJ85QSE/dedden2019.pdf;/home/buhrjk/Zotero/storage/XFS87B32/Dedden et al. - 2019 - The Architecture of Talin1 Reveals an Autoinhibiti.pdf;/home/buhrjk/Zotero/storage/8LF6PRAQ/S0092-8674(19)30953-5.html}
+}
+
+@article{elliottStructureTalinHead2010,
+  title = {The {{Structure}} of the {{Talin Head Reveals}} a {{Novel~Extended Conformation}} of the {{FERM Domain}}},
+  author = {Elliott, Paul R. and Goult, Benjamin T. and Kopp, Petra M. and Bate, Neil and Grossmann, J. G{\"u}nter and Roberts, Gordon C.K. and Critchley, David R. and Barsukov, Igor L.},
+  year = {2010},
+  month = oct,
+  journal = {Structure(London, England:1993)},
+  volume = {18},
+  number = {10-13},
+  pages = {1289--1299},
+  issn = {0969-2126},
+  doi = {10.1016/j.str.2010.07.011},
+  abstract = {FERM domains are found in a diverse superfamily of signaling and adaptor proteins at membrane interfaces. They typically consist of three separately folded domains (F1, F2, F3) in a compact cloverleaf structure. The crystal structure of the N-terminal head of the integrin-associated cytoskeletal protein talin reported here reveals a novel FERM domain with a linear domain arrangement, plus an additional domain F0 packed against F1. While F3 binds {$\beta$}-integrin tails, basic residues in F1 and F2 are required for membrane association and for integrin activation. We show that these same residues are also required for cell spreading and focal adhesion assembly in cells. We suggest that the extended conformation of the talin head allows simultaneous binding to integrins via F3 and to PtdIns(4,5)P2-enriched microdomains via basic residues distributed along one surface of the talin head, and that these multiple interactions are required to stabilize integrins in the activated state.},
+  pmcid = {PMC2977851},
+  pmid = {20947018},
+  file = {/home/buhrjk/Zotero/storage/EYSFYF74/Elliott et al. - 2010 - The Structure of the Talin Head Reveals a Novel Ex.pdf}
+}
+
+@article{goultStructureDoubleUbiquitinlike2010,
+  title = {Structure of a Double Ubiquitin-like Domain in the Talin Head: A Role in Integrin Activation},
+  shorttitle = {Structure of a Double Ubiquitin-like Domain in the Talin Head},
+  author = {Goult, Benjamin T and Bouaouina, Mohamed and Elliott, Paul R and Bate, Neil and Patel, Bipin and Gingras, Alexandre R and Grossmann, J G{\"u}nter and Roberts, Gordon C K and Calderwood, David A and Critchley, David R and Barsukov, Igor L},
+  year = {2010},
+  month = mar,
+  journal = {The EMBO Journal},
+  volume = {29},
+  number = {6},
+  pages = {1069--1080},
+  publisher = {{John Wiley \& Sons, Ltd}},
+  issn = {0261-4189},
+  doi = {10.1038/emboj.2010.4},
+  abstract = {Talin is a 270-kDa protein that activates integrins and couples them to cytoskeletal actin. Talin contains an N-terminal FERM domain comprised of F1, F2 and F3 domains, but it is atypical in that F1 contains a large insert and is preceded by an extra domain F0. Although F3 contains the binding site for ?-integrin tails, F0 and F1 are also required for activation of ?1-integrins. Here, we report the solution structures of F0, F1 and of the F0F1 double domain. Both F0 and F1 have ubiquitin-like folds joined in a novel fixed orientation by an extensive charged interface. The F1 insert forms a loop with helical propensity, and basic residues predicted to reside on one surface of the helix are required for binding to acidic phospholipids and for talin-mediated activation of ?1-integrins. This and the fact that basic residues on F2 and F3 are also essential for integrin activation suggest that extensive interactions between the talin FERM domain and acidic membrane phospholipids are required to orientate the FERM domain such that it can activate integrins.},
+  keywords = {focal adhesions,integrins,NMR,phospholipids,talin},
+  file = {/home/buhrjk/Zotero/storage/6WV5YYEF/goult2010.pdf;/home/buhrjk/Zotero/storage/JU6Y243G/Goult et al. - 2010 - Structure of a double ubiquitin-like domain in the.pdf;/home/buhrjk/Zotero/storage/YT8V97XY/emboj.2010.html}
+}
+
+@article{hooverCanonicalDynamicsEquilibrium1985,
+  title = {Canonical Dynamics: Equilibrium Phase-Space Distributions},
+  shorttitle = {Canonical Dynamics},
+  author = {Hoover, William G.},
+  year = {1985},
+  month = mar,
+  journal = {Physical Review A},
+  volume = {31},
+  number = {3},
+  pages = {1695--1697},
+  publisher = {{American Physical Society}},
+  doi = {10.1103/PhysRevA.31.1695},
+  abstract = {Nos\'e has modified Newtonian dynamics so as to reproduce both the canonical and the isothermal-isobaric probability densities in the phase space of an N-body system. He did this by scaling time (with s) and distance (with V1/D in D dimensions) through Lagrangian equations of motion. The dynamical equations describe the evolution of these two scaling variables and their two conjugate momenta ps and pv. Here we develop a slightly different set of equations, free of time scaling. We find the dynamical steady-state probability density in an extended phase space with variables x, px, V, {$\epsilon\dot$}, and {$\zeta$}, where the x are reduced distances and the two variables {$\epsilon\dot$} and {$\zeta$} act as thermodynamic friction coefficients. We find that these friction coefficients have Gaussian distributions. From the distributions the extent of small-system non-Newtonian behavior can be estimated. We illustrate the dynamical equations by considering their application to the simplest possible case, a one-dimensional classical harmonic oscillator.},
+  file = {/home/buhrjk/Zotero/storage/DURLGZA9/Hoover - 1985 - Canonical dynamics Equilibrium phase-space distri.pdf;/home/buhrjk/Zotero/storage/RP5XJ9RC/PhysRevA.31.html}
+}
+
+@article{ismerSL2InteractiveWebtool2016,
+  title = {{{SL2}}: An Interactive Webtool for Modeling of Missing Segments in Proteins},
+  shorttitle = {{{SL2}}},
+  author = {Ismer, Jochen and Rose, Alexander S. and Tiemann, Johanna K. S. and Goede, Andrean and Preissner, Robert and Hildebrand, Peter W.},
+  year = {2016},
+  month = jul,
+  journal = {Nucleic Acids Research},
+  volume = {44},
+  number = {W1},
+  pages = {W390-W394},
+  publisher = {{Oxford Academic}},
+  issn = {0305-1048},
+  doi = {10.1093/nar/gkw297},
+  abstract = {Abstract.  SuperLooper2 (SL2) (http://proteinformatics.charite.de/sl2) is the updated version of our previous web-server SuperLooper, a fragment based tool for},
+  langid = {english},
+  file = {/home/buhrjk/Zotero/storage/IHYVLJH9/Ismer et al. - 2016 - SL2 an interactive webtool for modeling of missin.pdf;/home/buhrjk/Zotero/storage/2P5PMD6C/2499317.html}
+}
+
+@article{joCHARMMGUIWebbasedGraphical2008,
+  title = {{{CHARMM}}-{{GUI}}: A Web-Based Graphical User Interface for {{CHARMM}}},
+  shorttitle = {{{CHARMM}}-{{GUI}}},
+  author = {Jo, Sunhwan and Kim, Taehoon and Iyer, Vidyashankara G. and Im, Wonpil},
+  year = {2008},
+  month = aug,
+  journal = {Journal of Computational Chemistry},
+  volume = {29},
+  number = {11},
+  pages = {1859--1865},
+  issn = {1096-987X},
+  doi = {10.1002/jcc.20945},
+  abstract = {CHARMM is an academic research program used widely for macromolecular mechanics and dynamics with versatile analysis and manipulation tools of atomic coordinates and dynamics trajectories. CHARMM-GUI, http://www.charmm-gui.org, has been developed to provide a web-based graphical user interface to generate various input files and molecular systems to facilitate and standardize the usage of common and advanced simulation techniques in CHARMM. The web environment provides an ideal platform to build and validate a molecular model system in an interactive fashion such that, if a problem is found through visual inspection, one can go back to the previous setup and regenerate the whole system again. In this article, we describe the currently available functional modules of CHARMM-GUI Input Generator that form a basis for the advanced simulation techniques. Future directions of the CHARMM-GUI development project are also discussed briefly together with other features in the CHARMM-GUI website, such as Archive and Movie Gallery.},
+  langid = {english},
+  pmid = {18351591},
+  keywords = {Computer Graphics,Internet,Protein Conformation,Proteins,Solvents,Static Electricity,User-Computer Interface}
+}
+
+@article{klapholzTalinMasterIntegrin2017,
+  title = {Talin \textendash{} the Master of Integrin Adhesions},
+  author = {Klapholz, Benjamin and Brown, Nicholas H.},
+  year = {2017},
+  month = aug,
+  journal = {Journal of Cell Science},
+  volume = {130},
+  number = {15},
+  pages = {2435--2446},
+  publisher = {{The Company of Biologists Ltd}},
+  issn = {0021-9533, 1477-9137},
+  doi = {10.1242/jcs.190991},
+  abstract = {Skip to Next Section Talin has emerged as the key cytoplasmic protein that mediates integrin adhesion to the extracellular matrix. In this Review, we draw on experiments performed in mammalian cells in culture and Drosophila to present evidence that talin is the most important component of integrin adhesion complexes. We describe how the properties of this adaptor protein enable it to orchestrate integrin adhesions. Talin forms the core of integrin adhesion complexes by linking integrins directly to actin, increasing the affinity of integrin for ligands (integrin activation) and recruiting numerous proteins. It regulates the strength of integrin adhesion, senses matrix rigidity, increases focal adhesion size in response to force and serves as a platform for the building of the adhesion structure. Finally, the mechano-sensitive structure of talin provides a paradigm for how proteins transduce mechanical signals to chemical signals.},
+  chapter = {Review},
+  copyright = {\textcopyright{} 2017. Published by The Company of Biologists Ltd},
+  langid = {english},
+  pmid = {28701514},
+  file = {/home/buhrjk/Zotero/storage/5DP7D4PP/Klapholz and Brown - 2017 - Talin – the master of integrin adhesions.pdf;/home/buhrjk/Zotero/storage/7HSE9N5F/klapholz2017.pdf;/home/buhrjk/Zotero/storage/W9N6USAT/2435.html}
+}
+
+@article{leeCHARMMGUIInputGenerator2016,
+  title = {{{CHARMM}}-{{GUI Input Generator}} for {{NAMD}}, {{GROMACS}}, {{AMBER}}, {{OpenMM}}, and {{CHARMM}}/{{OpenMM Simulations Using}} the {{CHARMM36 Additive Force Field}}},
+  author = {Lee, Jumin and Cheng, Xi and Swails, Jason M. and Yeom, Min Sun and Eastman, Peter K. and Lemkul, Justin A. and Wei, Shuai and Buckner, Joshua and Jeong, Jong Cheol and Qi, Yifei and Jo, Sunhwan and Pande, Vijay S. and Case, David A. and Brooks, Charles L. and MacKerell, Alexander D. and Klauda, Jeffery B. and Im, Wonpil},
+  year = {2016},
+  month = jan,
+  journal = {Journal of Chemical Theory and Computation},
+  volume = {12},
+  number = {1},
+  pages = {405--413},
+  publisher = {{American Chemical Society}},
+  issn = {1549-9618},
+  doi = {10.1021/acs.jctc.5b00935},
+  abstract = {Proper treatment of nonbonded interactions is essential for the accuracy of molecular dynamics (MD) simulations, especially in studies of lipid bilayers. The use of the CHARMM36 force field (C36 FF) in different MD simulation programs can result in disagreements with published simulations performed with CHARMM due to differences in the protocols used to treat the long-range and 1-4 nonbonded interactions. In this study, we systematically test the use of the C36 lipid FF in NAMD, GROMACS, AMBER, OpenMM, and CHARMM/OpenMM. A wide range of Lennard-Jones (LJ) cutoff schemes and integrator algorithms were tested to find the optimal simulation protocol to best match bilayer properties of six lipids with varying acyl chain saturation and head groups. MD simulations of a 1,2-dipalmitoyl-sn-phosphatidylcholine (DPPC) bilayer were used to obtain the optimal protocol for each program. MD simulations with all programs were found to reasonably match the DPPC bilayer properties (surface area per lipid, chain order parameters, and area compressibility modulus) obtained using the standard protocol used in CHARMM as well as from experiments. The optimal simulation protocol was then applied to the other five lipid simulations and resulted in excellent agreement between results from most simulation programs as well as with experimental data. AMBER compared least favorably with the expected membrane properties, which appears to be due to its use of the hard-truncation in the LJ potential versus a force-based switching function used to smooth the LJ potential as it approaches the cutoff distance. The optimal simulation protocol for each program has been implemented in CHARMM-GUI. This protocol is expected to be applicable to the remainder of the additive C36 FF including the proteins, nucleic acids, carbohydrates, and small molecules.},
+  file = {/home/buhrjk/Zotero/storage/IDHV5BGC/Lee et al. - 2016 - CHARMM-GUI Input Generator for NAMD, GROMACS, AMBE.pdf;/home/buhrjk/Zotero/storage/BP3BCGFZ/acs.jctc.html}
+}
+
+@article{marti-renomComparativeProteinStructure2000,
+  title = {Comparative Protein Structure Modeling of Genes and Genomes},
+  author = {{Mart{\'i}-Renom}, M. A. and Stuart, A. C. and Fiser, A. and S{\'a}nchez, R. and Melo, F. and Sali, A.},
+  year = {2000},
+  journal = {Annual Review of Biophysics and Biomolecular Structure},
+  volume = {29},
+  pages = {291--325},
+  issn = {1056-8700},
+  doi = {10.1146/annurev.biophys.29.1.291},
+  abstract = {Comparative modeling predicts the three-dimensional structure of a given protein sequence (target) based primarily on its alignment to one or more proteins of known structure (templates). The prediction process consists of fold assignment, target-template alignment, model building, and model evaluation. The number of protein sequences that can be modeled and the accuracy of the predictions are increasing steadily because of the growth in the number of known protein structures and because of the improvements in the modeling software. Further advances are necessary in recognizing weak sequence-structure similarities, aligning sequences with structures, modeling of rigid body shifts, distortions, loops and side chains, as well as detecting errors in a model. Despite these problems, it is currently possible to model with useful accuracy significant parts of approximately one third of all known protein sequences. The use of individual comparative models in biology is already rewarding and increasingly widespread. A major new challenge for comparative modeling is the integration of it with the torrents of data from genome sequencing projects as well as from functional and structural genomics. In particular, there is a need to develop an automated, rapid, robust, sensitive, and accurate comparative modeling pipeline applicable to whole genomes. Such large-scale modeling is likely to encourage new kinds of applications for the many resulting models, based on their large number and completeness at the level of the family, organism, or functional network.},
+  langid = {english},
+  pmid = {10940251},
+  keywords = {Animals,Computer Simulation,Databases; Factual,Genome,Genomics,Humans,Models; Biological,Models; Genetic,Models; Molecular,Proteins},
+  file = {/home/buhrjk/Zotero/storage/UBEHJKK7/Martí-Renom et al. - 2000 - Comparative protein structure modeling of genes an.pdf}
+}
+
+@article{noseUnifiedFormulationConstant1984,
+  title = {A Unified Formulation of the Constant Temperature Molecular Dynamics Methods},
+  author = {Nos{\'e}, Shuichi},
+  year = {1984},
+  month = jul,
+  journal = {The Journal of Chemical Physics},
+  volume = {81},
+  number = {1},
+  pages = {511--519},
+  publisher = {{American Institute of Physics}},
+  issn = {0021-9606},
+  doi = {10.1063/1.447334},
+  file = {/home/buhrjk/Zotero/storage/2HJZS58L/Nosé - 1984 - A unified formulation of the constant temperature .pdf;/home/buhrjk/Zotero/storage/LMP7Z2ZY/1.html;/home/buhrjk/Zotero/storage/ZUGKJFR7/1.html}
+}
+
+@article{parrinelloPolymorphicTransitionsSingle1981,
+  title = {Polymorphic Transitions in Single Crystals: A New Molecular Dynamics Method},
+  shorttitle = {Polymorphic Transitions in Single Crystals},
+  author = {Parrinello, M. and Rahman, A.},
+  year = {1981},
+  month = dec,
+  journal = {Journal of Applied Physics},
+  volume = {52},
+  number = {12},
+  pages = {7182--7190},
+  publisher = {{American Institute of Physics}},
+  issn = {0021-8979},
+  doi = {10.1063/1.328693},
+  file = {/home/buhrjk/Zotero/storage/EC4YTXYN/1.html}
+}
+
+@article{pettersenUCSFChimeraVisualization2004,
+  title = {{{UCSF Chimera}}--a Visualization System for Exploratory Research and Analysis},
+  author = {Pettersen, Eric F. and Goddard, Thomas D. and Huang, Conrad C. and Couch, Gregory S. and Greenblatt, Daniel M. and Meng, Elaine C. and Ferrin, Thomas E.},
+  year = {2004},
+  month = oct,
+  journal = {Journal of Computational Chemistry},
+  volume = {25},
+  number = {13},
+  pages = {1605--1612},
+  issn = {0192-8651},
+  doi = {10.1002/jcc.20084},
+  abstract = {The design, implementation, and capabilities of an extensible visualization system, UCSF Chimera, are discussed. Chimera is segmented into a core that provides basic services and visualization, and extensions that provide most higher level functionality. This architecture ensures that the extension mechanism satisfies the demands of outside developers who wish to incorporate new features. Two unusual extensions are presented: Multiscale, which adds the ability to visualize large-scale molecular assemblies such as viral coats, and Collaboratory, which allows researchers to share a Chimera session interactively despite being at separate locales. Other extensions include Multalign Viewer, for showing multiple sequence alignments and associated structures; ViewDock, for screening docked ligand orientations; Movie, for replaying molecular dynamics trajectories; and Volume Viewer, for display and analysis of volumetric data. A discussion of the usage of Chimera in real-world situations is given, along with anticipated future directions. Chimera includes full user documentation, is free to academic and nonprofit users, and is available for Microsoft Windows, Linux, Apple Mac OS X, SGI IRIX, and HP Tru64 Unix from http://www.cgl.ucsf.edu/chimera/.},
+  langid = {english},
+  pmid = {15264254},
+  keywords = {Amino Acid Sequence,Computer Graphics,Models; Molecular,Molecular Conformation,Molecular Sequence Data,Research,Sequence Alignment,Software,Thermodynamics},
+  file = {/home/buhrjk/Zotero/storage/PG6Y7J8S/Pettersen et al. - 2004 - UCSF Chimera--a visualization system for explorato.pdf}
+}
+
+@article{webbComparativeProteinStructure2016,
+  title = {Comparative {{Protein Structure Modeling Using MODELLER}}},
+  author = {Webb, Benjamin and Sali, Andrej},
+  year = {2016},
+  journal = {Current Protocols in Protein Science},
+  volume = {86},
+  number = {1},
+  pages = {2.9.1-2.9.37},
+  issn = {1934-3663},
+  doi = {10.1002/cpps.20},
+  abstract = {Comparative protein structure modeling predicts the three-dimensional structure of a given protein sequence (target) based primarily on its alignment to one or more proteins of known structure (templates). The prediction process consists of fold assignment, target-template alignment, model building, and model evaluation. This unit describes how to calculate comparative models using the program MODELLER and how to use the ModBase database of such models, and discusses all four steps of comparative modeling, frequently observed errors, and some applications. Modeling lactate dehydrogenase from Trichomonas vaginalis (TvLDH) is described as an example. The download and installation of the MODELLER software is also described. \textcopyright{} 2016 by John Wiley \& Sons, Inc.},
+  copyright = {Copyright \textcopyright{} 2016 John Wiley \& Sons, Inc.},
+  langid = {english},
+  keywords = {comparative modeling,ModBase,MODELLER,protein fold,protein structure,structure prediction},
+  annotation = {\_eprint: https://currentprotocols.onlinelibrary.wiley.com/doi/pdf/10.1002/cpps.20},
+  file = {/home/buhrjk/Zotero/storage/W6JC3L6S/Webb and Sali - 2016 - Comparative Protein Structure Modeling Using MODEL.pdf;/home/buhrjk/Zotero/storage/3SNRLLAX/cpps.html;/home/buhrjk/Zotero/storage/IZUAJMUB/cpps.html}
+}
+
+
+
+@book{lindahlGROMACS2020Source2020,
+	title = {GROMACS 2020 Source code},
+	author = {Lindahl,  and Abraham,  and Hess,  and van der Spoel, },
+	year = {2020},
+	month = {01},
+	date = {2020-01-01},
+	publisher = {Zenodo},
+	doi = {10.5281/zenodo.3562495},
+	url = {https://zenodo.org/record/3562495},
+	note = {DOI: 10.5281/zenodo.3562495
+Citation Key: lindahlGROMACS2020Source2020}
+}
+
+
+@Article{goughTaleTwoTalins2018,
+  title = {The Tale of Two Talins \textendash{} Two Isoforms to Fine-Tune Integrin Signalling},
+  author = {Rosemarie E. Gough and Benjamin T. Goult},
+  year = {2018},
+  volume = {592},
+  pages = {2108--2125},
+  issn = {1873-3468},
+  doi = {10.1002/1873-3468.13081},
+  annotation = {\_eprint: https://febs.onlinelibrary.wiley.com/doi/pdf/10.1002/1873-3468.13081},
+  copyright = {\textcopyright{} 2018 Federation of European Biochemical Societies},
+  file = {/home/jannik/Zotero/storage/ZBVRBEXA/Gough and Goult - 2018 - The tale of two talins – two isoforms to fine-tune.pdf;/home/jannik/Zotero/storage/2WCMW6QA/1873-3468.html},
+  journal = {FEBS Letters},
+  keywords = {integrin,mechanobiology,talin},
+  language = {en},
+  number = {12},
+}
+
+
+@article{chinthalapudiInteractionTalinCell2018a,
+  title = {The Interaction of Talin with the Cell Membrane Is Essential for Integrin Activation and Focal Adhesion Formation},
+  author = {Chinthalapudi, Krishna and Rangarajan, Erumbi S. and Izard, Tina},
+  year = {2018},
+  month = oct,
+  journal = {Proceedings of the National Academy of Sciences of the United States of America},
+  volume = {115},
+  number = {41},
+  pages = {10339--10344},
+  issn = {1091-6490},
+  doi = {10.1073/pnas.1806275115},
+  abstract = {Multicellular organisms have well-defined, tightly regulated mechanisms for cell adhesion. Heterodimeric {$\alpha\beta$} integrin receptors play central roles in this function and regulate processes for normal cell functions, including signaling, cell migration, and development, binding to the extracellular matrix, and senescence. They are involved in hemostasis and the immune response, participate in leukocyte function, and have biological implications in angiogenesis and cancer. Proper control of integrin activation for cellular communication with the external environment requires several physiological processes. Perturbation of these equilibria may lead to constitutive integrin activation that results in bleeding disorders. Furthermore, integrins play key roles in cancer progression and metastasis in which certain tumor types exhibit higher levels of various integrins. Thus, the integrin-associated signaling complex is important for cancer therapy development. During inside-out signaling, the cytoskeletal protein talin plays a key role in regulating integrin affinity whereby the talin head domain activates integrin by binding to the cytoplasmic tail of {$\beta$}-integrin and acidic membrane phospholipids. To understand the mechanism of integrin activation by talin, we determined the crystal structure of the talin head domain bound to the acidic phospholipid phosphatidylinositol 4,5-bisphosphate (PIP2), allowing us to design a lipid-binding-deficient talin mutant. Our confocal microscopy with talin knockout cells suggests that the talin-cell membrane interaction seems essential for focal adhesion formation and stabilization. Basal integrin activation in Chinese hamster ovary cells suggests that the lipid-binding-deficient talin mutant inhibits integrin activation. Thus, membrane attachment of talin seems necessary for integrin activation and focal adhesion formation.},
+  langid = {english},
+  pmcid = {PMC6187153},
+  pmid = {30254158},
+  keywords = {Allosteric Regulation,angiogenesis,Animals,Binding Sites,cell adhesion,Cell Membrane,CHO Cells,Cricetulus,Crystallography; X-Ray,Focal Adhesions,integrin activation,Integrins,Models; Molecular,Phosphatidylinositol 4;5-Diphosphate,phospholipids,Protein Conformation,Protein Domains,Talin,talin activation},
+  file = {/home/jannik/Zotero/storage/9VH8VAZW/chinthalapudi2018.pdf.pdf;/home/jannik/Zotero/storage/Q9CQLHMF/Chinthalapudi et al. - 2018 - The interaction of talin with the cell membrane is.pdf}
+}
+
+@Book{knitr,
+  title = {Dynamic Documents with {R} and knitr},
+  author = {Yihui Xie},
+  publisher = {Chapman and Hall/CRC},
+  address = {Boca Raton, Florida},
+  year = {2015},
+  edition = {2nd},
+  note = {ISBN 978-1498716963},
+  url = {https://yihui.org/knitr/},
+}
+
+@Manual{rbetterposter,
+  title = {betterposter: A Better Scientific Poster},
+  author = {Garrick Aden-Buie},
+  year = {2022},
+  note = {R package version 0.0.1},
+  url = {https://gerkelab.github.io/betterposter/index.html},
+}
+
+@software{quarto,
+  author = {Allaire, J.J. and Teague, Charles and Scheidegger, Carlos and Xie, Yihui and Dervieux, Christophe},
+  doi = {10.5281/zenodo.5960048},
+  month = {1},
+  title = {{Quarto}},
+  url = {https://github.com/quarto-dev/quarto-cli},
+  version = {0.3},
+  year = {2022}
+}
+
+@software{blender,
+   title = {Blender - a 3D modelling and rendering package},
+   author = {Blender Online Community},
+   organization = {Blender Foundation},
+   address = {Stichting Blender Foundation, Amsterdam},
+   year = {2018},
+   url = {http://www.blender.org},
+ }
+
+@article{vmd,
+  author={William Humphrey and Andrew Dalke and Klaus Schulten},
+  title={{VMD} -- {V}isual {M}olecular {D}ynamics},
+  journal={Journal of Molecular Graphics},
+  year=1996,
+  volume=14,
+  pages={33-38},
+  note={},
+  tbstatus={Published.},
+  techrep={},
+  tbreference={222}
+}
+
+

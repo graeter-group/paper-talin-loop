@@ -1,0 +1,91 @@
+---
+title: |
+  Intrinsically disordered region of talin’s FERM domain functions as an initial PIP2 recognition site
+author: "Jannik Buhr, Florian Franz, Frauke Gräter"
+date: "2022-02-20"
+link-citations: true
+validate-yaml: false
+format:
+  html:
+    page-layout: custom
+    css:
+      - betterposter.css
+      - poster.css
+    accent_color: "#444444"
+    hero_color: "#FFFFFF"
+    linkcolor: "#1e4287"
+    qrcode:
+      text: "https://github.com/hits-mbm-dev/paper-talin-loop"
+      size: "250"
+    mathjax: false
+    self-contained: true
+bibliography: references.bib
+---
+
+::::{#hero}
+
+![](www/hits-logo-large-negative.png){.logo #logo-hits}
+![](www/logo-hbigs-inv.png){.logo #logo-hbigs}
+![](www/logo-uni-hd-bw-inv.png){.logo #logo-uni-hd}
+
+# Unstructured loop of Talin's FERM domain can serve as a flexible membrane anchor
+
+This allows for interaction with PIP~2~ even in Talin's autoinhibited form
+and paves the way to establish known binding surfaces.
+
+![](assets/blender/render/frame0002.png)
+
+:::{.call-to-action}
+Follow the QR code or visit <https://github.com/hits-mbm-dev/paper-talin-loop>
+for the repository of the paper draft. Or even better yet, talk to me in front of
+the poster!
+:::
+
+::::
+
+::::{#left-bar}
+## Abstract
+
+![The autoinhibited (Cryo-EM) structure of Talin1 found by @deddenArchitectureTalin1Reveals2019a aligned with the structure of the FERM domain by @elliottStructureTalinHead2010 and the modelled flexible loop in F1 (darker cyan)](assets/blender/render-align/frame0000.png){.wrapping #fig-structure}
+
+Focal adhesions mediate the interaction of the cytoskeleton with the extracellular matrix (ECM).
+Talin is a central regulator and adaptorprotein of the multiprotein focal adhesion complexes and is responsible for integrin activation and force-sensing.
+We evaluated direct interactions of talin with the membrane lipid phosphatidylinositol 4,5-bisphosphate (PIP~2~) by means of molecular dynamics simulations.
+A newly published autoinhibitory structure of talin, where common PIP~2~ interaction sites are covered up, sparked our curiosity for a hitherto less examined loop as a potential site of first contact.
+We show that this unstructured loop in the F1 subdomain of the talin1 FERM domain is able to interact with PIP~2~ and can facilitate further interactions by serving as a flexible membrane anchor.
+
+![A rotational sampling of the F0F1 domain reaveals the strong propensity of the F1 loop to interact with the membrane. Even in the most unfavorable position, the loop still has a high probability to find the membrane and interact with PIP~2~ due to the large search space it can cover.](assets/results/plots/f0f1-ri-angle-npip-1.png){width=80% .center #fig-rot-sample}
+
+![The residues of F0F1 interacting with PIP~2~ are highlighted in blue, with their CA-atoms labelled](./assets/vmd/f0f1/residues.png){width=80% .center #fig-f0f1-residues}
+::::
+
+::::{#right-bar}
+
+:::{#fig-attach-detach layout-ncol=2}
+![ ](assets/results/plots/f0f1-retention-1.png){width=50%}
+
+![ ](assets/results/plots/f0f1_vert_pull-1.png){width=50%}
+
+**Left**: Once a certain number of residues are interacting, it becomes highly unlikely for F0F1 to dissociate from the membrane. **Right**: Pulling bound F0F1 from the membrane does need some force, but the most important aspect for remaining bound is its flexibility. This allows it to remain in contact with PIP~2~ even at large distances.
+:::
+
+<!-- ![](assets/results/plots/f0f1-ri-npip-1.png){width=60% .center} -->
+
+<!-- ![](assets/vmd/ferm-system.png) -->
+
+![](./assets/vmd/ferm/ferm-residues-transparent-arrows.png)
+
+![Once contact has been established via the loop, simulations with the full lenght FERM domain show that known PIP~2~ interaction sites are recovered. The location of binding surfaces found by @chinthalapudiInteractionTalinCell2018a are highlighted with red lines on the schematic: K272 of F2 and K316, K324, E342, and K343 of F3.](assets/results/plots/ferm-ri-npip-1.png){#fig-ferm-residue}
+
+
+## Acknowledgments
+
+This project has received funding from the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation program (grant agreement No. 101002812)
+
+This poster was made possible by the `knitr` [@knitr]
+and `betterposter` [@rbetterposter] R packages.
+
+::::
+
+## References
+
