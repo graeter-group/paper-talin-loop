@@ -63,12 +63,51 @@ outside--in and inside--out activation, are being investigated [@thamilselvanPre
 At the center of the focal adhesion complex sits the adaptorprotein talin,
 which dynamically unfolds and refolds under force [@yaoMechanicalResponseTalin2016].
 A schematic of Talin can be seen in @fig-tln-schema-long.
-Through direct interaction with integrin tails (dark green),
-which interact with collagen fibers via their heads,
+Through interaction with integrin tails (dark green),
+which in turn interact with collagen fibers via their heads,
 it links the extracellular matrix to the intracellular cytoskeleton
 by directly interacting with acting and increasing integrins
 affinity for ligands, thereby activating it [@tadokoroTalinBindingIntegrin2003].
 
+Talin features an N-terminal FERM domain (F for 4.1 protein, E for ezrin, R for radixin and M for moesin) which provides the link to the cystosolic
+side of the plasma membrane [@chishtiFERMDomainUnique1998].
+It does so via a conserved binding motif for
+phosphatidylinositol 4,5-bisphosphate (PIP~2~),
+which is enrichted at active focal adhesion sites [@maniFERMDomainPhosphoinositide2011; @dasMolecularMechanotransductionPathway2015; @songNovelMembranedependentSwitch2012a].
+In the figures we color the individual subdomains F0--F3.
+The main binding sites in F2 and F3 are highlighted with red spheres.
+Notably, the Talin1 FERM domain differs from other FERM proteins through
+the addition of the F0 subdomain, which is connected to F1 via a charged interface,
+as well as an insert in F1, a flexible loop with helical propensity and basic residues [@goultStructureDoubleUbiquitinlike2010].
+Additionally, it exists in an extended conformation, as opposed to the cloverleaf-like
+conformation of other FERM proteins [@elliottStructureTalinHead2010].
+F3 also has a binding site for $\beta$-integrin tails [@calderwoodTalinHeadDomain1999] and is partly responsible for the enrichment of PIP~2~ at the membrane through a binding site
+for PIPKI$\gamma$ [@calderwoodTalinsKindlinsPartners2013].
+A second integrin binding site is located with the rod domains 11 (R11) [@horwitzInteractionPlasmaMembrane1986].
+On the other hand talin interacts with the cytoskeleton through
+actin binding sites (F2-F3, R4-R8, R13-DH) [@mccannLWEQModuleConserved1997].
+The review by Klapholz et al. [@klapholzTalinMasterIntegrin2017] provides.
+an excellent overview of the many interaction sites of talin
+and its central role in the focal adhesion complex.
+
+It was previously shown that F3 can interact with R9, which hinders integrin
+activation [@bannoSubcellularLocalizationTalin2012]
+and recently Dedden et al. [@deddenArchitectureTalin1Reveals2019a]
+published a novel cryo-Electron Microscopy structure of
+the autoinhibited talin1.
+They showed that the rod domains R9 and R12 shield the
+estalished PIP~2~ binding surface and the integrin binding
+site in F3.
+This beckons the question how this autoinhibition can be resolved.
+Song at al. [@songNovelMembranedependentSwitch2012a]
+had previously investigated a fragment of talin consisting of F2-F3 and an
+inhibiting rod segment and suggested a pull-push mechanism,
+whereby negatively charged PIP~2~ attracts its positively
+charged binding surface on F2-F3 and simultaneously
+repels the negatively charged surface of the inhibitig rod segment.
+However, this still leaves open the question of how
+talin can establish a first contact with the membrane
+and remain within a sufficient proximity for this effect to kick in.
 
 
 ::::{#fig-structure layout="[[1], [1,1], [1]]" .column-body-outset}
@@ -85,6 +124,36 @@ affinity for ligands, thereby activating it [@tadokoroTalinBindingIntegrin2003].
 We modelled with MODELLER and are find the expected flexibility of the loop in simulations using RMSF as a measure, see supplementary @fig-loop-rmsf.
 ::::
 
+In order to investigate this we looked at the additional
+flexible F1 loop, which had been shown to be important
+for talin mediated integrin activation [@goultStructureDoubleUbiquitinlike2010],
+but was only considered a minor PIP~2~ binding site
+compared to the main site in F2-F3 [@chinthalapudiInteractionTalinCell2018a; @saltelNewPIP22009].
+
+Due to its high flexibility, the loop itself is not included
+in crystal structures of the FERM domain,
+such as PDB-ID 3IVF by Elliot et al. [@elliottStructureTalinHead2010].
+Its high flexibility however also gave use the confidence to
+model it from sequence.
+The retained flexibility in equilibrium simulations (@fig-loop-rmsf)
+as well as comparisons to NMR structures
+[@goultStructureDoubleUbiquitinlike2010] confirmed this approach.
+
+With a complete structure of the talin FERM domain
+we investigate the role of the F1 loop through molecular
+dynamics simulations.
+By taking a closer look at just F0-F1, we first
+show that the loop has a clear propensity to interact with
+the PIP~2~-containing membrane
+and is able to establish a first contact with it even from 
+unfavorable initial conformations due to its large search volume.
+Furthermore we show with simulaitions of the full-length FERM
+domain that once the loop has established contact it
+can anchor the FERM domain to the membrane and re-establish
+the known major binding sites in F2-F3.
+
+<!-- TODO: short outlook sentence -->
+
 # Materials and Methods
 
 ## Molecular dynamics with GROMACS
@@ -97,9 +166,9 @@ version 2020.03 [@lindahlGROMACS2020Source2020].
 A crystal structure of the Talin FERM domain by 
 Goult et al. [@elliottStructureTalinHead2010] with the PDB-ID 3IVF was used as the basis of all simulations.
 
-<!-- :::video-container -->
-<!-- [FERM]{#app1 .app} -->
-<!-- ::: -->
+:::{.video-container}
+[3IVF]{#app1 .app}
+:::
 
 The missing F1 domain loop between residues L133 and W144 was modeled using MODELLER [@marti-renomComparativeProteinStructure2000; @webbComparativeProteinStructure2016] via the interface to Chimera [@pettersenUCSFChimeraVisualization2004], followed by equilibration with GROMACS.
 The resulting conformation was compared to an NMR structure of the F1 domain (PDB-ID 2KC2) by Goult et al. [@goultStructureDoubleUbiquitinlike2010].
@@ -371,30 +440,32 @@ refcoord_scaling        = com
 
 # References {.unnumbered}
 
-<!-- ```{=html} -->
-<!-- <script type="text/javascript" src="./www/molstar.js"></script> -->
-<!-- <link rel="stylesheet" type="text/css" href="./www/molstar.css" /> -->
-<!-- <script type="text/javascript"> -->
-<!-- var viewer1 = new molstar.Viewer('app1', { -->
-<!-- layoutIsExpanded: false, -->
-<!-- layoutShowControls: false, -->
-<!-- layoutShowRemoteState: false, -->
-<!-- layoutShowSequence: true, -->
-<!-- layoutShowLog: false, -->
-<!-- layoutShowLeftPanel: true, -->
-<!-- viewportShowExpand: true, -->
-<!-- viewportShowSelectionMode: false, -->
-<!-- viewportShowAnimation: false, -->
-<!-- pdbProvider: "rcsb", -->
-<!-- emdbProvider: "rcsb", -->
-<!-- }); -->
-<!-- // viewer1.loadPdb("3IVF"); -->
-<!-- viewer1.loadStructureFromUrl('www/3IVF.pdb', format='pdb') -->
-<!-- </script> -->
-<!-- ``` -->
 
 
-<!-- ```{=html} -->
+
+
+
+<script type="text/javascript" src="./www/molstar.js"></script>
+<link rel="stylesheet" type="text/css" href="./www/molstar.css" />
+<script type="text/javascript">
+var viewer1 = new molstar.Viewer('app1', {
+layoutIsExpanded: false,
+layoutShowControls: false,
+layoutShowRemoteState: false,
+layoutShowSequence: true,
+layoutShowLog: false,
+layoutShowLeftPanel: true,
+viewportShowExpand: true,
+viewportShowSelectionMode: false,
+viewportShowAnimation: false,
+pdbProvider: "rcsb",
+emdbProvider: "rcsb",
+});
+// viewer1.loadPdb("3IVF");
+viewer1.loadStructureFromUrl('www/3IVF.pdb', format='pdb')
+</script>
+
+
 <!-- <script type="text/javascript" src="./www/molstar.js"></script> -->
 <!-- <link rel="stylesheet" type="text/css" href="./www/molstar.css" /> -->
 <!-- <script type="text/javascript"> -->
@@ -418,4 +489,3 @@ refcoord_scaling        = com
 <!-- anim = viewer2.plugin.managers.animation.animations[0] -->
 <!-- viewer2.plugin.managers.animation.play(anim, { duration: { name: 'computed', params: { targetFps: 30 } } }) -->
 <!-- </script> -->
-<!-- ``` -->
