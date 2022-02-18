@@ -300,10 +300,6 @@ angle of 30° laterally over a membrane with differing concentrations of PIP~2~
 are currently running.
 :::
 
-<!-- - force probing / lateral pulling (compare to vertical only-loop pulling) -->
-<!--   - many interactions important vs. single strong site -->
-<!--   - loop itself only recognition -->
-
 <!-- :::: {#fig-pulling layout="[[1],[1,1]]"} -->
 <!---->
 <!---->
@@ -317,21 +313,17 @@ are currently running.
 <!-- **c\)** TODO: -->
 <!-- :::: -->
 
-# Discussion
-
-<!-- TODO: -->
-
-# Conclusion
+# Discussion and Outlook
 
 <!-- TODO: -->
 
 # Author Contributions
 
-Conceived and designed the experiments: JB FF FG.
-Performed the experiments: JB FF.
-Analyzed the data: JB FF.
-Contributed reagents/materials/analysis tools: FF.
-Wrote the paper: JB.
+Conceived and designed the experiments:\ JB FF FG.
+Performed the experiments:\ JB FF.
+Analyzed the data:\ JB FF.
+Contributed reagents/materials/analysis tools:\ FF.
+Wrote the paper:\ JB.
 
 <!-- TODO: -->
 
@@ -420,9 +412,8 @@ Table: Top residues interacting with FERM {#tbl-ferm-top-interacting}
 **b\)** A density plot of distances between PIP~2~ and the protein residues to decide on a cutoff for defining interactions. A distance of 0.25 nm was chosen.
 :::
 
-
-## Trajectories
-
+<!-- ## Trajectories -->
+<!---->
 <!-- :::video-container -->
 <!-- [Tln1 trajectory]{#app2 .app} -->
 <!-- ::: -->
@@ -470,11 +461,6 @@ refcoord_scaling        = com
 
 # References {.unnumbered}
 
-
-
-
-
-
 <script type="text/javascript" src="./www/molstar.js"></script>
 <link rel="stylesheet" type="text/css" href="./www/molstar.css" />
 <script type="text/javascript">
@@ -491,10 +477,8 @@ viewportShowAnimation: false,
 pdbProvider: "rcsb",
 emdbProvider: "rcsb",
 });
-// viewer1.loadPdb("3IVF");
 viewer1.loadStructureFromUrl('www/3IVF.pdb', format='pdb')
 </script>
-
 
 <!-- <script type="text/javascript" src="./www/molstar.js"></script> -->
 <!-- <link rel="stylesheet" type="text/css" href="./www/molstar.css" /> -->
