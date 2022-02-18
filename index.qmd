@@ -16,8 +16,8 @@ format:
       dark:
         - darkly
         - styles.scss
-    mainfont: Roboto
-    monofont: Fira Mono
+    mainfont: Roboto, sans-serif
+    monofont: Fira Mono, monospace
     toc-depth: 2
     toc: true
     linkcolor: "#1E4287"
