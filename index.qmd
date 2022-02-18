@@ -47,6 +47,7 @@ This is a draft and as such subject to change.
 :::callout-tip
 You can find the poster that goes along with the paper presented at the [Annual Meeting of the Biophysical Society 2022](https://www.biophysics.org/2022meeting#)
 in your favorite format here: [web/html](./poster-bps-2022.html), [print/pdf](./poster-jannik-buhr-bps-2022.pdf)
+The source repository for this paper lives [here](https://github.com/hits-mbm-dev/paper-talin-loop)
 :::
 
 # Introduction
@@ -54,7 +55,7 @@ in your favorite format here: [web/html](./poster-bps-2022.html), [print/pdf](./
 It is critical for cells to mechanically
 sense their surroundings at cell adhesion sites for a multitude
 of biological processes.
-Contact with the extracellular matrix and surroundin cells regulates growth, differentiation,
+Contact with the extracellular matrix and surrounding cells regulates growth, differentiation,
 motility and even apoptosis [@vogelLocalForceGeometry2006; @oakesStressingLimitsFocal2014; @schillerMechanosensitivityCompositionalDynamics2013; @miroshnikovaAdhesionForcesCortical2018].
 The multiprotein focal adhesion complex is responsible for translating
 between biochemical and mechanical signals, where both directions,
@@ -73,8 +74,8 @@ Talin features an N-terminal FERM domain (F for 4.1 protein, E for ezrin, R for 
 side of the plasma membrane [@chishtiFERMDomainUnique1998].
 It does so via a conserved binding motif for
 phosphatidylinositol 4,5-bisphosphate (PIP~2~),
-which is enrichted at active focal adhesion sites [@maniFERMDomainPhosphoinositide2011; @dasMolecularMechanotransductionPathway2015; @songNovelMembranedependentSwitch2012a].
-In the figures we color the individual subdomains F0--F3.
+which is enriched at active focal adhesion sites [@maniFERMDomainPhosphoinositide2011; @dasMolecularMechanotransductionPathway2015; @songNovelMembranedependentSwitch2012a].
+In the figures we color the individual subdomains F0-F3.
 The main binding sites in F2 and F3 are highlighted with red spheres.
 Notably, the Talin1 FERM domain differs from other FERM proteins through
 the addition of the F0 subdomain, which is connected to F1 via a charged interface,
@@ -87,16 +88,16 @@ A second integrin binding site is located with the rod domains 11 (R11) [@horwit
 On the other hand talin interacts with the cytoskeleton through
 actin binding sites (F2-F3, R4-R8, R13-DH) [@mccannLWEQModuleConserved1997].
 The review by Klapholz et al. [@klapholzTalinMasterIntegrin2017] provides.
-an excellent overview of the many interaction sites of talin
+An excellent overview of the many interaction sites of talin
 and its central role in the focal adhesion complex.
 
 It was previously shown that F3 can interact with R9, which hinders integrin
 activation [@bannoSubcellularLocalizationTalin2012]
 and recently Dedden et al. [@deddenArchitectureTalin1Reveals2019a]
 published a novel cryo-Electron Microscopy structure of
-the autoinhibited talin1.
+the autoinhibited Talin1.
 They showed that the rod domains R9 and R12 shield the
-estalished PIP~2~ binding surface and the integrin binding
+established PIP~2~ binding surface and the integrin binding
 site in F3.
 This beckons the question how this autoinhibition can be resolved.
 Song at al. [@songNovelMembranedependentSwitch2012a]
@@ -104,7 +105,7 @@ had previously investigated a fragment of talin consisting of F2-F3 and an
 inhibiting rod segment and suggested a pull-push mechanism,
 whereby negatively charged PIP~2~ attracts its positively
 charged binding surface on F2-F3 and simultaneously
-repels the negatively charged surface of the inhibitig rod segment.
+repels the negatively charged surface of the inhibitive rod segment.
 However, this still leaves open the question of how
 talin can establish a first contact with the membrane
 and remain within a sufficient proximity for this effect to kick in.
@@ -118,14 +119,14 @@ and remain within a sufficient proximity for this effect to kick in.
 ![ ](./assets/blender/render-align/frame0000.png){#fig-tln-align-autoinhib}
 
 A schematic overview of Talin and our simulation setup.
-**a\)** A schematic rendering of full-length Talin over a POPC membrane enrichted with PIP~2~ in the upper leaflet.
+**a\)** A schematic rendering of full-length Talin over a POPC membrane enriched with PIP~2~ in the upper leaflet.
 The subdomains under scrutiny in this publication,
 namely F0-F3, which comprise the N-terminal FERM domain (or talin head)
 are highlighted in pastel colors (green, cyan, yellow, magenta).
 The two major PIP~2~ binding sites in F2-F3 are marked with red spheres.
 An integrin binding site also resides in this area.
 Klapholz et al. [@klapholzTalinMasterIntegrin2017] provide
-an excellent review of talin's central role in the focal adhesion
+an excellent review of Talin's central role in the focal adhesion
 complex and list further binding sites.
 The talin rod segments (or talin tail) are numbered R1 to R13.
 Note, that under physiological conditions with talin experiencing force
@@ -135,14 +136,14 @@ for illustrative purposes.
 Tails of an integrin $\alpha$ and $\beta$ heterodimer
 reaching through the lipid bilayer are represented in green.
 **b\)** A schematic rendering of the autoinhibited structure of Talin
-as crystalized by Deddent et al. [@deddenArchitectureTalin1Reveals2019a]
+as crystallized by Dedden et al. [@deddenArchitectureTalin1Reveals2019a]
 in combination with a cartoon representation in **c)**.
-The completed FERM structure by Goult et al. [@elliottStructureTalinHead2010],
-with our addition of the modelle F1 loop,
+The completed FERM structure by Elliott et al. [@elliottStructureTalinHead2010],
+with our addition of the modelled F1 loop,
 is fitted to the autoinhibited structure,
 as the latter does not include F0-F1 due to their flexibility.
 The main PIP~2~-binding sites in F2-F3 are occluded by rod domain 12
-Additionally, R9 covers up the integrin bindin site.
+Additionally, R9 covers up the integrin binding site.
 ::::
 
 In order to investigate this we looked at the additional
@@ -185,7 +186,7 @@ Molecular dynamics simulations where performed with GROMACS
 [@berendsenGROMACSMessagepassingParallel1995; @abrahamGROMACSHighPerformance2015]
 version 2020.03 [@lindahlGROMACS2020Source2020].
 A crystal structure of the Talin FERM domain by 
-Goult et al. [@elliottStructureTalinHead2010] with the PDB-ID 3IVF was used as the basis of all simulations.
+Elliot et al. [@elliottStructureTalinHead2010] with the PDB-ID 3IVF was used as the basis of all simulations.
 
 :::{.video-container}
 [3IVF]{#app1 .app}
@@ -197,7 +198,7 @@ The resulting conformation was compared to an NMR structure of the F1 domain (PD
 The missing residue M1 was also added.
 The missing residues I399 and L400 where not modeled, leaving us with with a continuous sequence from residue 1 to 398.
 Simulations where performed with the CHARM36 force field.
-Topologies, including the membrane, where generated with the CHARM-GUI web app [@brooksCHARMMBiomolecularSimulation2009; @joCHARMMGUIWebbasedGraphical2008; @leeCHARMMGUIInputGenerator2016] and GROMACS tools. All simulations used the TIP3P water model and where neutralized with 0.15 mol/L of NaCl. A a 6-step equilibration was performed after gradient decent energy minimization while gradually relieving restraints on protein and membrane atoms. Production runs use a timestep of 2 fs, a Verlet cut-off scheme for Van-der-Waals interactions and the Particle Mesh Ewald (PME) method for long-range electrostatics. NTP-ensembles where achieved by Nosé-Hoover temperature coupling [@hooverCanonicalDynamicsEquilibrium1985; @noseUnifiedFormulationConstant1984] and Parinello-Rahman pressure coupling [@parrinelloPolymorphicTransitionsSingle1981].
+Topologies, including the membrane, where generated with the CHARM-GUI web app [@brooksCHARMMBiomolecularSimulation2009; @joCHARMMGUIWebbasedGraphical2008; @leeCHARMMGUIInputGenerator2016] and GROMACS tools. All simulations used the TIP3P water model and where neutralized with 0.15 mol/L of NaCl. A 6-step equilibration was performed after gradient decent energy minimization while gradually relieving restraints on protein and membrane atoms. Production runs use a timestep of 2 fs, a Verlet cut-off scheme for Van-der-Waals interactions and the Particle Mesh Ewald (PME) method for long-range electrostatics. NTP-ensembles where achieved by Nosé-Hoover temperature coupling [@hooverCanonicalDynamicsEquilibrium1985; @noseUnifiedFormulationConstant1984] and Parinello-Rahman pressure coupling [@parrinelloPolymorphicTransitionsSingle1981].
 An example `.mdp`-file can be found in the supplementary materials at @sec-prod-mdp.
 
 The initial equilibrium simulation of the completed FERM domain was run for 75 ns.
@@ -245,7 +246,7 @@ And once contact had been established the protein was
 anchored strongly enough for more contacts to evolve
 with time, pulling the protein onto the membrane ([see Figure @fig-f0f1-unbound; -@fig-f0f1-anchored; -@fig-f0f1-bound]).
 In order to control for a potential bias towards the loop as a result
-of the starting positin we performed a rotational sampling
+of the starting position we performed a rotational sampling
 of the system, where the starting angle of the loop
 with respect to the membrane was varied across 60 equally spaced angles.
 @fig-f0f1-ri-angle shows that independent of the starting
@@ -319,7 +320,7 @@ at the respective time and angle summarized over all residues and replicates.
 Angles in which the loop is already favored towards the membrane
 tend to make contact faster. Note, that this trend
 is not simply because angles favoring the loop would have been
-already closer the the membrane.
+already closer to the membrane.
 The protein was rotated in such a way that the respective closest residue
 had the same distance to the membrane for the 0° and the 180° starting positions.
 **f\)**
@@ -328,11 +329,11 @@ residues gradually increasing as the anchored protein gets pulled
 closer towards the membrane by the forming interactions.
 Only in 10 simulations (out of 269 simulations that had at least one contact)
 did the protein leave the membrane again within the 200\ ns long timeframe.
-This never occured after more than 3 residues had already made contact.
+This never occurred after more than 3 residues had already made contact.
 **g\)**
 The Mean interaction scores of the individual residues across all simulations that
 made contact with the membrane.
-Color represents the isoelectric point of the amino acid in isolation (blue = basic, maganta = acidic).
+Color represents the isoelectric point of the amino acid in isolation (blue = basic, magenta = acidic).
 A number of very prominent lysines can be observed, as well as
 a cluster of residues belonging to the F1 loop.
 The most prominent residues are highlighted in **h)**.
@@ -340,7 +341,7 @@ The most prominent residues are highlighted in **h)**.
 
 ## The F1 loop can facilitate further contacts
 
-We chose a represantive conformation from the rotational
+We chose a representative conformation from the rotational
 sampling as a starting point for force-probe simulations
 of F0-F1 perpendicular to the membrane (@fig-f0f1-vert-pull-vmd) to test the strength
 of the interaction.
@@ -373,7 +374,7 @@ As F0-F1 gets pulled at a constant rate of 0.03\ nm/ns we
 observe the time evolution of the force (bottom panel) and
 the number of interacting residues (top panel).
 The number of interacting residues goes down very gradually,
-as the high flexibility of loop allows the residus to remain
+as the high flexibility of loop allows the residues to remain
 in contact even as the distance increases.
 ::::
 
@@ -388,10 +389,10 @@ The highlighted residues include K272 of F2 and K316, K324, E342, and K343 of F3
 
 ![ ](./assets/vmd/ferm/ferm-residues-transparent-arrows.png){#fig-ferm-memb-system}
 
-Simlation of the full-length FERM domain over a 10% PIP~2~-membrane.
+Simulation of the full-length FERM domain over a 10% PIP~2~-membrane.
 **a\)**
 The Mean interaction scores of the individual residues across 6 simulations.
-Color represents the isoelectric point of the amino acid in isolation (blue = basic, maganta = acidic).
+Color represents the isoelectric point of the amino acid in isolation (blue = basic, magenta = acidic).
 The known PIP~2~ interaction sites K272 of F2 and K316, K324, E342, and K343 of F3 [@chinthalapudiInteractionTalinCell2018a] are highlighted with red lines on the
 x-axis colorbar and can also be seen in the cartoon representation in **b\)**
 where the main interacting residues are displayed as dark blue stick models.
