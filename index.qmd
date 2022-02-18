@@ -109,7 +109,7 @@ However, this still leaves open the question of how
 talin can establish a first contact with the membrane
 and remain within a sufficient proximity for this effect to kick in.
 
-::::{#fig-structure layout="[[1], [1,1], [1]]" .column-body-outset}
+::::{#fig-structure layout="[[1], [1,1], [1]]"}
 
 ![ ](./assets/blender/render/frame0000.png){#fig-tln-schema-long}
 
@@ -117,10 +117,32 @@ and remain within a sufficient proximity for this effect to kick in.
 
 ![ ](./assets/blender/render-align/frame0000.png){#fig-tln-align-autoinhib}
 
-**a\)** TODO: This is what full-length talin is made up of, these are the important sites, notice integrin binding site and pip2 binding surface. A stylized representation of the Talin1 (sub-)domains over the inner leaflet of a POPC membrane containing PIP~2~. The two main PIP~2~-binding sites are indicated with red dots. Tails of an integrin $\alpha$ and $\beta$ heterodimer are represented in green.
-**b\)** TODO: Dedden et all found this autoinhibited structure, pip2 binding surface if covered by R12. Additionally R9 covers up Integrin bindin site. The same stylized representation as a), this time depicting the autoinhibited state of Talin. The main PIP~2~-binding sites in F2 and F3 are occluded by rod domain 12
-**c\)** TODO: Same as b) but with more detail as a cartoon representation. This is the structure found by Dedden et all with the addition of F0 F1, which are not in the initial crystal structure, due to their flexibility. For the complete extended conformation of the FERM domain we used the structure by @elliottStructureTalinHead2010 <https://www.rcsb.org/structure/3IVF>. However, once again due to flexibility it is missing the F1 loop.
-We modelled with MODELLER and are find the expected flexibility of the loop in simulations using RMSF as a measure, see supplementary @fig-loop-rmsf.
+A schematic overview of Talin and our simulation setup.
+**a\)** A schematic rendering of full-length Talin over a POPC membrane enrichted with PIP~2~ in the upper leaflet.
+The subdomains under scrutiny in this publication,
+namely F0-F3, which comprise the N-terminal FERM domain (or talin head)
+are highlighted in pastel colors (green, cyan, yellow, magenta).
+The two major PIP~2~ binding sites in F2-F3 are marked with red spheres.
+An integrin binding site also resides in this area.
+Klapholz et al. [@klapholzTalinMasterIntegrin2017] provide
+an excellent review of talin's central role in the focal adhesion
+complex and list further binding sites.
+The talin rod segments (or talin tail) are numbered R1 to R13.
+Note, that under physiological conditions with talin experiencing force
+from bound actin the angle between the FERM domain and the talin rod
+would be more akin to 30° as opposed to the linear structure used here
+for illustrative purposes.
+Tails of an integrin $\alpha$ and $\beta$ heterodimer
+reaching through the lipid bilayer are represented in green.
+**b\)** A schematic rendering of the autoinhibited structure of Talin
+as crystalized by Deddent et al. [@deddenArchitectureTalin1Reveals2019a]
+in combination with a cartoon representation in **c)**.
+The completed FERM structure by Goult et al. [@elliottStructureTalinHead2010],
+with our addition of the modelle F1 loop,
+is fitted to the autoinhibited structure,
+as the latter does not include F0-F1 due to their flexibility.
+The main PIP~2~-binding sites in F2-F3 are occluded by rod domain 12
+Additionally, R9 covers up the integrin bindin site.
 ::::
 
 In order to investigate this we looked at the additional
@@ -214,6 +236,8 @@ This paper and the matching poster were generated with [quarto](https://quarto.o
 
 ## The F1 loop can act as a point of first contact
 
+<!-- TODO: axis label in E should be time not frame -->
+
 When simulating F0-F1 over a POPC membrane containing 10% PIP~2~
 we noticed that the F1 loop had a clear propensity to establish
 contact with the membrane.
@@ -259,13 +283,59 @@ involved in the interaction.
 
 ![ ](./assets/vmd/f0f1/residues.mp4){#fig-f0f1-residues}
 
-**a\)** TODO: The F1-loop interacts with PIP~2~ and can anchor the subdomain to the membrane due to its high flexibility.
-But in order to test if this interaction of the loop with the membrane is just the result of a biased starting position with the loop already
-pointing downwards we sampled 60 different starting positions, rotating around the x-axis, with 6 replicates each.
-**a\)** TODO: Regardless of the angle the loop is almost always involved in the contact residues
-**b\)** TODO: And angles in which the loop is already favored towards the membrane tend to make contact faster. A heatmap of the first 100 ns of all 360 simulation s, summarized per angle, showing the average number of residues in contact with at least one PIP~2~ for that frame. The F1-loop finds the membrane faster than other parts of F0F1 can due to it's high flexibility.
-**c\)** TODO: f0f1 retention
-**d\)** TODO: Mean interaction scores of the individual residues across all 6 simulations. Color represents the PI of the amino acid in isolation. A number of very prominent lysines can be observed.
+
+Rotational sampling of F0-F1.
+**a-c\)**
+Snapshots from a simulation involving F0-F1 over a POPC membrane
+containing 10% PIP~2~ in the upper leaflet.
+POPC is not rendered and PIP~2~ is shown as light grey stick models
+that turn thicker for those molecules that are currently interacting
+with residues of the protein.
+Those residues are then shown as dark blue stick models.
+Once the F1 loop has made contact with the membrane it can act as an anchor
+and facilitate further contacts, ultimately pulling the
+protein onto the membrane.
+In order to test if this interaction of the loop with the membrane
+is just the result of a biased starting position with the loop already
+pointing downwards,
+we sampled 60 different starting positions,
+rotated equally spaced around the horizontal axis,
+with 6 replicates each.
+**d\)**
+A heatmap summarizing 358 simulations from the rotational sampling.
+Unfortunately the number is not 360 because 2 trajectories
+where lost due to a hardware failure.
+Each simulation is 200\ ns long.
+Across all angles (y-axis) we see that with very
+few exceptions the F1 loop (dark blue region on the x-axis colorbar)
+is almost always involved in interactions. 0° equates to the loop
+pointing downwards towards the membrane.
+The heatmap color represents the mean number of PIP~2~ molecules
+that are in close contact with the respective residue summarized
+over time and replicates for that specific angle.
+**e\)**
+A heatmap of the time evolution of the number of PIP~2~ molecules
+at the respective time and angle summarized over all residues and replicates.
+Angles in which the loop is already favored towards the membrane
+tend to make contact faster. Note, that this trend
+is not simply because angles favoring the loop would have been
+already closer the the membrane.
+The protein was rotated in such a way that the respective closest residue
+had the same distance to the membrane for the 0° and the 180° starting positions.
+**f\)**
+A time evolution of the simulations shows the number of interacting
+residues gradually increasing as the anchored protein gets pulled
+closer towards the membrane by the forming interactions.
+Only in 10 simulations (out of 269 simulations that had at least one contact)
+did the protein leave the membrane again within the 200\ ns long timeframe.
+This never occured after more than 3 residues had already made contact.
+**g\)**
+The Mean interaction scores of the individual residues across all simulations that
+made contact with the membrane.
+Color represents the isoelectric point of the amino acid in isolation (blue = basic, maganta = acidic).
+A number of very prominent lysines can be observed, as well as
+a cluster of residues belonging to the F1 loop.
+The most prominent residues are highlighted in **h)**.
 :::::
 
 ## The F1 loop can facilitate further contacts
@@ -290,9 +360,27 @@ of more contacts should the force be alleviated.
 
 ![ ](./assets/results/plots/f0f1-vert-pull-1.png){#fig-f0f1-vert-pull}
 
-**a\)** TODO:
+Vertical Pulling of F0-F1.
+**a\)**
+A representative render of one of 6 force-probe MD simulations pulling
+F0-F1 off the membrane.
+It starts from a snapshot of F0-F1 in its bound conformation taken
+from the rotational sampling (@fig-loop-importance) and gets pulled
+upwards from its C-terminus.
+The direction of force is shown in the snapshot **b\)**.
+**c\)**
+As F0-F1 gets pulled at a constant rate of 0.03\ nm/ns we
+observe the time evolution of the force (bottom panel) and
+the number of interacting residues (top panel).
+The number of interacting residues goes down very gradually,
+as the high flexibility of loop allows the residus to remain
+in contact even as the distance increases.
 ::::
 
+Simulations with the full-length FERM domain show
+that with the loop as an initial membrane contact,
+known PIP~2~ binding sites can also be established as well ([@fig-ferm-ri-npip; @fig-ferm-memb-system]).
+The highlighted residues include K272 of F2 and K316, K324, E342, and K343 of F3, which have been shown to be crucial for the membrane interaction of Talin and subsequent integrin activation by Chinthalapudi et al. [@chinthalapudiInteractionTalinCell2018a].
 
 :::: {#fig-ferm-further layout="[[1],[1]]"}
 
@@ -300,6 +388,7 @@ of more contacts should the force be alleviated.
 
 ![ ](./assets/vmd/ferm/ferm-residues-transparent-arrows.png){#fig-ferm-memb-system}
 
+Simlation of the full-length FERM domain over a 10% PIP~2~-membrane.
 **a\)** TODO: see K272 of F2 and K316, K324, E342, and K343 of F3 [@chinthalapudiInteractionTalinCell2018a].
 **b\)** TODO: The complete simulation system with the talin1 FERM domain over a POPC membrane containing 10 % PIP~2~ in the upper leaflet (26 PIP2 molecules for simulations with the full-length ferm domain, 12 for F0F1 simulations).
 ::::
