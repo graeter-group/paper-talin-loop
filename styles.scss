@@ -63,7 +63,11 @@ code {
   }
 }
 
-// @media print {
-//   h1 {page-break-before: always;}
-// }
+@media print {
+  h1 {page-break-before: always;}
+}
+
+.msp-plugin .msp-material-icon svg {
+    color: #1E4287 !important;
+}
 

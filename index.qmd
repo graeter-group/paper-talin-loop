@@ -270,6 +270,18 @@ pointing downwards we sampled 60 different starting positions, rotating around t
 
 ## The F1 loop can facilitate further contacts
 
+We chose a represantive conformation from the rotational
+sampling as a starting point for force-probe simulations
+of F0-F1 perpendicular to the membrane (@fig-f0f1-vert-pull-vmd) to test the strength
+of the interaction.
+An exemplary render of one of the simulations can be seen in @fig-f0f1-pull-run-1.
+Pulling F0-F1 off the membrane requires peak forces of 100--120\ pN,
+during which the interacting residues only very gradually loose contact (@fig-f0f1-vert-pull).
+This highlights the strong anchoring capabilities of the loop.
+Its high flexibility allows it the remain in contact with the membrane
+over large distances, which would allow for a spring-like re-establishing
+of more contacts should the force be alleviated.
+
 :::: {#fig-vert-pull layout="[[1],[1, 1.3],[1],[1]]"}
 
 ![ ](./assets/vmd/f0f1-pulling/f0f1-run1.mp4){#fig-f0f1-pull-run-1}
@@ -281,18 +293,18 @@ pointing downwards we sampled 60 different starting positions, rotating around t
 **a\)** TODO:
 ::::
 
+
 :::: {#fig-ferm-further layout="[[1],[1]]"}
 
 ![ ](./assets/results/plots/ferm-ri-npip-1.png){#fig-ferm-ri-npip}
 
 ![ ](./assets/vmd/ferm/ferm-residues-transparent-arrows.png){#fig-ferm-memb-system}
 
-**a\)** TODO:
-**b\)** TODO: see K272 of F2 and K316, K324, E342, and K343 of F3 [@chinthalapudiInteractionTalinCell2018a].
-**c\)** TODO: The complete simulation system with the talin1 FERM domain over a POPC membrane containing 10 % PIP~2~ in the upper leaflet (26 PIP2 molecules for simulations with the full-length ferm domain, 12 for F0F1 simulations).
+**a\)** TODO: see K272 of F2 and K316, K324, E342, and K343 of F3 [@chinthalapudiInteractionTalinCell2018a].
+**b\)** TODO: The complete simulation system with the talin1 FERM domain over a POPC membrane containing 10 % PIP~2~ in the upper leaflet (26 PIP2 molecules for simulations with the full-length ferm domain, 12 for F0F1 simulations).
 ::::
 
-## Lateral Pulling of the FERM domain
+## The FERM domain adds lateral friction to aid in localizing Talin at the membrane
 
 :::callout-note
 Additional simulations pulling the whole FERM domain at a physiological
