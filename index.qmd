@@ -7,6 +7,8 @@ bibliography: references.bib
 csl: biophysical-journal.csl
 format:
   html:
+    comments:
+      hypothesis: true
     html-math-method: katex
     self-contained: false
     theme:
@@ -162,7 +164,7 @@ as well as comparisons to NMR structures
 [@goultStructureDoubleUbiquitinlike2010] confirmed this approach.
 
 With a complete structure of the talin FERM domain
-we investigate the role of the F1 loop through molecular
+we investigated the role of the F1 loop through molecular
 dynamics simulations.
 By taking a closer look at just F0-F1, we first
 show that the loop has a clear propensity to interact with
