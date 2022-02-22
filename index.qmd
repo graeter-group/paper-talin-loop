@@ -49,7 +49,8 @@ This is a draft and as such subject to change.
 :::callout-tip
 You can find the poster that goes along with the paper presented at the [Annual Meeting of the Biophysical Society 2022](https://www.biophysics.org/2022meeting#)
 in your favorite format here: [web/html](./poster-bps-2022.html), [print/pdf](./poster-jannik-buhr-bps-2022.pdf)
-The source repository for this paper lives [here](https://github.com/hits-mbm-dev/paper-talin-loop)
+The source repository for this paper lives [here](https://github.com/hits-mbm-dev/paper-talin-loop).
+The preliminary and less feature-rich pdf version lives [here](./index.pdf).
 :::
 
 # Introduction
