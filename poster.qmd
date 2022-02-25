@@ -1,25 +1,39 @@
 ---
 title: |
   Intrinsically disordered region of talin’s FERM domain functions as an initial PIP2 recognition site
-author: "Jannik Buhr, Florian Franz, Frauke Gräter"
+author:
+  - name: Jannik Buhr
+    affiliation: 1,2
+    extra:
+      - "jannik.buhr@h-its.org"
+      - '<a href="https://jmbuhr.de">jmbuhr.de</a>'
+  - name: Florian Franz
+    affiliation: 1,2
+  - name: Frauke Gräter
+    affiliation: 1,2
+affiliation:
+  - Heidelberg Institute for Theoretical Studies (HITS)
+  - Heidelberg University
 date: "2022-02-20"
 link-citations: true
 validate-yaml: false
 format:
   html:
+    template: www/poster-template.html
     page-layout: custom
+    theme: none
     css:
-      - betterposter.css
+      - www/betterposter.css
       - poster.css
     accent_color: "#444444"
-    hero_color: "#FFFFFF"
     linkcolor: "#1e4287"
     qrcode:
       text: "https://github.com/hits-mbm-dev/paper-talin-loop"
       size: "250"
     mathjax: false
-    self-contained: true
+    self-contained: false
 bibliography: references.bib
+
 ---
 
 ::::{#hero}
@@ -62,9 +76,10 @@ We show that this unstructured loop in the F1 subdomain of the talin1 FERM domai
 ::::{#right-bar}
 
 :::{#fig-attach-detach layout-ncol=2}
+
 ![ ](assets/results/plots/f0f1-retention-1.png){width=50%}
 
-![ ](assets/results/plots/f0f1_vert_pull-1.png){width=50%}
+![ ](assets/results/plots/f0f1-vert-pull-1.png){width=50%}
 
 **Left**: Once a certain number of residues are interacting, it becomes highly unlikely for F0F1 to dissociate from the membrane. **Right**: Pulling bound F0F1 from the membrane does need some force, but the most important aspect for remaining bound is its flexibility. This allows it to remain in contact with PIP~2~ even at large distances.
 :::
@@ -88,4 +103,5 @@ and `betterposter` [@rbetterposter] R packages.
 ::::
 
 ## References
+
 

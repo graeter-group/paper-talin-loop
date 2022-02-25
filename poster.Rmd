@@ -31,15 +31,8 @@ output:
     mathjax: false
     self_contained: true
 bibliography: references.bib
+
 ---
-
-<!-- TODO: -->
-<!-- - move integrin tails out of the spotlight in graphical -->
-<!--   abstract and highlight loop-membrane interactions -->
-<!-- - add protein representation of binding pip2 sites for FERM -->
-<!--   and highlight recovery of known sites with arrows -->
-<!-- - check text size of plots with A0 print reference -->
-
 
 <div id="hero">
 

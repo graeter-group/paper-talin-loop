@@ -8,6 +8,7 @@
 
 html, body {
   background: #fff;
+  min-width: 0;
 }
 
 html {
@@ -18,24 +19,20 @@ html {
   height: 33.09669in;
 }
 
-.grid {
+/* ---- Grid ---- */
+body {
+  display: grid;
+  grid-template-areas:
+  "T H R"
+  "L H R"
+  "L H FH"
+  "L H F";
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 10fr auto 1fr;
   margin: 0;
   width: 46.3in;
   height: 32.59669in;
-  padding: 0.25in !important;
-  display: grid;
   grid-gap: 0.25in;
-  grid-template-columns: 60px 60px;
-}
-
-/* ---- Grid ---- */
-.grid {
-  grid-template-areas:
-    "T H R"
-    "L H R"
-    "L H F";
-  grid-template-columns: 1fr 3fr 1fr;
-  grid-template-rows: 1fr 5fr 1fr;
 }
 
 #hero {
@@ -52,10 +49,6 @@ html {
 
 #title-container {
   grid-area: T;
-}
-
-.references {
-  grid-area: F;
 }
 
 img {
@@ -123,6 +116,10 @@ sup {
   bottom: 5%;
 }
 
+#hero a {
+  color: white;
+}
+
 #qrcode {
   position: absolute;
   bottom: 5%;
@@ -162,11 +159,8 @@ sup {
 }
 
 /* ---- References ---- */
-.references {
+#references, #refs {
   padding: 0 5%;
-}
-.references p, .references ul, .references ol {
-  font-size: 0.6em;
 }
 
 /* ---- Tables ---- */
@@ -190,3 +184,6 @@ table th {
   border-bottom-width: .1rem;
 }
 
+.quarto-figure {
+    clear: both;
+}
