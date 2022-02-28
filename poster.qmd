@@ -25,8 +25,10 @@ format:
     css:
       - www/betterposter.css
       - poster.css
-    accent_color: "#444444"
+    # accent_color: "#1e4287"
+    hero_background: "#1e4287"
     linkcolor: "#1e4287"
+    favicon: www/hits-logo.png
     qrcode:
       text: "https://github.com/hits-mbm-dev/paper-talin-loop"
       size: "250"
@@ -37,6 +39,9 @@ bibliography: references.bib
 ---
 
 ::::{#hero}
+
+:::{#qrcode}
+:::
 
 ![](www/hits-logo-large-negative.png){.logo #logo-hits}
 ![](www/logo-hbigs-inv.png){.logo #logo-hbigs}
@@ -97,8 +102,7 @@ We show that this unstructured loop in the F1 subdomain of the talin1 FERM domai
 
 This project has received funding from the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation program (grant agreement No. 101002812)
 
-This poster was made possible by the `knitr` [@knitr]
-and `betterposter` [@rbetterposter] R packages.
+This poster was made `betterposter` [@rbetterposter] R package and quarto [@quarto].
 
 ::::
 

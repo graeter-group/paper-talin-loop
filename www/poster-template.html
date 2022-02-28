@@ -5,6 +5,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="generator" content="pandoc" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    $if(favicon)$
+    <link rel="icon" type="image/png" href="$favicon$" />
+    $endif$
 
     $for(author-meta)$<meta name="author" content="$author-meta$" />$endfor$
     $if(date-meta)$<meta name="date" content="$date-meta$" />$endif$
@@ -19,10 +22,6 @@
     $for(css)$
     <link rel="stylesheet" href="$css$" $if(html5)$$else$type="text/css" $endif$/>
     $endfor$
-
-    $if(qrcode)$
-    <script defer src="./www/qrcode.min.js" type="text/javascript"></script>
-    $endif$
 
     <style>
     /* Override template defaults */
@@ -63,10 +62,11 @@
       margin-bottom: 2%;
     }
     $endif$
-    $if(accent_color)$
-    a, a:visited, a:hover, a:focus, a:active { color: $accent_color$; }
-    strong, b, sup { color: $accent_color$; }
-    /*h1, h2, h3, h4, h5, h6 { color: $accent_color$;}*/
+    $if(linkcolor)$
+    a, a:visited, a:hover, a:focus, a:active { color: $linkcolor$; }
+    $endif$
+    $if(highlight_color)$
+    strong, b, sup { color: $highlight_color$; }
     $endif$
     </style>
 
@@ -127,22 +127,16 @@ $if(math)$
 $endif$
 
 
+$if(qrcode)$
+<script src="./www/qrcode.min.js" type="text/javascript"></script>
 <script type="text/javascript">
-  (function() {
-    // Add qrcode div to hero
-    var qr_el = document.createElement("div");
-    qr_el.id = "qrcode";
-    document.getElementById('hero').appendChild(qr_el);
-  })();
-
-  var qrcode = new QRCode(document.getElementById("qrcode"), {
-  	text: "$if(qrcode_text)$$qrcode_text$$endif$",
-  	width: $if(qrcode_size)$$qrcode_size$$else$250$endif$,
-  	height: $if(qrcode_size)$$qrcode_size$$else$250$endif$,
-  	colorLight: "$if(qrcode_color_background)$$qrcode_color_background$$else$#000000$endif$",
-  	colorDark: "$if(qrcode_color)$$qrcode_color$$else$#FFFFFF$endif$",
-  	correctLevel : QRCode.CorrectLevel.L
-  });
+new QRCode(document.getElementById("qrcode"), {
+  text: "$if(qrcode.text)$$qrcode.text$$endif$",
+  width: $if(qrcode.size)$$qrcode.size$$else$250$endif$,
+  height: $if(qrcode.size)$$qrcode.size$$else$250$endif$,
+  colorLight: "$if(qrcode.color.background)$$qrcode.color.background$$else$#00000000$endif$",
+  colorDark: "$if(qrcode.color)$$qrcode.color$$else$#FFFFFF$endif$",
+  correctLevel : QRCode.CorrectLevel.L});
 </script>
 $endif$
 
