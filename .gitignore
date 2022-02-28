@@ -11,5 +11,7 @@ assets/results/videos/*
 *.blend
 *.wrl
 .nfs*
-
+*.aux
+*.log
+*.tex
 
