@@ -145,6 +145,8 @@ The completed FERM structure by Elliott et al. [@elliottStructureTalinHead2010],
 with our addition of the modelled F1 loop,
 is fitted to the autoinhibited structure,
 as the latter does not include F0-F1 due to their flexibility.
+The complete FERM structure can be explored interactively
+in the context of our simulation system in @sec-system.
 The main PIP~2~-binding sites in F2-F3 are occluded by rod domain 12
 Additionally, R9 covers up the integrin binding site.
 ::::
@@ -163,6 +165,8 @@ model it from sequence.
 The retained flexibility in equilibrium simulations (@fig-loop-rmsf)
 as well as comparisons to NMR structures
 [@goultStructureDoubleUbiquitinlike2010] confirmed this approach.
+The resulting system that provides the basis for our simulations
+can be explored interactively in @sec-system.
 
 With a complete structure of the talin FERM domain
 we investigated the role of the F1 loop through molecular
@@ -177,7 +181,10 @@ domain that once the loop has established an initial contact, it
 can anchor the FERM domain to the membrane and re-establish
 the known major binding sites in F2-F3.
 
-<!-- TODO: short outlook sentence -->
+These results provide mechanistic insight into the role of membrane
+interactions for the localization of Talin at the center
+of the focal adhesion complex and and highlight the role
+of secondary flexible binding surfaces for membrane recognition.
 
 # Materials and Methods
 
@@ -191,12 +198,8 @@ version 2020.03 [@lindahlGROMACS2020Source2020].
 A crystal structure of the Talin FERM domain by 
 Elliot et al. [@elliottStructureTalinHead2010] with the PDB-ID 3IVF was used as the basis of all simulations.
 
-:::{.video-container}
-[3IVF]{#app1 .app}
-:::
-
 The missing F1 domain loop between residues L133 and W144 was modeled using MODELLER [@marti-renomComparativeProteinStructure2000; @webbComparativeProteinStructure2016] via the interface to Chimera [@pettersenUCSFChimeraVisualization2004], followed by equilibration with GROMACS.
-The resulting conformation was compared to an NMR structure of the F1 domain (PDB-ID 2KC2) by Goult et al. [@goultStructureDoubleUbiquitinlike2010].
+The resulting conformation (see @sec-system) was compared to an NMR structure of the F1 domain (PDB-ID 2KC2) by Goult et al. [@goultStructureDoubleUbiquitinlike2010].
 
 The missing residue M1 was also added.
 The missing residues I399 and L400 where not modeled, leaving us with with a continuous sequence from residue 1 to 398.
@@ -232,7 +235,7 @@ Files relevant to this paper that are too big to be uploaded to
 this repository, such as trajectories and blender files,
 will be uploaded to a separate location.
 
-This paper and the matching poster were generated with [quarto](https://quarto.org/) [@quarto] and Rmarkdown [@knitr; @rbetterposter].
+This paper and the matching poster were generated with [quarto](https://quarto.org/) [@quarto] and Rmarkdown [@rmarkdown2018; @knitr; @rbetterposter].
 
 <!-- TODO: upload trajectories -->
 
@@ -424,7 +427,20 @@ are currently running.
 
 # Discussion and Outlook
 
-<!-- TODO: -->
+Using molecular dynamics simulations, we provide mechanistic insight
+into the membrane recognition dynamics of Talin.
+This adds a mode of interaction that helps to explain
+how Talin can find the membrane even when its main PIP~2~
+(and integrin) binding sites are blocked by autoinhibition.
+However, though we where able to conclusively show
+that the F1 loop is able to interact with the membrane even
+from most unfavorable positions, recognition this is only the first step.
+It would indeed be fascinating to also provide mechanistic
+ideas for the resolution of the autoinhibition by
+all-atom simulations of the FERM domain that also include
+an inhibiting rod segment.
+These larger-scale simulations might then be able to
+provide evidence for the push--pull mechanism proposed by Song et al. [@songNovelMembranedependentSwitch2012a] or result in novel ideas.
 
 # Author Contributions
 
@@ -434,13 +450,9 @@ Analyzed the data:\ JB FF.
 Contributed reagents/materials/analysis tools:\ FF.
 Wrote the paper:\ JB.
 
-<!-- TODO: -->
-
 # Acknowledgments
 
 This project has received funding from the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation programme (grant agreement No. 101002812).
-
-<!-- TODO: -->
 
 # Supplementary Material
 
@@ -521,11 +533,10 @@ Table: Top residues interacting with FERM {#tbl-ferm-top-interacting}
 **b\)** A density plot of distances between PIP~2~ and the protein residues to decide on a cutoff for defining interactions. A distance of 0.25 nm was chosen.
 :::
 
-<!-- ## Trajectories -->
-<!---->
-<!-- :::video-container -->
-<!-- [Tln1 trajectory]{#app2 .app} -->
-<!-- ::: -->
+## Simulation system {#sec-system}
+
+:::{#app2 .app .video-container}
+:::
 
 ## Scripts
 
@@ -577,8 +588,24 @@ refcoord_scaling        = com
 
 <script type="text/javascript" src="./www/molstar.js"></script>
 <link rel="stylesheet" type="text/css" href="./www/molstar.css" />
+
 <script type="text/javascript">
-var viewer1 = new molstar.Viewer('app1', {
+<!-- var viewer1 = new molstar.Viewer('app1', { -->
+<!-- layoutIsExpanded: false, -->
+<!-- layoutShowControls: false, -->
+<!-- layoutShowRemoteState: false, -->
+<!-- layoutShowSequence: true, -->
+<!-- layoutShowLog: false, -->
+<!-- layoutShowLeftPanel: true, -->
+<!-- viewportShowExpand: true, -->
+<!-- viewportShowSelectionMode: false, -->
+<!-- viewportShowAnimation: false, -->
+<!-- pdbProvider: "rcsb", -->
+<!-- emdbProvider: "rcsb", -->
+<!-- }); -->
+<!-- viewer1.loadStructureFromUrl('www/3IVF.pdb', format='pdb') -->
+
+var viewer2 = new molstar.Viewer('app2', {
 layoutIsExpanded: false,
 layoutShowControls: false,
 layoutShowRemoteState: false,
@@ -591,29 +618,8 @@ viewportShowAnimation: false,
 pdbProvider: "rcsb",
 emdbProvider: "rcsb",
 });
-viewer1.loadStructureFromUrl('www/3IVF.pdb', format='pdb')
+viewer2.loadStructureFromUrl('./www/system-tln-memb.pdb', format='pdb')
 </script>
 
-<!-- <script type="text/javascript" src="./www/molstar.js"></script> -->
-<!-- <link rel="stylesheet" type="text/css" href="./www/molstar.css" /> -->
-<!-- <script type="text/javascript"> -->
-<!-- var viewer2 = new molstar.Viewer('app2', { -->
-<!-- layoutIsExpanded: false, -->
-<!-- layoutShowControls: false, -->
-<!-- layoutShowRemoteState: false, -->
-<!-- layoutShowSequence: true, -->
-<!-- layoutShowLog: false, -->
-<!-- layoutShowLeftPanel: true, -->
-<!-- viewportShowExpand: true, -->
-<!-- viewportShowSelectionMode: false, -->
-<!-- viewportShowAnimation: true, -->
-<!-- pdbProvider: "rcsb", -->
-<!-- emdbProvider: "rcsb", -->
-<!-- }); -->
-<!-- viewer2.loadTrajectory({ -->
-<!--     model: { kind: 'model-url', url: './www/f0f1_rot_sample_center.gro', format: 'gro' }, -->
-<!--     coordinates: { kind: 'coordinates-url', url: './www/f0f1_rot_sample_run5_angl150.xtc', format: 'xtc', isBinary: true } -->
-<!-- }); -->
-<!-- anim = viewer2.plugin.managers.animation.animations[0] -->
-<!-- viewer2.plugin.managers.animation.play(anim, { duration: { name: 'computed', params: { targetFps: 30 } } }) -->
-<!-- </script> -->
+
+
