@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
   <meta charset="utf-8">
-  <meta name="generator" content="quarto-0.9.46">
+  <meta name="generator" content="quarto-0.9.71">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <meta name="author" content="Jannik Buhr, Florian Franz, Frauke Gräter">
   <meta name="dcterms.date" content="2021-09-07">
@@ -161,15 +161,15 @@
 </nav>
 </div>
 <main class="content" id="quarto-document-content">
-<header id="title-block-header">
-<h1 class="title display-7"><p>Intrinsically disordered region of talin’s FERM domain functions as an initial PIP2 recognition site</p></h1>
-<p class="author">Jannik Buhr, Florian Franz, Frauke Gräter</p>
-<p class="date">2021-09-07</p>
-<div class="abstract">
+<header id="title-block-header" class="quarto-title-block default">
+
+
+
+
+<div class="quarto-title"><h1 class="title display-7"><p>Intrinsically disordered region of talin’s FERM domain functions as an initial PIP2 recognition site</p></h1></div><div class="quarto-title-meta"><div><div class="quarto-title-meta-heading">Author</div><div class="quarto-title-meta-contents"><div class="quarto-title-authors"><p>Jannik Buhr, Florian Franz, Frauke Gräter</p></div></div></div><div><div class="quarto-title-meta-heading">Published</div><div class="quarto-title-meta-contents"><p class="date">2021-09-07</p></div></div></div><div class="abstract">
 <div class="abstract-title">Abstract</div>
 <p>Focal adhesions mediate the interaction of the cytoskeleton with the extracellular matrix (ECM). Cell-ECM adhesion is used by almost all cells both during development and homeostasis and ranges from dynamic to permanent. As such, it is an important process in health and disease alike. Talin is a central regulator and adaptorprotein of the multiprotein focal adhesion complexes and is responsible for integrin activation and force-sensing. We evaluated direct interactions of talin with the membrane lipid phosphatidylinositol 4,5-bisphosphate (PIP<sub>2</sub>) by means of molecular dynamics simulations. A newly published autoinhibitory structure of talin, where common PIP<sub>2</sub> interaction sites are covered up, sparked our curiosity for a hitherto less examined loop as a potential site of first contact. We show that this unstructured loop in the F1 subdomain of the talin1 FERM domain is able to interact with PIP<sub>2</sub> and can facilitate further interactions by serving as a flexible membrane anchor. This work presents the dynamics of the interaction and identifies key residues. Further, we surveyed the effect of a physiological PIP<sub>2</sub> enrichment at focal adhesion sites on the dynamics of talin through force-probe molecular dynamics simulations. The results provide backing for the direct involvement of PIP<sub>2</sub> in the localization and activation of talin.</p>
-</div>
-</header>
+</div></header>
 
 <div class="callout-warning callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -195,6 +195,9 @@ Tip
 </div>
 <div class="callout-body-container callout-body">
 <p>You can find the poster that goes along with the paper presented at the <a href="https://www.biophysics.org/2022meeting#">Annual Meeting of the Biophysical Society 2022</a> in your favorite format here: <a href="./poster.html">web/html</a>, <a href="./poster.pdf">print/pdf</a> The source repository for this paper lives <a href="https://github.com/hits-mbm-dev/paper-talin-loop">here</a>. The preliminary and less feature-rich pdf version lives <a href="./index.pdf">here</a>.</p>
+<div class="web-only">
+<p>You are reading the web version.</p>
+</div>
 </div>
 </div>
 <section id="introduction" class="level1">
@@ -335,7 +338,7 @@ Tip
 </div>
 </div>
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 100.0%;justify-content: center;">
+<div class="web-only quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 100.0%;justify-content: center;">
 <div id="fig-f0f1-residues" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><video src="./assets/vmd/f0f1/residues.mp4" class="img-fluid" data-ref-parent="fig-loop-importance" controls=""><a href="./assets/vmd/f0f1/residues.mp4">Video</a></video></p>
@@ -354,7 +357,7 @@ Tip
 <div class="quarto-layout-panel">
 <figure class="figure">
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 100.0%;justify-content: center;">
+<div class="web-only quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 100.0%;justify-content: center;">
 <div id="fig-f0f1-pull-run-1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><video src="./assets/vmd/f0f1-pulling/f0f1-run1.mp4" class="img-fluid" data-ref-parent="fig-vert-pull" controls=""><a href="./assets/vmd/f0f1-pulling/f0f1-run1.mp4">Video</a></video></p>
@@ -709,8 +712,10 @@ Note
 </div>
 <section id="sec-system" class="level2">
 <h2 class="anchored" data-anchor-id="sec-system">Simulation system</h2>
+<div class="web-only">
 <div id="app2" class="app video-container">
 
+</div>
 </div>
 </section>
 <section id="scripts" class="level2">
@@ -802,7 +807,10 @@ emdbProvider: "rcsb",
 });
 viewer2.loadStructureFromUrl('./www/system-tln-memb.pdb', format='pdb')
 </script>
-<div id="refs" class="references csl-bib-body" role="doc-bibliography">
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" role="doc-bibliography">
 <div id="ref-vogelLocalForceGeometry2006" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">1. </div><div class="csl-right-inline">Vogel, V., and M. Sheetz. 2006. <a href="https://doi.org/10.1038/nrm1890">Local force and geometry sensing regulate cell functions</a>. <em>Nature Reviews Molecular Cell Biology</em>. 7:265–275.</div>
 </div>
@@ -932,15 +940,12 @@ viewer2.loadStructureFromUrl('./www/system-tln-memb.pdb', format='pdb')
 <div id="ref-rbetterposter" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">43. </div><div class="csl-right-inline">Aden-Buie, G. 2022. Betterposter: <span>A</span> better scientific poster.</div>
 </div>
-</div>
-</section>
-<section class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
+</div></section><section class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
 <ol>
 <li id="fn1" role="doc-endnote"><p>6 replicas each for 60 angles minus 2 runs lost to a storage failure<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</section>
-</main>
+</section></div></main>
 <!-- /main column -->
 <script type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {

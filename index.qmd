@@ -39,19 +39,32 @@ abstract: |
   This work presents the dynamics of the interaction and identifies key residues.
   Further, we surveyed the effect of a physiological PIP~2~ enrichment at focal adhesion sites on the dynamics of talin through force-probe molecular dynamics simulations.
   The results provide backing for the direct involvement of PIP~2~ in the localization and activation of talin.
+filters:
+  - conditional-content.lua
+  - quarto
 
 ---
+
 
 :::callout-warning
 This is a draft and as such subject to change.
 :::
 
-:::callout-tip
+::::callout-tip
 You can find the poster that goes along with the paper presented at the [Annual Meeting of the Biophysical Society 2022](https://www.biophysics.org/2022meeting#)
 in your favorite format here: [web/html](./poster.html), [print/pdf](./poster.pdf)
 The source repository for this paper lives [here](https://github.com/hits-mbm-dev/paper-talin-loop).
 The preliminary and less feature-rich pdf version lives [here](./index.pdf).
+
+:::web-only
+You are reading the web version.
 :::
+
+:::print-only
+You are reading the print version.
+:::
+
+::::
 
 # Introduction
 
@@ -288,8 +301,13 @@ involved in the interaction.
 
 ![ ](./assets/results/plots/f0f1-ri-npip-1.png){#fig-f0f1-ri-npip}
 
+:::web-only
 ![ ](./assets/vmd/f0f1/residues.mp4){#fig-f0f1-residues}
+:::
 
+:::{.print-only width=20%}
+![TODO. Placeholder image. Video here: <https://youtu.be/Mf6WOBqI86M>](./www/hits-logo.png){#fig-f1f1-residues}
+:::
 
 Rotational sampling of F0-F1.
 **a-c\)**
@@ -361,7 +379,13 @@ of more contacts should the force be alleviated.
 
 :::: {#fig-vert-pull layout="[[1],[1, 1.3],[1],[1]]"}
 
+:::web-only
 ![ ](./assets/vmd/f0f1-pulling/f0f1-run1.mp4){#fig-f0f1-pull-run-1}
+:::
+
+:::{.print-only width=20%}
+![TODO. Placeholder image. Video here: <https://youtu.be/yf8Tvutb-70>](./www/hits-logo.png){#fig-f0f1-pull-run-1}
+:::
 
 ![ ](./assets/vmd/f0f1-pulling/vert-pull.png){#fig-f0f1-vert-pull-vmd}
 
@@ -535,8 +559,10 @@ Table: Top residues interacting with FERM {#tbl-ferm-top-interacting}
 
 ## Simulation system {#sec-system}
 
+::::web-only
 :::{#app2 .app .video-container}
 :::
+::::
 
 ## Scripts
 
