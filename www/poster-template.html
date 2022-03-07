@@ -80,9 +80,9 @@ $endfor$
 $if(title)$
 <div id="title-container">
     <h1>$title$</h1>
-    $if(author)$
+    $if(authors)$
     <div class="author">
-      $for(author)$<span style="white-space: pre">$author.name$</span>$if(author.affiliation)$<sup>$author.affiliation$</sup>$endif$$if(author.extra)$ ($for(author.extra)$$author.extra$$sep$, $endfor$)$endif$$sep$, $endfor$
+      $for(authors)$<span style="white-space: pre">$authors.name$</span>$if(authors.affiliation)$<sup>$authors.affiliation$</sup>$endif$$if(authors.extra)$ ($for(authors.extra)$$authors.extra$$sep$, $endfor$)$endif$$sep$, $endfor$
     </div>
     $endif$
     $if(affiliation)$

@@ -9,7 +9,7 @@ local function matchAny(str, patternList)
 end
 
 local webFormats = {'html','revealjs'}
-local printFormats = {'latex','docx','pdf','opendocument','odt','beamer'}
+local printFormats = {'latex','docx','pdf','opendocument','odt','beamer','epub'}
 
 
 return {

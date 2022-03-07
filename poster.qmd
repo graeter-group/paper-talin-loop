@@ -1,12 +1,13 @@
 ---
 title: |
   Intrinsically disordered region of talin’s FERM domain functions as an initial PIP2 recognition site
-author:
+authors:
   - name: Jannik Buhr
     affiliation: 1,2
     extra:
       - "jannik.buhr@h-its.org"
       - '<a href="https://jmbuhr.de">jmbuhr.de</a>'
+    url: https://jmbuhr.de">jmbuhr.de
   - name: Florian Franz
     affiliation: 1,2
   - name: Frauke Gräter
