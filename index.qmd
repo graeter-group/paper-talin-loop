@@ -41,6 +41,10 @@ abstract: |
   This work presents the dynamics of the interaction and identifies key residues.
   Further, we surveyed the effect of a physiological PIP~2~ enrichment at focal adhesion sites on the dynamics of talin through force-probe molecular dynamics simulations.
   The results provide backing for the direct involvement of PIP~2~ in the localization and activation of talin.
+editor_options:
+  markdown:
+    wrap: sentence
+editor: source
 filters:
   - conditional-content.lua
   - quarto
