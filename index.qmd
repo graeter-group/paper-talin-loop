@@ -1,6 +1,5 @@
 ---
-title: |
-  Intrinsically disordered region of talin’s FERM domain functions as an initial PIP2 recognition site
+title: "Intrinsically disordered region of talin’s FERM domain functions as an initial PIP2 recognition site"
 date: 2021-09-07
 author: Jannik Buhr, Florian Franz, Frauke Gräter
 bibliography: references.bib
@@ -30,17 +29,18 @@ format:
   docx:
     colorlinks: true
   epub: default
-abstract: |
+abstract: "
   Focal adhesions mediate the interaction of the cytoskeleton with the extracellular matrix (ECM).
   Cell-ECM adhesion is used by almost all cells both during development and homeostasis and ranges from dynamic to permanent.
   As such, it is an important process in health and disease alike.
   Talin is a central regulator and adaptor protein of the multiprotein focal adhesion complexes and is responsible for integrin activation and force-sensing.
   We evaluated direct interactions of talin with the membrane lipid phosphatidylinositol 4,5-bisphosphate (PIP~2~) by means of molecular dynamics simulations.
-  A newly published autoinhibitory structure of talin, where common PIP~2~ interaction sites are covered up, sparked our curiosity for a hitherto less examined loop as a potential site of first contact.
+  A newly published autoinhibitory structure of talin, where common PIP~2~ interaction sites are covered up, sparked our curiosity for a hitherto
+  less examined loop as a potential site of first contact.
   We show that this unstructured loop in the F1 subdomain of the talin1 FERM domain is able to interact with PIP~2~ and can facilitate further interactions by serving as a flexible membrane anchor.
   This work presents the dynamics of the interaction and identifies key residues.
   Further, we surveyed the effect of a physiological PIP~2~ enrichment at focal adhesion sites on the dynamics of talin through force-probe molecular dynamics simulations.
-  The results provide backing for the direct involvement of PIP~2~ in the localization and activation of talin.
+  The results provide backing for the direct involvement of PIP~2~ in the localization and activation of talin."
 editor_options:
   markdown:
     wrap: sentence
