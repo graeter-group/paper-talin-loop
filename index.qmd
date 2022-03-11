@@ -1,5 +1,5 @@
 ---
-title: Intrinsically disordered region of talin's FERM domain functions as an initial PIP2 recognition site
+title: "Intrinsically disordered region of talin's FERM domain functions as an initial PIP2 recognition site"
 date: 2021-09-07
 author: Jannik Buhr, Florian Franz, Frauke Gräter
 bibliography: references.bib
