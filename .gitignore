@@ -13,5 +13,4 @@ assets/results/videos/*
 .nfs*
 *.aux
 *.log
-*.tex
 .luarc.json
