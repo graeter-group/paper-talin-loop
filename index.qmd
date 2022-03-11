@@ -1,5 +1,5 @@
 ---
-title: "Intrinsically disordered region of talin’s FERM domain functions as an initial PIP2 recognition site"
+title: Intrinsically disordered region of talin's FERM domain functions as an initial PIP2 recognition site
 date: 2021-09-07
 author: Jannik Buhr, Florian Franz, Frauke Gräter
 bibliography: references.bib
@@ -29,7 +29,7 @@ format:
   docx:
     colorlinks: true
   epub: default
-abstract: "
+abstract: |
   Focal adhesions mediate the interaction of the cytoskeleton with the extracellular matrix (ECM).
   Cell-ECM adhesion is used by almost all cells both during development and homeostasis and ranges from dynamic to permanent.
   As such, it is an important process in health and disease alike.
@@ -40,7 +40,7 @@ abstract: "
   We show that this unstructured loop in the F1 subdomain of the talin1 FERM domain is able to interact with PIP~2~ and can facilitate further interactions by serving as a flexible membrane anchor.
   This work presents the dynamics of the interaction and identifies key residues.
   Further, we surveyed the effect of a physiological PIP~2~ enrichment at focal adhesion sites on the dynamics of talin through force-probe molecular dynamics simulations.
-  The results provide backing for the direct involvement of PIP~2~ in the localization and activation of talin."
+  The results provide backing for the direct involvement of PIP~2~ in the localization and activation of talin.
 editor_options:
   markdown:
     wrap: sentence
