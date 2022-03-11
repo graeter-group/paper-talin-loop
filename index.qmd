@@ -24,6 +24,7 @@ format:
     toc: true
     linkcolor: "#1E4287"
   pdf:
+    keep-tex: true
     pdf-engine: lualatex
     colorlinks: true
   docx:
@@ -55,15 +56,6 @@ You can find the poster that goes along with the paper presented at the [Annual 
 in your favorite format here: [web/html](./poster.html), [print/pdf](./poster.pdf)
 The source repository for this paper lives [here](https://github.com/hits-mbm-dev/paper-talin-loop).
 The preliminary and less feature-rich pdf version lives [here](./index.pdf).
-
-:::web-only
-You are reading the web version.
-:::
-
-:::print-only
-You are reading the print version.
-:::
-
 ::::
 
 # Introduction
