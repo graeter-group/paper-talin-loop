@@ -213,11 +213,11 @@ simulations. The results provide backing for the direct involvement of
 PIP\textsubscript{2} in the localization and activation of talin.
 \end{abstract}
 
-\begin{tcolorbox}[standard jigsaw,bottomtitle=1mm, left=2mm, colback=white, rightrule=.15mm, opacityback=0, toptitle=1mm, titlerule=0mm, bottomrule=.15mm, leftrule=.75mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}Warning, arc=.35mm, toprule=.15mm, coltitle=black, opacitybacktitle=0.6, colbacktitle=quarto-callout-warning-color!10!white, colframe=quarto-callout-warning-color-frame]
+\begin{tcolorbox}[standard jigsaw,leftrule=.75mm, bottomrule=.15mm, coltitle=black, left=2mm, colback=white, toptitle=1mm, colbacktitle=quarto-callout-warning-color!10!white, colframe=quarto-callout-warning-color-frame, bottomtitle=1mm, titlerule=0mm, toprule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}Warning, arc=.35mm, opacityback=0, rightrule=.15mm, opacitybacktitle=0.6]
 This is a draft and as such subject to change.
 \end{tcolorbox}
 
-\begin{tcolorbox}[standard jigsaw,bottomtitle=1mm, left=2mm, colback=white, rightrule=.15mm, opacityback=0, toptitle=1mm, titlerule=0mm, bottomrule=.15mm, leftrule=.75mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}Tip, arc=.35mm, toprule=.15mm, coltitle=black, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, colframe=quarto-callout-tip-color-frame]
+\begin{tcolorbox}[standard jigsaw,leftrule=.75mm, bottomrule=.15mm, coltitle=black, left=2mm, colback=white, toptitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, titlerule=0mm, toprule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}Tip, arc=.35mm, opacityback=0, rightrule=.15mm, opacitybacktitle=0.6]
 You can find the poster that goes along with the paper presented at the
 \href{https://www.biophysics.org/2022meeting\#}{Annual Meeting of the
 Biophysical Society 2022} in your favorite format here:
@@ -637,7 +637,7 @@ the residues involved in the interaction.
 
 \raisebox{-\height}{
 
-\includegraphics{./www/hits-logo.png}
+\includegraphics{./www/hits-logo-small.png}
 
 }
 
@@ -704,10 +704,10 @@ seen in Figure~\ref{fig-f0f1-pull-run-1}. Pulling F0-F1 off the membrane
 requires peak forces of 100--120~pN, during which the interacting
 residues only very gradually loose contact
 (Figure~\ref{fig-f0f1-vert-pull}). This highlights the strong anchoring
-capabilities of the loop. Its high flexibility allows it the remain in
-contact with the membrane over large distances, which would allow for a
-spring-like re-establishing of more contacts should the force be
-alleviated.
+capabilities of the loop as well as the F0 subdomain. Their high
+flexibility allows them to remain in contact with the membrane over
+large distances, which would allow for a spring-like re-establishing of
+more contacts should the force be alleviated.
 
 \begin{figure}
 
@@ -717,7 +717,7 @@ alleviated.
 
 \raisebox{-\height}{
 
-\includegraphics{./www/hits-logo.png}
+\includegraphics{./www/hits-logo-small.png}
 
 }
 
@@ -727,7 +727,7 @@ alleviated.
 here: \url{https://youtu.be/yf8Tvutb-70}}
 \end{minipage}%
 \newline
-\begin{minipage}[t]{0.43\linewidth}
+\begin{minipage}[t]{0.42\linewidth}
 
 {\centering 
 
@@ -742,7 +742,7 @@ here: \url{https://youtu.be/yf8Tvutb-70}}
 \subcaption{\label{fig-f0f1-vert-pull-vmd}~}
 \end{minipage}%
 %
-\begin{minipage}[t]{0.56\linewidth}
+\begin{minipage}[t]{0.58\linewidth}
 
 {\centering 
 
@@ -756,6 +756,21 @@ here: \url{https://youtu.be/yf8Tvutb-70}}
 
 \subcaption{\label{fig-f0f1-vert-pull}~}
 \end{minipage}%
+\newline
+\begin{minipage}[t]{\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics{./assets/results/plots/f0f1-vert-pull-residues-1.png}
+
+}
+
+}
+
+\subcaption{\label{fig-f0f1-vert-pull-residues}~}
+\end{minipage}%
 
 \caption{\label{fig-vert-pull}Vertical Pulling of F0-F1. \textbf{a)} A
 representative render of one of 6 force-probe MD simulations pulling
@@ -767,7 +782,10 @@ C-terminus. The direction of force is shown in the snapshot \textbf{b)}.
 observe the time evolution of the force (bottom panel) and the number of
 interacting residues (top panel). The number of interacting residues
 goes down very gradually, as the high flexibility of loop allows the
-residues to remain in contact even as the distance increases.}
+residues to remain in contact even as the distance increases.
+\textbf{d)} A closer look at the residues involved in the interaction
+during pulling reveals the instrumental role of both the F1 loop as well
+as the F0 subdomain in keeping the connection to the membrane.}
 
 \end{figure}
 
@@ -829,7 +847,7 @@ interacting residues are displayed as dark blue stick models.}
 Talin at the
 membrane}\label{the-ferm-domain-adds-lateral-friction-to-aid-in-localizing-talin-at-the-membrane}}
 
-\begin{tcolorbox}[standard jigsaw,bottomtitle=1mm, left=2mm, colback=white, rightrule=.15mm, opacityback=0, toptitle=1mm, titlerule=0mm, bottomrule=.15mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}Note, arc=.35mm, toprule=.15mm, coltitle=black, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, colframe=quarto-callout-note-color-frame]
+\begin{tcolorbox}[standard jigsaw,leftrule=.75mm, bottomrule=.15mm, coltitle=black, left=2mm, colback=white, toptitle=1mm, colbacktitle=quarto-callout-note-color!10!white, colframe=quarto-callout-note-color-frame, bottomtitle=1mm, titlerule=0mm, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}Note, arc=.35mm, opacityback=0, rightrule=.15mm, opacitybacktitle=0.6]
 Additional simulations pulling the whole FERM domain at a physiological
 angle of 30° laterally over a membrane with differing concentrations of
 PIP\textsubscript{2} are currently running.
@@ -1039,7 +1057,7 @@ chosen.}
 \hypertarget{scripts}{%
 \subsection{Scripts}\label{scripts}}
 
-\begin{tcolorbox}[standard jigsaw,bottomtitle=1mm, left=2mm, colback=white, rightrule=.15mm, opacityback=0, toptitle=1mm, titlerule=0mm, bottomrule=.15mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}Note, arc=.35mm, toprule=.15mm, coltitle=black, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, colframe=quarto-callout-note-color-frame]
+\begin{tcolorbox}[standard jigsaw,leftrule=.75mm, bottomrule=.15mm, coltitle=black, left=2mm, colback=white, toptitle=1mm, colbacktitle=quarto-callout-note-color!10!white, colframe=quarto-callout-note-color-frame, bottomtitle=1mm, titlerule=0mm, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}Note, arc=.35mm, opacityback=0, rightrule=.15mm, opacitybacktitle=0.6]
 Analysis scripts, setup scripts and production trajectories will be
 uploaded and linked here.
 \end{tcolorbox}

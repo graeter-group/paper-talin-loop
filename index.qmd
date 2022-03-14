@@ -401,7 +401,7 @@ of more contacts should the force be alleviated.
 
 ![ ](./assets/results/plots/f0f1-vert-pull-1.png){#fig-f0f1-vert-pull}
 
-![ ](./assets/results/plots/f0f1-vert-pull-residue-1.png){#fig-f0f1-vert-pull-residues}
+![ ](./assets/results/plots/f0f1-vert-pull-residues-1.png){#fig-f0f1-vert-pull-residues}
 
 Vertical Pulling of F0-F1.
 **a\)**
