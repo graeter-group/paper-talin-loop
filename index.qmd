@@ -315,7 +315,7 @@ involved in the interaction.
 :::
 
 :::{.print-only width=20%}
-![TODO. Placeholder image. Video here: <https://youtu.be/Mf6WOBqI86M>](./www/hits-logo.png){#fig-f1f1-residues}
+![TODO. Placeholder image. Video here: <https://youtu.be/Mf6WOBqI86M>](./www/hits-logo-small.png){#fig-f1f1-residues}
 :::
 
 Rotational sampling of F0-F1.
@@ -381,24 +381,27 @@ of the interaction.
 An exemplary render of one of the simulations can be seen in @fig-f0f1-pull-run-1.
 Pulling F0-F1 off the membrane requires peak forces of 100--120\ pN,
 during which the interacting residues only very gradually loose contact (@fig-f0f1-vert-pull).
-This highlights the strong anchoring capabilities of the loop.
-Its high flexibility allows it the remain in contact with the membrane
+This highlights the strong anchoring capabilities of the loop as well
+as the F0 subdomain.
+Their high flexibility allows them to remain in contact with the membrane
 over large distances, which would allow for a spring-like re-establishing
 of more contacts should the force be alleviated.
 
-:::: {#fig-vert-pull layout="[[1],[1, 1.3],[1],[1]]"}
+:::: {#fig-vert-pull layout="[[1],[1, 1.4],[1],[1]]"}
 
 :::web-only
 ![ ](./assets/vmd/f0f1-pulling/f0f1-run1.mp4){#fig-f0f1-pull-run-1}
 :::
 
-:::{.print-only width=20%}
-![TODO. Placeholder image. Video here: <https://youtu.be/yf8Tvutb-70>](./www/hits-logo.png){#fig-f0f1-pull-run-1}
+:::{.print-only}
+![TODO. Placeholder image. Video here: <https://youtu.be/yf8Tvutb-70>](./www/hits-logo-small.png){#fig-f0f1-pull-run-1}
 :::
 
 ![ ](./assets/vmd/f0f1-pulling/vert-pull.png){#fig-f0f1-vert-pull-vmd}
 
 ![ ](./assets/results/plots/f0f1-vert-pull-1.png){#fig-f0f1-vert-pull}
+
+![ ](./assets/results/plots/f0f1-vert-pull-residue-1.png){#fig-f0f1-vert-pull-residues}
 
 Vertical Pulling of F0-F1.
 **a\)**
@@ -415,6 +418,10 @@ the number of interacting residues (top panel).
 The number of interacting residues goes down very gradually,
 as the high flexibility of loop allows the residues to remain
 in contact even as the distance increases.
+**d\)**
+A closer look at the residues involved in the interaction during pulling
+reveals the instrumental role of both the F1 loop as well as the
+F0 subdomain in keeping the connection to the membrane.
 ::::
 
 Simulations with the full-length FERM domain show

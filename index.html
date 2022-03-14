@@ -361,7 +361,7 @@ Tip
 </section>
 <section id="the-f1-loop-can-facilitate-further-contacts" class="level2">
 <h2 class="anchored" data-anchor-id="the-f1-loop-can-facilitate-further-contacts">The F1 loop can facilitate further contacts</h2>
-<p>We chose a representative conformation from the rotational sampling as a starting point for force-probe simulations of F0-F1 perpendicular to the membrane (<a href="#fig-f0f1-vert-pull-vmd">Figure&nbsp;3 (b)</a>) to test the strength of the interaction. An exemplary render of one of the simulations can be seen in <a href="#fig-f0f1-pull-run-1">Figure&nbsp;3 (a)</a>. Pulling F0-F1 off the membrane requires peak forces of 100–120&nbsp;pN, during which the interacting residues only very gradually loose contact (<a href="#fig-f0f1-vert-pull">Figure&nbsp;3 (c)</a>). This highlights the strong anchoring capabilities of the loop. Its high flexibility allows it the remain in contact with the membrane over large distances, which would allow for a spring-like re-establishing of more contacts should the force be alleviated.</p>
+<p>We chose a representative conformation from the rotational sampling as a starting point for force-probe simulations of F0-F1 perpendicular to the membrane (<a href="#fig-f0f1-vert-pull-vmd">Figure&nbsp;3 (b)</a>) to test the strength of the interaction. An exemplary render of one of the simulations can be seen in <a href="#fig-f0f1-pull-run-1">Figure&nbsp;3 (a)</a>. Pulling F0-F1 off the membrane requires peak forces of 100–120&nbsp;pN, during which the interacting residues only very gradually loose contact (<a href="#fig-f0f1-vert-pull">Figure&nbsp;3 (c)</a>). This highlights the strong anchoring capabilities of the loop as well as the F0 subdomain. Their high flexibility allows them to remain in contact with the membrane over large distances, which would allow for a spring-like re-establishing of more contacts should the force be alleviated.</p>
 <div class="quarto-layout-panel">
 <figure class="figure">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -375,7 +375,7 @@ Tip
 </div>
 </div>
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 43.5%;justify-content: center;">
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 41.7%;justify-content: center;">
 <div id="fig-f0f1-vert-pull-vmd" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="./assets/vmd/f0f1-pulling/vert-pull.png" class="img-fluid figure-img" data-ref-parent="fig-vert-pull"></p>
@@ -383,7 +383,7 @@ Tip
 </figure>
 </div>
 </div>
-<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 56.5%;justify-content: center;">
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 58.3%;justify-content: center;">
 <div id="fig-f0f1-vert-pull" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="./assets/results/plots/f0f1-vert-pull-1.png" class="img-fluid figure-img" data-ref-parent="fig-vert-pull"></p>
@@ -392,7 +392,17 @@ Tip
 </div>
 </div>
 </div>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3: Vertical Pulling of F0-F1. <strong>a)</strong> A representative render of one of 6 force-probe MD simulations pulling F0-F1 off the membrane. It starts from a snapshot of F0-F1 in its bound conformation taken from the rotational sampling (<a href="#fig-loop-importance">Figure&nbsp;2</a>) and gets pulled upwards from its C-terminus. The direction of force is shown in the snapshot <strong>b)</strong>. <strong>c)</strong> As F0-F1 gets pulled at a constant rate of 0.03&nbsp;nm/ns we observe the time evolution of the force (bottom panel) and the number of interacting residues (top panel). The number of interacting residues goes down very gradually, as the high flexibility of loop allows the residues to remain in contact even as the distance increases.</figcaption><p></p>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 100.0%;justify-content: center;">
+<div id="fig-f0f1-vert-pull-residues" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="./assets/results/plots/f0f1-vert-pull-residue-1.png" class="img-fluid figure-img" data-ref-parent="fig-vert-pull"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">(d) &nbsp;</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3: Vertical Pulling of F0-F1. <strong>a)</strong> A representative render of one of 6 force-probe MD simulations pulling F0-F1 off the membrane. It starts from a snapshot of F0-F1 in its bound conformation taken from the rotational sampling (<a href="#fig-loop-importance">Figure&nbsp;2</a>) and gets pulled upwards from its C-terminus. The direction of force is shown in the snapshot <strong>b)</strong>. <strong>c)</strong> As F0-F1 gets pulled at a constant rate of 0.03&nbsp;nm/ns we observe the time evolution of the force (bottom panel) and the number of interacting residues (top panel). The number of interacting residues goes down very gradually, as the high flexibility of loop allows the residues to remain in contact even as the distance increases. <strong>d)</strong> A closer look at the residues involved in the interaction during pulling reveals the instrumental role of both the F1 loop as well as the F0 subdomain in keeping the connection to the membrane.</figcaption><p></p>
 </figure>
 </div>
 <p>Simulations with the full-length FERM domain show that with the loop as an initial membrane contact, known PIP<sub>2</sub> binding sites can also be established as well (<a href="#fig-ferm-ri-npip">Figure&nbsp;4 (a)</a>, <a href="#fig-ferm-memb-system">Figure&nbsp;4 (b)</a>). The highlighted residues include K272 of F2 and K316, K324, E342, and K343 of F3, which have been shown to be crucial for the membrane interaction of Talin and subsequent integrin activation by Chinthalapudi et al. <span class="citation" data-cites="chinthalapudiInteractionTalinCell2018a">(<a href="#ref-chinthalapudiInteractionTalinCell2018a" role="doc-biblioref">20</a>)</span>.</p>
