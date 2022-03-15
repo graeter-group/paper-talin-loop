@@ -39,8 +39,10 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
-  pdftitle={Intrinsically disordered region of talin's FERM domain functions as an initial PIP2 recognition site},
+  pdftitle={Intrinsically disordered region of Talin's FERM domain functions as an initial PIP2 recognition site},
   pdfauthor={Jannik Buhr, Florian Franz, Frauke Gräter},
+  pdfkeywords={molecular dynamics, Talin, Focal
+Adhesion, Mechanosensing},
   colorlinks=true,
   linkcolor={blue},
   filecolor={Maroon},
@@ -182,10 +184,10 @@
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
 
-\title{Intrinsically disordered region of talin's FERM domain functions
-as an initial PIP2 recognition site}
+\title{Intrinsically disordered region of Talin's FERM domain functions
+as an initial PIP\textsubscript{2} recognition site}
 \author{Jannik Buhr, Florian Franz, Frauke Gräter}
-\date{2021-09-07}
+\date{2022-03-15}
 
 \begin{document}
 \maketitle
@@ -203,7 +205,7 @@ newly published autoinhibitory structure of talin, where common
 PIP\textsubscript{2} interaction sites are covered up, sparked our
 curiosity for a hitherto less examined loop as a potential site of first
 contact. We show that this unstructured loop in the F1 subdomain of the
-talin1 FERM domain is able to interact with PIP\textsubscript{2} and can
+Talin1 FERM domain is able to interact with PIP\textsubscript{2} and can
 facilitate further interactions by serving as a flexible membrane
 anchor. This work presents the dynamics of the interaction and
 identifies key residues. Further, we surveyed the effect of a
@@ -213,15 +215,15 @@ simulations. The results provide backing for the direct involvement of
 PIP\textsubscript{2} in the localization and activation of talin.
 \end{abstract}
 
-\begin{tcolorbox}[standard jigsaw,leftrule=.75mm, bottomrule=.15mm, coltitle=black, left=2mm, colback=white, toptitle=1mm, colbacktitle=quarto-callout-warning-color!10!white, colframe=quarto-callout-warning-color-frame, bottomtitle=1mm, titlerule=0mm, toprule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}Warning, arc=.35mm, opacityback=0, rightrule=.15mm, opacitybacktitle=0.6]
+\begin{tcolorbox}[standard jigsaw,toptitle=1mm, colback=white, bottomtitle=1mm, bottomrule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}Warning, colbacktitle=quarto-callout-warning-color!10!white, arc=.35mm, coltitle=black, opacityback=0, opacitybacktitle=0.6, toprule=.15mm, colframe=quarto-callout-warning-color-frame, titlerule=0mm, rightrule=.15mm, leftrule=.75mm, left=2mm]
 This is a draft and as such subject to change.
 \end{tcolorbox}
 
-\begin{tcolorbox}[standard jigsaw,leftrule=.75mm, bottomrule=.15mm, coltitle=black, left=2mm, colback=white, toptitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, titlerule=0mm, toprule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}Tip, arc=.35mm, opacityback=0, rightrule=.15mm, opacitybacktitle=0.6]
+\begin{tcolorbox}[standard jigsaw,toptitle=1mm, colback=white, bottomtitle=1mm, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}Tip, colbacktitle=quarto-callout-tip-color!10!white, arc=.35mm, coltitle=black, opacityback=0, opacitybacktitle=0.6, toprule=.15mm, colframe=quarto-callout-tip-color-frame, titlerule=0mm, rightrule=.15mm, leftrule=.75mm, left=2mm]
 You can find the poster that goes along with the paper presented at the
 \href{https://www.biophysics.org/2022meeting\#}{Annual Meeting of the
 Biophysical Society 2022} in your favorite format here:
-\href{./poster.html}{web/html}, \href{./poster.pdf}{print/pdf} The
+\href{./poster.html}{web/html}, \href{./poster.pdf}{print/pdf}. The
 source repository for this paper lives
 \href{https://github.com/hits-mbm-dev/paper-talin-loop}{here}. The
 preliminary and less feature-rich pdf version lives
@@ -245,9 +247,9 @@ schematic of Talin can be seen in Figure~\ref{fig-tln-schema-long}.
 Through interaction with integrin tails (dark green) (8), which in turn
 interact with collagen fibers via their heads, it links the
 extracellular matrix to the intracellular cytoskeleton by directly
-interacting with actin. Talin also features specfic interactions with
+interacting with actin. Talin also features specific interactions with
 the membrane. Their formation, mechanical stability and role in
-mechanosensing remain to be fully resoled.
+mechanosensing remain to be fully resolved.
 
 Talin features an N-terminal FERM domain (F for 4.1 protein, E for
 ezrin, R for radixin and M for moesin), which is composed of subdomains
@@ -273,8 +275,8 @@ Talin interacts with the cytoskeleton through actin binding sites
 an excellent overview of the many interaction sites of talin and its
 central role in the focal adhesion complex.
 
-The mechanistic role of the disorderd F1 loop in the many aspects of
-Talin function remains elusive. Its overal positive charge renders it a
+The mechanistic role of the disordered F1 loop in the many aspects of
+Talin function remains elusive. Its overall positive charge renders it a
 prime candidate as a PIP\textsubscript{2} binding site. However,
 previous studies identified an only minor role of the loop in
 PIP\textsubscript{2} binding compared to F2-F3 (20, 21). On the other
@@ -289,7 +291,7 @@ PIP\textsubscript{2} binding surface and the integrin binding site in F3
 (see
 Figure~\ref{fig-tln-schema-autoinhib}, Figure~\ref{fig-tln-align-autoinhib}).
 This beckons the question how this autoinhibition can be resolved. Song
-at al. (12) reviously investigated a fragment of talin consisting of
+at al. (12) previously investigated a fragment of talin consisting of
 F2-F3 and an inhibiting rod segment and suggested a pull-push mechanism,
 whereby negatively charged PIP\textsubscript{2} attracts its positively
 charged binding surface on F2-F3 and simultaneously repels the
@@ -375,10 +377,10 @@ integrin binding site.}
 \end{figure}
 
 Here we test the hypothesis that the flexible F1 loop inserted into
-talin's FERM domain serves as an additional PIP\textsubscript{2}
+Talin's FERM domain serves as an additional PIP\textsubscript{2}
 interaction site that is readily accessible to PIP\textsubscript{2} even
-in talin's autoinhibited conformation and further mechanically
-stabilizes talin's interaction with the membrane. To this end, we
+in Talin's autoinhibited conformation and further mechanically
+stabilizes Talin's interaction with the membrane. To this end, we
 modelled the loop, which due to its high flexibility, is not included in
 crystal structures of the FERM domain, such as PDB-ID 3IVF by Elliot et
 al. (14).
@@ -429,15 +431,15 @@ L400 where not modeled, leaving us with with a continuous sequence from
 residue 1 to 398. Simulations where performed with the CHARM36 force
 field. Topologies, including the membrane, where generated with the
 CHARM-GUI web app (32--34) and GROMACS tools. All simulations used the
-TIP3P water model and where neutralized with 0.15 mol/L of NaCl. A
-6-step equilibration was performed after gradient decent energy
-minimization while gradually relieving restraints on protein and
-membrane atoms. Production runs use a timestep of 2 fs, a Verlet cut-off
-scheme for Van-der-Waals interactions and the Particle Mesh Ewald (PME)
-method for long-range electrostatics. NTP-ensembles where achieved by
-Nosé-Hoover temperature coupling (35, 36) and Parinello-Rahman pressure
-coupling (37). An example \texttt{.mdp}-file can be found in the
-supplementary materials at Section~\ref{sec-prod-mdp}.
+TIP3P water model and where neutralized with 0.15 mol/L of NaCl A 6-step
+equilibration was performed after gradient decent energy minimization
+while gradually relieving restraints on protein and membrane atoms
+Production runs use a timestep of 2 fs, a Verlet cut-off scheme for
+Van-der-Waals interactions and the Particle Mesh Ewald (PME) method for
+long-range electrostatics NTP-ensembles where achieved by Nosé-Hoover
+temperature coupling (35, 36) and Parinello-Rahman pressure coupling
+(37). An example \texttt{.mdp}-file can be found in the supplementary
+materials at Section~\ref{sec-prod-mdp}.
 
 The initial equilibrium simulation of the completed FERM domain was run
 for 75 ns. Subsequently, the root mean squared fluctuation (RMSF) was
@@ -492,7 +494,7 @@ This paper and the matching poster were generated with
 contact}\label{the-f1-loop-can-act-as-a-point-of-first-contact}}
 
 The high flexibility of the F1 loop gave use the confidence to model it
-from sequence. It retained its flexibility in equilibrium simulations
+from sequence It retained its flexibility in equilibrium simulations
 (Figure~\ref{fig-loop-rmsf}), which in combination with comparisons to
 NMR structures (13) confirmed this approach. The resulting system that
 provides the basis for our simulations can be explored interactively in
@@ -664,31 +666,31 @@ summarizing 358 simulations from the rotational sampling. Unfortunately
 the number is not 360 because 2 trajectories where lost due to a
 hardware failure. Each simulation is 200~ns long. Across all angles
 (y-axis) we see that with very few exceptions the F1 loop (dark blue
-region on the x-axis colorbar) is almost always involved in
-interactions. 0° equates to the loop pointing downwards towards the
-membrane. The heatmap color represents the mean number of
-PIP\textsubscript{2} molecules that are in close contact with the
-respective residue summarized over time and replicates for that specific
-angle. \textbf{e)} A heatmap of the time evolution of the number of
-PIP\textsubscript{2} molecules at the respective time and angle
-summarized over all residues and replicates. Angles in which the loop is
-already favored towards the membrane tend to make contact faster. Note,
-that this trend is not simply because angles favoring the loop would
-have been already closer to the membrane. The protein was rotated in
-such a way that the respective closest residue had the same distance to
-the membrane for the 0° and the 180° starting positions. \textbf{f)} A
-time evolution of the simulations shows the number of interacting
-residues gradually increasing as the anchored protein gets pulled closer
-towards the membrane by the forming interactions. Only in 10 simulations
-(out of 269 simulations that had at least one contact) did the protein
-leave the membrane again within the 200~ns long timeframe. This never
-occurred after more than 3 residues had already made contact.
-\textbf{g)} The Mean interaction scores of the individual residues
-across all simulations that made contact with the membrane. Color
-represents the isoelectric point of the amino acid in isolation (blue =
-basic, magenta = acidic). A number of very prominent lysines can be
-observed, as well as a cluster of residues belonging to the F1 loop. The
-most prominent residues are highlighted in \textbf{h)}.}
+region on the x-axis colorbar) is almost always involved in interactions
+0° equates to the loop pointing downwards towards the membrane. The
+heatmap color represents the mean number of PIP\textsubscript{2}
+molecules that are in close contact with the respective residue
+summarized over time and replicates for that specific angle. \textbf{e)}
+A heatmap of the time evolution of the number of PIP\textsubscript{2}
+molecules at the respective time and angle summarized over all residues
+and replicates. Angles in which the loop is already favored towards the
+membrane tend to make contact faster Note, that this trend is not simply
+because angles favoring the loop would have been already closer to the
+membrane. The protein was rotated in such a way that the respective
+closest residue had the same distance to the membrane for the 0° and the
+180° starting positions. \textbf{f)} A time evolution of the simulations
+shows the number of interacting residues gradually increasing as the
+anchored protein gets pulled closer towards the membrane by the forming
+interactions. Only in 10 simulations (out of 269 simulations that had at
+least one contact) did the protein leave the membrane again within the
+200~ns long timeframe. This never occurred after more than 3 residues
+had already made contact. \textbf{g)} The Mean interaction scores of the
+individual residues across all simulations that made contact with the
+membrane. Color represents the isoelectric point of the amino acid in
+isolation (blue = basic, magenta = acidic). A number of very prominent
+lysines can be observed, as well as a cluster of residues belonging to
+the F1 loop. The most prominent residues are highlighted in
+\textbf{h)}.}
 
 \end{figure}
 
@@ -704,8 +706,8 @@ seen in Figure~\ref{fig-f0f1-pull-run-1}. Pulling F0-F1 off the membrane
 requires peak forces of 100--120~pN, during which the interacting
 residues only very gradually loose contact
 (Figure~\ref{fig-f0f1-vert-pull}). This highlights the strong anchoring
-capabilities of the loop as well as the F0 subdomain. Their high
-flexibility allows them to remain in contact with the membrane over
+capabilities of the F1 loop in conjunction with the F0 subdomain. Their
+high flexibility allows them to remain in contact with the membrane over
 large distances, which would allow for a spring-like re-establishing of
 more contacts should the force be alleviated.
 
@@ -847,7 +849,7 @@ interacting residues are displayed as dark blue stick models.}
 Talin at the
 membrane}\label{the-ferm-domain-adds-lateral-friction-to-aid-in-localizing-talin-at-the-membrane}}
 
-\begin{tcolorbox}[standard jigsaw,leftrule=.75mm, bottomrule=.15mm, coltitle=black, left=2mm, colback=white, toptitle=1mm, colbacktitle=quarto-callout-note-color!10!white, colframe=quarto-callout-note-color-frame, bottomtitle=1mm, titlerule=0mm, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}Note, arc=.35mm, opacityback=0, rightrule=.15mm, opacitybacktitle=0.6]
+\begin{tcolorbox}[standard jigsaw,toptitle=1mm, colback=white, bottomtitle=1mm, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}Note, colbacktitle=quarto-callout-note-color!10!white, arc=.35mm, coltitle=black, opacityback=0, opacitybacktitle=0.6, toprule=.15mm, colframe=quarto-callout-note-color-frame, titlerule=0mm, rightrule=.15mm, leftrule=.75mm, left=2mm]
 Additional simulations pulling the whole FERM domain at a physiological
 angle of 30° laterally over a membrane with differing concentrations of
 PIP\textsubscript{2} are currently running.
@@ -1044,9 +1046,9 @@ S 362 & 0.363 \\
 
 \caption{\label{fig-suppl}\textbf{a)} RMSF {[}nm{]} of the c\(\alpha\)
 of individual residues in an equilibrium simulation shown by coloring
-the backbone. The loop is highly flexible. \textbf{b)} A density plot of
+the backbone The loop is highly flexible. \textbf{b)} A density plot of
 distances between PIP\textsubscript{2} and the protein residues to
-decide on a cutoff for defining interactions. A distance of 0.25 nm was
+decide on a cutoff for defining interactions A distance of 0.25 nm was
 chosen.}
 
 \end{figure}
@@ -1054,10 +1056,15 @@ chosen.}
 \hypertarget{sec-system}{%
 \subsection{Simulation system}\label{sec-system}}
 
+\begin{tcolorbox}[standard jigsaw,toptitle=1mm, colback=white, bottomtitle=1mm, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}Note, colbacktitle=quarto-callout-note-color!10!white, arc=.35mm, coltitle=black, opacityback=0, opacitybacktitle=0.6, toprule=.15mm, colframe=quarto-callout-note-color-frame, titlerule=0mm, rightrule=.15mm, leftrule=.75mm, left=2mm]
+This interactive display is only available in the web version:
+\url{https://hits-mbm-dev.github.io/paper-talin-loop/}
+\end{tcolorbox}
+
 \hypertarget{scripts}{%
 \subsection{Scripts}\label{scripts}}
 
-\begin{tcolorbox}[standard jigsaw,leftrule=.75mm, bottomrule=.15mm, coltitle=black, left=2mm, colback=white, toptitle=1mm, colbacktitle=quarto-callout-note-color!10!white, colframe=quarto-callout-note-color-frame, bottomtitle=1mm, titlerule=0mm, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}Note, arc=.35mm, opacityback=0, rightrule=.15mm, opacitybacktitle=0.6]
+\begin{tcolorbox}[standard jigsaw,toptitle=1mm, colback=white, bottomtitle=1mm, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}Note, colbacktitle=quarto-callout-note-color!10!white, arc=.35mm, coltitle=black, opacityback=0, opacitybacktitle=0.6, toprule=.15mm, colframe=quarto-callout-note-color-frame, titlerule=0mm, rightrule=.15mm, leftrule=.75mm, left=2mm]
 Analysis scripts, setup scripts and production trajectories will be
 uploaded and linked here.
 \end{tcolorbox}
@@ -1103,10 +1110,6 @@ uploaded and linked here.
 \ExtensionTok{refcoord\_scaling}\NormalTok{        = com}
 \end{Highlighting}
 \end{Shaded}
-
-\hypertarget{references}{%
-\section*{References}\label{references}}
-\addcontentsline{toc}{section}{References}
 
 \hypertarget{refs}{}
 \begin{CSLReferences}{0}{0}
