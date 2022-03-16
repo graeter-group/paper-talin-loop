@@ -26,6 +26,9 @@ format:
     keep-tex: true
     pdf-engine: lualatex
     colorlinks: true
+    # fig-pos: 'h'
+    # header-includes: |
+    #   \usepackage{mdframed}
   docx:
     colorlinks: true
 abstract: |
@@ -208,7 +211,14 @@ However, even in its most unfavorable starting orientation (180°, oriented away
 
 Once contact has been made, it becomes exceedingly unlikely for F0-F1 to dissociate from the membrane (@fig-f0f1-retention).
 Of 358 runs ^[6 replicas each for 60 angles minus 2 runs lost to a storage failure], 89 runs never made contact with the membrane, but out of the 269 that did, only 10 eventually dissociated.
+
+:::web-only
 @fig-f0f1-ri-npip and @fig-f0f1-residues highlight the residues involved in the interaction.
+:::
+
+:::print-only
+@fig-f0f1-ri-npip highlights the residues involved in the interaction.
+:::
 
 ::::: {#fig-loop-importance layout="[[1,1,1],[1],[1,1],[1],[1]]"}
 
@@ -231,7 +241,7 @@ Of 358 runs ^[6 replicas each for 60 angles minus 2 runs lost to a storage failu
 :::
 
 :::{.print-only width=20%}
-![TODO. Placeholder image. Video here: <https://youtu.be/Mf6WOBqI86M>](./www/hits-logo-small.png){#fig-f1f1-residues}
+![This is a placeholder image. The video is available in the web-version or here: <https://youtu.be/Mf6WOBqI86M>](./www/hits-logo-small.png){#fig-f1f1-residues}
 :::
 
 Rotational sampling of F0-F1.
@@ -277,7 +287,7 @@ Their high flexibility allows them to remain in contact with the membrane over l
 :::
 
 :::{.print-only}
-![TODO. Placeholder image. Video here: <https://youtu.be/yf8Tvutb-70>](./www/hits-logo-small.png){#fig-f0f1-pull-run-1}
+![This is a placeholder image. The video is available in the web-version or here: <https://youtu.be/yf8Tvutb-70>](./www/hits-logo-small.png){#fig-f0f1-pull-run-1}
 :::
 
 ![ ](./assets/vmd/f0f1-pulling/vert-pull.png){#fig-f0f1-vert-pull-vmd}
