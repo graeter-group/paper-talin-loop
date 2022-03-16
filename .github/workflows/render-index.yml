@@ -1,0 +1,23 @@
+
+name: Render index
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: install quarto
+        shell: bash
+        run: |
+          wget https://github.com/quarto-dev/quarto-cli/releases/download/v0.9.105/quarto-0.9.105-linux-amd64.deb
+          sudo apt install ./quarto-*
+      - name: render index
+        shell: bash
+        run: |
+          quarto render index.qmd -t all
+
