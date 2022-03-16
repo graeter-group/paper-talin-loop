@@ -18,11 +18,10 @@ jobs:
         run: |
           wget https://github.com/quarto-dev/quarto-cli/releases/download/v0.9.105/quarto-0.9.105-linux-amd64.deb
           sudo apt install ./quarto-*
-          sudo quarto tools install tinytex
+      - uses: r-lib/actions/setup-tinytex
       - name: render index
         run: |
           quarto render index.qmd -t all
-            - name: Commit results
       - name: commit rendered files
         run: |
           git config --local user.name "$GITHUB_ACTOR"
