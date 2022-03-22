@@ -26,9 +26,6 @@ format:
     keep-tex: true
     pdf-engine: lualatex
     colorlinks: true
-    # fig-pos: 'h'
-    # header-includes: |
-    #   \usepackage{mdframed}
   docx:
     colorlinks: true
 abstract: |
@@ -241,7 +238,7 @@ Of 358 runs ^[6 replicas each for 60 angles minus 2 runs lost to a storage failu
 :::
 
 :::{.print-only width=20%}
-![This is a placeholder image. The video is available in the web-version or here: <https://youtu.be/Mf6WOBqI86M>](./www/hits-logo-small.png){#fig-f1f1-residues}
+![This is a placeholder image. The video is available in the web-version or here: <https://youtu.be/s5yya0XeNTA>](./www/hits-logo-small.png){#fig-f1f1-residues}
 :::
 
 Rotational sampling of F0-F1.
@@ -287,14 +284,14 @@ Their high flexibility allows them to remain in contact with the membrane over l
 :::
 
 :::{.print-only}
-![This is a placeholder image. The video is available in the web-version or here: <https://youtu.be/yf8Tvutb-70>](./www/hits-logo-small.png){#fig-f0f1-pull-run-1}
+![This is a placeholder image. The video is available in the web-version or here: <https://youtu.be/-eZ2orx7QRE>](./www/hits-logo-small.png){#fig-f0f1-pull-run-1}
 :::
 
 ![ ](./assets/vmd/f0f1-pulling/vert-pull.png){#fig-f0f1-vert-pull-vmd}
 
 ![ ](./assets/results/plots/f0f1-vert-pull-1.png){#fig-f0f1-vert-pull}
 
-![ ](./assets/results/plots/f0f1-vert-pull-residues-1.png){#fig-f0f1-vert-pull-residues}
+![ ](./assets/results/plots/fig-f0f1-vert-pull-contacts-1.png){#fig-f0f1-vert-pull-residues}
 
 Vertical Pulling of F0-F1.
 **a\)**
@@ -304,8 +301,6 @@ The direction of force is shown in the snapshot **b\)**.
 **c\)**
 As F0-F1 gets pulled at a constant rate of 0.03\ nm/ns we observe the time evolution of the force (bottom panel) and the number of interacting residues (top panel).
 The number of interacting residues goes down very gradually, as the high flexibility of loop allows the residues to remain in contact even as the distance increases.
-**d\)**
-A closer look at the residues involved in the interaction during pulling reveals the instrumental role of both the F1 loop as well as the F0 subdomain in keeping the connection to the membrane.
 ::::
 
 Simulations with the full-length FERM domain show that with the loop as an initial membrane contact, known PIP~2~ binding sites can also be established as well ([@fig-ferm-ri-npip; @fig-ferm-memb-system]).
@@ -375,6 +370,10 @@ This project has received funding from the European Research Council (ERC) under
 
 ![ ](./assets/results/plots/ferm-time-ri-npip-all-1.png){#fig-ferm-time-ri-npip-all}
 
+![ ](./assets/results/plots/f0f1-vert-pull-residues-1.png){#fig-f0f1-vert-pull-residues}
+
+
+Table: Talin1 FERM domain boundaries {#tbl-ferm-domains}
 
 | Domain | From | To |
 |------|------|------|
@@ -383,7 +382,6 @@ This project has received funding from the European Research Council (ERC) under
 |   F2 | 208| 309|
 |   F3 | 310| 400|
 
-Table: Talin1 FERM domain boundaries {#tbl-ferm-domains}
 
 Table: Top residues interacting with F0F1 {#tbl-f0f1-top-interacting}
 
@@ -440,6 +438,8 @@ Table: Top residues interacting with FERM {#tbl-ferm-top-interacting}
 RMSF [nm] of the c$\alpha$ of individual residues in an equilibrium simulation shown by coloring the backbone The loop is highly flexible.
 **b\)**
 A density plot of distances between PIP~2~ and the protein residues to decide on a cutoff for defining interactions A distance of 0.25 nm was chosen.
+**d\)**
+A closer look at the residues involved in the interaction during pulling reveals the instrumental role of both the F1 loop as well as the F0 subdomain in keeping the connection to the membrane.
 :::
 
 ## Simulation system {#sec-system}
@@ -518,4 +518,5 @@ var viewer2 = new molstar.Viewer('app2', {
 });
 viewer2.loadStructureFromUrl('./www/system-tln-memb.pdb', format='pdb')
 </script>
+
 
