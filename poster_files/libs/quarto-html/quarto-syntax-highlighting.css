@@ -40,7 +40,8 @@ code span {
   color: #00769E;
 }
 
-div.sourceCode {
+div.sourceCode,
+div.sourceCode pre.sourceCode {
   color: #00769E;
 }
 
@@ -150,3 +151,5 @@ code span.dv {
 code span.kw {
   color: #00769E;
 }
+
+/*# sourceMappingURL=debc5d5d77c3f9108843748ff7464032.css.map */

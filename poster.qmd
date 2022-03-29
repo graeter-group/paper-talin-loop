@@ -105,8 +105,12 @@ This project has received funding from the European Research Council (ERC) under
 
 This poster was made `betterposter` [@rbetterposter] R package and quarto [@quarto].
 
+## References
+
+:::{#refs}
+:::
+
 ::::
 
-## References
 
 
