@@ -1,27 +1,42 @@
 ---
 title: "Intrinsically disordered region of Talin's FERM domain functions as an initial PIP~2~ recognition site"
 date: 2022-03-15
-author: Jannik Buhr, Florian Franz, Frauke Gräter
+author:
+  - name: Jannik Buhr
+    url: https://jmbuhr.de
+    affiliation: Heidelberg Institute for Theoretical Studies, Heidelberg University
+    affiliation-url: https://www.h-its.org/
+  - name: Florian Franz
+    affiliation: Heidelberg Institute for Theoretical Studies, Heidelberg University
+    affiliation-url: https://www.h-its.org/
+  - name: Frauke Gräter
+    url: https://www.h-its.org/people/prof-dr-frauke-grater/
+    affiliation: Heidelberg Institute for Theoretical Studies, Heidelberg University
+    affiliation-url: https://www.h-its.org/
+github: https://github.com/hits-mbm-dev/
+repo: "paper-talin-loop"
 bibliography: references.bib
 csl: biophysical-journal.csl
 format:
   html:
     comments:
-      hypothesis: true
+      hypothesis: false
     html-math-method: katex
     self-contained: false
+    code-tools:
+      source: repo
     theme:
       light:
         - default
-        - styles.scss
+        - hits.scss
       dark:
         - darkly
-        - styles.scss
     mainfont: Roboto, sans-serif
     monofont: Fira Mono, monospace
     toc-depth: 2
     toc: true
     linkcolor: "#1E4287"
+    css: styles.css
   pdf:
     keep-tex: true
     pdf-engine: lualatex

@@ -1,12 +1,3 @@
-/*-- scss:defaults --*/
-
-
-/*-- scss:rules --*/
-@import 'https://fonts.googleapis.com/css?family=Roboto&family=Fira+Mono&family=Miriam+Libre&display=swap';
-
-code {
-  color: #1f2b42;
-}
 
 .anchored .figure-caption {
   text-transform: uppercase;
