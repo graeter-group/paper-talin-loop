@@ -1,9 +1,11 @@
 ---
 title: "Intrinsically disordered region of Talin's FERM domain functions as an initial PIP~2~ recognition site"
-date: 2022-03-15
+date: today
+date-format: long
 author:
   - name: Jannik Buhr
     url: https://jmbuhr.de
+    orcid: 0000-0002-9350-2629
     affiliation: Heidelberg Institute for Theoretical Studies, Heidelberg University
     affiliation-url: https://www.h-its.org/
   - name: Florian Franz
@@ -11,6 +13,7 @@ author:
     affiliation-url: https://www.h-its.org/
   - name: Frauke Gräter
     url: https://www.h-its.org/people/prof-dr-frauke-grater/
+    orcid: 0000-0003-2891-3381
     affiliation: Heidelberg Institute for Theoretical Studies, Heidelberg University
     affiliation-url: https://www.h-its.org/
 github: https://github.com/hits-mbm-dev/
