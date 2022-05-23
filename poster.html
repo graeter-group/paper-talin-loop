@@ -162,7 +162,7 @@ new QRCode(document.getElementById("qrcode"), {
   correctLevel : QRCode.CorrectLevel.L});
 </script>
 
-<script type="application/javascript">
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
   tabsets.forEach(function(tabset) {
@@ -187,7 +187,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.blur();
     // flash "checked"
     button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
     setTimeout(function() {
+      button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
     // clear code selection
