@@ -213,8 +213,6 @@ This paper and the matching poster were generated with [quarto](https://quarto.o
 
 ## The F1 loop can act as a point of first contact
 
-<!-- TODO: axis label in E should be time not frame -->
-
 The high flexibility of the F1 loop gave use the confidence to model it from sequence It retained its flexibility in equilibrium simulations (@fig-loop-rmsf), which in combination with comparisons to NMR structures [@goultStructureDoubleUbiquitinlike2010] confirmed this approach.
 The resulting system that provides the basis for our simulations can be explored interactively in @sec-system.
 
