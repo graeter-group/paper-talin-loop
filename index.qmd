@@ -369,7 +369,7 @@ This work was supported by the Klaus Tschira Foundation.
 
 ![ ](./assets/results/figures/loop-rmsf.png){#fig-loop-rmsf}
 
-![ ](./assets/results/plots/rot-sample-r-hist-1.png){#fig-r-hist}
+![ ](./assets/results/plots/f0f1-distance-cutoff-1.png){#fig-r-hist}
 
 ![ ](./assets/results/plots/ferm-time-ri-npip-all-1.png){#fig-ferm-time-ri-npip-all}
 
