@@ -7,6 +7,7 @@
   letterpaper,
   DIV=11,
   numbers=noendperiod]{scrartcl}
+
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
 \usepackage{iftex}
@@ -36,20 +37,18 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\hypersetup{
-  pdftitle={Intrinsically disordered region of Talin's FERM domain functions as an initial PIP2 recognition site},
-  pdfauthor={Jannik Buhr, Florian Franz, Frauke Gräter},
-  pdfkeywords={molecular dynamics, Talin, Focal
-Adhesion, Mechanosensing},
-  colorlinks=true,
-  linkcolor={blue},
-  filecolor={Maroon},
-  citecolor={Blue},
-  urlcolor={Blue},
-  pdfcreator={LaTeX via pandoc}}
-\urlstyle{same} % disable monospaced font for URLs
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
 \usepackage{color}
 \usepackage{fancyvrb}
 \newcommand{\VerbBar}{|}
@@ -61,36 +60,38 @@ Adhesion, Mechanosensing},
 \newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
 \newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
 \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.46,0.14}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
 \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
 \newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
 \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
 \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
 \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
 \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
 \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
 \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
 \newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
 \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
 \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
 \newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
 \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
-\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
 \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
 \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
 \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
 \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
 \newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
 \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
 \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
 \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
-\usepackage{longtable,booktabs,array}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
@@ -113,10 +114,6 @@ Adhesion, Mechanosensing},
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
-\setlength{\emergencystretch}{3em} % prevent overfull lines
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 \newlength{\cslhangindent}
 \setlength{\cslhangindent}{1.5em}
 \newlength{\csllabelwidth}
@@ -140,6 +137,7 @@ Adhesion, Mechanosensing},
 \newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
 \newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
 \KOMAoption{captions}{tableheading}
 \makeatletter
 \@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
@@ -162,11 +160,31 @@ Adhesion, Mechanosensing},
 \makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \AtBeginDocument{%
-\renewcommand*\contentsname{Table of contents}
-\renewcommand*\listfigurename{List of Figures}
-\renewcommand*\listtablename{List of Tables}
-\renewcommand*\figurename{Figure}
-\renewcommand*\tablename{Table}
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
 }
 \@ifpackageloaded{float}{}{\usepackage{float}}
 \floatstyle{ruled}
@@ -189,11 +207,25 @@ Adhesion, Mechanosensing},
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Intrinsically disordered region of Talin's FERM domain functions as an initial PIP2 recognition site},
+  pdfauthor={Jannik Buhr; Florian Franz; Frauke Gräter},
+  pdfkeywords={molecular dynamics, Talin, Focal
+Adhesion, Mechanosensing},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
 
 \title{Intrinsically disordered region of Talin's FERM domain functions
 as an initial PIP\textsubscript{2} recognition site}
-\author{Jannik Buhr, Florian Franz, Frauke Gräter}
-\date{2022-03-15}
+\author{Jannik Buhr \and Florian Franz \and Frauke Gräter}
+\date{June 24, 2022}
 
 \begin{document}
 \maketitle
@@ -220,14 +252,13 @@ the dynamics of talin through force-probe molecular dynamics
 simulations. The results provide backing for the direct involvement of
 PIP\textsubscript{2} in the localization and activation of talin.
 \end{abstract}
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[frame hidden, borderline west={3pt}{0pt}{shadecolor}, enhanced, sharp corners, interior hidden, boxrule=0pt, breakable]}{\end{tcolorbox}}\fi
 
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, borderline west={3pt}{0pt}{shadecolor}, enhanced, sharp corners, boxrule=0pt, frame hidden]}{\end{tcolorbox}}\fi
-
-\begin{tcolorbox}[standard jigsaw,colframe=quarto-callout-warning-color-frame, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}Warning, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, toptitle=1mm, arc=.35mm, bottomtitle=1mm, rightrule=.15mm, leftrule=.75mm, left=2mm, colback=white, opacitybacktitle=0.6, coltitle=black, colbacktitle=quarto-callout-warning-color!10!white, opacityback=0]
+\begin{tcolorbox}[standard jigsaw,toprule=.15mm, left=2mm, colframe=quarto-callout-warning-color-frame, leftrule=.75mm, toptitle=1mm, colbacktitle=quarto-callout-warning-color!10!white, opacitybacktitle=0.6, titlerule=0mm, rightrule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, arc=.35mm, coltitle=black, bottomrule=.15mm, colback=white, opacityback=0, bottomtitle=1mm]
 This is a draft and as such subject to change.
 \end{tcolorbox}
 
-\begin{tcolorbox}[standard jigsaw,colframe=quarto-callout-tip-color-frame, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}Tip, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, toptitle=1mm, arc=.35mm, bottomtitle=1mm, rightrule=.15mm, leftrule=.75mm, left=2mm, colback=white, opacitybacktitle=0.6, coltitle=black, colbacktitle=quarto-callout-tip-color!10!white, opacityback=0]
+\begin{tcolorbox}[standard jigsaw,toprule=.15mm, left=2mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, titlerule=0mm, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, arc=.35mm, coltitle=black, bottomrule=.15mm, colback=white, opacityback=0, bottomtitle=1mm]
 You can find the poster that goes along with the paper presented at the
 \href{https://www.biophysics.org/2022meeting\#}{Annual Meeting of the
 Biophysical Society 2022} in your favorite format here:
@@ -260,9 +291,9 @@ the membrane. Their formation, mechanical stability and role in
 mechanosensing remain to be fully resolved.
 
 Talin features an N-terminal FERM domain (F for 4.1 protein, E for
-ezrin, R for radixin and M for moesin), which is composed of subdomains
-F0 to F3 and provides the link to the cystosolic side of the plasma
-membrane (9). It does so via a conserved binding motif for
+ezrin, R for radixin and M for moesin), which is composed of the
+subdomains F0 to F3 and provides a link to the cystosolic side of the
+plasma membrane (9). It does so via a conserved binding motif for
 phosphatidylinositol 4,5-bisphosphate (PIP\textsubscript{2}), which is
 enriched at active focal adhesion sites (10--12). The main
 PIP\textsubscript{2} binding sites are located in F2 and F3 (highlighted
@@ -286,13 +317,13 @@ central role in the focal adhesion complex.
 The mechanistic role of the disordered F1 loop in the many aspects of
 Talin function remains elusive. Its overall positive charge renders it a
 prime candidate as a PIP\textsubscript{2} binding site. However,
-previous studies identified an only minor role of the loop in
+previous studies only identified a minor role of the loop in
 PIP\textsubscript{2} binding compared to F2-F3 (20, 21). On the other
-hand, the F1 loop contributes to talin-mediated integrin activation
-(13).
+hand, the F1 loop has been shown to contribute to talin-mediated
+integrin activation (13).
 
 It was previously shown that F3 can interact with R9, which impedes
-integrin activation (22). However, in a recently determined
+integrin activation (22). Furthermore, in a recently determined
 cryo-electron microscopy structure of autoinhibited Talin1, Dedden et
 al. (23) showed that the rod domains R9 and R12 shield the established
 PIP\textsubscript{2} binding surface and the integrin binding site in F3
@@ -365,19 +396,19 @@ major PIP\textsubscript{2} binding sites in F2-F3 are marked with red
 spheres. An integrin binding site also resides in this area. Klapholz et
 al. (19) provide an excellent review of Talin's central role in the
 focal adhesion complex and list further binding sites. The talin rod
-segments (or talin tail) are numbered R1 to R13. Note, that under
-physiological conditions with talin experiencing force from bound actin
-the angle between the FERM domain and the talin rod would be more akin
-to 30° as opposed to the linear structure used here for illustrative
-purposes. Tails of an integrin \(\alpha\) and \(\beta\) heterodimer
-reaching through the lipid bilayer are represented in green. \textbf{b)}
-A schematic rendering of the autoinhibited structure of Talin as
-crystallized by Dedden et al. (23) in combination with a cartoon
-representation in \textbf{c)}. The completed FERM structure by Elliott
-et al. (14), with our addition of the modelled F1 loop, is fitted to the
-autoinhibited structure, as the latter does not include F0-F1 due to
-their flexibility. The complete FERM structure can be explored
-interactively in the context of our simulation system in
+segments (or talin tail) are numbered R1 to R13. Note that under
+physiological conditions, with talin experiencing force from bound
+actin, the angle between the FERM domain and the talin rod would be more
+akin to 30° as opposed to the linear structure shown here for
+illustrative purposes. Tails of an integrin \(\alpha\) and \(\beta\)
+heterodimer reaching through the lipid bilayer are represented in green.
+\textbf{b)} A schematic rendering of the autoinhibited structure of
+Talin as crystallized by Dedden et al. (23) in combination with a
+cartoon representation in \textbf{c)}. The completed FERM structure by
+Elliott et al. (14), with our addition of the modelled F1 loop, is
+fitted to the autoinhibited structure, as the latter does not include
+F0-F1 due to their flexibility. The complete FERM structure can be
+explored interactively in the context of our simulation system in
 Section~\ref{sec-system}. The main PIP\textsubscript{2}-binding sites in
 F2-F3 are occluded by rod domain 12 Additionally, R9 covers up the
 integrin binding site.}
@@ -406,10 +437,7 @@ unfavorable initial orientations due to its large search volume.
 Furthermore, we show with simulations of the full-length FERM domain
 that once the loop has established an initial contact, it can anchor the
 FERM domain to the membrane and establish the known major binding sites
-in F2-F3. Finally, we find the additional PIP\textsubscript{2}
-interaction to provide the FERM domain of Talin1 with an increased
-resistance against lateral motion when force acts on the protein along
-directions expected when bound to actin stress fibers.
+in F2-F3.
 
 These results provide mechanistic insight into the role of membrane
 interactions for the localization of Talin at the center of the focal
@@ -444,10 +472,10 @@ equilibration was performed after gradient decent energy minimization
 while gradually relieving restraints on protein and membrane atoms
 Production runs use a timestep of 2 fs, a Verlet cut-off scheme for
 Van-der-Waals interactions and the Particle Mesh Ewald (PME) method for
-long-range electrostatics NTP-ensembles where achieved by Nosé-Hoover
+long-range electrostatics. NTP-ensembles were achieved by Nosé-Hoover
 temperature coupling (35, 36) and Parinello-Rahman pressure coupling
 (37). An example \texttt{.mdp}-file can be found in the supplementary
-materials at Section~\ref{sec-prod-mdp}.
+materials in Section~\ref{sec-prod-mdp}.
 
 The initial equilibrium simulation of the completed FERM domain was run
 for 75 ns. Subsequently, the root mean squared fluctuation (RMSF) was
@@ -465,19 +493,12 @@ replaced with PIP\textsubscript{2}, which results in a physiological
 concentration of 10\% PIP\textsubscript{2}.
 
 From this rotational sampling, we selected representative conformations
-with high protein-membrane interaction as the basis of 6 equilibrium
+with loop-membrane interactions as the basis of 6 equilibrium
 simulations of the complete FERM domain over a POPC membrane with 26
 PIP\textsubscript{2} lipids out of a total of 273 lipids in the upper
 leaflet. Each simulation ran for 400~ns. The initial conformations for
 perpendicular pulling simulations of the F0F1 subdomains to gauge
-interaction strength where also chose from the rotational sampling set.
-
-To compare the effects of PIP\textsubscript{2} on the dynamics, a system
-containing only 1~\%~PIP\textsubscript{2} (3 PIP\textsubscript{2}
-molecules in 273 lipids) was created from the enriched system by
-programmatically exchanging lipid head groups via a python script. The
-enriched and non-enriched systems where then subjected to force-probe MD
-simulations.
+interaction strength were also chose from the rotational sampling set.
 
 \hypertarget{automation-data-analysis-and-availability}{%
 \subsection{Automation, Data Analysis and
@@ -684,7 +705,7 @@ summarized over time and replicates for that specific angle. \textbf{e)}
 A heatmap of the time evolution of the number of PIP\textsubscript{2}
 molecules at the respective time and angle summarized over all residues
 and replicates. Angles in which the loop is already favored towards the
-membrane tend to make contact faster Note, that this trend is not simply
+membrane tend to make contact faster. Note that this trend is not simply
 because angles favoring the loop would have been already closer to the
 membrane. The protein was rotated in such a way that the respective
 closest residue had the same distance to the membrane for the 0° and the
@@ -710,11 +731,11 @@ contacts}\label{the-f1-loop-can-facilitate-further-contacts}}
 
 We chose a representative conformation from the rotational sampling as a
 starting point for force-probe simulations of F0-F1 perpendicular to the
-membrane (Figure~\ref{fig-f0f1-vert-pull-vmd}) to test the strength of
-the interaction. An exemplary render of one of the simulations can be
-seen in Figure~\ref{fig-f0f1-pull-run-1}. Pulling F0-F1 off the membrane
-requires peak forces of 100--120~pN, during which the interacting
-residues only very gradually loose contact
+membrane to test the strength of the interaction
+(Figure~\ref{fig-f0f1-vert-pull-vmd}). An exemplary render of one of the
+simulations can be seen in Figure~\ref{fig-f0f1-pull-run-1}. Pulling
+F0-F1 off the membrane requires peak forces of 100--120~pN, during which
+the interacting residues only very gradually loose contact
 (Figure~\ref{fig-f0f1-vert-pull}). This highlights the strong anchoring
 capabilities of the F1 loop. As seen in
 Figure~\ref{fig-f0f1-vert-pull-contacts}, during pulling residues not
@@ -799,18 +820,25 @@ C-terminus. The direction of force is shown in the snapshot \textbf{b)}.
 observe the time evolution of the force (bottom panel) and the number of
 interacting residues (top panel). The number of interacting residues
 goes down very gradually, as the high flexibility of loop allows the
-residues to remain in contact even as the distance increases.
-\textbf{d)} The time evolution of the number of contacs for resides
-belonging to the F1 loop and other residues shows how initially other
-residues loose contact until eventually the loop looses contacts as
-well. The remaining non-loop contacts belong to the N-terminus of F0
-(for which \textbf{b} is also a representative snapshot).}
+residues to remain in contact even as the distance increases. Replicat 4
+is highlighted in magenta, as in this run the interactions were so so
+strong that a total of 3 molecules of PIP\textsubscript{2} were pulled
+out of the membrane (1 by F0 and 2 by the F1 loop). A snapshot of this
+can be seen in Figure~\ref{fig-f0f1-vert-pull-run4}. \textbf{d)} The
+time evolution of the number of contacs for resides belonging to the F1
+loop and other residues shows how initially other residues loose contact
+until eventually the loop looses contacts as well. Lighter shades of
+blue correspond to a later time in the simulation. Black dots mark the
+starting positions. The longest remaining non-loop contacts belong to
+the N-terminus of F0 (for which \textbf{b} is also a representative
+snapshot), with the exception of replicate 4, as explained in
+\textbf{c}.}
 
 \end{figure}
 
 Simulations with the full-length FERM domain show that with the loop as
 an initial membrane contact, known PIP\textsubscript{2} binding sites
-can also be established as well
+can also be established
 (Figure~\ref{fig-ferm-ri-npip}, Figure~\ref{fig-ferm-memb-system}). The
 highlighted residues include K272 of F2 and K316, K324, E342, and K343
 of F3, which have been shown to be crucial for the membrane interaction
@@ -861,83 +889,6 @@ interacting residues are displayed as dark blue stick models.}
 
 \end{figure}
 
-\hypertarget{the-ferm-domain-adds-lateral-friction-to-aid-in-localizing-talin-at-the-membrane}{%
-\subsection{The FERM domain adds lateral friction to aid in localizing
-Talin at the
-membrane}\label{the-ferm-domain-adds-lateral-friction-to-aid-in-localizing-talin-at-the-membrane}}
-
-\begin{tcolorbox}[standard jigsaw,colframe=quarto-callout-note-color-frame, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}Note, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, toptitle=1mm, arc=.35mm, bottomtitle=1mm, rightrule=.15mm, leftrule=.75mm, left=2mm, colback=white, opacitybacktitle=0.6, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, opacityback=0]
-Additional simulations pulling the whole FERM domain at a physiological
-angle of 30° laterally over a membrane with differing concentrations of
-PIP\textsubscript{2} are currently running.
-\end{tcolorbox}
-
-To observe the effect of PIP\textsubscript{2} enrichment at focal
-adhesion sites, we pulled the FERM domain laterally over a membrane
-containing different concentrations of PIP\textsubscript{2} in the upper
-leaflet (Figure~\ref{fig-ferm-lat-pull}). We pulled at an angle of 30°,
-as this is the angle at which the Talin rod domains attach to the
-C-terminus of the FERM domain and exert force \emph{in vivo}. As seen in
-Figure~\ref{fig-ferm-lat-pull}, the presence of PIP\textsubscript{2}
-increases the force necessary for constant-velocity pulling and thus the
-lateral friction. This should help localizing Talin at focal adhesion
-sites by increasing retention time. The main PIP\textsubscript{2}
-binding sites (Figure~\ref{fig-ferm-memb-system}) as well as the F1 loop
-are involved in this interaction.
-
-\begin{figure}
-
-\begin{minipage}[t]{0.50\linewidth}
-
-{\centering 
-
-\raisebox{-\height}{
-
-\includegraphics{./assets/vmd/ferm-system.png}
-
-}
-
-}
-
-\subcaption{\label{fig-ferm-lat-pull}~}
-\end{minipage}%
-%
-\begin{minipage}[t]{0.50\linewidth}
-
-{\centering 
-
-\raisebox{-\height}{
-
-\includegraphics{./www/hits-logo-small.png}
-
-}
-
-}
-
-\subcaption{\label{fig-ferm-lat-pull}~}
-\end{minipage}%
-\newline
-\begin{minipage}[t]{0.50\linewidth}
-
-{\centering 
-
-\raisebox{-\height}{
-
-}
-
-}
-
-\end{minipage}%
-
-\caption{\label{fig-pulling}\textbf{a)} The simulation system for
-force-probe molecualar dymamics simulations of the Talin FERM domain
-over a membrane containing 10~\% PIP\textsubscript{2} in the upper
-leaflet. The force for constant velocity pulling is exerted at the
-C-terminus of F3, where Talin's rod domains attach. \textbf{b)} TODO:
-placeholder.}
-
-\end{figure}
-
 \hypertarget{discussion-and-outlook}{%
 \section{Discussion and Outlook}\label{discussion-and-outlook}}
 
@@ -968,6 +919,8 @@ This project has received funding from the European Research Council
 (ERC) under the European Union's Horizon 2020 research and innovation
 programme (grant agreement No.~101002812).
 
+This work was supported by the Klaus Tschira Foundation.
+
 \hypertarget{supplementary-material}{%
 \section{Supplementary Material}\label{supplementary-material}}
 
@@ -994,7 +947,7 @@ programme (grant agreement No.~101002812).
 
 \raisebox{-\height}{
 
-\includegraphics{./assets/results/plots/rot-sample-r-hist-1.png}
+\includegraphics{./assets/results/plots/f0f1-distance-cutoff-1.png}
 
 }
 
@@ -1033,6 +986,21 @@ programme (grant agreement No.~101002812).
 \subcaption{\label{fig-f0f1-vert-pull-residues}~}
 \end{minipage}%
 \newline
+\begin{minipage}[t]{\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics{./assets/vmd/f0f1-pulling/snapshot-run4.png}
+
+}
+
+}
+
+\subcaption{\label{fig-f0f1-vert-pull-run4}~}
+\end{minipage}%
+\newline
 \begin{minipage}[t]{0.33\linewidth}
 
 {\centering 
@@ -1040,13 +1008,13 @@ programme (grant agreement No.~101002812).
 \begin{longtable}[]{@{}lr@{}}
 \caption{\label{tbl-f0f1-top-interacting}Top residues interacting with
 F0F1}\tabularnewline
-\toprule
+\toprule()
 Residue & Mean \#PIP\textsubscript{2} \\
-\midrule
+\midrule()
 \endfirsthead
-\toprule
+\toprule()
 Residue & Mean \#PIP\textsubscript{2} \\
-\midrule
+\midrule()
 \endhead
 M 1 & 0.188 \\
 K 15 & 0.184 \\
@@ -1066,7 +1034,7 @@ K 160 & 0.254 \\
 K 162 & 0.181 \\
 L 193 & 0.200 \\
 R 194 & 0.101 \\
-\bottomrule
+\bottomrule()
 \end{longtable}
 
 }
@@ -1080,13 +1048,13 @@ R 194 & 0.101 \\
 \begin{longtable}[]{@{}lr@{}}
 \caption{\label{tbl-ferm-top-interacting}Top residues interacting with
 FERM}\tabularnewline
-\toprule
+\toprule()
 Residue & Mean \#PIP\textsubscript{2} \\
-\midrule
+\midrule()
 \endfirsthead
-\toprule
+\toprule()
 Residue & Mean \#PIP\textsubscript{2} \\
-\midrule
+\midrule()
 \endhead
 M 1 & 0.118 \\
 T 144 & 0.322 \\
@@ -1109,7 +1077,7 @@ G 321 & 0.174 \\
 K 322 & 0.442 \\
 D 341 & 0.142 \\
 S 362 & 0.363 \\
-\bottomrule
+\bottomrule()
 \end{longtable}
 
 }
@@ -1124,14 +1092,17 @@ decide on a cutoff for defining interactions A distance of 0.25 nm was
 chosen. \textbf{d)} A closer look at the residues involved in the
 interaction during pulling reveals the instrumental role of both the F1
 loop as well as the F0 subdomain in keeping the connection to the
-membrane.}
+membrane. \textbf{e)} Run 4 of the vertical pulling of F0F1.
+Interactions between the protein and PIP\textsubscript{2} were so strong
+that a total of 3 molecules of PIP\textsubscript{2} (gray) were pulled
+out of the membrane (1 by F0 (green) and 2 by the F1 loop (blue)).}
 
 \end{figure}
 
 \hypertarget{sec-system}{%
 \subsection{Simulation system}\label{sec-system}}
 
-\begin{tcolorbox}[standard jigsaw,colframe=quarto-callout-note-color-frame, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}Note, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, toptitle=1mm, arc=.35mm, bottomtitle=1mm, rightrule=.15mm, leftrule=.75mm, left=2mm, colback=white, opacitybacktitle=0.6, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, opacityback=0]
+\begin{tcolorbox}[standard jigsaw,toprule=.15mm, left=2mm, colframe=quarto-callout-note-color-frame, leftrule=.75mm, toptitle=1mm, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, titlerule=0mm, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, arc=.35mm, coltitle=black, bottomrule=.15mm, colback=white, opacityback=0, bottomtitle=1mm]
 This interactive display is only available in the web version:
 \url{https://hits-mbm-dev.github.io/paper-talin-loop/}
 \end{tcolorbox}
@@ -1139,7 +1110,7 @@ This interactive display is only available in the web version:
 \hypertarget{scripts}{%
 \subsection{Scripts}\label{scripts}}
 
-\begin{tcolorbox}[standard jigsaw,colframe=quarto-callout-note-color-frame, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}Note, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, toptitle=1mm, arc=.35mm, bottomtitle=1mm, rightrule=.15mm, leftrule=.75mm, left=2mm, colback=white, opacitybacktitle=0.6, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, opacityback=0]
+\begin{tcolorbox}[standard jigsaw,toprule=.15mm, left=2mm, colframe=quarto-callout-note-color-frame, leftrule=.75mm, toptitle=1mm, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, titlerule=0mm, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, arc=.35mm, coltitle=black, bottomrule=.15mm, colback=white, opacityback=0, bottomtitle=1mm]
 Analysis scripts, setup scripts and production trajectories will be
 uploaded and linked here.
 \end{tcolorbox}
@@ -1189,28 +1160,28 @@ uploaded and linked here.
 \hypertarget{refs}{}
 \begin{CSLReferences}{0}{0}
 \leavevmode\vadjust pre{\hypertarget{ref-vogelLocalForceGeometry2006}{}}%
-\CSLLeftMargin{1. }
+\CSLLeftMargin{1. }%
 \CSLRightInline{Vogel, V., and M. Sheetz. 2006.
 \href{https://doi.org/10.1038/nrm1890}{Local force and geometry sensing
 regulate cell functions}. \emph{Nature Reviews Molecular Cell Biology}.
 7:265--275.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-oakesStressingLimitsFocal2014}{}}%
-\CSLLeftMargin{2. }
+\CSLLeftMargin{2. }%
 \CSLRightInline{Oakes, P.W., and M.L. Gardel. 2014.
 \href{https://doi.org/10.1016/j.ceb.2014.06.003}{Stressing the limits of
 focal adhesion mechanosensitivity}. \emph{Current Opinion in Cell
 Biology}. 30:68--73.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-schillerMechanosensitivityCompositionalDynamics2013}{}}%
-\CSLLeftMargin{3. }
+\CSLLeftMargin{3. }%
 \CSLRightInline{Schiller, H.B., and R. Fässler. 2013.
 \href{https://doi.org/10.1038/embor.2013.49}{Mechanosensitivity and
 compositional dynamics of cell\textendash matrix adhesions}. \emph{EMBO
 reports}. 14:509--519.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-miroshnikovaAdhesionForcesCortical2018}{}}%
-\CSLLeftMargin{4. }
+\CSLLeftMargin{4. }%
 \CSLRightInline{Miroshnikova, Y.A., H.Q. Le, D. Schneider, T. Thalheim,
 M. Rübsam, N. Bremicker, J. Polleux, N. Kamprad, M. Tarantola, I. Wang,
 M. Balland, C.M. Niessen, J. Galle, and S.A. Wickström. 2018.
@@ -1219,14 +1190,14 @@ cortical tension couple cell proliferation and differentiation to drive
 epidermal stratification}. \emph{Nature Cell Biology}. 20:69--80.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-thamilselvanPressureActivatesColon2004}{}}%
-\CSLLeftMargin{5. }
+\CSLLeftMargin{5. }%
 \CSLRightInline{Thamilselvan, V., and M.D. Basson. 2004.
 \href{https://doi.org/10.1053/j.gastro.2003.10.078}{Pressure activates
 colon cancer cell adhesion by inside-out focal adhesion complex and
 actin cytoskeletal signaling}. \emph{Gastroenterology}. 126:8--18.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-pelletierActivationStateIntegrin1995}{}}%
-\CSLLeftMargin{6. }
+\CSLLeftMargin{6. }%
 \CSLRightInline{Pelletier, A.J., T. Kunicki, Z.M. Ruggeri, and V.
 Quaranta. 1995. \href{https://doi.org/10.1074/jbc.270.30.18133}{The
 {Activation State} of the {Integrin \(\alpha\)IIb\(\beta\)3 Affects
@@ -1235,14 +1206,14 @@ Kinase Phosphorylation} *}. \emph{Journal of Biological Chemistry}.
 270:18133--18140.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-yaoMechanicalResponseTalin2016}{}}%
-\CSLLeftMargin{7. }
+\CSLLeftMargin{7. }%
 \CSLRightInline{Yao, M., B.T. Goult, B. Klapholz, X. Hu, C.P. Toseland,
 Y. Guo, P. Cong, M.P. Sheetz, and J. Yan. 2016.
 \href{https://doi.org/10.1038/ncomms11966}{The mechanical response of
 talin}. \emph{Nature Communications}. 7:11966.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-tadokoroTalinBindingIntegrin2003}{}}%
-\CSLLeftMargin{8. }
+\CSLLeftMargin{8. }%
 \CSLRightInline{Tadokoro, S., S.J. Shattil, K. Eto, V. Tai, R.C.
 Liddington, J.M. de Pereda, M.H. Ginsberg, and D.A. Calderwood. 2003.
 \href{https://doi.org/10.1126/science.1086652}{Talin {Binding} to
@@ -1250,7 +1221,7 @@ Liddington, J.M. de Pereda, M.H. Ginsberg, and D.A. Calderwood. 2003.
 \emph{Science}. 302:103--106.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-chishtiFERMDomainUnique1998}{}}%
-\CSLLeftMargin{9. }
+\CSLLeftMargin{9. }%
 \CSLRightInline{Chishti, A.H., A.C. Kim, S.M. Marfatia, M. Lutchman, M.
 Hanspal, H. Jindal, S.-C. Liu, P.S. Low, G.A. Rouleau, N. Mohandas, J.A.
 Chasis, J.G. Conboy, P. Gascard, Y. Takakuwa, S.-C. Huang, E.J.B. Jr, A.
@@ -1262,7 +1233,7 @@ A unique module involved in the linkage of cytoplasmic proteins to the
 membrane}. \emph{Trends in Biochemical Sciences}. 23:281--282.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-maniFERMDomainPhosphoinositide2011}{}}%
-\CSLLeftMargin{10. }
+\CSLLeftMargin{10. }%
 \CSLRightInline{Mani, T., R.F. Hennigan, L.A. Foster, D.G. Conrady, A.B.
 Herr, and W. Ip. 2011. \href{https://doi.org/10.1128/MCB.00609-10}{{FERM
 Domain Phosphoinositide Binding Targets Merlin} to the {Membrane} and
@@ -1270,14 +1241,14 @@ Domain Phosphoinositide Binding Targets Merlin} to the {Membrane} and
 and Cellular Biology}. 31:1983--1996.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-dasMolecularMechanotransductionPathway2015}{}}%
-\CSLLeftMargin{11. }
+\CSLLeftMargin{11. }%
 \CSLRightInline{Das, T., K. Safferling, S. Rausch, N. Grabe, H. Boehm,
 and J.P. Spatz. 2015. \href{https://doi.org/10.1038/ncb3115}{A molecular
 mechanotransduction pathway regulates collective migration of epithelial
 cells}. \emph{Nature Cell Biology}. 17:276--287.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-songNovelMembranedependentSwitch2012a}{}}%
-\CSLLeftMargin{12. }
+\CSLLeftMargin{12. }%
 \CSLRightInline{Song, X., J. Yang, J. Hirbawi, S. Ye, H.D. Perera, E.
 Goksoy, P. Dwivedi, E.F. Plow, R. Zhang, and J. Qin. 2012.
 \href{https://doi.org/10.1038/cr.2012.97}{A novel membrane-dependent
@@ -1285,7 +1256,7 @@ on/off switch mechanism of talin {FERM} domain at sites of cell
 adhesion}. \emph{Cell Research}. 22:1533--1545.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-goultStructureDoubleUbiquitinlike2010}{}}%
-\CSLLeftMargin{13. }
+\CSLLeftMargin{13. }%
 \CSLRightInline{Goult, B.T., M. Bouaouina, P.R. Elliott, N. Bate, B.
 Patel, A.R. Gingras, J.G. Grossmann, G.C.K. Roberts, D.A. Calderwood,
 D.R. Critchley, and I.L. Barsukov. 2010.
@@ -1294,7 +1265,7 @@ ubiquitin-like domain in the talin head: A role in integrin activation}.
 \emph{The EMBO Journal}. 29:1069--1080.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-elliottStructureTalinHead2010}{}}%
-\CSLLeftMargin{14. }
+\CSLLeftMargin{14. }%
 \CSLRightInline{Elliott, P.R., B.T. Goult, P.M. Kopp, N. Bate, J.G.
 Grossmann, G.C.K. Roberts, D.R. Critchley, and I.L. Barsukov. 2010.
 \href{https://doi.org/10.1016/j.str.2010.07.011}{The {Structure} of the
@@ -1302,7 +1273,7 @@ Grossmann, G.C.K. Roberts, D.R. Critchley, and I.L. Barsukov. 2010.
 Domain}}. \emph{Structure(London, England:1993)}. 18:1289--1299.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-calderwoodTalinHeadDomain1999}{}}%
-\CSLLeftMargin{15. }
+\CSLLeftMargin{15. }%
 \CSLRightInline{Calderwood, D.A., R. Zent, R. Grant, D.J.G. Rees, R.O.
 Hynes, and M.H. Ginsberg. 1999.
 \href{https://doi.org/10.1074/jbc.274.40.28071}{The {Talin Head Domain
@@ -1311,21 +1282,21 @@ Binds} to {Integrin} {\(\beta\)} {Subunit Cytoplasmic Tails} and
 Chemistry}. 274:28071--28074.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-calderwoodTalinsKindlinsPartners2013}{}}%
-\CSLLeftMargin{16. }
+\CSLLeftMargin{16. }%
 \CSLRightInline{Calderwood, D.A., I.D. Campbell, and D.R. Critchley.
 2013. \href{https://doi.org/10.1038/nrm3624}{Talins and kindlins:
 Partners in integrin-mediated adhesion}. \emph{Nature Reviews Molecular
 Cell Biology}. 14:503--517.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-horwitzInteractionPlasmaMembrane1986}{}}%
-\CSLLeftMargin{17. }
+\CSLLeftMargin{17. }%
 \CSLRightInline{Horwitz, A., K. Duggan, C. Buck, M.C. Beckerle, and K.
 Burridge. 1986. \href{https://doi.org/10.1038/320531a0}{Interaction of
 plasma membrane fibronectin receptor with talin\textemdash a
 transmembrane linkage}. \emph{Nature}. 320:531--533.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-mccannLWEQModuleConserved1997}{}}%
-\CSLLeftMargin{18. }
+\CSLLeftMargin{18. }%
 \CSLRightInline{McCann, R.O., and S.W. Craig. 1997.
 \href{https://doi.org/10.1073/pnas.94.11.5679}{The {I}/{LWEQ} module: A
 conserved sequence that signifies {F-actin} binding in functionally
@@ -1333,13 +1304,13 @@ diverse proteins from yeast to mammals}. \emph{Proceedings of the
 National Academy of Sciences}. 94:5679--5684.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-klapholzTalinMasterIntegrin2017}{}}%
-\CSLLeftMargin{19. }
+\CSLLeftMargin{19. }%
 \CSLRightInline{Klapholz, B., and N.H. Brown. 2017.
 \href{https://doi.org/10.1242/jcs.190991}{Talin \textendash{} the master
 of integrin adhesions}. \emph{Journal of Cell Science}. 130:2435--2446.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-chinthalapudiInteractionTalinCell2018a}{}}%
-\CSLLeftMargin{20. }
+\CSLLeftMargin{20. }%
 \CSLRightInline{Chinthalapudi, K., E.S. Rangarajan, and T. Izard. 2018.
 \href{https://doi.org/10.1073/pnas.1806275115}{The interaction of talin
 with the cell membrane is essential for integrin activation and focal
@@ -1347,7 +1318,7 @@ adhesion formation}. \emph{Proceedings of the National Academy of
 Sciences of the United States of America}. 115:10339--10344.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-saltelNewPIP22009}{}}%
-\CSLLeftMargin{21. }
+\CSLLeftMargin{21. }%
 \CSLRightInline{Saltel, F., E. Mortier, V.P. Hytönen, M.-C. Jacquier, P.
 Zimmermann, V. Vogel, W. Liu, and B. Wehrle-Haller. 2009.
 \href{https://doi.org/10.1083/jcb.200908134}{New {PI}(4,5){P2-} and
@@ -1356,7 +1327,7 @@ control {\(B\)}3-integrin clustering}. \emph{Journal of Cell Biology}.
 187:715--731.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-bannoSubcellularLocalizationTalin2012}{}}%
-\CSLLeftMargin{22. }
+\CSLLeftMargin{22. }%
 \CSLRightInline{Banno, A., B.T. Goult, H. Lee, N. Bate, D.R. Critchley,
 and M.H. Ginsberg. 2012.
 \href{https://doi.org/10.1074/jbc.M112.341214}{Subcellular
@@ -1364,7 +1335,7 @@ and M.H. Ginsberg. 2012.
 *}. \emph{Journal of Biological Chemistry}. 287:13799--13812.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-deddenArchitectureTalin1Reveals2019a}{}}%
-\CSLLeftMargin{23. }
+\CSLLeftMargin{23. }%
 \CSLRightInline{Dedden, D., S. Schumacher, C.F. Kelley, M. Zacharias, C.
 Biertümpfel, R. Fässler, and N. Mizuno. 2019.
 \href{https://doi.org/10.1016/j.cell.2019.08.034}{The {Architecture} of
@@ -1372,7 +1343,7 @@ Biertümpfel, R. Fässler, and N. Mizuno. 2019.
 179:120--131.e13.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-buyanMultiscaleSimulationsSuggest2016}{}}%
-\CSLLeftMargin{24. }
+\CSLLeftMargin{24. }%
 \CSLRightInline{Buyan, A., A.C. Kalli, and M.S.P. Sansom. 2016.
 \href{https://doi.org/10.1371/journal.pcbi.1005028}{Multiscale
 {Simulations Suggest} a {Mechanism} for the {Association} of the {Dok7
@@ -1380,7 +1351,7 @@ PH Domain} with {PIP-Containing Membranes}}. \emph{PLOS Computational
 Biology}. 12:e1005028.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-zhouMechanismFocalAdhesion2015}{}}%
-\CSLLeftMargin{25. }
+\CSLLeftMargin{25. }%
 \CSLRightInline{Zhou, J., C. Aponte-Santamaría, S. Sturm, J.T.
 Bullerjahn, A. Bronowska, and F. Gräter. 2015.
 \href{https://doi.org/10.1371/journal.pcbi.1004593}{Mechanism of {Focal
@@ -1388,14 +1359,14 @@ Adhesion Kinase Mechanosensing}}. \emph{PLOS Computational Biology}.
 11:e1004593.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-berendsenGROMACSMessagepassingParallel1995}{}}%
-\CSLLeftMargin{26. }
+\CSLLeftMargin{26. }%
 \CSLRightInline{Berendsen, H.J.C., D. van der Spoel, and R. van Drunen.
 1995. \href{https://doi.org/10.1016/0010-4655(95)00042-E}{{GROMACS}: {A}
 message-passing parallel molecular dynamics implementation}.
 \emph{Computer Physics Communications}. 91:43--56.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-abrahamGROMACSHighPerformance2015}{}}%
-\CSLLeftMargin{27. }
+\CSLLeftMargin{27. }%
 \CSLRightInline{Abraham, M.J., T. Murtola, R. Schulz, S. Páll, J.C.
 Smith, B. Hess, and E. Lindahl. 2015.
 \href{https://doi.org/10.1016/j.softx.2015.06.001}{{GROMACS}: {High}
@@ -1403,13 +1374,13 @@ performance molecular simulations through multi-level parallelism from
 laptops to supercomputers}. \emph{SoftwareX}. 1--2:19--25.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-lindahlGROMACS2020Source2020}{}}%
-\CSLLeftMargin{28. }
+\CSLLeftMargin{28. }%
 \CSLRightInline{Lindahl, Abraham, Hess, and van der Spoel. 2020-01-01,
 2020-01. \href{https://doi.org/10.5281/zenodo.3562495}{{GROMACS} 2020
 source code}. {Zenodo}.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-marti-renomComparativeProteinStructure2000}{}}%
-\CSLLeftMargin{29. }
+\CSLLeftMargin{29. }%
 \CSLRightInline{Martí-Renom, M.A., A.C. Stuart, A. Fiser, R. Sánchez, F.
 Melo, and A. Sali. 2000.
 \href{https://doi.org/10.1146/annurev.biophys.29.1.291}{Comparative
@@ -1417,14 +1388,14 @@ protein structure modeling of genes and genomes}. \emph{Annual Review of
 Biophysics and Biomolecular Structure}. 29:291--325.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-webbComparativeProteinStructure2016}{}}%
-\CSLLeftMargin{30. }
+\CSLLeftMargin{30. }%
 \CSLRightInline{Webb, B., and A. Sali. 2016.
 \href{https://doi.org/10.1002/cpps.20}{Comparative {Protein Structure
 Modeling Using MODELLER}}. \emph{Current Protocols in Protein Science}.
 86:2.9.1--2.9.37.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-pettersenUCSFChimeraVisualization2004}{}}%
-\CSLLeftMargin{31. }
+\CSLLeftMargin{31. }%
 \CSLRightInline{Pettersen, E.F., T.D. Goddard, C.C. Huang, G.S. Couch,
 D.M. Greenblatt, E.C. Meng, and T.E. Ferrin. 2004.
 \href{https://doi.org/10.1002/jcc.20084}{{UCSF Chimera--a} visualization
@@ -1432,7 +1403,7 @@ system for exploratory research and analysis}. \emph{Journal of
 Computational Chemistry}. 25:1605--1612.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-brooksCHARMMBiomolecularSimulation2009}{}}%
-\CSLLeftMargin{32. }
+\CSLLeftMargin{32. }%
 \CSLRightInline{Brooks, B.R., C.L. Brooks, A.D. Mackerell, L. Nilsson,
 R.J. Petrella, B. Roux, Y. Won, G. Archontis, C. Bartels, S. Boresch, A.
 Caflisch, L. Caves, Q. Cui, A.R. Dinner, M. Feig, S. Fischer, J. Gao, M.
@@ -1444,14 +1415,14 @@ simulation program}. \emph{Journal of Computational Chemistry}.
 30:1545--1614.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-joCHARMMGUIWebbasedGraphical2008}{}}%
-\CSLLeftMargin{33. }
+\CSLLeftMargin{33. }%
 \CSLRightInline{Jo, S., T. Kim, V.G. Iyer, and W. Im. 2008.
 \href{https://doi.org/10.1002/jcc.20945}{{CHARMM-GUI}: A web-based
 graphical user interface for {CHARMM}}. \emph{Journal of Computational
 Chemistry}. 29:1859--1865.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-leeCHARMMGUIInputGenerator2016}{}}%
-\CSLLeftMargin{34. }
+\CSLLeftMargin{34. }%
 \CSLRightInline{Lee, J., X. Cheng, J.M. Swails, M.S. Yeom, P.K. Eastman,
 J.A. Lemkul, S. Wei, J. Buckner, J.C. Jeong, Y. Qi, S. Jo, V.S. Pande,
 D.A. Case, C.L. Brooks, A.D. MacKerell, J.B. Klauda, and W. Im. 2016.
@@ -1462,32 +1433,32 @@ Field}}. \emph{Journal of Chemical Theory and Computation}.
 12:405--413.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-hooverCanonicalDynamicsEquilibrium1985}{}}%
-\CSLLeftMargin{35. }
+\CSLLeftMargin{35. }%
 \CSLRightInline{Hoover, W.G. 1985.
 \href{https://doi.org/10.1103/PhysRevA.31.1695}{Canonical dynamics:
 {Equilibrium} phase-space distributions}. \emph{Physical Review A}.
 31:1695--1697.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-noseUnifiedFormulationConstant1984}{}}%
-\CSLLeftMargin{36. }
+\CSLLeftMargin{36. }%
 \CSLRightInline{Nosé, S. 1984. \href{https://doi.org/10.1063/1.447334}{A
 unified formulation of the constant temperature molecular dynamics
 methods}. \emph{The Journal of Chemical Physics}. 81:511--519.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-parrinelloPolymorphicTransitionsSingle1981}{}}%
-\CSLLeftMargin{37. }
+\CSLLeftMargin{37. }%
 \CSLRightInline{Parrinello, M., and A. Rahman. 1981.
 \href{https://doi.org/10.1063/1.328693}{Polymorphic transitions in
 single crystals: {A} new molecular dynamics method}. \emph{Journal of
 Applied Physics}. 52:7182--7190.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-ggplot}{}}%
-\CSLLeftMargin{38. }
+\CSLLeftMargin{38. }%
 \CSLRightInline{Wickham, H. 2016. Ggplot2: {Elegant} graphics for data
 analysis. {Springer-Verlag New York}.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-molstar}{}}%
-\CSLLeftMargin{39. }
+\CSLLeftMargin{39. }%
 \CSLRightInline{Sehnal, D., S. Bittrich, M. Deshpande, R. Svobodová, K.
 Berka, V. Bazgier, S. Velankar, S.K. Burley, J. Koča, and A.S. Rose.
 2021. \href{https://doi.org/10.1093/nar/gkab314}{Mol* {Viewer}: Modern
@@ -1495,37 +1466,39 @@ web app for {3D} visualization and analysis of large biomolecular
 structures}. \emph{Nucleic Acids Research}. 49:W431--W437.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-blender}{}}%
-\CSLLeftMargin{40. }
+\CSLLeftMargin{40. }%
 \CSLRightInline{Community, B.O. 2018. Blender - a {3D} modelling and
 rendering package.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-vmd}{}}%
-\CSLLeftMargin{41. }
+\CSLLeftMargin{41. }%
 \CSLRightInline{Humphrey, W., A. Dalke, and K. Schulten. 1996. {VMD}
 \textendash{} {Visual Molecular Dynamics}. \emph{Journal of Molecular
 Graphics}. 14:33--38.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-quarto}{}}%
-\CSLLeftMargin{42. }
+\CSLLeftMargin{42. }%
 \CSLRightInline{Allaire, J.J., C. Teague, C. Scheidegger, Y. Xie, and C.
 Dervieux. 2022. \href{https://doi.org/10.5281/zenodo.5960048}{Quarto}.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-rmarkdown2018}{}}%
-\CSLLeftMargin{43. }
+\CSLLeftMargin{43. }%
 \CSLRightInline{Xie, Y., J.J. Allaire, and G. Grolemund. 2018. R
 markdown: {The} definitive guide. {Boca Raton, Florida}: {Chapman and
 Hall/CRC}.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-knitr}{}}%
-\CSLLeftMargin{44. }
+\CSLLeftMargin{44. }%
 \CSLRightInline{Xie, Y. 2015. Dynamic documents with {R} and knitr.
 Second. {Boca Raton, Florida}: {Chapman and Hall/CRC}.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-rbetterposter}{}}%
-\CSLLeftMargin{45. }
+\CSLLeftMargin{45. }%
 \CSLRightInline{Aden-Buie, G. 2022. Betterposter: {A} better scientific
 poster.}
 
 \end{CSLReferences}
+
+
 
 \end{document}
