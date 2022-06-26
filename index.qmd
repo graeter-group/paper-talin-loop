@@ -166,17 +166,17 @@ These results provide mechanistic insight into the role of membrane interactions
 
 ## Molecular dynamics with GROMACS
 
-Molecular dynamics simulations where performed with GROMACS [@berendsenGROMACSMessagepassingParallel1995; @abrahamGROMACSHighPerformance2015] version 2020.03 [@lindahlGROMACS2020Source2020].
+Molecular dynamics simulations were performed with GROMACS [@berendsenGROMACSMessagepassingParallel1995; @abrahamGROMACSHighPerformance2015] version 2020.03 [@lindahlGROMACS2020Source2020].
 A crystal structure of the Talin FERM domain by Elliot et al. [@elliottStructureTalinHead2010] with the PDB-ID 3IVF was used as the basis of all simulations.
 
 The missing F1 domain loop between residues L133 and W144 was modeled using MODELLER [@marti-renomComparativeProteinStructure2000; @webbComparativeProteinStructure2016] via the interface to Chimera [@pettersenUCSFChimeraVisualization2004], followed by equilibration with GROMACS.
 The resulting conformation (see @sec-system) was compared to an NMR structure of the F1 domain (PDB-ID 2KC2) by Goult et al. [@goultStructureDoubleUbiquitinlike2010].
 
 The missing residue M1 was also added.
-The missing residues I399 and L400 where not modeled, leaving us with with a continuous sequence from residue 1 to 398.
-Simulations where performed with the CHARM36 force field.
-Topologies, including the membrane, where generated with the CHARM-GUI web app [@brooksCHARMMBiomolecularSimulation2009; @joCHARMMGUIWebbasedGraphical2008; @leeCHARMMGUIInputGenerator2016] and GROMACS tools.
-All simulations used the TIP3P water model and where neutralized with 0.15 mol/L of NaCl A 6-step equilibration was performed after gradient decent energy minimization while gradually relieving restraints on protein and membrane atoms Production runs use a timestep of 2 fs, a Verlet cut-off scheme for Van-der-Waals interactions and the Particle Mesh Ewald (PME) method for long-range electrostatics.
+The missing residues I399 and L400 were not modeled, leaving us with with a continuous sequence from residue 1 to 398.
+Simulations were performed with the CHARM36 force field.
+Topologies, including the membrane, were generated with the CHARM-GUI web app [@brooksCHARMMBiomolecularSimulation2009; @joCHARMMGUIWebbasedGraphical2008; @leeCHARMMGUIInputGenerator2016] and GROMACS tools.
+All simulations used the TIP3P water model and were neutralized with 0.15 mol/L of NaCl A 6-step equilibration was performed after gradient decent energy minimization while gradually relieving restraints on protein and membrane atoms Production runs use a timestep of 2 fs, a Verlet cut-off scheme for Van-der-Waals interactions and the Particle Mesh Ewald (PME) method for long-range electrostatics.
 NTP-ensembles were achieved by Nosé-Hoover temperature coupling [@hooverCanonicalDynamicsEquilibrium1985; @noseUnifiedFormulationConstant1984] and Parinello-Rahman pressure coupling [@parrinelloPolymorphicTransitionsSingle1981].
 An example `.mdp`-file can be found in the supplementary materials in @sec-prod-mdp.
 
@@ -185,7 +185,7 @@ Subsequently, the root mean squared fluctuation (RMSF) was calculated with GROMA
 
 The F0F1 FERM sub domains (residues 1 to 197) were simulated to evaluate protein-membrane association using a rotational sampling approach.
 This entailed placing the protein 1.5 nm away from a 1-palmitoyl-2-oleoyl-glycero-3-phosphocholine (POPC) membrane in a total of 60 orientations spanning a rotation of 360 degrees.
-6 replicates of each orientation where run for 200\ ns each.
+6 replicates of each orientation were run for 200\ ns each.
 However, due to a hardware failure, 6 of these 360 runs are only 50 to 150\ ns long.
 Of the 119 lipids in the upper leaflet of the POPC membrane, 12 lipids were replaced with PIP~2~, which results in a physiological concentration of 10% PIP~2~.
 
@@ -250,7 +250,7 @@ Once the F1 loop has made contact with the membrane it can act as an anchor and 
 In order to test if this interaction of the loop with the membrane is just the result of a biased starting position with the loop already pointing downwards, we sampled 60 different starting positions, rotated equally spaced around the horizontal axis, with 6 replicates each.
 **d\)**
 A heatmap summarizing 358 simulations from the rotational sampling.
-Unfortunately the number is not 360 because 2 trajectories where lost due to a hardware failure.
+Unfortunately the number is not 360 because 2 trajectories were lost due to a hardware failure.
 Each simulation is 200\ ns long.
 Across all angles (y-axis) we see that with very few exceptions the F1 loop (dark blue region on the x-axis colorbar) is almost always involved in interactions 0° equates to the loop pointing downwards towards the membrane.
 The heatmap color represents the mean number of PIP~2~ molecules that are in close contact with the respective residue summarized over time and replicates for that specific angle.
@@ -349,8 +349,28 @@ The known PIP~2~ interaction sites K272 of F2 and K316, K324, E342, and K343 of 
 # Discussion and Outlook
 
 Using molecular dynamics simulations, we provide mechanistic insight into the membrane recognition dynamics of Talin.
-This adds a mode of interaction that helps to explain how Talin can find the membrane even when its main PIP~2~ (and integrin) binding sites are blocked by autoinhibition.
-However, though we where able to conclusively show that the F1 loop is able to interact with the membrane even from most unfavorable positions, recognition this is only the first step.
+This adds a new mode of interaction that helps to explain how Talin can find the membrane even when its main PIP~2~ (and integrin) binding sites are blocked by autoinhibition.
+This interaction mode is not characterized by strong binding sites interacting with one molecule of PIP~2~ each, as would be the conclusion from crystallographic data alone, but rather by the cummulative diffuse interaction of multiple PIP~2~ with multiple residues
+This is particularily visible in the interaction with the flexible F1 loop, but also in the F0 domain.
+As of yet unpulished simulations of the PIP~2~-interaction of other FERM proteins also suggest that the single PIP~2~ per interaction site in crystal structures likely represents just a snapshot and that the true stoichiometry might be up to 1:7.
+
+A similar mechanism to the one by which the F1 loop uses its disorder to quickly find favorable interactions with PIP~2~ has also been shown by Shoemakter et al. [@shoemakerSpeedingMolecularRecognition2000] and was fittingly coined "fly-casting".
+In the aforementioned publication they focus on the interaction of unfolded regions with DNA.
+Our simulations now provide an example for the concept applied to protein-lipid interactions.
+It its well worth noting that, allthough we mention the greater search space of the F1 loop as its advantage in recognizing PIP~2~, it has also been argued that the kinetic advantage of the fly-casting mechanism comes mainly from the reduction in free energy as the disorderd region folds around the interaction target [@huangKineticAdvantageIntrinsically2009].
+The fast binding kinetics are crucial for Talins function at focal adhesion sites.
+As the PIP~2~ concentrations increases at the active focal adhesion site, Talin's FERM F1 loop can perform a quick recognition.
+Due to the flexible nature of the loop, it can then anchor the protein at the membrane even when being stretched under force (up to a delta of 7 nm, as seen in @fig-f0f1-vert-pull).
+This is akin to the elastic response seen in focal adhesion kinase (FAK) under force [@bauerStructuralMechanisticInsights2019].
+In our force probe experiments we pulled F0F1 orthogonally off of the membrane.
+This was usefull in showing the full extension and force resistance of the loop.
+_In vivo_ however, talin's FERM domain is subjected to forces acting at a 30° angle.
+This might imply an additional function for the FERM domain.
+As it is dragged along the membrane, the diffuse interactions of the F1 loop and main interaction sites in F2-F3 with PIP~2~ would increase lateral friction along the membrane as the PIP~2~ concentration increases.
+This could further localize Talin at active focal adhesion sites.
+
+We conclusively show that the F1 loop is able to interact with the membrane even from most unfavorable positions.
+But recognition is only the first step.
 It would indeed be fascinating to also provide mechanistic ideas for the resolution of the autoinhibition by all-atom simulations of the FERM domain that also include an inhibiting rod segment.
 These larger-scale simulations might then be able to provide evidence for the push--pull mechanism proposed by Song et al. [@songNovelMembranedependentSwitch2012a] or result in novel ideas.
 

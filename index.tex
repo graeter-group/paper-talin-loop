@@ -158,6 +158,8 @@
 \makeatletter
 \makeatother
 \makeatletter
+\makeatother
+\makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \AtBeginDocument{%
 \ifdefined\contentsname
@@ -225,7 +227,7 @@ Adhesion, Mechanosensing},
 \title{Intrinsically disordered region of Talin's FERM domain functions
 as an initial PIP\textsubscript{2} recognition site}
 \author{Jannik Buhr \and Florian Franz \and Frauke Gräter}
-\date{June 24, 2022}
+\date{June 26, 2022}
 
 \begin{document}
 \maketitle
@@ -252,13 +254,13 @@ the dynamics of talin through force-probe molecular dynamics
 simulations. The results provide backing for the direct involvement of
 PIP\textsubscript{2} in the localization and activation of talin.
 \end{abstract}
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[frame hidden, borderline west={3pt}{0pt}{shadecolor}, enhanced, sharp corners, interior hidden, boxrule=0pt, breakable]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[frame hidden, interior hidden, boxrule=0pt, borderline west={3pt}{0pt}{shadecolor}, enhanced, breakable, sharp corners]}{\end{tcolorbox}}\fi
 
-\begin{tcolorbox}[standard jigsaw,toprule=.15mm, left=2mm, colframe=quarto-callout-warning-color-frame, leftrule=.75mm, toptitle=1mm, colbacktitle=quarto-callout-warning-color!10!white, opacitybacktitle=0.6, titlerule=0mm, rightrule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, arc=.35mm, coltitle=black, bottomrule=.15mm, colback=white, opacityback=0, bottomtitle=1mm]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, toptitle=1mm, opacityback=0, colback=white, colframe=quarto-callout-warning-color-frame, colbacktitle=quarto-callout-warning-color!10!white, breakable, toprule=.15mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, titlerule=0mm, bottomtitle=1mm, left=2mm, opacitybacktitle=0.6, coltitle=black]
 This is a draft and as such subject to change.
 \end{tcolorbox}
 
-\begin{tcolorbox}[standard jigsaw,toprule=.15mm, left=2mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, titlerule=0mm, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, arc=.35mm, coltitle=black, bottomrule=.15mm, colback=white, opacityback=0, bottomtitle=1mm]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, toptitle=1mm, opacityback=0, colback=white, colframe=quarto-callout-tip-color-frame, colbacktitle=quarto-callout-tip-color!10!white, breakable, toprule=.15mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, titlerule=0mm, bottomtitle=1mm, left=2mm, opacitybacktitle=0.6, coltitle=black]
 You can find the poster that goes along with the paper presented at the
 \href{https://www.biophysics.org/2022meeting\#}{Annual Meeting of the
 Biophysical Society 2022} in your favorite format here:
@@ -451,7 +453,7 @@ surfaces for membrane recognition.
 \subsection{Molecular dynamics with
 GROMACS}\label{molecular-dynamics-with-gromacs}}
 
-Molecular dynamics simulations where performed with GROMACS (26, 27)
+Molecular dynamics simulations were performed with GROMACS (26, 27)
 version 2020.03 (28). A crystal structure of the Talin FERM domain by
 Elliot et al. (14) with the PDB-ID 3IVF was used as the basis of all
 simulations.
@@ -463,11 +465,11 @@ Section~\ref{sec-system}) was compared to an NMR structure of the F1
 domain (PDB-ID 2KC2) by Goult et al. (13).
 
 The missing residue M1 was also added. The missing residues I399 and
-L400 where not modeled, leaving us with with a continuous sequence from
-residue 1 to 398. Simulations where performed with the CHARM36 force
-field. Topologies, including the membrane, where generated with the
+L400 were not modeled, leaving us with with a continuous sequence from
+residue 1 to 398. Simulations were performed with the CHARM36 force
+field. Topologies, including the membrane, were generated with the
 CHARM-GUI web app (32--34) and GROMACS tools. All simulations used the
-TIP3P water model and where neutralized with 0.15 mol/L of NaCl A 6-step
+TIP3P water model and were neutralized with 0.15 mol/L of NaCl A 6-step
 equilibration was performed after gradient decent energy minimization
 while gradually relieving restraints on protein and membrane atoms
 Production runs use a timestep of 2 fs, a Verlet cut-off scheme for
@@ -486,7 +488,7 @@ protein-membrane association using a rotational sampling approach. This
 entailed placing the protein 1.5 nm away from a
 1-palmitoyl-2-oleoyl-glycero-3-phosphocholine (POPC) membrane in a total
 of 60 orientations spanning a rotation of 360 degrees. 6 replicates of
-each orientation where run for 200~ns each. However, due to a hardware
+each orientation were run for 200~ns each. However, due to a hardware
 failure, 6 of these 360 runs are only 50 to 150~ns long. Of the 119
 lipids in the upper leaflet of the POPC membrane, 12 lipids were
 replaced with PIP\textsubscript{2}, which results in a physiological
@@ -505,15 +507,14 @@ interaction strength were also chose from the rotational sampling set.
 Availability}\label{automation-data-analysis-and-availability}}
 
 Setup scripts written in bash are available for all simulations shown in
-this work. Plots were generated with R using ggplot2 (38). Interactive
-structure representations are embedded using Mol* (39). Schematic
-visualizations were rendered with blender (40) and VMD (41). Files
+this work. Computations for data analysis were tracked with the targets
+R package (38). Plots were generated with ggplot2 (39). Interactive
+structure representations are embedded using Mol* (40). Schematic
+visualizations were rendered with blender (41) and VMD (42). Files
 relevant to this paper that are too big to be uploaded to this
 repository, such as trajectories and blender files, will be uploaded to
-a separate location.
-
-This paper and the matching poster were generated with
-\href{https://quarto.org/}{quarto} (42) and Rmarkdown (43--45).
+a separate location. This paper and the matching poster were generated
+with \href{https://quarto.org/}{quarto} (43--45).
 
 \hypertarget{results}{%
 \section{Results}\label{results}}
@@ -647,7 +648,42 @@ interaction.
 
 \subcaption{\label{fig-f0f1-retention}~}
 \end{minipage}%
-\newline
+
+\caption{\label{fig-loop-importance}Rotational sampling of F0-F1.
+\textbf{a-c)} Snapshots from a simulation involving F0-F1 over a POPC
+membrane containing 10\% PIP\textsubscript{2} in the upper leaflet. POPC
+is not rendered and PIP\textsubscript{2} is shown as light grey stick
+models that turn thicker for those molecules that are currently
+interacting with residues of the protein. Those residues are then shown
+as dark blue stick models. Once the F1 loop has made contact with the
+membrane it can act as an anchor and facilitate further contacts,
+ultimately pulling the protein onto the membrane. In order to test if
+this interaction of the loop with the membrane is just the result of a
+biased starting position with the loop already pointing downwards, we
+sampled 60 different starting positions, rotated equally spaced around
+the horizontal axis, with 6 replicates each. \textbf{d)} A heatmap
+summarizing 358 simulations from the rotational sampling. Unfortunately
+the number is not 360 because 2 trajectories were lost due to a hardware
+failure. Each simulation is 200~ns long. Across all angles (y-axis) we
+see that with very few exceptions the F1 loop (dark blue region on the
+x-axis colorbar) is almost always involved in interactions 0° equates to
+the loop pointing downwards towards the membrane. The heatmap color
+represents the mean number of PIP\textsubscript{2} molecules that are in
+close contact with the respective residue summarized over time and
+replicates for that specific angle. \textbf{e)} A heatmap of the time
+evolution of the number of PIP\textsubscript{2} molecules at the
+respective time and angle summarized over all residues and replicates.
+Angles in which the loop is already favored towards the membrane tend to
+make contact faster. Note that this trend is not simply because angles
+favoring the loop would have been already closer to the membrane. The
+protein was rotated in such a way that the respective closest residue
+had the same distance to the membrane for the 0° and the 180° starting
+positions.}
+
+\end{figure}
+
+\begin{figure}
+
 \begin{minipage}[t]{\linewidth}
 
 {\centering 
@@ -680,42 +716,14 @@ video is available in the web-version or here:
 \url{https://youtu.be/s5yya0XeNTA}}
 \end{minipage}%
 
-\caption{\label{fig-loop-importance}Rotational sampling of F0-F1.
-\textbf{a-c)} Snapshots from a simulation involving F0-F1 over a POPC
-membrane containing 10\% PIP\textsubscript{2} in the upper leaflet. POPC
-is not rendered and PIP\textsubscript{2} is shown as light grey stick
-models that turn thicker for those molecules that are currently
-interacting with residues of the protein. Those residues are then shown
-as dark blue stick models. Once the F1 loop has made contact with the
-membrane it can act as an anchor and facilitate further contacts,
-ultimately pulling the protein onto the membrane. In order to test if
-this interaction of the loop with the membrane is just the result of a
-biased starting position with the loop already pointing downwards, we
-sampled 60 different starting positions, rotated equally spaced around
-the horizontal axis, with 6 replicates each. \textbf{d)} A heatmap
-summarizing 358 simulations from the rotational sampling. Unfortunately
-the number is not 360 because 2 trajectories where lost due to a
-hardware failure. Each simulation is 200~ns long. Across all angles
-(y-axis) we see that with very few exceptions the F1 loop (dark blue
-region on the x-axis colorbar) is almost always involved in interactions
-0° equates to the loop pointing downwards towards the membrane. The
-heatmap color represents the mean number of PIP\textsubscript{2}
-molecules that are in close contact with the respective residue
-summarized over time and replicates for that specific angle. \textbf{e)}
-A heatmap of the time evolution of the number of PIP\textsubscript{2}
-molecules at the respective time and angle summarized over all residues
-and replicates. Angles in which the loop is already favored towards the
-membrane tend to make contact faster. Note that this trend is not simply
-because angles favoring the loop would have been already closer to the
-membrane. The protein was rotated in such a way that the respective
-closest residue had the same distance to the membrane for the 0° and the
-180° starting positions. \textbf{f)} A time evolution of the simulations
-shows the number of interacting residues gradually increasing as the
-anchored protein gets pulled closer towards the membrane by the forming
+\caption{\label{fig-f0f1-residues}PIP\textsubscript{2}-interacting
+residues of F0-F1. \textbf{a)} A time evolution of the simulations shows
+the number of interacting residues gradually increasing as the anchored
+protein gets pulled closer towards the membrane by the forming
 interactions. Only in 10 simulations (out of 269 simulations that had at
 least one contact) did the protein leave the membrane again within the
 200~ns long timeframe. This never occurred after more than 3 residues
-had already made contact. \textbf{g)} The Mean interaction scores of the
+had already made contact. \textbf{b)} The Mean interaction scores of the
 individual residues across all simulations that made contact with the
 membrane. Color represents the isoelectric point of the amino acid in
 isolation (blue = basic, magenta = acidic). A number of very prominent
@@ -893,17 +901,57 @@ interacting residues are displayed as dark blue stick models.}
 \section{Discussion and Outlook}\label{discussion-and-outlook}}
 
 Using molecular dynamics simulations, we provide mechanistic insight
-into the membrane recognition dynamics of Talin. This adds a mode of
+into the membrane recognition dynamics of Talin. This adds a new mode of
 interaction that helps to explain how Talin can find the membrane even
 when its main PIP\textsubscript{2} (and integrin) binding sites are
-blocked by autoinhibition. However, though we where able to conclusively
-show that the F1 loop is able to interact with the membrane even from
-most unfavorable positions, recognition this is only the first step. It
-would indeed be fascinating to also provide mechanistic ideas for the
-resolution of the autoinhibition by all-atom simulations of the FERM
-domain that also include an inhibiting rod segment. These larger-scale
-simulations might then be able to provide evidence for the push--pull
-mechanism proposed by Song et al. (12) or result in novel ideas.
+blocked by autoinhibition. This interaction mode is not characterized by
+strong binding sites interacting with one molecule of
+PIP\textsubscript{2} each, as would be the conclusion from
+crystallographic data alone, but rather by the cummulative diffuse
+interaction of multiple PIP\textsubscript{2} with multiple residues This
+is particularily visible in the interaction with the flexible F1 loop,
+but also in the F0 domain. As of yet unpulished simulations of the
+PIP\textsubscript{2}-interaction of other FERM proteins also suggest
+that the single PIP\textsubscript{2} per interaction site in crystal
+structures likely represents just a snapshot and that the true
+stoichiometry might be up to 1:7.
+
+A similar mechanism to the one by which the F1 loop uses its disorder to
+quickly find favorable interactions with PIP\textsubscript{2} has also
+been shown by Shoemakter et al. (46) and was fittingly coined
+``fly-casting''. In the aforementioned publication they focus on the
+interaction of unfolded regions with DNA. Our simulations now provide an
+example for the concept applied to protein-lipid interactions. It its
+well worth noting that, allthough we mention the greater search space of
+the F1 loop as its advantage in recognizing PIP\textsubscript{2}, it has
+also been argued that the kinetic advantage of the fly-casting mechanism
+comes mainly from the reduction in free energy as the disorderd region
+folds around the interaction target (47). The fast binding kinetics are
+crucial for Talins function at focal adhesion sites. As the
+PIP\textsubscript{2} concentrations increases at the active focal
+adhesion site, Talin's FERM F1 loop can perform a quick recognition. Due
+to the flexible nature of the loop, it can then anchor the protein at
+the membrane even when being stretched under force (up to a delta of 7
+nm, as seen in Figure~\ref{fig-f0f1-vert-pull}). This is akin to the
+elastic response seen in focal adhesion kinase (FAK) under force (48).
+In our force probe experiments we pulled F0F1 orthogonally off of the
+membrane. This was usefull in showing the full extension and force
+resistance of the loop. \emph{In vivo} however, talin's FERM domain is
+subjected to forces acting at a 30° angle. This might imply an
+additional function for the FERM domain. As it is dragged along the
+membrane, the diffuse interactions of the F1 loop and main interaction
+sites in F2-F3 with PIP\textsubscript{2} would increase lateral friction
+along the membrane as the PIP\textsubscript{2} concentration increases.
+This could further localize Talin at active focal adhesion sites.
+
+We conclusively show that the F1 loop is able to interact with the
+membrane even from most unfavorable positions. But recognition is only
+the first step. It would indeed be fascinating to also provide
+mechanistic ideas for the resolution of the autoinhibition by all-atom
+simulations of the FERM domain that also include an inhibiting rod
+segment. These larger-scale simulations might then be able to provide
+evidence for the push--pull mechanism proposed by Song et al. (12) or
+result in novel ideas.
 
 \hypertarget{author-contributions}{%
 \section{Author Contributions}\label{author-contributions}}
@@ -1102,7 +1150,7 @@ out of the membrane (1 by F0 (green) and 2 by the F1 loop (blue)).}
 \hypertarget{sec-system}{%
 \subsection{Simulation system}\label{sec-system}}
 
-\begin{tcolorbox}[standard jigsaw,toprule=.15mm, left=2mm, colframe=quarto-callout-note-color-frame, leftrule=.75mm, toptitle=1mm, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, titlerule=0mm, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, arc=.35mm, coltitle=black, bottomrule=.15mm, colback=white, opacityback=0, bottomtitle=1mm]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, toptitle=1mm, opacityback=0, colback=white, colframe=quarto-callout-note-color-frame, colbacktitle=quarto-callout-note-color!10!white, breakable, toprule=.15mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, titlerule=0mm, bottomtitle=1mm, left=2mm, opacitybacktitle=0.6, coltitle=black]
 This interactive display is only available in the web version:
 \url{https://hits-mbm-dev.github.io/paper-talin-loop/}
 \end{tcolorbox}
@@ -1110,7 +1158,7 @@ This interactive display is only available in the web version:
 \hypertarget{scripts}{%
 \subsection{Scripts}\label{scripts}}
 
-\begin{tcolorbox}[standard jigsaw,toprule=.15mm, left=2mm, colframe=quarto-callout-note-color-frame, leftrule=.75mm, toptitle=1mm, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, titlerule=0mm, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, arc=.35mm, coltitle=black, bottomrule=.15mm, colback=white, opacityback=0, bottomtitle=1mm]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, toptitle=1mm, opacityback=0, colback=white, colframe=quarto-callout-note-color-frame, colbacktitle=quarto-callout-note-color!10!white, breakable, toprule=.15mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, titlerule=0mm, bottomtitle=1mm, left=2mm, opacitybacktitle=0.6, coltitle=black]
 Analysis scripts, setup scripts and production trajectories will be
 uploaded and linked here.
 \end{tcolorbox}
@@ -1452,13 +1500,21 @@ methods}. \emph{The Journal of Chemical Physics}. 81:511--519.}
 single crystals: {A} new molecular dynamics method}. \emph{Journal of
 Applied Physics}. 52:7182--7190.}
 
-\leavevmode\vadjust pre{\hypertarget{ref-ggplot}{}}%
+\leavevmode\vadjust pre{\hypertarget{ref-targets}{}}%
 \CSLLeftMargin{38. }%
+\CSLRightInline{Landau, W.M. 2021.
+\href{https://doi.org/10.21105/joss.02959}{The targets r package: A
+dynamic make-like function-oriented pipeline toolkit for reproducibility
+and high-performance computing}. \emph{Journal of Open Source Software}.
+6:2959.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-ggplot}{}}%
+\CSLLeftMargin{39. }%
 \CSLRightInline{Wickham, H. 2016. Ggplot2: {Elegant} graphics for data
 analysis. {Springer-Verlag New York}.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-molstar}{}}%
-\CSLLeftMargin{39. }%
+\CSLLeftMargin{40. }%
 \CSLRightInline{Sehnal, D., S. Bittrich, M. Deshpande, R. Svobodová, K.
 Berka, V. Bazgier, S. Velankar, S.K. Burley, J. Koča, and A.S. Rose.
 2021. \href{https://doi.org/10.1093/nar/gkab314}{Mol* {Viewer}: Modern
@@ -1466,26 +1522,20 @@ web app for {3D} visualization and analysis of large biomolecular
 structures}. \emph{Nucleic Acids Research}. 49:W431--W437.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-blender}{}}%
-\CSLLeftMargin{40. }%
+\CSLLeftMargin{41. }%
 \CSLRightInline{Community, B.O. 2018. Blender - a {3D} modelling and
 rendering package.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-vmd}{}}%
-\CSLLeftMargin{41. }%
+\CSLLeftMargin{42. }%
 \CSLRightInline{Humphrey, W., A. Dalke, and K. Schulten. 1996. {VMD}
 \textendash{} {Visual Molecular Dynamics}. \emph{Journal of Molecular
 Graphics}. 14:33--38.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-quarto}{}}%
-\CSLLeftMargin{42. }%
+\CSLLeftMargin{43. }%
 \CSLRightInline{Allaire, J.J., C. Teague, C. Scheidegger, Y. Xie, and C.
 Dervieux. 2022. \href{https://doi.org/10.5281/zenodo.5960048}{Quarto}.}
-
-\leavevmode\vadjust pre{\hypertarget{ref-rmarkdown2018}{}}%
-\CSLLeftMargin{43. }%
-\CSLRightInline{Xie, Y., J.J. Allaire, and G. Grolemund. 2018. R
-markdown: {The} definitive guide. {Boca Raton, Florida}: {Chapman and
-Hall/CRC}.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-knitr}{}}%
 \CSLLeftMargin{44. }%
@@ -1496,6 +1546,32 @@ Second. {Boca Raton, Florida}: {Chapman and Hall/CRC}.}
 \CSLLeftMargin{45. }%
 \CSLRightInline{Aden-Buie, G. 2022. Betterposter: {A} better scientific
 poster.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-shoemakerSpeedingMolecularRecognition2000}{}}%
+\CSLLeftMargin{46. }%
+\CSLRightInline{Shoemaker, B.A., J.J. Portman, and P.G. Wolynes. 2000.
+\href{https://doi.org/10.1073/pnas.160259697}{Speeding molecular
+recognition by using the folding funnel: The fly-casting mechanism}.
+\emph{Proceedings of the National Academy of Sciences of the United
+States of America}. 97:8868--8873.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-huangKineticAdvantageIntrinsically2009}{}}%
+\CSLLeftMargin{47. }%
+\CSLRightInline{Huang, Y., and Z. Liu. 2009.
+\href{https://doi.org/10.1016/j.jmb.2009.09.010}{Kinetic {Advantage} of
+{Intrinsically Disordered Proteins} in {Coupled
+Folding}\textendash{{Binding Process}}: {A Critical Assessment} of the
+{``{Fly-Casting}''} {Mechanism}}. \emph{Journal of Molecular Biology}.
+393:1143--1159.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-bauerStructuralMechanisticInsights2019}{}}%
+\CSLLeftMargin{48. }%
+\CSLRightInline{Bauer, M.S., F. Baumann, C. Daday, P. Redondo, E.
+Durner, M.A. Jobst, L.F. Milles, D. Mercadante, D.A. Pippig, H.E. Gaub,
+F. Gräter, and D. Lietha. 2019.
+\href{https://doi.org/10.1073/pnas.1820567116}{Structural and
+mechanistic insights into mechanoactivation of focal adhesion kinase}.
+\emph{Proceedings of the National Academy of Sciences}. 116:6766--6774.}
 
 \end{CSLReferences}
 
