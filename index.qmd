@@ -201,7 +201,6 @@ Plots were generated with ggplot2 [@ggplot].
 Interactive structure representations are embedded using Mol\* [@molstar].
 Schematic visualizations were rendered with blender [@blender] and VMD [@vmd].
 Files relevant to this paper that are too big to be uploaded to this repository, such as trajectories and blender files, will be uploaded to a separate location.
-
 This paper and the matching poster were generated with [quarto](https://quarto.org/) [@quarto; @knitr; @rbetterposter].
 
 # Results
@@ -228,7 +227,7 @@ Of 358 runs ^[6 replicas each for 60 angles minus 2 runs lost to a storage failu
 @fig-f0f1-ri-npip highlights the residues involved in the interaction.
 :::
 
-::::: {#fig-loop-importance layout="[[1,1,1],[1],[1,1],[1],[1]]"}
+::::: {#fig-loop-importance layout="[[1,1,1],[1],[1,1]]"}
 
 ![ ](./assets/vmd/f0f1/unbound.png){#fig-f0f1-unbound}
 
@@ -241,17 +240,6 @@ Of 358 runs ^[6 replicas each for 60 angles minus 2 runs lost to a storage failu
 ![ ](./assets/results/plots/f0f1-angle-frame-npip-1.png){#fig-f0f1-angle-frame}
 
 ![ ](./assets/results/plots/f0f1-retention-1.png){#fig-f0f1-retention}
-
-![ ](./assets/results/plots/f0f1-ri-npip-1.png){#fig-f0f1-ri-npip}
-
-:::web-only
-![ ](./assets/vmd/f0f1/residues.mp4){#fig-f0f1-residues}
-:::
-
-:::{.print-only width=20%}
-![This is a placeholder image.
-The video is available in the web-version or here: <https://youtu.be/s5yya0XeNTA>](./www/hits-logo-small.png){#fig-f1f1-residues}
-:::
 
 Rotational sampling of F0-F1.
 **a-c\)**
@@ -271,11 +259,27 @@ A heatmap of the time evolution of the number of PIP~2~ molecules at the respect
 Angles in which the loop is already favored towards the membrane tend to make contact faster.
 Note that this trend is not simply because angles favoring the loop would have been already closer to the membrane.
 The protein was rotated in such a way that the respective closest residue had the same distance to the membrane for the 0° and the 180° starting positions.
-**f\)**
+:::::
+
+::::: {#fig-f0f1-residues layout="[[1],[1]]"}
+
+![ ](./assets/results/plots/f0f1-ri-npip-1.png){#fig-f0f1-ri-npip}
+
+:::web-only
+![ ](./assets/vmd/f0f1/residues.mp4){#fig-f0f1-residues}
+:::
+
+:::{.print-only width=20%}
+![This is a placeholder image.
+The video is available in the web-version or here: <https://youtu.be/s5yya0XeNTA>](./www/hits-logo-small.png){#fig-f1f1-residues}
+:::
+
+PIP~2~-interacting residues of F0-F1.
+**a\)**
 A time evolution of the simulations shows the number of interacting residues gradually increasing as the anchored protein gets pulled closer towards the membrane by the forming interactions.
 Only in 10 simulations (out of 269 simulations that had at least one contact) did the protein leave the membrane again within the 200\ ns long timeframe.
 This never occurred after more than 3 residues had already made contact.
-**g\)**
+**b\)**
 The Mean interaction scores of the individual residues across all simulations that made contact with the membrane.
 Color represents the isoelectric point of the amino acid in isolation (blue = basic, magenta = acidic).
 A number of very prominent lysines can be observed, as well as a cluster of residues belonging to the F1 loop.

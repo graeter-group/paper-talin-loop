@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.393">
+<meta name="generator" content="quarto-0.9.624">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jannik Buhr">
 <meta name="author" content="Florian Franz">
 <meta name="author" content="Frauke Gräter">
-<meta name="dcterms.date" content="2022-06-24">
+<meta name="dcterms.date" content="2022-06-26">
 <meta name="keywords" content="molecular dynamics, Talin, Focal Adhesion, Mechanosensing">
 
 <title>Intrinsically disordered region of Talin’s FERM domain functions as an initial PIP2 recognition site</title>
@@ -104,20 +104,21 @@ div.csl-indent {
 }
 </style>
 
+
 <script src="index_files/libs/clipboard/clipboard.min.js"></script>
 <script src="index_files/libs/quarto-html/quarto.js"></script>
 <script src="index_files/libs/quarto-html/popper.min.js"></script>
 <script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="index_files/libs/quarto-html/anchor.min.js"></script>
 <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link class="quarto-color-scheme" id="quarto-text-highlighting-styles" href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
-<link class="quarto-color-scheme quarto-color-alternate" rel="prefetch" id="quarto-text-highlighting-styles" href="index_files/libs/quarto-html/quarto-syntax-highlighting-dark.css">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link class="quarto-color-scheme" href="index_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet">
-<link class="quarto-color-scheme quarto-color-alternate" rel="prefetch" href="index_files/libs/bootstrap/bootstrap-dark.min.css">
+<link href="index_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme">
+<link href="index_files/libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate">
 
-  <script defer="" src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
  var macros = [];
@@ -132,7 +133,7 @@ div.csl-indent {
    });
 }}});
   </script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -211,15 +212,13 @@ div.csl-indent {
       </div>
     </div>
 
-
-
 <div class="quarto-title-meta">
 
       
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">June 24, 2022</p>
+      <p class="date">June 26, 2022</p>
     </div>
   </div>
     
@@ -271,7 +270,7 @@ Tip
 <!-- multiple binding sites, several pip2s critial for stability of FAK, -->
 <!-- allows opening of autoinhibited FAK -->
 <p>It was previously shown that F3 can interact with R9, which impedes integrin activation <span class="citation" data-cites="bannoSubcellularLocalizationTalin2012">(<a href="#ref-bannoSubcellularLocalizationTalin2012" role="doc-biblioref">22</a>)</span>. Furthermore, in a recently determined cryo-electron microscopy structure of autoinhibited Talin1, Dedden et al. <span class="citation" data-cites="deddenArchitectureTalin1Reveals2019a">(<a href="#ref-deddenArchitectureTalin1Reveals2019a" role="doc-biblioref">23</a>)</span> showed that the rod domains R9 and R12 shield the established PIP<sub>2</sub> binding surface and the integrin binding site in F3 (see <a href="#fig-tln-schema-autoinhib">Figure&nbsp;1 (b)</a>, <a href="#fig-tln-align-autoinhib">Figure&nbsp;1 (c)</a>). This beckons the question how this autoinhibition can be resolved. Song at al. <span class="citation" data-cites="songNovelMembranedependentSwitch2012a">(<a href="#ref-songNovelMembranedependentSwitch2012a" role="doc-biblioref">12</a>)</span> previously investigated a fragment of talin consisting of F2-F3 and an inhibiting rod segment and suggested a pull-push mechanism, whereby negatively charged PIP<sub>2</sub> attracts its positively charged binding surface on F2-F3 and simultaneously repels the negatively charged surface of the inhibitive rod segment. However, this still leaves open the question of how talin can establish a first contact with the membrane and remain within a sufficient proximity for this effect to kick in.</p>
-<div class="quarto-layout-panel">
+<div id="fig-structure" class="quarto-layout-panel">
 <figure class="figure">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 100.0%;justify-content: center;">
@@ -322,21 +321,20 @@ Tip
 </section>
 <section id="automation-data-analysis-and-availability" class="level2">
 <h2 class="anchored" data-anchor-id="automation-data-analysis-and-availability">Automation, Data Analysis and Availability</h2>
-<p>Setup scripts written in bash are available for all simulations shown in this work. Plots were generated with R using ggplot2 <span class="citation" data-cites="ggplot">(<a href="#ref-ggplot" role="doc-biblioref">38</a>)</span>. Interactive structure representations are embedded using Mol* <span class="citation" data-cites="molstar">(<a href="#ref-molstar" role="doc-biblioref">39</a>)</span>. Schematic visualizations were rendered with blender <span class="citation" data-cites="blender">(<a href="#ref-blender" role="doc-biblioref">40</a>)</span> and VMD <span class="citation" data-cites="vmd">(<a href="#ref-vmd" role="doc-biblioref">41</a>)</span>. Files relevant to this paper that are too big to be uploaded to this repository, such as trajectories and blender files, will be uploaded to a separate location.</p>
-<p>This paper and the matching poster were generated with <a href="https://quarto.org/">quarto</a> <span class="citation" data-cites="quarto">(<a href="#ref-quarto" role="doc-biblioref">42</a>)</span> and Rmarkdown <span class="citation" data-cites="rmarkdown2018 knitr rbetterposter">(<a href="#ref-rmarkdown2018" role="doc-biblioref">43</a>–<a href="#ref-rbetterposter" role="doc-biblioref">45</a>)</span>.</p>
+<p>Setup scripts written in bash are available for all simulations shown in this work. Computations for data analysis were tracked with the targets R package <span class="citation" data-cites="targets">(<a href="#ref-targets" role="doc-biblioref">38</a>)</span>. Plots were generated with ggplot2 <span class="citation" data-cites="ggplot">(<a href="#ref-ggplot" role="doc-biblioref">39</a>)</span>. Interactive structure representations are embedded using Mol* <span class="citation" data-cites="molstar">(<a href="#ref-molstar" role="doc-biblioref">40</a>)</span>. Schematic visualizations were rendered with blender <span class="citation" data-cites="blender">(<a href="#ref-blender" role="doc-biblioref">41</a>)</span> and VMD <span class="citation" data-cites="vmd">(<a href="#ref-vmd" role="doc-biblioref">42</a>)</span>. Files relevant to this paper that are too big to be uploaded to this repository, such as trajectories and blender files, will be uploaded to a separate location. This paper and the matching poster were generated with <a href="https://quarto.org/">quarto</a> <span class="citation" data-cites="quarto knitr rbetterposter">(<a href="#ref-quarto" role="doc-biblioref">43</a>–<a href="#ref-rbetterposter" role="doc-biblioref">45</a>)</span>.</p>
 </section>
 </section>
 <section id="results" class="level1">
 <h1>Results</h1>
 <section id="the-f1-loop-can-act-as-a-point-of-first-contact" class="level2">
 <h2 class="anchored" data-anchor-id="the-f1-loop-can-act-as-a-point-of-first-contact">The F1 loop can act as a point of first contact</h2>
-<p>The high flexibility of the F1 loop gave use the confidence to model it from sequence It retained its flexibility in equilibrium simulations (<a href="#fig-loop-rmsf">Figure&nbsp;5 (a)</a>), which in combination with comparisons to NMR structures <span class="citation" data-cites="goultStructureDoubleUbiquitinlike2010">(<a href="#ref-goultStructureDoubleUbiquitinlike2010" role="doc-biblioref">13</a>)</span> confirmed this approach. The resulting system that provides the basis for our simulations can be explored interactively in <a href="#sec-system">Section&nbsp;7.1</a>.</p>
-<p>When simulating only F0-F1 over a POPC membrane containing 10% PIP<sub>2</sub>, we noticed that the F1 loop had a clear propensity to establish contact with the membrane. And once contact had been established the protein was anchored strongly enough for more contacts to evolve with time, pulling the protein onto the membrane (<a href="#fig-f0f1-unbound">see Figure&nbsp;2 (a)</a>, <a href="#fig-f0f1-anchored">2 (b)</a>, <a href="#fig-f0f1-bound">2 (c)</a>). In order to control for a potential bias towards the loop as a result of the starting position we performed a rotational sampling of the system, where the starting angle of the loop with respect to the membrane was varied across 60 equally spaced angles. <a href="#fig-f0f1-ri-angle">Figure&nbsp;2 (d)</a> shows that independent of the starting position, the loop is able to find the membrane and bind to it, though this does happen earlier in the simulation when the loop starts favorably oriented towards the membrane (<a href="#fig-f0f1-angle-frame">Figure&nbsp;2 (e)</a>). However, even in its most unfavorable starting orientation (180°, oriented away from the membrane) the loop is able to find the membrane due to the large search space it can cover with its high flexibility (see <a href="#fig-loop-rmsf">Figure&nbsp;5 (a)</a>).</p>
+<p>The high flexibility of the F1 loop gave use the confidence to model it from sequence It retained its flexibility in equilibrium simulations (<a href="#fig-loop-rmsf">Figure&nbsp;6 (a)</a>), which in combination with comparisons to NMR structures <span class="citation" data-cites="goultStructureDoubleUbiquitinlike2010">(<a href="#ref-goultStructureDoubleUbiquitinlike2010" role="doc-biblioref">13</a>)</span> confirmed this approach. The resulting system that provides the basis for our simulations can be explored interactively in <a href="#sec-system">Section&nbsp;7.1</a>.</p>
+<p>When simulating only F0-F1 over a POPC membrane containing 10% PIP<sub>2</sub>, we noticed that the F1 loop had a clear propensity to establish contact with the membrane. And once contact had been established the protein was anchored strongly enough for more contacts to evolve with time, pulling the protein onto the membrane (<a href="#fig-f0f1-unbound">see Figure&nbsp;2 (a)</a>, <a href="#fig-f0f1-anchored">2 (b)</a>, <a href="#fig-f0f1-bound">2 (c)</a>). In order to control for a potential bias towards the loop as a result of the starting position we performed a rotational sampling of the system, where the starting angle of the loop with respect to the membrane was varied across 60 equally spaced angles. <a href="#fig-f0f1-ri-angle">Figure&nbsp;2 (d)</a> shows that independent of the starting position, the loop is able to find the membrane and bind to it, though this does happen earlier in the simulation when the loop starts favorably oriented towards the membrane (<a href="#fig-f0f1-angle-frame">Figure&nbsp;2 (e)</a>). However, even in its most unfavorable starting orientation (180°, oriented away from the membrane) the loop is able to find the membrane due to the large search space it can cover with its high flexibility (see <a href="#fig-loop-rmsf">Figure&nbsp;6 (a)</a>).</p>
 <p>Once contact has been made, it becomes exceedingly unlikely for F0-F1 to dissociate from the membrane (<a href="#fig-f0f1-retention">Figure&nbsp;2 (f)</a>). Of 358 runs <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, 89 runs never made contact with the membrane, but out of the 269 that did, only 10 eventually dissociated.</p>
 <div class="web-only">
-<p><a href="#fig-f0f1-ri-npip">Figure&nbsp;2 (g)</a> and <a href="#fig-f0f1-residues">Figure&nbsp;2 (h)</a> highlight the residues involved in the interaction.</p>
+<p><a href="#fig-f0f1-ri-npip">Figure&nbsp;3 (a)</a> and <a href="#fig-f0f1-residues">Figure&nbsp;3</a> highlight the residues involved in the interaction.</p>
 </div>
-<div class="quarto-layout-panel">
+<div id="fig-loop-importance" class="quarto-layout-panel">
 <figure class="figure">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 33.3%;justify-content: center;">
@@ -392,12 +390,17 @@ Tip
 </div>
 </div>
 </div>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2: Rotational sampling of F0-F1. <strong>a-c)</strong> Snapshots from a simulation involving F0-F1 over a POPC membrane containing 10% PIP<sub>2</sub> in the upper leaflet. POPC is not rendered and PIP<sub>2</sub> is shown as light grey stick models that turn thicker for those molecules that are currently interacting with residues of the protein. Those residues are then shown as dark blue stick models. Once the F1 loop has made contact with the membrane it can act as an anchor and facilitate further contacts, ultimately pulling the protein onto the membrane. In order to test if this interaction of the loop with the membrane is just the result of a biased starting position with the loop already pointing downwards, we sampled 60 different starting positions, rotated equally spaced around the horizontal axis, with 6 replicates each. <strong>d)</strong> A heatmap summarizing 358 simulations from the rotational sampling. Unfortunately the number is not 360 because 2 trajectories where lost due to a hardware failure. Each simulation is 200&nbsp;ns long. Across all angles (y-axis) we see that with very few exceptions the F1 loop (dark blue region on the x-axis colorbar) is almost always involved in interactions 0° equates to the loop pointing downwards towards the membrane. The heatmap color represents the mean number of PIP<sub>2</sub> molecules that are in close contact with the respective residue summarized over time and replicates for that specific angle. <strong>e)</strong> A heatmap of the time evolution of the number of PIP<sub>2</sub> molecules at the respective time and angle summarized over all residues and replicates. Angles in which the loop is already favored towards the membrane tend to make contact faster. Note that this trend is not simply because angles favoring the loop would have been already closer to the membrane. The protein was rotated in such a way that the respective closest residue had the same distance to the membrane for the 0° and the 180° starting positions.</figcaption><p></p>
+</figure>
+</div>
+<div id="fig-f0f1-residues" class="quarto-layout-panel">
+<figure class="figure">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 100.0%;justify-content: center;">
 <div id="fig-f0f1-ri-npip" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="./assets/results/plots/f0f1-ri-npip-1.png" class="img-fluid figure-img" data-ref-parent="fig-loop-importance"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">(g) &nbsp;</figcaption><p></p>
+<p><img src="./assets/results/plots/f0f1-ri-npip-1.png" class="img-fluid figure-img" data-ref-parent="fig-f0f1-residues"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">(a) &nbsp;</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -406,20 +409,20 @@ Tip
 <div class="web-only quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 100.0%;justify-content: center;">
 <div id="fig-f0f1-residues" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><video src="./assets/vmd/f0f1/residues.mp4" class="img-fluid" data-ref-parent="fig-loop-importance" controls=""><a href="./assets/vmd/f0f1/residues.mp4">Video</a></video></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">(h) &nbsp;</figcaption><p></p>
+<p><video src="./assets/vmd/f0f1/residues.mp4" class="img-fluid" data-ref-parent="fig-f0f1-residues" controls=""><a href="./assets/vmd/f0f1/residues.mp4">Video</a></video></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">(b) &nbsp;</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2: Rotational sampling of F0-F1. <strong>a-c)</strong> Snapshots from a simulation involving F0-F1 over a POPC membrane containing 10% PIP<sub>2</sub> in the upper leaflet. POPC is not rendered and PIP<sub>2</sub> is shown as light grey stick models that turn thicker for those molecules that are currently interacting with residues of the protein. Those residues are then shown as dark blue stick models. Once the F1 loop has made contact with the membrane it can act as an anchor and facilitate further contacts, ultimately pulling the protein onto the membrane. In order to test if this interaction of the loop with the membrane is just the result of a biased starting position with the loop already pointing downwards, we sampled 60 different starting positions, rotated equally spaced around the horizontal axis, with 6 replicates each. <strong>d)</strong> A heatmap summarizing 358 simulations from the rotational sampling. Unfortunately the number is not 360 because 2 trajectories where lost due to a hardware failure. Each simulation is 200&nbsp;ns long. Across all angles (y-axis) we see that with very few exceptions the F1 loop (dark blue region on the x-axis colorbar) is almost always involved in interactions 0° equates to the loop pointing downwards towards the membrane. The heatmap color represents the mean number of PIP<sub>2</sub> molecules that are in close contact with the respective residue summarized over time and replicates for that specific angle. <strong>e)</strong> A heatmap of the time evolution of the number of PIP<sub>2</sub> molecules at the respective time and angle summarized over all residues and replicates. Angles in which the loop is already favored towards the membrane tend to make contact faster. Note that this trend is not simply because angles favoring the loop would have been already closer to the membrane. The protein was rotated in such a way that the respective closest residue had the same distance to the membrane for the 0° and the 180° starting positions. <strong>f)</strong> A time evolution of the simulations shows the number of interacting residues gradually increasing as the anchored protein gets pulled closer towards the membrane by the forming interactions. Only in 10 simulations (out of 269 simulations that had at least one contact) did the protein leave the membrane again within the 200&nbsp;ns long timeframe. This never occurred after more than 3 residues had already made contact. <strong>g)</strong> The Mean interaction scores of the individual residues across all simulations that made contact with the membrane. Color represents the isoelectric point of the amino acid in isolation (blue = basic, magenta = acidic). A number of very prominent lysines can be observed, as well as a cluster of residues belonging to the F1 loop. The most prominent residues are highlighted in <strong>h)</strong>.</figcaption><p></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3: PIP<sub>2</sub>-interacting residues of F0-F1. <strong>a)</strong> A time evolution of the simulations shows the number of interacting residues gradually increasing as the anchored protein gets pulled closer towards the membrane by the forming interactions. Only in 10 simulations (out of 269 simulations that had at least one contact) did the protein leave the membrane again within the 200&nbsp;ns long timeframe. This never occurred after more than 3 residues had already made contact. <strong>b)</strong> The Mean interaction scores of the individual residues across all simulations that made contact with the membrane. Color represents the isoelectric point of the amino acid in isolation (blue = basic, magenta = acidic). A number of very prominent lysines can be observed, as well as a cluster of residues belonging to the F1 loop. The most prominent residues are highlighted in <strong>h)</strong>.</figcaption><p></p>
 </figure>
 </div>
 </section>
 <section id="the-f1-loop-can-facilitate-further-contacts" class="level2">
 <h2 class="anchored" data-anchor-id="the-f1-loop-can-facilitate-further-contacts">The F1 loop can facilitate further contacts</h2>
-<p>We chose a representative conformation from the rotational sampling as a starting point for force-probe simulations of F0-F1 perpendicular to the membrane to test the strength of the interaction (<a href="#fig-f0f1-vert-pull-vmd">Figure&nbsp;3 (b)</a>). An exemplary render of one of the simulations can be seen in <a href="#fig-f0f1-pull-run-1">Figure&nbsp;3 (a)</a>. Pulling F0-F1 off the membrane requires peak forces of 100–120&nbsp;pN, during which the interacting residues only very gradually loose contact (<a href="#fig-f0f1-vert-pull">Figure&nbsp;3 (c)</a>). This highlights the strong anchoring capabilities of the F1 loop. As seen in <a href="#fig-f0f1-vert-pull-contacts">Figure&nbsp;3 (d)</a>, during pulling residues not belonging to the F1 loop loose contact first, while the loop stays attached. The F1 loop works in conjunction with the F0 subdomain (see <a href="#fig-f0f1-vert-pull-residues">Figure&nbsp;5 (d)</a>). Their high flexibility allows them to remain in contact with the membrane over large distances, which would allow for a spring-like re-establishing of more contacts should the force be alleviated.</p>
-<div class="quarto-layout-panel">
+<p>We chose a representative conformation from the rotational sampling as a starting point for force-probe simulations of F0-F1 perpendicular to the membrane to test the strength of the interaction (<a href="#fig-f0f1-vert-pull-vmd">Figure&nbsp;4 (b)</a>). An exemplary render of one of the simulations can be seen in <a href="#fig-f0f1-pull-run-1">Figure&nbsp;4 (a)</a>. Pulling F0-F1 off the membrane requires peak forces of 100–120&nbsp;pN, during which the interacting residues only very gradually loose contact (<a href="#fig-f0f1-vert-pull">Figure&nbsp;4 (c)</a>). This highlights the strong anchoring capabilities of the F1 loop. As seen in <a href="#fig-f0f1-vert-pull-contacts">Figure&nbsp;4 (d)</a>, during pulling residues not belonging to the F1 loop loose contact first, while the loop stays attached. The F1 loop works in conjunction with the F0 subdomain (see <a href="#fig-f0f1-vert-pull-residues">Figure&nbsp;6 (d)</a>). Their high flexibility allows them to remain in contact with the membrane over large distances, which would allow for a spring-like re-establishing of more contacts should the force be alleviated.</p>
+<div id="fig-vert-pull" class="quarto-layout-panel">
 <figure class="figure">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="web-only quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 61.5%;justify-content: center;">
@@ -457,11 +460,11 @@ Tip
 </div>
 </div>
 </div>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3: Vertical Pulling of F0-F1. <strong>a)</strong> A representative render of one of 6 force-probe MD simulations pulling F0-F1 off the membrane. It starts from a snapshot of F0-F1 in its bound conformation taken from the rotational sampling (<a href="#fig-loop-importance">Figure&nbsp;2</a>) and gets pulled upwards from its C-terminus. The direction of force is shown in the snapshot <strong>b)</strong>. <strong>c)</strong> As F0-F1 gets pulled at a constant rate of 0.03&nbsp;nm/ns we observe the time evolution of the force (bottom panel) and the number of interacting residues (top panel). The number of interacting residues goes down very gradually, as the high flexibility of loop allows the residues to remain in contact even as the distance increases. Replicat 4 is highlighted in magenta, as in this run the interactions were so so strong that a total of 3 molecules of PIP<sub>2</sub> were pulled out of the membrane (1 by F0 and 2 by the F1 loop). A snapshot of this can be seen in <a href="#fig-f0f1-vert-pull-run4">Figure&nbsp;5 (e)</a>. <strong>d)</strong> The time evolution of the number of contacs for resides belonging to the F1 loop and other residues shows how initially other residues loose contact until eventually the loop looses contacts as well. Lighter shades of blue correspond to a later time in the simulation. Black dots mark the starting positions. The longest remaining non-loop contacts belong to the N-terminus of F0 (for which <strong>b</strong> is also a representative snapshot), with the exception of replicate 4, as explained in <strong>c</strong>.</figcaption><p></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4: Vertical Pulling of F0-F1. <strong>a)</strong> A representative render of one of 6 force-probe MD simulations pulling F0-F1 off the membrane. It starts from a snapshot of F0-F1 in its bound conformation taken from the rotational sampling (<a href="#fig-loop-importance">Figure&nbsp;2</a>) and gets pulled upwards from its C-terminus. The direction of force is shown in the snapshot <strong>b)</strong>. <strong>c)</strong> As F0-F1 gets pulled at a constant rate of 0.03&nbsp;nm/ns we observe the time evolution of the force (bottom panel) and the number of interacting residues (top panel). The number of interacting residues goes down very gradually, as the high flexibility of loop allows the residues to remain in contact even as the distance increases. Replicat 4 is highlighted in magenta, as in this run the interactions were so so strong that a total of 3 molecules of PIP<sub>2</sub> were pulled out of the membrane (1 by F0 and 2 by the F1 loop). A snapshot of this can be seen in <a href="#fig-f0f1-vert-pull-run4">Figure&nbsp;6 (e)</a>. <strong>d)</strong> The time evolution of the number of contacs for resides belonging to the F1 loop and other residues shows how initially other residues loose contact until eventually the loop looses contacts as well. Lighter shades of blue correspond to a later time in the simulation. Black dots mark the starting positions. The longest remaining non-loop contacts belong to the N-terminus of F0 (for which <strong>b</strong> is also a representative snapshot), with the exception of replicate 4, as explained in <strong>c</strong>.</figcaption><p></p>
 </figure>
 </div>
-<p>Simulations with the full-length FERM domain show that with the loop as an initial membrane contact, known PIP<sub>2</sub> binding sites can also be established (<a href="#fig-ferm-ri-npip">Figure&nbsp;4 (a)</a>, <a href="#fig-ferm-memb-system">Figure&nbsp;4 (b)</a>). The highlighted residues include K272 of F2 and K316, K324, E342, and K343 of F3, which have been shown to be crucial for the membrane interaction of Talin and subsequent integrin activation by Chinthalapudi et al. <span class="citation" data-cites="chinthalapudiInteractionTalinCell2018a">(<a href="#ref-chinthalapudiInteractionTalinCell2018a" role="doc-biblioref">20</a>)</span>.</p>
-<div class="quarto-layout-panel">
+<p>Simulations with the full-length FERM domain show that with the loop as an initial membrane contact, known PIP<sub>2</sub> binding sites can also be established (<a href="#fig-ferm-ri-npip">Figure&nbsp;5 (a)</a>, <a href="#fig-ferm-memb-system">Figure&nbsp;5 (b)</a>). The highlighted residues include K272 of F2 and K316, K324, E342, and K343 of F3, which have been shown to be crucial for the membrane interaction of Talin and subsequent integrin activation by Chinthalapudi et al. <span class="citation" data-cites="chinthalapudiInteractionTalinCell2018a">(<a href="#ref-chinthalapudiInteractionTalinCell2018a" role="doc-biblioref">20</a>)</span>.</p>
+<div id="fig-ferm-further" class="quarto-layout-panel">
 <figure class="figure">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 100.0%;justify-content: center;">
@@ -483,7 +486,7 @@ Tip
 </div>
 </div>
 </div>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4: Simulation of the full-length FERM domain over a 10% PIP<sub>2</sub>-membrane. <strong>a)</strong> The Mean interaction scores of the individual residues across 6 simulations. Color represents the isoelectric point of the amino acid in isolation (blue = basic, magenta = acidic). The known PIP<sub>2</sub> interaction sites K272 of F2 and K316, K324, E342, and K343 of F3 <span class="citation" data-cites="chinthalapudiInteractionTalinCell2018a">(<a href="#ref-chinthalapudiInteractionTalinCell2018a" role="doc-biblioref">20</a>)</span> are highlighted with red lines on the x-axis colorbar and can also be seen in the cartoon representation in <strong>b)</strong> where the main interacting residues are displayed as dark blue stick models.</figcaption><p></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 5: Simulation of the full-length FERM domain over a 10% PIP<sub>2</sub>-membrane. <strong>a)</strong> The Mean interaction scores of the individual residues across 6 simulations. Color represents the isoelectric point of the amino acid in isolation (blue = basic, magenta = acidic). The known PIP<sub>2</sub> interaction sites K272 of F2 and K316, K324, E342, and K343 of F3 <span class="citation" data-cites="chinthalapudiInteractionTalinCell2018a">(<a href="#ref-chinthalapudiInteractionTalinCell2018a" role="doc-biblioref">20</a>)</span> are highlighted with red lines on the x-axis colorbar and can also be seen in the cartoon representation in <strong>b)</strong> where the main interacting residues are displayed as dark blue stick models.</figcaption><p></p>
 </figure>
 </div>
 </section>
@@ -503,7 +506,7 @@ Tip
 </section>
 <section id="supplementary-material" class="level1">
 <h1>Supplementary Material</h1>
-<div class="quarto-layout-panel">
+<div id="fig-suppl" class="quarto-layout-panel">
 <figure class="figure">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
@@ -735,7 +738,7 @@ Tip
 </table>
 </div>
 </div>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 5: <strong>a)</strong> RMSF [nm] of the c<span class="math inline">\alpha</span> of individual residues in an equilibrium simulation shown by coloring the backbone The loop is highly flexible. <strong>b)</strong> A density plot of distances between PIP<sub>2</sub> and the protein residues to decide on a cutoff for defining interactions A distance of 0.25 nm was chosen. <strong>d)</strong> A closer look at the residues involved in the interaction during pulling reveals the instrumental role of both the F1 loop as well as the F0 subdomain in keeping the connection to the membrane. <strong>e)</strong> Run 4 of the vertical pulling of F0F1. Interactions between the protein and PIP<sub>2</sub> were so strong that a total of 3 molecules of PIP<sub>2</sub> (gray) were pulled out of the membrane (1 by F0 (green) and 2 by the F1 loop (blue)).</figcaption><p></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6: <strong>a)</strong> RMSF [nm] of the c<span class="math inline">\alpha</span> of individual residues in an equilibrium simulation shown by coloring the backbone The loop is highly flexible. <strong>b)</strong> A density plot of distances between PIP<sub>2</sub> and the protein residues to decide on a cutoff for defining interactions A distance of 0.25 nm was chosen. <strong>d)</strong> A closer look at the residues involved in the interaction during pulling reveals the instrumental role of both the F1 loop as well as the F0 subdomain in keeping the connection to the membrane. <strong>e)</strong> Run 4 of the vertical pulling of F0F1. Interactions between the protein and PIP<sub>2</sub> were so strong that a total of 3 molecules of PIP<sub>2</sub> (gray) were pulled out of the membrane (1 by F0 (green) and 2 by the F1 loop (blue)).</figcaption><p></p>
 </figure>
 </div>
 <section id="sec-system" class="level2">
@@ -933,23 +936,23 @@ viewer2.loadStructureFromUrl('./www/system-tln-memb.pdb', format='pdb')
 <div id="ref-parrinelloPolymorphicTransitionsSingle1981" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">37. </div><div class="csl-right-inline">Parrinello, M., and A. Rahman. 1981. <a href="https://doi.org/10.1063/1.328693">Polymorphic transitions in single crystals: <span>A</span> new molecular dynamics method</a>. <em>Journal of Applied Physics</em>. 52:7182–7190.</div>
 </div>
+<div id="ref-targets" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">38. </div><div class="csl-right-inline">Landau, W.M. 2021. <a href="https://doi.org/10.21105/joss.02959">The targets r package: A dynamic make-like function-oriented pipeline toolkit for reproducibility and high-performance computing</a>. <em>Journal of Open Source Software</em>. 6:2959.</div>
+</div>
 <div id="ref-ggplot" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">38. </div><div class="csl-right-inline">Wickham, H. 2016. Ggplot2: <span>Elegant</span> graphics for data analysis. <span>Springer-Verlag New York</span>.</div>
+<div class="csl-left-margin">39. </div><div class="csl-right-inline">Wickham, H. 2016. Ggplot2: <span>Elegant</span> graphics for data analysis. <span>Springer-Verlag New York</span>.</div>
 </div>
 <div id="ref-molstar" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">39. </div><div class="csl-right-inline">Sehnal, D., S. Bittrich, M. Deshpande, R. Svobodová, K. Berka, V. Bazgier, S. Velankar, S.K. Burley, J. Koča, and A.S. Rose. 2021. <a href="https://doi.org/10.1093/nar/gkab314">Mol* <span>Viewer</span>: Modern web app for <span>3D</span> visualization and analysis of large biomolecular structures</a>. <em>Nucleic Acids Research</em>. 49:W431–W437.</div>
+<div class="csl-left-margin">40. </div><div class="csl-right-inline">Sehnal, D., S. Bittrich, M. Deshpande, R. Svobodová, K. Berka, V. Bazgier, S. Velankar, S.K. Burley, J. Koča, and A.S. Rose. 2021. <a href="https://doi.org/10.1093/nar/gkab314">Mol* <span>Viewer</span>: Modern web app for <span>3D</span> visualization and analysis of large biomolecular structures</a>. <em>Nucleic Acids Research</em>. 49:W431–W437.</div>
 </div>
 <div id="ref-blender" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">40. </div><div class="csl-right-inline">Community, B.O. 2018. Blender - a <span>3D</span> modelling and rendering package.</div>
+<div class="csl-left-margin">41. </div><div class="csl-right-inline">Community, B.O. 2018. Blender - a <span>3D</span> modelling and rendering package.</div>
 </div>
 <div id="ref-vmd" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">41. </div><div class="csl-right-inline">Humphrey, W., A. Dalke, and K. Schulten. 1996. <span>VMD</span> <span>Visual Molecular Dynamics</span>. <em>Journal of Molecular Graphics</em>. 14:33–38.</div>
+<div class="csl-left-margin">42. </div><div class="csl-right-inline">Humphrey, W., A. Dalke, and K. Schulten. 1996. <span>VMD</span> <span>Visual Molecular Dynamics</span>. <em>Journal of Molecular Graphics</em>. 14:33–38.</div>
 </div>
 <div id="ref-quarto" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">42. </div><div class="csl-right-inline">Allaire, J.J., C. Teague, C. Scheidegger, Y. Xie, and C. Dervieux. 2022. <a href="https://doi.org/10.5281/zenodo.5960048">Quarto</a>.</div>
-</div>
-<div id="ref-rmarkdown2018" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">43. </div><div class="csl-right-inline">Xie, Y., J.J. Allaire, and G. Grolemund. 2018. R markdown: <span>The</span> definitive guide. <span>Boca Raton, Florida</span>: <span>Chapman and Hall/CRC</span>.</div>
+<div class="csl-left-margin">43. </div><div class="csl-right-inline">Allaire, J.J., C. Teague, C. Scheidegger, Y. Xie, and C. Dervieux. 2022. <a href="https://doi.org/10.5281/zenodo.5960048">Quarto</a>.</div>
 </div>
 <div id="ref-knitr" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">44. </div><div class="csl-right-inline">Xie, Y. 2015. Dynamic documents with <span>R</span> and knitr. Second. <span>Boca Raton, Florida</span>: <span>Chapman and Hall/CRC</span>.</div>
