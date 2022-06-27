@@ -1,0 +1,35 @@
+$if(title)$
+\title{$title$}
+\runningtitle{$title$}
+$endif$
+
+$for(by-author)$
+\author[$it.number$]{$by-author.name.literal$}
+$endfor$
+$for(by-affiliation)$
+\affil[$it.number$]{$it.affiliation$}
+$endfor$
+
+$for(by-author/first)$
+\corrauthor[*]{$it.email$}
+$endfor$
+
+\runningauthor{$for(author)$$author$$sep$, $endfor$}
+
+% \author[1,*]{First author}
+% \author[2]{Second author}
+% \runningauthor{Author1 and Author2} %% For page header
+%
+% \affil[1]{Institution A, Address A}
+% \affil[2]{Institution B, Address B}
+% \corrauthor[*]{abx@xyz.edu}
+
+$if(date)$
+\date{$date$}
+$endif$
+
+% \papertype{Letters}
+\papertype{$Papertype$}
+% \papertype{Computational Tools}
+
+

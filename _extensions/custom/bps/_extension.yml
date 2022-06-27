@@ -1,0 +1,18 @@
+title: Biophysical Journal Format
+author: Jannik Buhr
+version: 0.1.0
+contributes:
+  format:
+    common:
+      csl: biophysical-journal.csl
+    pdf:
+      number-sections: false
+      papertype: Article
+      twocolumn: false
+      template-partials:
+        - ./partials/doc-class.tex
+        - ./partials/_print-affiliation.tex
+        - ./partials/title.tex
+        - ./partials/before-body.tex
+      include-in-header:
+        - include-in-header.tex

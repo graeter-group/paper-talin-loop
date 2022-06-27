@@ -1,0 +1,111 @@
+---
+title: "Intrinsically disordered region of Talin's FERM domain functions as an initial PIP~2~ recognition site"
+date: today
+date-format: long
+author:
+  - name: Jannik Buhr
+    num: '1,*'
+    url: https://jmbuhr.de
+    orcid: 0000-0002-9350-2629
+    affiliations:
+      - name: Heidelberg Institute for Theoretical Studies
+        url: https://www.h-its.org/
+      - name: Heidelberg University
+        url: https://www.uni-heidelberg.de/
+    email: 'jannik.buhr@h-its.org'
+  - name: Florian Franz
+    num: '2'
+    affiliations:
+      - name: Heidelberg Institute for Theoretical Studies
+        url: https://www.h-its.org/
+      - name: Heidelberg University
+        url: https://www.uni-heidelberg.de/
+  - name: Frauke Gräter
+    num: '3'
+    url: https://www.h-its.org/people/prof-dr-frauke-grater/
+    orcid: 0000-0003-2891-3381
+    affiliations:
+      - name: Heidelberg Institute for Theoretical Studies
+        url: https://www.h-its.org/
+      - name: Heidelberg University
+        url: https://www.uni-heidelberg.de/
+github: https://github.com/hits-mbm-dev/
+repo: "paper-talin-loop"
+format:
+  html:
+    linkcolor: "#1E4287"
+    comments:
+      hypothesis: false
+    html-math-method: katex
+    self-contained: false
+    code-tools:
+      source: repo
+    theme:
+      light:
+        - default
+        - hits.scss
+      dark:
+        - darkly
+    mainfont: Roboto, sans-serif
+    monofont: Fira Mono, monospace
+    toc-depth: 2
+    toc: true
+    css: styles.css
+  quarto-journals/acs-pdf: default
+  quarto-journals/acm-pdf: default
+  quarto-journals/elsevier-pdf: default
+  quarto-journals/springer-pdf: default
+  custom/bps-pdf:
+    classoption:
+      - twocolumn
+  pdf: default
+  docx: default
+colorlinks: true
+keep-tex: true
+abstract: |
+  Focal adhesions mediate the interaction of the cytoskeleton with the extracellular matrix (ECM).
+  Cell-ECM adhesion is used by almost all cells both during development and homeostasis and ranges from dynamic to permanent.
+  As such, it is an important process in health and disease alike.
+  Talin is a central regulator and adaptor protein of the multiprotein focal adhesion complexes and is responsible for integrin activation and force-sensing.
+  We evaluated direct interactions of talin with the membrane lipid phosphatidylinositol 4,5-bisphosphate (PIP~2~) by means of molecular dynamics simulations.
+  A newly published autoinhibitory structure of talin, where common PIP~2~ interaction sites are covered up, sparked our curiosity for a hitherto less examined loop as a potential site of first contact.
+  We show that this unstructured loop in the F1 subdomain of the Talin1 FERM domain is able to interact with PIP~2~ and can facilitate further interactions by serving as a flexible membrane anchor.
+  This work presents the dynamics of the interaction and identifies key residues.
+  Further, we surveyed the effect of a physiological PIP~2~ enrichment at focal adhesion sites on the dynamics of talin through force-probe molecular dynamics simulations.
+  The results provide backing for the direct involvement of PIP~2~ in the localization and activation of talin.
+sigstatement: |
+  TODO
+  Each manuscript must also have a statement of significance or no more than 120 words.
+image: ./assets/blender/render/frame0001.png
+license: CC BY
+keywords:
+  - Molecular Dynamics
+  - Talin
+  - Focal Adhesion
+  - Mechanosensing
+  - Disorder
+  - IDP
+  - IDR
+citation:
+  type: article
+  citation-key: buhrTalin2022
+  status: draft
+editor_options:
+  markdown:
+    wrap: sentence
+editor: source
+bibliography: references.bib
+---
+
+
+# Hello
+
+
+\newpage
+
+hello
+
+\newpage
+
+hello
+

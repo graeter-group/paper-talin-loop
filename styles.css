@@ -28,10 +28,12 @@
   z-index: 1;
 }
 
+/* borders */
 .quarto-layout-panel {
   padding: 1rem;
+  padding-left: 1.1rem;
   border-style: solid;
-  border-width: 2px;
+  border-width: 1px;
   border-color: black;
 }
 
