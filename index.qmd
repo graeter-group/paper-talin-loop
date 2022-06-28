@@ -50,6 +50,7 @@ format:
     classoption:
       - twocolumn
   docx: default
+csl: ./_extensions/custom/bps/biophysical-journal.csl
 colorlinks: true
 keep-tex: true
 abstract: |
