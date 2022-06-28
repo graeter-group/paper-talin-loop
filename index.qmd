@@ -49,7 +49,6 @@ format:
   custom/bps-pdf:
     classoption:
       - twocolumn
-  pdf: default
   docx: default
 colorlinks: true
 keep-tex: true
