@@ -66,3 +66,12 @@
     color: #1E4287 !important;
 }
 
+table, .table {
+  position: float;
+  width: max-content;
+}
+
+#tbl-f0f1-top-interacting {
+  float: left
+}
+

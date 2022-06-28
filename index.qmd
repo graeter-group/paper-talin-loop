@@ -4,22 +4,26 @@ date: today
 date-format: long
 author:
   - name: Jannik Buhr
-    num: '1,*'
     url: https://jmbuhr.de
     orcid: 0000-0002-9350-2629
-    affiliation: Heidelberg Institute for Theoretical Studies, Heidelberg University
-    affiliation-url: https://www.h-its.org/
+    affiliations:
+      - id: hits
+        name: Heidelberg Institute for Theoretical Studies
+        url: https://www.h-its.org/
+      - id: uni-hd
+        name: Heidelberg University
+        url: https://www.uni-heidelberg.de/
     email: 'jannik.buhr@h-its.org'
   - name: Florian Franz
-    num: '2'
-    affiliation: Heidelberg Institute for Theoretical Studies, Heidelberg University
-    affiliation-url: https://www.h-its.org/
+    affiliations:
+      - ref: hits
+      - ref: uni-hd
   - name: Frauke Gräter
-    num: '3'
     url: https://www.h-its.org/people/prof-dr-frauke-grater/
     orcid: 0000-0003-2891-3381
-    affiliation: Heidelberg Institute for Theoretical Studies, Heidelberg University
-    affiliation-url: https://www.h-its.org/
+    affiliations:
+      - ref: hits
+      - ref: uni-hd
 github: https://github.com/hits-mbm-dev/
 repo: "paper-talin-loop"
 format:
@@ -42,10 +46,6 @@ format:
     toc-depth: 2
     toc: true
     css: styles.css
-  quarto-journals/acs-pdf: default
-  quarto-journals/acm-pdf: default
-  quarto-journals/elsevier-pdf: default
-  quarto-journals/springer-pdf: default
   custom/bps-pdf:
     classoption:
       - twocolumn
@@ -300,7 +300,7 @@ The Mean interaction scores of the individual residues across all simulations th
 Color represents the isoelectric point of the amino acid in isolation (blue = basic, magenta = acidic).
 A number of very prominent lysines can be observed, as well as a cluster of residues belonging to the F1 loop.
 The most prominent residues are highlighted in **b)**.
-(A placeholder image for print. The video is available in the web-version or here: <https://youtu.be/-eZ2orx7QRE>).
+(For the print version it is just a placeholder image. The video is available in the web-version (<https://hits-mbm-dev.github.io/paper-talin-loop>) or here: <https://youtu.be/s5yya0XeNTA>).
 :::::
 
 ## The F1 loop can facilitate further contacts
@@ -333,7 +333,7 @@ Their high flexibility allows them to remain in contact with the membrane over l
 
 Vertical Pulling of F0-F1.
 **a\)**
-A representative render of one of 6 force-probe MD simulations pulling F0-F1 off the membrane (with a placeholder image for print. The video is available in the web-version or here: <https://youtu.be/-eZ2orx7QRE>).
+A representative render of one of 6 force-probe MD simulations pulling F0-F1 off the membrane (For the print version it is just a placeholder image. The video is available in the web-version (<https://hits-mbm-dev.github.io/paper-talin-loop> or here: <https://youtu.be/-eZ2orx7QRE>).
 It starts from a snapshot of F0-F1 in its bound conformation taken from the rotational sampling (@fig-loop-importance) and gets pulled upwards from its C-terminus.
 The direction of force is shown in the snapshot **b\)**.
 **c\)**
@@ -477,8 +477,6 @@ A closer look at the residues involved in the interaction during pulling reveals
 Run 4 of the vertical pulling of F0F1. Interactions between the protein and PIP~2~ were so strong that a total of 3 molecules of PIP~2~ (gray) were pulled out of the membrane (1 by F0 (green) and 2 by the F1 loop (blue)).
 :::
 
- 
-::: {.content-visible when-format="html" layout="[[1,1]]"}
 Table: Top residues interacting with F0F1 {#tbl-f0f1-top-interacting}
 
 |Residue | Mean #PIP~2~|
@@ -527,7 +525,6 @@ Table: Top residues interacting with FERM {#tbl-ferm-top-interacting}
 |K 322   |      0.442|
 |D 341   |      0.142|
 |S 362   |      0.363|
-:::
 
 
 ### Molecular Dynamics Parameters {#sec-prod-mdp}
@@ -568,6 +565,4 @@ comm_mode               = linear
 comm_grps               = SYSTEM
 refcoord_scaling        = com
 ```
-
-
 

@@ -1,4 +1,4 @@
-\ProvidesClass{biophys-new-mod}[2019/04/25]
+\ProvidesClass{biophys-new}[2019/04/25]
 
 \newif\if@twocol
 \newif\if@endfloat
@@ -19,6 +19,8 @@
 
 \RequirePackage[T1]{fontenc}
 \RequirePackage{microtype}
+\RequirePackage{mathptmx}
+\RequirePackage[scaled]{helvet}
 \RequirePackage{textcase}
 \RequirePackage{xcolor}
 \frenchspacing

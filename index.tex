@@ -7,6 +7,7 @@
 \documentclass[
   twocolumn]{biophys-new-mod}
 
+\papertype{Article}
 
 
 \usepackage{amsmath,amssymb}
@@ -27,16 +28,6 @@
   \usepackage[]{microtype}
   \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
-\makeatletter
-\@ifundefined{KOMAClassName}{% if non-KOMA class
-  \IfFileExists{parskip.sty}{%
-    \usepackage{parskip}
-  }{% else
-    \setlength{\parindent}{0pt}
-    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
-}{% if KOMA class
-  \KOMAoptions{parskip=half}}
-\makeatother
 \usepackage{xcolor}
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
@@ -243,38 +234,25 @@ Adhesion, Mechanosensing, Disorder, IDP, IDR},
   urlcolor={Blue},
   pdfcreator={LaTeX via pandoc}}
 
+
 \title{Intrinsically disordered region of Talin's FERM domain functions
 as an initial PIP\textsubscript{2} recognition site}
 \runningtitle{Intrinsically disordered region of Talin's FERM domain
 functions as an initial PIP\textsubscript{2} recognition site}
 
+  \author[1,2,*]
+  {Jannik Buhr}
+  \author[1,2]
+  {Florian Franz}
+  \author[1,2]
+  {Frauke Gräter}
 
-\author[1]{}
-\author[1]{}
-\author[1]{}
+\affil[1]{Heidelberg Institute for Theoretical Studies}
+\affil[2]{Heidelberg University}
 
-% % \affil{}
-% % \affil{}
-% % \affil{}
-% 
+  \corrauthor[*]{jannik.buhr@h-its.org}
 
 \runningauthor{Jannik Buhr, Florian Franz, Frauke Gräter}
-
-
-% \author[1,*]{First author}
-% \author[2]{Second author}
-% \runningauthor{Author1 and Author2} %% For page header
-%
-% \affil[1]{Institution A, Address A}
-% \affil[2]{Institution B, Address B}
-
-
-\date{June 27, 2022}
-
-% \papertype{Letters}
-\papertype{}
-% \papertype{Computational Tools}
-
 
 \begin{document}
 \begin{frontmatter}
@@ -310,13 +288,13 @@ more than 120 words.
 \end{sigstatement}
 
 
-\end{frontmatter}\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, sharp corners, boxrule=0pt, breakable, borderline west={3pt}{0pt}{shadecolor}, enhanced, frame hidden]}{\end{tcolorbox}}\fi
+\end{frontmatter}\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[sharp corners, boxrule=0pt, borderline west={3pt}{0pt}{shadecolor}, enhanced, breakable, interior hidden, frame hidden]}{\end{tcolorbox}}\fi
 
-\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, opacityback=0, coltitle=black, breakable, left=2mm, toptitle=1mm, colbacktitle=quarto-callout-warning-color!10!white, bottomrule=.15mm, arc=.35mm, colframe=quarto-callout-warning-color-frame, titlerule=0mm, colback=white, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, rightrule=.15mm, leftrule=.75mm, opacitybacktitle=0.6, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, bottomrule=.15mm, bottomtitle=1mm, toprule=.15mm, colframe=quarto-callout-warning-color-frame, breakable, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, titlerule=0mm, toptitle=1mm, arc=.35mm, opacityback=0, rightrule=.15mm, colback=white, left=2mm, leftrule=.75mm, colbacktitle=quarto-callout-warning-color!10!white, opacitybacktitle=0.6, coltitle=black]
 This is a draft and as such subject to change.
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, opacityback=0, coltitle=black, breakable, left=2mm, toptitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, arc=.35mm, colframe=quarto-callout-tip-color-frame, titlerule=0mm, colback=white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, rightrule=.15mm, leftrule=.75mm, opacitybacktitle=0.6, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, bottomrule=.15mm, bottomtitle=1mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, titlerule=0mm, toptitle=1mm, arc=.35mm, opacityback=0, rightrule=.15mm, colback=white, left=2mm, leftrule=.75mm, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, coltitle=black]
 You can find the poster that goes along with the paper presented at the
 \href{https://www.biophysics.org/2022meeting\#}{Annual Meeting of the
 Biophysical Society 2022} in your favorite format here:
@@ -785,8 +763,10 @@ membrane. Color represents the isoelectric point of the amino acid in
 isolation (blue = basic, magenta = acidic). A number of very prominent
 lysines can be observed, as well as a cluster of residues belonging to
 the F1 loop. The most prominent residues are highlighted in \textbf{b)}.
-(A placeholder image for print. The video is available in the
-web-version or here: \url{https://youtu.be/-eZ2orx7QRE}).}
+(For the print version it is just a placeholder image. The video is
+available in the web-version
+(\url{https://hits-mbm-dev.github.io/paper-talin-loop}) or here:
+\url{https://youtu.be/s5yya0XeNTA}).}
 
 \end{figure}
 
@@ -871,8 +851,9 @@ the force be alleviated.
 
 \caption{\label{fig-vert-pull}Vertical Pulling of F0-F1. \textbf{a)} A
 representative render of one of 6 force-probe MD simulations pulling
-F0-F1 off the membrane (with a placeholder image for print. The video is
-available in the web-version or here:
+F0-F1 off the membrane (For the print version it is just a placeholder
+image. The video is available in the web-version
+(\url{https://hits-mbm-dev.github.io/paper-talin-loop} or here:
 \url{https://youtu.be/-eZ2orx7QRE}). It starts from a snapshot of F0-F1
 in its bound conformation taken from the rotational sampling
 (Figure~\ref{fig-loop-importance}) and gets pulled upwards from its
@@ -1401,7 +1382,7 @@ mechanistic insights into mechanoactivation of focal adhesion kinase}.
 \hypertarget{sec-system}{%
 \subsection{Simulation System}\label{sec-system}}
 
-\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, opacityback=0, coltitle=black, breakable, left=2mm, toptitle=1mm, colbacktitle=quarto-callout-note-color!10!white, bottomrule=.15mm, arc=.35mm, colframe=quarto-callout-note-color-frame, titlerule=0mm, colback=white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, rightrule=.15mm, leftrule=.75mm, opacitybacktitle=0.6, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, bottomrule=.15mm, bottomtitle=1mm, toprule=.15mm, colframe=quarto-callout-note-color-frame, breakable, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, titlerule=0mm, toptitle=1mm, arc=.35mm, opacityback=0, rightrule=.15mm, colback=white, left=2mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, coltitle=black]
 This interactive display is only available in the web version:
 \url{https://hits-mbm-dev.github.io/paper-talin-loop/}
 \end{tcolorbox}
@@ -1409,7 +1390,7 @@ This interactive display is only available in the web version:
 \hypertarget{scripts}{%
 \subsection{Scripts}\label{scripts}}
 
-\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, opacityback=0, coltitle=black, breakable, left=2mm, toptitle=1mm, colbacktitle=quarto-callout-note-color!10!white, bottomrule=.15mm, arc=.35mm, colframe=quarto-callout-note-color-frame, titlerule=0mm, colback=white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, rightrule=.15mm, leftrule=.75mm, opacitybacktitle=0.6, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, bottomrule=.15mm, bottomtitle=1mm, toprule=.15mm, colframe=quarto-callout-note-color-frame, breakable, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, titlerule=0mm, toptitle=1mm, arc=.35mm, opacityback=0, rightrule=.15mm, colback=white, left=2mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, coltitle=black]
 Analysis scripts, setup scripts and production trajectories will be
 uploaded and linked here.
 \end{tcolorbox}
@@ -1509,6 +1490,75 @@ that a total of 3 molecules of PIP\textsubscript{2} (gray) were pulled
 out of the membrane (1 by F0 (green) and 2 by the F1 loop (blue)).}
 
 \end{figure}
+
+\hypertarget{tbl-f0f1-top-interacting}{}
+\begin{longtable}[]{@{}lr@{}}
+\caption{\label{tbl-f0f1-top-interacting}Top residues interacting with
+F0F1}\tabularnewline
+\toprule()
+Residue & Mean \#PIP\textsubscript{2} \\
+\midrule()
+\endfirsthead
+\toprule()
+Residue & Mean \#PIP\textsubscript{2} \\
+\midrule()
+\endhead
+M 1 & 0.188 \\
+K 15 & 0.184 \\
+R 30 & 0.173 \\
+R 35 & 0.245 \\
+R 74 & 0.124 \\
+K 98 & 0.176 \\
+R 118 & 0.209 \\
+T 144 & 0.299 \\
+L 145 & 0.168 \\
+K 147 & 0.263 \\
+L 151 & 0.325 \\
+D 154 & 0.248 \\
+E 155 & 0.261 \\
+M 158 & 0.272 \\
+K 160 & 0.254 \\
+K 162 & 0.181 \\
+L 193 & 0.200 \\
+R 194 & 0.101 \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{tbl-ferm-top-interacting}{}
+\begin{longtable}[]{@{}lr@{}}
+\caption{\label{tbl-ferm-top-interacting}Top residues interacting with
+FERM}\tabularnewline
+\toprule()
+Residue & Mean \#PIP\textsubscript{2} \\
+\midrule()
+\endfirsthead
+\toprule()
+Residue & Mean \#PIP\textsubscript{2} \\
+\midrule()
+\endhead
+M 1 & 0.118 \\
+T 144 & 0.322 \\
+L 145 & 0.129 \\
+K 147 & 0.412 \\
+L 151 & 0.204 \\
+D 154 & 0.293 \\
+E 155 & 0.257 \\
+M 158 & 0.246 \\
+K 160 & 0.459 \\
+K 162 & 0.195 \\
+Y 270 & 0.156 \\
+K 272 & 0.180 \\
+G 275 & 0.222 \\
+L 314 & 0.141 \\
+K 316 & 0.304 \\
+K 318 & 0.148 \\
+K 320 & 0.552 \\
+G 321 & 0.174 \\
+K 322 & 0.442 \\
+D 341 & 0.142 \\
+S 362 & 0.363 \\
+\bottomrule()
+\end{longtable}
 
 \hypertarget{sec-prod-mdp}{%
 \subsubsection{Molecular Dynamics Parameters}\label{sec-prod-mdp}}

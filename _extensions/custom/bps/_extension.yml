@@ -7,12 +7,11 @@ contributes:
       csl: biophysical-journal.csl
     pdf:
       number-sections: false
-      papertype: Article
-      twocolumn: false
+      papertype: Article # Letters, Computational Tools
+      indent: true
       template-partials:
         - ./partials/doc-class.tex
-        - ./partials/_print-affiliation.tex
         - ./partials/title.tex
         - ./partials/before-body.tex
       include-in-header:
-        - include-in-header.tex
+        - include-in-header.tex # enable `longtable` in twocolumn mode
