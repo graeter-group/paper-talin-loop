@@ -86,6 +86,7 @@ editor_options:
     wrap: sentence
 editor: source
 bibliography: references.bib
+
 ---
 
 :::callout-warning
@@ -367,7 +368,7 @@ The known PIP~2~ interaction sites K272 of F2 and K316, K324, E342, and K343 of 
 # Discussion and Outlook
 
 Using molecular dynamics simulations, we provide mechanistic insight into the membrane recognition dynamics of Talin.
-This adds a new mode of interaction that helps to explain how Talin can find the membrane even when its main PIP~2~ (and integrin) binding sites are blocked by autoinhibition.
+This adds a new mode of interaction that helps to explain how Talin can find the membrane even when its main PIP~2~ (and integrin) binding sites are blocked by autoinhibition [@deddenArchitectureTalin1Reveals2019a].
 This interaction mode is not characterized by strong binding sites interacting with one molecule of PIP~2~ each, as would be the conclusion from crystallographic data alone, but rather by the cummulative diffuse interaction of multiple PIP~2~ with multiple residues
 This is particularily visible in the interaction with the flexible F1 loop, but also in the F0 domain.
 As of yet unpulished simulations of the PIP~2~-interaction of other FERM proteins also suggest that the single PIP~2~ per interaction site in crystal structures likely represents just a snapshot and that the true stoichiometry might be up to 1:7.
