@@ -1,0 +1,26 @@
+title: HITS Formats Posters
+author: Jannik Buhr
+version: 0.1.0
+contributes:
+  format:
+    common:
+      link-citations: true
+      colorlinks: true
+      knitr:
+        opts_chunk:
+          echo: false
+          warning: false
+          message: false
+    html:
+      template: ./poster-template.html
+      page-layout: custom
+      theme: none
+      css:
+        - betterposter.css
+      hero_background: "#1e4287"
+      linkcolor: "#1e4287"
+      mathjax: false
+      self-contained: false
+      csl: ./biophysical-journal.csl
+      html-math-method: katex
+

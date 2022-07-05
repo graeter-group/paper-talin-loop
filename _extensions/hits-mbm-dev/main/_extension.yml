@@ -1,0 +1,55 @@
+title: HITS Formats
+author: Jannik Buhr
+version: 0.1.0
+contributes:
+  format:
+    common:
+      link-citations: true
+      colorlinks: true
+      filters:
+        - color-text.lua
+      shortcodes:
+        - shortcodes.lua
+      knitr:
+        opts_chunk:
+          echo: false
+          warning: false
+          message: false
+    pdf:
+      csl: ./biophysical-journal.csl
+      header-includes: |
+        \definecolor{hitsblue}{RGB}{0, 31, 73}
+      linkcolor: hitsblue
+      urlcolor: hitsblue
+    html:
+      csl: ./biophysical-journal.csl
+      css: styles.css
+      linkcolor: "#1E4287"
+      html-math-method: katex
+      code-tools:
+        source: repo
+      theme:
+        light:
+          - default
+          - hits.scss
+        dark:
+          - darkly
+      mainfont: Roboto, sans-serif
+      monofont: Fira Mono, monospace
+      toc-depth: 2
+      toc: true
+    revealjs:
+      css: presentation.css
+      chalkboard: true
+      theme: [default, hits.scss]
+      logo: ./www/hits-logo.png
+      footer: "[h-its.org](https://h-its.org)"
+      code-copy: true
+      code-link: true
+      fig-responsive: true
+      citations-hover: true
+      footnotes-hover: true
+      slide-number: true
+    docx:
+      reference-doc: ./template.docx
+
