@@ -198,6 +198,10 @@ Schematic visualizations were rendered with blender [@blender] and VMD [@vmd].
 Files relevant to this paper that are too big to be uploaded to this repository, such as trajectories and blender files, will be uploaded to a separate location.
 This paper and the matching poster were generated with [quarto](https://quarto.org/) [@quarto; @knitr; @rbetterposter].
 
+::: {.content-visible when-format="html"}
+The plotting code and computational graph of `targets` is available in [this document](./_analysis.html).
+:::
+
 # Results
 
 ## The F1 loop can act as a point of first contact
@@ -230,7 +234,7 @@ Of 358 runs ^[6 replicas each for 60 angles minus 2 runs lost to a storage failu
 
 ![ ](./assets/vmd/f0f1/bound.png){#fig-f0f1-bound}
 
-![ ](./assets/results/plots/f0f1-ri-angle-npip-1.png){#fig-f0f1-ri-angle}
+![ ](./results/plots/f0f1-ri-angle-npip-1.png){#fig-f0f1-ri-angle}
 
 Rotational sampling of F0-F1.
 **a-c\)**
@@ -249,9 +253,9 @@ The heatmap color represents the mean number of PIP~2~ molecules that are in clo
 
 
 ::::: {#fig-loop-importance layout="[[1,1]]"}
-![ ](./assets/results/plots/f0f1-angle-frame-npip-1.png){#fig-f0f1-angle-frame}
+![ ](./results/plots/f0f1-angle-frame-npip-1.png){#fig-f0f1-angle-frame}
 
-![ ](./assets/results/plots/f0f1-retention-1.png){#fig-f0f1-retention}
+![ ](./results/plots/f0f1-retention-1.png){#fig-f0f1-retention}
 
 **a\)**
 A heatmap of the time evolution of the number of PIP~2~ molecules at the respective time and angle summarized over all residues and replicates.
@@ -266,7 +270,7 @@ This never occurred after more than 3 residues had already made contact.
 
 ::::: {#fig-f0f1-residues layout="[[1],[1]]"}
 
-![ ](./assets/results/plots/f0f1-ri-npip-1.png){#fig-f0f1-ri-npip}
+![ ](./results/plots/f0f1-ri-npip-1.png){#fig-f0f1-ri-npip}
 
 :::{#fig-f1f1-residues}
 ::: {.content-visible when-format="html" }
@@ -311,9 +315,9 @@ Their high flexibility allows them to remain in contact with the membrane over l
 
 ![ ](./assets/vmd/f0f1-pulling/vert-pull.png){#fig-f0f1-vert-pull-vmd}
 
-![ ](./assets/results/plots/f0f1-vert-pull-1.png){#fig-f0f1-vert-pull}
+![ ](./results/plots/f0f1-vert-pull-1.png){#fig-f0f1-vert-pull}
 
-![ ](./assets/results/plots/f0f1-vert-pull-contacts-time-1.png){#fig-f0f1-vert-pull-contacts}
+![ ](./results/plots/f0f1-vert-pull-contacts-time-1.png){#fig-f0f1-vert-pull-contacts}
 
 Vertical Pulling of F0-F1.
 **a\)**
@@ -337,7 +341,7 @@ The highlighted residues include K272 of F2 and K316, K324, E342, and K343 of F3
 
 :::: {#fig-ferm-further layout="[[1],[1]]"}
 
-![ ](./assets/results/plots/ferm-ri-npip-1.png){#fig-ferm-ri-npip}
+![ ](./results/plots/ferm-ri-npip-1.png){#fig-ferm-ri-npip}
 
 ![ ](./assets/vmd/ferm/ferm-residues-transparent-arrows.png){#fig-ferm-memb-system}
 
@@ -442,11 +446,11 @@ Analysis scripts, setup scripts and production trajectories will be uploaded and
 
 ![ ](./assets/results/figures/loop-rmsf.png){#fig-loop-rmsf}
 
-![ ](./assets/results/plots/f0f1-distance-cutoff-1.png){#fig-r-hist}
+![ ](./results/plots/f0f1-distance-cutoff-1.png){#fig-r-hist}
 
-![ ](./assets/results/plots/ferm-time-ri-npip-all-1.png){#fig-ferm-time-ri-npip-all}
+![ ](./results/plots/ferm-time-ri-npip-all-1.png){#fig-ferm-time-ri-npip-all}
 
-![ ](./assets/results/plots/f0f1-vert-pull-residues-1.png){#fig-f0f1-vert-pull-residues}
+![ ](./results/plots/f0f1-vert-pull-residues-1.png){#fig-f0f1-vert-pull-residues}
 
 ![ ](./assets/vmd/f0f1-pulling/snapshot-run4.png){#fig-f0f1-vert-pull-run4}
 

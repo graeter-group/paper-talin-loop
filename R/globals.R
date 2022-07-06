@@ -13,7 +13,7 @@ library(future.callr)
 
 # theme
 custom_theme <- function() {
-  theme_classic(base_family = "Roboto") +
+  theme_classic(base_family = "Roboto", base_size = 16) +
   theme(
     legend.background = element_blank(),
     axis.line = element_blank(),

@@ -46,6 +46,7 @@ tar_make()
 tar_visnetwork(callr_arguments = list(show = FALSE))
 ```
 
+
 ## Notes
 
 - Data loss due to disk failure:
@@ -53,7 +54,6 @@ tar_visnetwork(callr_arguments = list(show = FALSE))
     - run2/angle_204: corrupted 00143.dat.csv, 00166.dat.csv
     - run3/angle_234: corrupted after first 4 frames
     - run4/angle_348: corrupted
-
 
 # Plots
 
