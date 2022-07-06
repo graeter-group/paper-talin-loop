@@ -188,6 +188,8 @@ From this rotational sampling, we selected representative conformations with loo
 Each simulation ran for 400\ ns.
 The initial conformations for perpendicular pulling simulations of the F0F1 subdomains to gauge interaction strength were also chose from the rotational sampling set.
 
+Distance information was extracted from trajectories with gromacs tools interfaced via CONAN [@mercadanteCONANToolDecode2018].
+
 ## Automation, Data Analysis and Availability
 
 Setup scripts written in bash are available for all simulations shown in this work.
@@ -277,7 +279,7 @@ This never occurred after more than 3 residues had already made contact.
 ![](./assets/vmd/f0f1/residues.mp4)
 :::
 :::{.content-visible when-format="pdf" width=20%}
-![](./www/hits-logo-small.png)
+![](./assets/vmd/f0f1/residues.png)
 :::
  
 :::
@@ -327,10 +329,10 @@ The direction of force is shown in the snapshot **b\)**.
 **c\)**
 As F0-F1 gets pulled at a constant rate of 0.03\ nm/ns we observe the time evolution of the force (bottom panel) and the number of interacting residues (top panel).
 The number of interacting residues goes down very gradually, as the high flexibility of loop allows the residues to remain in contact even as the distance increases.
-Replicat 4 is highlighted in magenta, as in this run the interactions were so so strong that a total of 3 molecules of PIP~2~ were pulled out of the membrane (1 by F0 and 2 by the F1 loop).
+Replicate 4 is highlighted in magenta, as in this run the interactions were so so strong that a total of 3 molecules of PIP~2~ were pulled out of the membrane (1 by F0 and 2 by the F1 loop).
 A snapshot of this can be seen in @fig-f0f1-vert-pull-run4.
 **d\)**
-The time evolution of the number of contacs for resides belonging to the F1 loop and other residues shows how initially other residues loose contact until eventually the loop looses contacts as well.
+The time evolution of the number of contacts for resides belonging to the F1 loop and other residues shows how initially other residues loose contact until eventually the loop looses contacts as well.
 Lighter shades of blue correspond to a later time in the simulation.
 Black dots mark the starting positions.
 The longest remaining non-loop contacts belong to the N-terminus of F0 (for which **b** is also a representative snapshot), with the exception of replicate 4, as explained in **c**.
@@ -356,21 +358,21 @@ The known PIP~2~ interaction sites K272 of F2 and K316, K324, E342, and K343 of 
 
 Using molecular dynamics simulations, we provide mechanistic insight into the membrane recognition dynamics of Talin.
 This adds a new mode of interaction that helps to explain how Talin can find the membrane even when its main PIP~2~ (and integrin) binding sites are blocked by autoinhibition [@deddenArchitectureTalin1Reveals2019a].
-This interaction mode is not characterized by strong binding sites interacting with one molecule of PIP~2~ each, as would be the conclusion from crystallographic data alone, but rather by the cummulative diffuse interaction of multiple PIP~2~ with multiple residues
-This is particularily visible in the interaction with the flexible F1 loop, but also in the F0 domain.
-As of yet unpulished simulations of the PIP~2~-interaction of other FERM proteins also suggest that the single PIP~2~ per interaction site in crystal structures likely represents just a snapshot and that the true stoichiometry might be up to 1:7.
+This interaction mode is not characterized by strong binding sites interacting with one molecule of PIP~2~ each, as would be the conclusion from crystallographic data alone, but rather by the cumulative diffuse interaction of multiple PIP~2~ with multiple residues
+This is particularly visible in the interaction with the flexible F1 loop, but also in the F0 domain.
+As of yet unpublished simulations of the PIP~2~-interaction of other FERM proteins also suggest that the single PIP~2~ per interaction site in crystal structures likely represents just a snapshot and that the true stoichiometry might be up to 1:7.
 
 A similar mechanism to the one by which the F1 loop uses its disorder to quickly find favorable interactions with PIP~2~ has also been shown by Shoemakter et al. [@shoemakerSpeedingMolecularRecognition2000] and was fittingly coined "fly-casting".
 In the aforementioned publication they focus on the interaction of unfolded regions with DNA.
 Our simulations now provide an example for the concept applied to protein-lipid interactions.
-It its well worth noting that, allthough we mention the greater search space of the F1 loop as its advantage in recognizing PIP~2~, it has also been argued that the kinetic advantage of the fly-casting mechanism comes mainly from the reduction in free energy as the disorderd region folds around the interaction target [@huangKineticAdvantageIntrinsically2009].
-The fast binding kinetics are crucial for Talins function at focal adhesion sites.
+It its well worth noting that, although we mention the greater search space of the F1 loop as its advantage in recognizing PIP~2~, it has also been argued that the kinetic advantage of the fly-casting mechanism comes mainly from the reduction in free energy as the disordered region folds around the interaction target [@huangKineticAdvantageIntrinsically2009].
+The fast binding kinetics are crucial for Talin's function at focal adhesion sites.
 As the PIP~2~ concentrations increases at the active focal adhesion site, Talin's FERM F1 loop can perform a quick recognition.
 Due to the flexible nature of the loop, it can then anchor the protein at the membrane even when being stretched under force (up to a delta of 7 nm, as seen in @fig-f0f1-vert-pull).
 This is akin to the elastic response seen in focal adhesion kinase (FAK) under force [@bauerStructuralMechanisticInsights2019].
 In our force probe experiments we pulled F0F1 orthogonally off of the membrane.
-This was usefull in showing the full extension and force resistance of the loop.
-_In vivo_ however, talin's FERM domain is subjected to forces acting at a 30° angle.
+This was useful in showing the full extension and force resistance of the loop.
+_In vivo_ however, Talin's FERM domain is subjected to forces acting at a 30° angle.
 This might imply an additional function for the FERM domain.
 As it is dragged along the membrane, the diffuse interactions of the F1 loop and main interaction sites in F2-F3 with PIP~2~ would increase lateral friction along the membrane as the PIP~2~ concentration increases.
 This could further localize Talin at active focal adhesion sites.
