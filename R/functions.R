@@ -129,3 +129,7 @@ summarize_interacting_run <- function(df, CUTOFF) {
     summarise(n_pip = sum(r <= CUTOFF)) %>%
     ungroup()
 }
+
+
+#### plotting ####
+sem <- function(x) sd(x) / sqrt(length(x))

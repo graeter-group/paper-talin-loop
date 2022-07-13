@@ -24,7 +24,6 @@ knitr:
     R.options:
       tidyverse.quiet = true
 editor: source
-
 ---
 
 # Setup
@@ -46,14 +45,13 @@ tar_make()
 tar_visnetwork(callr_arguments = list(show = FALSE))
 ```
 
-
 ## Notes
 
-- Data loss due to disk failure:
-  - rotational sampling
-    - run2/angle_204: corrupted 00143.dat.csv, 00166.dat.csv
-    - run3/angle_234: corrupted after first 4 frames
-    - run4/angle_348: corrupted
+-   Data loss due to disk failure:
+    -   rotational sampling
+        -   run2/angle_204: corrupted 00143.dat.csv, 00166.dat.csv
+        -   run3/angle_234: corrupted after first 4 frames
+        -   run4/angle_348: corrupted
 
 # Plots
 
@@ -72,13 +70,10 @@ tar_load(ferm_interacting)
 tar_load(ferm_annotation)
 tar_load(ferm_colors)
 tar_load(bool_colors)
-tar_load(tln1_ferm_lat_pull)
 tar_load(f0f1_pulling_smooth)
 tar_load(f0f1_pulling_peaks)
 tar_load(ferm_pip_sites)
 tar_load(f0f1_pulling_interacting)
-
-sem <- function(x) sd(x) / sqrt(length(x))
 ```
 
 ## Rotational sampling of F0F1
@@ -285,7 +280,6 @@ plt <- f0f1_run1 |>
 plt
 ```
 
-
 ## Vertical pulling of F0F1
 
 ```{r f0f1-vert-pull}
@@ -319,8 +313,8 @@ f0f1_pulling_interacting |>
   summarise(sum(n_pip > 0))
 ```
 
-- Run 4 looks interesting.
-- PIP~2~s get pulled out of the membrane, one lodges itself near F0, two more get pulled out by the loop.
+-   Run 4 looks interesting.
+-   PIP~2~s get pulled out of the membrane, one lodges itself near F0, two more get pulled out by the loop.
 
 ```{r f0f1-vert-pull-contacts}
 # loop: 135 to 168
@@ -439,7 +433,7 @@ anot <- ggplot(ferm_annotation[1:3,]) +
   plot_annotation()
 ```
 
-## Equilibrium simulaions of FERM
+## Equilibrium simulations of FERM
 
 ```{r ferm-time-ri-npip-single-run}
 plt <- ferm_interacting |> 
