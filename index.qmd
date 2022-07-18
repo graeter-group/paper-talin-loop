@@ -311,7 +311,8 @@ Their high flexibility allows them to remain in contact with the membrane over l
 ![](./assets/vmd/f0f1-pulling/f0f1-run1.mp4)
 :::
 ::: {.content-visible when-format="pdf"}
-![](./www/hits-logo-small.png)
+![](./assets/vmd/f0f1-pulling/f0f1-pull-start.png)
+![](./assets/vmd/f0f1-pulling/f0f1-pull-end.png)
 :::
  
 :::
@@ -371,6 +372,7 @@ A similar mechanism has also been shown by Shoemakter et al. [@shoemakerSpeeding
 In the aforementioned publication they focus on the interaction of unfolded regions with DNA.
 Our simulations now provide an example for the concept applied to protein-lipid interactions.
 It its well worth noting that, although we mention the greater search space of the F1 loop as its advantage in recognizing PIP~2~, it has also been argued that the kinetic advantage of the fly-casting mechanism comes mainly from the reduction in free energy as the disordered region folds around the interaction target [@huangKineticAdvantageIntrinsically2009].
+
 The fast binding kinetics are crucial for Talin's function at focal adhesion sites.
 As the PIP~2~ concentrations increases at the active focal adhesion site, Talin's FERM F1 loop can perform a quick recognition.
 The flexibility of the loop also allows it to anchor the protein at the membrane even when being stretched under force (up to a delta of 7 nm, as seen in @fig-f0f1-vert-pull).
