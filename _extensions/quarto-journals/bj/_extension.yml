@@ -1,0 +1,20 @@
+title: Biophysical Journal Format
+author: Jannik Buhr
+version: 0.1.0
+contributes:
+  format:
+    common:
+      csl: biophysical-journal.csl
+    pdf:
+      number-sections: false
+      papertype: Article # Letters, Computational Tools
+      indent: true
+      template-partials:
+        - ./partials/doc-class.tex
+        - ./partials/title.tex
+        - ./partials/before-body.tex
+      format-resources:
+        - ./biophysical-journal.csl
+        - ./biophys-new-mod.cls
+      include-in-header:
+        - include-in-header.tex # enable `longtable` in twocolumn mode

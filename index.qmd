@@ -2,7 +2,7 @@
 title: "Intrinsically disordered region of Talin's FERM domain functions as an initial PIP~2~ recognition site"
 date: today
 date-format: long
-author:
+author: #todo
   - name: Jannik Buhr
     url: https://jmbuhr.de
     orcid: 0000-0002-9350-2629
@@ -10,26 +10,29 @@ author:
       - id: hits
         name: Heidelberg Institute for Theoretical Studies
         url: https://www.h-its.org/
-      - id: uni-hd
-        name: Heidelberg University
-        url: https://www.uni-heidelberg.de/
+      # - id: uni-hd
+      #   name: Heidelberg University
+      #   url: https://www.uni-heidelberg.de/
+      - id: iwr
+        name: Interdisciplinary Center for Scientific Computing, Heidelberg University
+        url: https://typo.iwr.uni-heidelberg.de/home
     email: 'jannik.buhr@h-its.org'
   - name: Florian Franz
     affiliations:
       - ref: hits
-      - ref: uni-hd
+      - ref: iwr
   - name: Frauke Gräter
     url: https://www.h-its.org/people/prof-dr-frauke-grater/
     orcid: 0000-0003-2891-3381
     affiliations:
       - ref: hits
-      - ref: uni-hd
+      - ref: iwr
 github: https://github.com/hits-mbm-dev/
 repo: "paper-talin-loop"
 format:
   hits-mbm-dev/main-html:
     css: styles.css
-  custom/bps-pdf:
+  bj-pdf:
     classoption:
       - twocolumn
   docx: default
@@ -69,7 +72,6 @@ editor_options:
     wrap: sentence
 editor: source
 bibliography: references.bib
-
 ---
 
 :::callout-warning
@@ -193,7 +195,7 @@ Distance information was extracted from trajectories with gromacs tools interfac
 ## Automation, Data Analysis and Availability
 
 Setup scripts written in bash are available for all simulations shown in this work.
-Computations for data analysis were tracked with the targets R package [@targets].
+Computations for data analysis were tracked with the targets R package [@landauTargetsPackageDynamic2021].
 Plots were generated with ggplot2 [@ggplot].
 Interactive structure representations are embedded using Mol\* [@molstar].
 Schematic visualizations were rendered with blender [@blender] and VMD [@vmd].
@@ -357,30 +359,37 @@ The known PIP~2~ interaction sites K272 of F2 and K316, K324, E342, and K343 of 
 # Discussion and Outlook
 
 Using molecular dynamics simulations, we provide mechanistic insight into the membrane recognition dynamics of Talin.
-This adds a new mode of interaction that helps to explain how Talin can find the membrane even when its main PIP~2~ (and integrin) binding sites are blocked by autoinhibition [@deddenArchitectureTalin1Reveals2019a].
-This interaction mode is not characterized by strong binding sites interacting with one molecule of PIP~2~ each, as would be the conclusion from crystallographic data alone, but rather by the cumulative diffuse interaction of multiple PIP~2~ with multiple residues
-This is particularly visible in the interaction with the flexible F1 loop, but also in the F0 domain.
-As of yet unpublished simulations of the PIP~2~-interaction of other FERM proteins also suggest that the single PIP~2~ per interaction site in crystal structures likely represents just a snapshot and that the true stoichiometry might be up to 1:7.
+This adds a new mode of interaction that helps to explain how Talin can find the membrane even when its main PIP~2~ (and integrin) binding sites in F2 and F3 [@chinthalapudiInteractionTalinCell2018a] (see figure @fig-ferm-memb-system ) are blocked by autoinhibition [@deddenArchitectureTalin1Reveals2019a].
+This interaction mode is not characterized by strong binding sites interacting with one molecule of PIP~2~ each, as would be the conclusion from crystallographic data alone.
+Rather the cumulative diffuse interaction of multiple PIP~2~ with multiple residues is what keeps the protein anchored to the membrane.
+This is particularly evident in the interaction with the flexible F1 loop, but also in the F0 domain.
+While crystal structures of proteins in complex with PIP~2~ typically show a one-to-one ratio of lipid per binding site [@chinthalapudiLipidBindingPromotes2018; @chinthalapudiInteractionTalinCell2018a; @jianMolecularBasisCooperative2015], possibly due to the nature of the experimental method, our simulations suggest multiple PIP~2~ molecules binding simultaneously.
+Similar results have been observed for Pleckstrin Homology (PH) domain proteins by Naughton et al. [@naughtonModesInteractionPleckstrin2018].
+According to their study, this simultaneous binding of multiple PIP~2~ molecules contributes to the high affinity of the membrane interaction.
 
-A similar mechanism to the one by which the F1 loop uses its disorder to quickly find favorable interactions with PIP~2~ has also been shown by Shoemakter et al. [@shoemakerSpeedingMolecularRecognition2000] and was fittingly coined "fly-casting".
+Our molecular dynamics simulations suggest that the F1 loop can find favorable interactions with PIP~2~ across large distances in a large search volume due to its flexibility.
+A similar mechanism has also been shown by Shoemakter et al. [@shoemakerSpeedingMolecularRecognition2000] and was fittingly coined "fly-casting".
 In the aforementioned publication they focus on the interaction of unfolded regions with DNA.
 Our simulations now provide an example for the concept applied to protein-lipid interactions.
 It its well worth noting that, although we mention the greater search space of the F1 loop as its advantage in recognizing PIP~2~, it has also been argued that the kinetic advantage of the fly-casting mechanism comes mainly from the reduction in free energy as the disordered region folds around the interaction target [@huangKineticAdvantageIntrinsically2009].
 The fast binding kinetics are crucial for Talin's function at focal adhesion sites.
 As the PIP~2~ concentrations increases at the active focal adhesion site, Talin's FERM F1 loop can perform a quick recognition.
-Due to the flexible nature of the loop, it can then anchor the protein at the membrane even when being stretched under force (up to a delta of 7 nm, as seen in @fig-f0f1-vert-pull).
-This is akin to the elastic response seen in focal adhesion kinase (FAK) under force [@bauerStructuralMechanisticInsights2019].
+The flexibility of the loop also allows it to anchor the protein at the membrane even when being stretched under force (up to a delta of 7 nm, as seen in @fig-f0f1-vert-pull).
+This is akin to the elastic response seen in focal adhesion kinase (FAK) under force, in which a 49 AA linker allows for buffering of the force [@bauerStructuralMechanisticInsights2019].
 In our force probe experiments we pulled F0F1 orthogonally off of the membrane.
 This was useful in showing the full extension and force resistance of the loop.
-_In vivo_ however, Talin's FERM domain is subjected to forces acting at a 30° angle.
+_In vivo_, however, Talin's FERM domain is subjected to forces acting at a 30° angle.
 This might imply an additional function for the FERM domain.
 As it is dragged along the membrane, the diffuse interactions of the F1 loop and main interaction sites in F2-F3 with PIP~2~ would increase lateral friction along the membrane as the PIP~2~ concentration increases.
 This could further localize Talin at active focal adhesion sites.
 
 We conclusively show that the F1 loop is able to interact with the membrane even from most unfavorable positions.
+We propose that talin mutants lacking the loop, or specifically the basic residues in said loop, will show reduced or at least slowed-down focal adhesion maturation, increased lateral diffusion of talin under force and faster focal adhesion disassembly.
+
 But recognition is only the first step.
 It would indeed be fascinating to also provide mechanistic ideas for the resolution of the autoinhibition by all-atom simulations of the FERM domain that also include an inhibiting rod segment.
 These larger-scale simulations might then be able to provide evidence for the push--pull mechanism proposed by Song et al. [@songNovelMembranedependentSwitch2012a] or result in novel ideas.
+More generally, we propose positively charged, intrincsically disordered regions in PIP~2~-binding domains to promote recognition and help to maintain the interaction under force, in FERM domains and elsewhere.
 
 # Author Contributions
 
