@@ -52,4 +52,6 @@ contributes:
       slide-number: true
     docx:
       reference-doc: ./template.docx
+format-resources:
+  - ./biophysical-journal.csl
 

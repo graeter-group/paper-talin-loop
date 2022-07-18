@@ -30,13 +30,12 @@ author: #todo
 github: https://github.com/hits-mbm-dev/
 repo: "paper-talin-loop"
 format:
-  hits-mbm-dev/main-html:
+  hits-html:
     css: styles.css
   bj-pdf:
     classoption:
       - twocolumn
   docx: default
-csl: ./_extensions/custom/bps/biophysical-journal.csl
 colorlinks: true
 keep-tex: true
 abstract: |
