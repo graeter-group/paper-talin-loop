@@ -2,7 +2,7 @@
 title: "Intrinsically disordered region of Talin's FERM domain functions as an initial PIP~2~ recognition site"
 date: today
 date-format: long
-author: #todo
+author:
   - name: Jannik Buhr
     url: https://jmbuhr.de
     orcid: 0000-0002-9350-2629
@@ -27,10 +27,12 @@ author: #todo
     affiliations:
       - ref: hits
       - ref: iwr
+repo-url: https://github.com/hits-mbm-dev/paper-talin-loop/
 github: https://github.com/hits-mbm-dev/
 repo: "paper-talin-loop"
 format:
   hits-html:
+    code-tools: false
     css: styles.css
   bj-pdf:
     classoption:
@@ -79,9 +81,10 @@ This is a draft and as such subject to change.
 
 ::::callout-tip
 You can find the poster that goes along with the paper presented at the [Annual Meeting of the Biophysical Society 2022](https://www.biophysics.org/2022meeting#)
-in your favorite format here: [web/html](./poster.html), [print/pdf](./poster.pdf).
+in your favorite format here: [poster web/html](./poster.html), [poster print/pdf](./poster.pdf).
+
 The source repository for this paper lives [here](https://github.com/hits-mbm-dev/paper-talin-loop).
-The preliminary and less feature-rich pdf version lives [here](./index.pdf).
+The pdf version of this paper lives [here](./index.pdf).
 ::::
 
 # Introduction
@@ -111,10 +114,6 @@ The mechanistic role of the disordered F1 loop in the many aspects of Talin func
 Its overall positive charge renders it a prime candidate as a PIP~2~ binding site.
 However, previous studies only identified a minor role of the loop in PIP~2~ binding compared to F2-F3 [@chinthalapudiInteractionTalinCell2018a; @saltelNewPIP22009].
 On the other hand, the F1 loop has been shown to contribute to talin-mediated integrin activation [@goultStructureDoubleUbiquitinlike2010].
-
-<!-- TODO: paragraph on FERM-PIP2 at focal adhesions, -->
-<!-- multiple binding sites, several pip2s critial for stability of FAK, -->
-<!-- allows opening of autoinhibited FAK -->
 
 It was previously shown that F3 can interact with R9, which impedes integrin activation [@bannoSubcellularLocalizationTalin2012].
 Furthermore, in a recently determined cryo-electron microscopy structure of autoinhibited Talin1, Dedden et al. [@deddenArchitectureTalin1Reveals2019a] showed that the rod domains R9 and R12 shield the established PIP~2~ binding surface and the integrin binding site in F3 (see [@fig-tln-schema-autoinhib; @fig-tln-align-autoinhib]).

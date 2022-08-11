@@ -175,7 +175,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Intrinsically disordered region of Talin’s FERM domain functions as an initial PIP<sub>2</sub> recognition site</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source" data-quarto-source-url="repo"><i class="bi"></i> Code</button></div></div>
+<h1 class="title">Intrinsically disordered region of Talin’s FERM domain functions as an initial PIP<sub>2</sub> recognition site</h1>
 </div>
 
 
@@ -274,7 +274,8 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You can find the poster that goes along with the paper presented at the <a href="https://www.biophysics.org/2022meeting#">Annual Meeting of the Biophysical Society 2022</a> in your favorite format here: <a href="./poster.html">web/html</a>, <a href="./poster.pdf">print/pdf</a>. The source repository for this paper lives <a href="https://github.com/hits-mbm-dev/paper-talin-loop">here</a>. The preliminary and less feature-rich pdf version lives <a href="./index.pdf">here</a>.</p>
+<p>You can find the poster that goes along with the paper presented at the <a href="https://www.biophysics.org/2022meeting#">Annual Meeting of the Biophysical Society 2022</a> in your favorite format here: <a href="./poster.html">poster web/html</a>, <a href="./poster.pdf">poster print/pdf</a>.</p>
+<p>The source repository for this paper lives <a href="https://github.com/hits-mbm-dev/paper-talin-loop">here</a>. The pdf version of this paper lives <a href="./index.pdf">here</a>.</p>
 </div>
 </div>
 <section id="introduction" class="level1">
@@ -284,9 +285,6 @@ Tip
 <p>Talin features an N-terminal FERM domain (F for 4.1 protein, E for ezrin, R for radixin and M for moesin), which is composed of the subdomains F0 to F3 and provides a link to the cystosolic side of the plasma membrane <span class="citation" data-cites="chishtiFERMDomainUnique1998">(<a href="#ref-chishtiFERMDomainUnique1998" role="doc-biblioref">9</a>)</span>. It does so via a conserved binding motif for phosphatidylinositol 4,5-bisphosphate (PIP<sub>2</sub>), which is enriched at active focal adhesion sites <span class="citation" data-cites="maniFERMDomainPhosphoinositide2011 dasMolecularMechanotransductionPathway2015 songNovelMembranedependentSwitch2012a">(<a href="#ref-maniFERMDomainPhosphoinositide2011" role="doc-biblioref">10</a>–<a href="#ref-songNovelMembranedependentSwitch2012a" role="doc-biblioref">12</a>)</span>. The main PIP<sub>2</sub> binding sites are located in F2 and F3 (highlighted as red spheres in <a href="#fig-tln-schema-long">Figure&nbsp;1 (a)</a>). Notably, the Talin1 FERM domain differs from other FERM proteins through the addition of the F0 subdomain, which is connected to F1 via a charged interface, as well as an insertion in F1, a flexible loop with helical propensity and basic residues <span class="citation" data-cites="goultStructureDoubleUbiquitinlike2010">(<a href="#ref-goultStructureDoubleUbiquitinlike2010" role="doc-biblioref">13</a>)</span>.</p>
 <p>Additionally, Talin’s FERM domain exists in an extended conformation, as opposed to the cloverleaf-like conformation of other FERM proteins <span class="citation" data-cites="elliottStructureTalinHead2010">(<a href="#ref-elliottStructureTalinHead2010" role="doc-biblioref">14</a>)</span>. F3 also has a binding site for <span class="math inline">\beta</span>-integrin tails <span class="citation" data-cites="calderwoodTalinHeadDomain1999">(<a href="#ref-calderwoodTalinHeadDomain1999" role="doc-biblioref">15</a>)</span> and is partly responsible for the enrichment of PIP<sub>2</sub> at the membrane through a binding site for PIPKI<span class="math inline">\gamma</span> <span class="citation" data-cites="calderwoodTalinsKindlinsPartners2013">(<a href="#ref-calderwoodTalinsKindlinsPartners2013" role="doc-biblioref">16</a>)</span>. A second integrin binding site is located with the rod domain 11 (R11) <span class="citation" data-cites="horwitzInteractionPlasmaMembrane1986">(<a href="#ref-horwitzInteractionPlasmaMembrane1986" role="doc-biblioref">17</a>)</span>. Talin interacts with the cytoskeleton through actin binding sites (F2-F3, R4-R8, R13-DH) <span class="citation" data-cites="mccannLWEQModuleConserved1997">(<a href="#ref-mccannLWEQModuleConserved1997" role="doc-biblioref">18</a>)</span>. The review by Klapholz et al. <span class="citation" data-cites="klapholzTalinMasterIntegrin2017">(<a href="#ref-klapholzTalinMasterIntegrin2017" role="doc-biblioref">19</a>)</span> provides an excellent overview of the many interaction sites of talin and its central role in the focal adhesion complex.</p>
 <p>The mechanistic role of the disordered F1 loop in the many aspects of Talin function remains elusive. Its overall positive charge renders it a prime candidate as a PIP<sub>2</sub> binding site. However, previous studies only identified a minor role of the loop in PIP<sub>2</sub> binding compared to F2-F3 <span class="citation" data-cites="chinthalapudiInteractionTalinCell2018a saltelNewPIP22009">(<a href="#ref-chinthalapudiInteractionTalinCell2018a" role="doc-biblioref">20</a>, <a href="#ref-saltelNewPIP22009" role="doc-biblioref">21</a>)</span>. On the other hand, the F1 loop has been shown to contribute to talin-mediated integrin activation <span class="citation" data-cites="goultStructureDoubleUbiquitinlike2010">(<a href="#ref-goultStructureDoubleUbiquitinlike2010" role="doc-biblioref">13</a>)</span>.</p>
-<!-- TODO: paragraph on FERM-PIP2 at focal adhesions, -->
-<!-- multiple binding sites, several pip2s critial for stability of FAK, -->
-<!-- allows opening of autoinhibited FAK -->
 <p>It was previously shown that F3 can interact with R9, which impedes integrin activation <span class="citation" data-cites="bannoSubcellularLocalizationTalin2012">(<a href="#ref-bannoSubcellularLocalizationTalin2012" role="doc-biblioref">22</a>)</span>. Furthermore, in a recently determined cryo-electron microscopy structure of autoinhibited Talin1, Dedden et al. <span class="citation" data-cites="deddenArchitectureTalin1Reveals2019a">(<a href="#ref-deddenArchitectureTalin1Reveals2019a" role="doc-biblioref">23</a>)</span> showed that the rod domains R9 and R12 shield the established PIP<sub>2</sub> binding surface and the integrin binding site in F3 (see <a href="#fig-tln-schema-autoinhib">Figure&nbsp;1 (b)</a>, <a href="#fig-tln-align-autoinhib">Figure&nbsp;1 (c)</a>). This beckons the question how this autoinhibition can be resolved. Song at al. <span class="citation" data-cites="songNovelMembranedependentSwitch2012a">(<a href="#ref-songNovelMembranedependentSwitch2012a" role="doc-biblioref">12</a>)</span> previously investigated a fragment of talin consisting of F2-F3 and an inhibiting rod segment and suggested a pull-push mechanism, whereby negatively charged PIP<sub>2</sub> attracts its positively charged binding surface on F2-F3 and simultaneously repels the negatively charged surface of the inhibitive rod segment. However, this still leaves open the question of how talin can establish a first contact with the membrane and remain within a sufficient proximity for this effect to kick in.</p>
 <div id="fig-structure" class="quarto-layout-panel">
 <figure class="figure">
@@ -1210,57 +1208,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  const viewSource = window.document.getElementById('quarto-view-source') ||
-                     window.document.getElementById('quarto-code-tools-source');
-  if (viewSource) {
-    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-    viewSource.addEventListener("click", function(e) {
-      if (sourceUrl) {
-        // rstudio viewer pane
-        if (/\bcapabilities=\b/.test(window.location)) {
-          window.open(sourceUrl);
-        } else {
-          window.location.href = sourceUrl;
-        }
-      } else {
-        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-        modal.show();
-      }
-      return false;
-    });
-  }
-  function toggleCodeHandler(show) {
-    return function(e) {
-      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-      for (let i=0; i<detailsSrc.length; i++) {
-        const details = detailsSrc[i].parentElement;
-        if (show) {
-          details.open = true;
-        } else {
-          details.removeAttribute("open");
-        }
-      }
-      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
-      const fromCls = show ? "hidden" : "unhidden";
-      const toCls = show ? "unhidden" : "hidden";
-      for (let i=0; i<cellCodeDivs.length; i++) {
-        const codeDiv = cellCodeDivs[i];
-        if (codeDiv.classList.contains(fromCls)) {
-          codeDiv.classList.remove(fromCls);
-          codeDiv.classList.add(toCls);
-        } 
-      }
-      return false;
-    }
-  }
-  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-  if (hideAllCode) {
-    hideAllCode.addEventListener("click", toggleCodeHandler(false));
-  }
-  const showAllCode = window.document.getElementById("quarto-show-all-code");
-  if (showAllCode) {
-    showAllCode.addEventListener("click", toggleCodeHandler(true));
-  }
   function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
