@@ -198,8 +198,8 @@ Computations for data analysis were tracked with the targets R package [@landauT
 Plots were generated with ggplot2 [@ggplot].
 Interactive structure representations are embedded using Mol\* [@molstar].
 Schematic visualizations were rendered with blender [@blender] and VMD [@vmd].
-Files relevant to this paper that are too big to be uploaded to this repository, such as trajectories and blender files, will be uploaded to a separate location.
-This paper and the matching poster were generated with [quarto](https://quarto.org/) [@quarto; @knitr; @rbetterposter].
+Files relevant to this work that are too big to be uploaded to this repository, such as trajectories and blender files, will be uploaded to a separate location.
+This manuscript and the matching poster were generated with [quarto](https://quarto.org/) [@quarto; @knitr; @rbetterposter].
 
 ::: {.content-visible when-format="html"}
 The plotting code and computational graph of `targets` is available in [this document](./_analysis.html).
