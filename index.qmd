@@ -40,6 +40,7 @@ format:
   docx: default
 colorlinks: true
 keep-tex: true
+number-sections: true
 abstract: |
   Focal adhesions (FAs) mediate the interaction of the cytoskeleton with the extracellular matrix (ECM) in a highly dynamic fashion.
   Talin is a central regulator, adaptor protein and mechano-sensor of focal adhesion complexes. For recruitment and firm attachment at FAs, Talin’s N-terminal FERM domain binds to phosphatidylinositol 4,5-bisphosphate (PIP~2~)-enriched membranes.
