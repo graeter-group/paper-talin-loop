@@ -47,7 +47,7 @@ abstract: |
   A newly published autoinhibitory structure of Talin, where the known PIP~2~ interaction sites are covered up, lead us to hypothesize that a hitherto less examined loop insertion of the FERM domain acts as an additional and initial site of contact.
   We evaluated direct interactions of Talin with the membrane lipid PIP~2~ by means of atomistic molecular dynamics (MD) simulations.
   We show that this unstructured, 33-residue-long loop strongly interacts with PIP~2~ and can facilitate further interactions by serving as a flexible membrane anchor.
-  Under physiological force as present in Talin at FAs, the extensible FERM loop ensures Talin to maintain membrane contacts when pulled away from the membrane by up to 7nm.
+  Under physiological force as present in Talin at FAs, the extensible FERM loop ensures Talin to maintain membrane contacts when pulled away from the membrane by up to 7\ nm.
   This work presents the dynamics of the interaction and identifies key residues.
   Our results put forward an intrinsically disordered loop as a key and highly adaptable PIP~2~ recognition site of Talin and potentially other PIP~2~-binding mechano-proteins.
 sigstatement: |
@@ -180,7 +180,7 @@ The initial equilibrium simulation of the completed FERM domain was run for 75 n
 Subsequently, the root mean squared fluctuation (RMSF) was calculated with GROMACS tools.
 
 The F0F1 FERM sub domains (residues 1 to 197) were simulated to evaluate protein-membrane association using a rotational sampling approach.
-This entailed placing the protein 1.5 nm away from a 1-palmitoyl-2-oleoyl-glycero-3-phosphocholine (POPC) membrane in a total of 60 orientations spanning a rotation of 360 degrees.
+This entailed placing the protein 1.5\ nm away from a 1-palmitoyl-2-oleoyl-glycero-3-phosphocholine (POPC) membrane in a total of 60 orientations spanning a rotation of 360 degrees.
 6 replicates of each orientation were run for 200\ ns each.
 However, due to a hardware failure, 6 of these 360 runs are only 50 to 150\ ns long.
 Of the 119 lipids in the upper leaflet of the POPC membrane, 12 lipids were replaced with PIP~2~, which results in a physiological concentration of 10% PIP~2~.
@@ -214,8 +214,8 @@ It retained its flexibility in equilibrium simulations (@fig-loop-rmsf), which i
 The resulting system that provides the basis for our simulations can be explored interactively in the Supplementary Materials.
 
 When simulating only F0-F1 over a POPC membrane containing 10% PIP~2~, we noticed that the F1 loop had a clear propensity to establish contact with the membrane.
-And once contact had been established the protein was anchored strongly enough for more contacts to evolve with time, pulling the protein onto the membrane ([see Figure @fig-f0f1-unbound; -@fig-f0f1-anchored; -@fig-f0f1-bound]).
-In order to control for a potential bias towards the loop as a result of the starting position we performed a rotational sampling of the system, where the starting angle of the loop with respect to the membrane was varied across 60 equally spaced angles.
+Once contact had been established the protein was anchored strongly enough for more contacts to evolve with time, pulling the protein onto the membrane ([@fig-f0f1-unbound; -@fig-f0f1-anchored; -@fig-f0f1-bound]).
+In order to control for a potential bias towards the loop as a result of the starting position, we performed a rotational sampling of the system, where the starting angle of the loop with respect to the membrane was varied across 60 equally spaced angles.
 @fig-f0f1-ri-angle shows that independent of the starting position, the loop is able to find the membrane and bind to it, though this does happen earlier in the simulation when the loop starts favorably oriented towards the membrane (@fig-f0f1-angle-frame).
 However, even in its most unfavorable starting orientation (180°, oriented away from the membrane) the loop is able to find the membrane due to the large search space it can cover with its high flexibility (see @fig-loop-rmsf).
 
@@ -256,7 +256,7 @@ The heatmap color represents the mean number of PIP~2~ molecules that are in clo
 :::::
 
 
-::::: {#fig-loop-importance layout="[[1,1]]"}
+::::: {#fig-loop-importance-2 layout="[[1,1]]"}
 ![ ](./results/plots/f0f1-angle-frame-npip-1.png){#fig-f0f1-angle-frame}
 
 ![ ](./results/plots/f0f1-retention-1.png){#fig-f0f1-retention}
@@ -295,9 +295,9 @@ The most prominent residues are highlighted in **b)**.
 (For the print version it is just a placeholder image. The video is available in the web-version (<https://hits-mbm-dev.github.io/paper-talin-loop>) or here: <https://youtu.be/s5yya0XeNTA>).
 :::::
 
-## The F1 loop can facilitate further contacts
+## The F1 loop can facilitate further membrane contacts
 
-We chose a representative conformation from the rotational sampling as a starting point for force-probe simulations of F0-F1 perpendicular to the membrane  to test the strength of the interaction (@fig-f0f1-vert-pull-vmd).
+We chose a representative conformation from the rotational sampling as a starting point for force-probe simulations of F0-F1 perpendicular to the membrane  to test the strength of the interaction (@fig-f0f1-vert-pull).
 An exemplary render of one of the simulations can be seen in @fig-f0f1-pull-run-1.
 Pulling F0-F1 off the membrane requires peak forces of 100--120\ pN, during which the interacting residues only very gradually loose contact (@fig-f0f1-vert-pull).
 This highlights the strong anchoring capabilities of the F1 loop.
@@ -305,20 +305,21 @@ As seen in @fig-f0f1-vert-pull-contacts, during pulling residues not belonging t
 The F1 loop works in conjunction with the F0 subdomain (see @fig-f0f1-vert-pull-residues).
 Their high flexibility allows them to remain in contact with the membrane over large distances, which would allow for a spring-like re-establishing of more contacts should the force be alleviated.
 
-:::: {#fig-vert-pull layout="[[1.6, 1],[1, 1]]"}
+:::: {#fig-vert-pull layout="[[1],[1, 1]]"}
 
 :::{#fig-f0f1-pull-run-1}
-::: {.content-visible when-format="html"}
+::: {.content-visible when-format="html" layout="[1.7,1]" .noborder}
 ![](./assets/vmd/f0f1-pulling/f0f1-run1.mp4)
+
+![](./assets/vmd/f0f1-pulling/vert-pull.png)
 :::
 ::: {.content-visible when-format="pdf"}
-![](./assets/vmd/f0f1-pulling/f0f1-pull-start.png)
-![](./assets/vmd/f0f1-pulling/f0f1-pull-end.png)
+![](./assets/vmd/f0f1-pulling/f0f1-pull-start.png){width=30%}
+![](./assets/vmd/f0f1-pulling/vert-pull.png){width=30%}
+![](./assets/vmd/f0f1-pulling/f0f1-pull-end.png){width=30%}
 :::
  
 :::
-
-![ ](./assets/vmd/f0f1-pulling/vert-pull.png){#fig-f0f1-vert-pull-vmd}
 
 ![ ](./results/plots/f0f1-vert-pull-1.png){#fig-f0f1-vert-pull}
 
@@ -328,17 +329,17 @@ Vertical Pulling of F0-F1.
 **a\)**
 A representative render of one of 6 force-probe MD simulations pulling F0-F1 off the membrane (For the print version it is just a placeholder image. The video is available in the web-version (<https://hits-mbm-dev.github.io/paper-talin-loop> or here: <https://youtu.be/-eZ2orx7QRE>).
 It starts from a snapshot of F0-F1 in its bound conformation taken from the rotational sampling (@fig-loop-importance) and gets pulled upwards from its C-terminus.
-The direction of force is shown in the snapshot **b\)**.
-**c\)**
+The direction of force is shown in the snapshot.
+**b\)**
 As F0-F1 gets pulled at a constant rate of 0.03\ nm/ns we observe the time evolution of the force (bottom panel) and the number of interacting residues (top panel).
 The number of interacting residues goes down very gradually, as the high flexibility of loop allows the residues to remain in contact even as the distance increases.
 Replicate 4 is highlighted in magenta, as in this run the interactions were so so strong that a total of 3 molecules of PIP~2~ were pulled out of the membrane (1 by F0 and 2 by the F1 loop).
 A snapshot of this can be seen in @fig-f0f1-vert-pull-run4.
-**d\)**
+**c\)**
 The time evolution of the number of contacts for resides belonging to the F1 loop and other residues shows how initially other residues loose contact until eventually the loop looses contacts as well.
 Lighter shades of blue correspond to a later time in the simulation.
 Black dots mark the starting positions.
-The longest remaining non-loop contacts belong to the N-terminus of F0 (for which **b** is also a representative snapshot), with the exception of replicate 4, as explained in **c**.
+The longest remaining non-loop contacts belong to the N-terminus of F0 (for which **a** is also a representative snapshot), with the exception of replicate 4, as explained in **b**.
 ::::
 
 Simulations with the full-length FERM domain show that with the loop as an initial membrane contact, known PIP~2~ binding sites can also be established ([@fig-ferm-ri-npip; @fig-ferm-memb-system]).
@@ -368,7 +369,7 @@ While crystal structures of proteins in complex with PIP~2~ typically show a one
 Similar results have been observed for Pleckstrin Homology (PH) domain proteins by Naughton et al. [@naughtonModesInteractionPleckstrin2018].
 According to their study, this simultaneous binding of multiple PIP~2~ molecules contributes to the high affinity of the membrane interaction.
 
-Our MD simulations suggest that the F1 loop can find favorable interactions with PIP~2~ across large distances in a large search volume due to its flexibility.
+Our MD simulations suggest that the F1 loop can find favorable interactions with PIP~2~ across large distances in a large search volume due to its flexibility and can maintain this contact when Talin is pulled off of the membrane over distances as large as 7\ nm.
 A similar mechanism has also been shown by Shoemakter et al. [@shoemakerSpeedingMolecularRecognition2000] and was fittingly coined "fly-casting".
 In the aforementioned publication they focus on the interaction of unfolded regions with DNA.
 Our simulations now provide an example for the concept applied to protein-lipid interactions.
@@ -376,7 +377,7 @@ It its well worth noting that, although we mention the greater search space of t
 
 The fast binding kinetics are crucial for Talin's function at focal adhesion sites.
 As the PIP~2~ concentrations increases at the active focal adhesion site, Talin's FERM F1 loop can perform a quick recognition.
-The flexibility of the loop also allows it to anchor the protein at the membrane even when being stretched under force (up to a delta of 7 nm, as seen in @fig-f0f1-vert-pull).
+The flexibility of the loop also allows it to anchor the protein at the membrane even when being stretched under force (up to a delta of 7\ nm, as seen in @fig-f0f1-vert-pull).
 This is akin to the elastic response seen in focal adhesion kinase (FAK) under force, in which a 49 AA linker allows for buffering of the force [@bauerStructuralMechanisticInsights2019].
 In our force probe experiments we pulled F0F1 orthogonally off of the membrane.
 This was useful in showing the full extension and force resistance of the loop.
@@ -449,7 +450,7 @@ Analysis scripts, setup scripts and production trajectories will be uploaded and
 **a\)**
 RMSF [nm] of the c$\alpha$ of individual residues in an equilibrium simulation shown by coloring the backbone The loop is highly flexible.
 **b\)**
-A density plot of distances between PIP~2~ and the protein residues to decide on a cutoff for defining interactions A distance of 0.25 nm was chosen.
+A density plot of distances between PIP~2~ and the protein residues to decide on a cutoff for defining interactions A distance of 0.25\ nm was chosen.
 **d\)**
 A closer look at the residues involved in the interaction during pulling reveals the instrumental role of both the F1 loop as well as the F0 subdomain in keeping the connection to the membrane.
 **e\)**
