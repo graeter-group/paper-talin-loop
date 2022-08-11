@@ -40,7 +40,7 @@ format:
   docx: default
 colorlinks: true
 keep-tex: true
-number-sections: true
+# number-sections: true
 abstract: |
   Focal adhesions (FAs) mediate the interaction of the cytoskeleton with the extracellular matrix (ECM) in a highly dynamic fashion.
   Talin is a central regulator, adaptor protein and mechano-sensor of focal adhesion complexes. For recruitment and firm attachment at FAs, Talin’s N-terminal FERM domain binds to phosphatidylinositol 4,5-bisphosphate (PIP~2~)-enriched membranes.
@@ -142,7 +142,7 @@ Tails of an integrin $\alpha$ and $\beta$ heterodimer reaching through the lipid
 **b\)**
 A schematic rendering of the autoinhibited structure of Talin as crystallized by Dedden et al. [@deddenArchitectureTalin1Reveals2019a] in combination with a cartoon representation in **c)**.
 The completed FERM structure by Elliott et al. [@elliottStructureTalinHead2010], with our addition of the modelled F1 loop, is fitted to the autoinhibited structure, as the latter does not include F0-F1 due to their flexibility.
-The complete FERM structure can be explored interactively in the context of our simulation system in @sec-system.
+The complete FERM structure can be explored interactively in the context of our simulation system in the Supplementary Materials.
 The main PIP~2~-binding sites in F2-F3 are occluded by rod domain 12.
 ::::
 
@@ -165,15 +165,16 @@ MD simulations were performed with GROMACS [@berendsenGROMACSMessagepassingParal
 A crystal structure of the Talin FERM domain by Elliot et al. [@elliottStructureTalinHead2010] with the PDB-ID 3IVF was used as the basis of all simulations.
 
 The missing F1 domain loop between residues L133 and W144 was modeled using MODELLER [@marti-renomComparativeProteinStructure2000; @webbComparativeProteinStructure2016] via the interface to Chimera [@pettersenUCSFChimeraVisualization2004], followed by equilibration with GROMACS.
-The resulting conformation (see @sec-system) was compared to an NMR structure of the F1 domain (PDB-ID 2KC2) by Goult et al. [@goultStructureDoubleUbiquitinlike2010].
+The resulting conformation was compared to an NMR structure of the F1 domain (PDB-ID 2KC2) by Goult et al. [@goultStructureDoubleUbiquitinlike2010].
 
 The missing residue M1 was also added.
-The missing residues I399 and L400 were not modeled, leaving us with with a continuous sequence from residue 1 to 398.
+The missing residues I399 and L400 were not modeled, leaving us with a continuous sequence from residue 1 to 398.
 Simulations were performed with the CHARM36 force field.
 Topologies, including the membrane, were generated with the CHARM-GUI web app [@brooksCHARMMBiomolecularSimulation2009; @joCHARMMGUIWebbasedGraphical2008; @leeCHARMMGUIInputGenerator2016] and GROMACS tools.
-All simulations used the TIP3P water model and were neutralized with 0.15 mol/L of NaCl A 6-step equilibration was performed after gradient decent energy minimization while gradually relieving restraints on protein and membrane atoms Production runs use a timestep of 2 fs, a Verlet cut-off scheme for Van-der-Waals interactions and the Particle Mesh Ewald (PME) method for long-range electrostatics.
-NTP-ensembles were achieved by Nosé-Hoover temperature coupling [@hooverCanonicalDynamicsEquilibrium1985; @noseUnifiedFormulationConstant1984] and Parinello-Rahman pressure coupling [@parrinelloPolymorphicTransitionsSingle1981].
-An example `.mdp`-file can be found in the supplementary materials in @sec-prod-mdp.
+All simulations used the TIP3P water model and were neutralized with 0.15 mol/L of NaCl. A 6-step equilibration was performed after gradient decent energy minimization while gradually relieving restraints on protein and membrane atoms.
+Production runs used a timestep of 2 fs, a Verlet cut-off scheme for Van-der-Waals interactions and the Particle Mesh Ewald (PME) method for long-range electrostatics.
+NPT-ensembles were achieved by Nosé-Hoover temperature coupling [@hooverCanonicalDynamicsEquilibrium1985; @noseUnifiedFormulationConstant1984] and Parinello-Rahman pressure coupling [@parrinelloPolymorphicTransitionsSingle1981].
+An example `.mdp`-file can be found in the Supplementary Materials.
 
 The initial equilibrium simulation of the completed FERM domain was run for 75 ns.
 Subsequently, the root mean squared fluctuation (RMSF) was calculated with GROMACS tools.
@@ -209,7 +210,7 @@ The plotting code and computational graph of `targets` is available in [this doc
 ## The F1 loop can act as a point of first contact
 
 The high flexibility of the F1 loop gave use the confidence to model it from sequence It retained its flexibility in equilibrium simulations (@fig-loop-rmsf), which in combination with comparisons to NMR structures [@goultStructureDoubleUbiquitinlike2010] confirmed this approach.
-The resulting system that provides the basis for our simulations can be explored interactively in @sec-system.
+The resulting system that provides the basis for our simulations can be explored interactively in the Supplementary Materials.
 
 When simulating only F0-F1 over a POPC membrane containing 10% PIP~2~, we noticed that the F1 loop had a clear propensity to establish contact with the membrane.
 And once contact had been established the protein was anchored strongly enough for more contacts to evolve with time, pulling the protein onto the membrane ([see Figure @fig-f0f1-unbound; -@fig-f0f1-anchored; -@fig-f0f1-bound]).
