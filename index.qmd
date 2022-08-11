@@ -43,12 +43,12 @@ keep-tex: true
 abstract: |
   Focal adhesions (FAs) mediate the interaction of the cytoskeleton with the extracellular matrix (ECM) in a highly dynamic fashion.
   Talin is a central regulator, adaptor protein and mechano-sensor of focal adhesion complexes. For recruitment and firm attachment at FAs, Talin’s N-terminal FERM domain binds to phosphatidylinositol 4,5-bisphosphate (PIP~2~)-enriched membranes.
-  A newly published autoinhibitory structure of talin, where the known PIP~2~ interaction sites are covered up, lead us to hypothesize that a hitherto less examined loop insertion of the FERM domain acts as an additional and initial site of contact.
-  We evaluated direct interactions of talin with the membrane lipid PIP~2~ by means of atomistic molecular dynamics simulations.
+  A newly published autoinhibitory structure of Talin, where the known PIP~2~ interaction sites are covered up, lead us to hypothesize that a hitherto less examined loop insertion of the FERM domain acts as an additional and initial site of contact.
+  We evaluated direct interactions of Talin with the membrane lipid PIP~2~ by means of atomistic molecular dynamics (MD) simulations.
   We show that this unstructured, 33-residue-long loop strongly interacts with PIP~2~ and can facilitate further interactions by serving as a flexible membrane anchor.
-  Under physiological force as present in talin at FAs, the extensible FERM loop ensures talin to maintain membrane contacts when pulled away from the membrane by up to 7nm.
+  Under physiological force as present in Talin at FAs, the extensible FERM loop ensures Talin to maintain membrane contacts when pulled away from the membrane by up to 7nm.
   This work presents the dynamics of the interaction and identifies key residues.
-  Our results put forward an intrinsically disordered loop as a key and highly adaptable PIP~2~ recognition site of talin and potentially other PIP~2~-binding mechano-proteins.
+  Our results put forward an intrinsically disordered loop as a key and highly adaptable PIP~2~ recognition site of Talin and potentially other PIP~2~-binding mechano-proteins.
 sigstatement: |
   TODO
   Each manuscript must also have a statement of significance or no more than 120 words.
@@ -75,24 +75,26 @@ bibliography: references.bib
 
 :::callout-warning
 This is a draft and as such subject to change.
-This is a test message.
 :::
 
 ::::callout-tip
-You can find the poster that goes along with the paper presented at the [Annual Meeting of the Biophysical Society 2022](https://www.biophysics.org/2022meeting#)
-in your favorite format here: [poster web/html](./poster.html), [poster print/pdf](./poster.pdf).
-
 The source repository for this paper lives [here](https://github.com/hits-mbm-dev/paper-talin-loop).
 The pdf version of this paper lives [here](./index.pdf).
+
+You can find the poster that goes along with the paper presented at the [Annual Meeting of the Biophysical Society 2022](https://www.biophysics.org/2022meeting#)
+in your favorite format here:
+
+- [poster web/html](./poster.html)
+- [poster print/pdf](./poster.pdf)
 ::::
 
 # Introduction
 
-It is critical for cells to mechanically sense their surroundings at cell adhesion sites for a multitude of biological processes.
+Cells critically sense the mechanics of their enviroment at cell adhesion sites for a multitude of biological processes.
 Contact with the extracellular matrix and surrounding cells regulates growth, differentiation, motility and even apoptosis [@vogelLocalForceGeometry2006; @oakesStressingLimitsFocal2014; @schillerMechanosensitivityCompositionalDynamics2013; @miroshnikovaAdhesionForcesCortical2018].
-The multiprotein focal adhesion complex is responsible for translating between biochemical and mechanical signals, where both directions, outside--in and inside--out activation, are being investigated [@thamilselvanPressureActivatesColon2004; @pelletierActivationStateIntegrin1995].
+The multiprotein focal adhesion complex is responsible for translating and integrating between biochemical and mechanical signals for both outside--in and inside--out activation[@thamilselvanPressureActivatesColon2004; @pelletierActivationStateIntegrin1995].
 
-At the center of the focal adhesion complex sits the adaptor protein talin, which dynamically unfolds and refolds under force [@yaoMechanicalResponseTalin2016].
+At the center of the focal adhesion complex sits the adaptor protein Talin, which dynamically unfolds and refolds under force [@yaoMechanicalResponseTalin2016].
 A schematic of Talin can be seen in @fig-tln-schema-long.
 Through interaction with integrin tails (dark green) [@tadokoroTalinBindingIntegrin2003], which in turn interact with collagen fibers via their heads, it links the extracellular matrix to the intracellular cytoskeleton by directly interacting with actin.
 Talin also features specific interactions with the membrane.
@@ -101,24 +103,24 @@ Their formation, mechanical stability and role in mechanosensing remain to be fu
 Talin features an N-terminal FERM domain (F for 4.1 protein, E for ezrin, R for radixin and M for moesin), which is composed of the subdomains F0 to F3 and provides a link to the cystosolic side of the plasma membrane [@chishtiFERMDomainUnique1998].
 It does so via a conserved binding motif for phosphatidylinositol 4,5-bisphosphate (PIP~2~), which is enriched at active focal adhesion sites [@maniFERMDomainPhosphoinositide2011; @dasMolecularMechanotransductionPathway2015; @songNovelMembranedependentSwitch2012a].
 The main PIP~2~ binding sites are located in F2 and F3 (highlighted as red spheres in @fig-tln-schema-long).
-Notably, the Talin1 FERM domain differs from other FERM proteins through the addition of the F0 subdomain, which is connected to F1 via a charged interface, as well as an insertion in F1, a flexible loop with helical propensity and basic residues [@goultStructureDoubleUbiquitinlike2010].
 
+Notably, the Talin1 FERM domain differs from other FERM proteins through the addition of the F0 subdomain, which is connected to F1 via a charged interface, as well as an insertion in F1, a flexible loop with helical propensity and basic residues [@goultStructureDoubleUbiquitinlike2010].
 Additionally, Talin's FERM domain exists in an extended conformation, as opposed to the cloverleaf-like conformation of other FERM proteins [@elliottStructureTalinHead2010].
 F3 also has a binding site for $\beta$-integrin tails [@calderwoodTalinHeadDomain1999] and is partly responsible for the enrichment of PIP~2~ at the membrane through a binding site for PIPKI$\gamma$ [@calderwoodTalinsKindlinsPartners2013].
-A second integrin binding site is located with the rod domain 11 (R11) [@horwitzInteractionPlasmaMembrane1986].
+A second integrin binding site is located in the rod domain 11 (R11) [@horwitzInteractionPlasmaMembrane1986].
 Talin interacts with the cytoskeleton through actin binding sites (F2-F3, R4-R8, R13-DH) [@mccannLWEQModuleConserved1997].
-The review by Klapholz et al. [@klapholzTalinMasterIntegrin2017] provides an excellent overview of the many interaction sites of talin and its central role in the focal adhesion complex.
+The review by Klapholz et al. [@klapholzTalinMasterIntegrin2017] provides an excellent overview of the many interaction sites of Talin and their central role in the focal adhesion complex.
 
 The mechanistic role of the disordered F1 loop in the many aspects of Talin function remains elusive.
 Its overall positive charge renders it a prime candidate as a PIP~2~ binding site.
 However, previous studies only identified a minor role of the loop in PIP~2~ binding compared to F2-F3 [@chinthalapudiInteractionTalinCell2018a; @saltelNewPIP22009].
-On the other hand, the F1 loop has been shown to contribute to talin-mediated integrin activation [@goultStructureDoubleUbiquitinlike2010].
+On the other hand, the F1 loop has been shown to contribute to Talin-mediated integrin activation [@goultStructureDoubleUbiquitinlike2010].
 
 It was previously shown that F3 can interact with R9, which impedes integrin activation [@bannoSubcellularLocalizationTalin2012].
 Furthermore, in a recently determined cryo-electron microscopy structure of autoinhibited Talin1, Dedden et al. [@deddenArchitectureTalin1Reveals2019a] showed that the rod domains R9 and R12 shield the established PIP~2~ binding surface and the integrin binding site in F3 (see [@fig-tln-schema-autoinhib; @fig-tln-align-autoinhib]).
 This beckons the question how this autoinhibition can be resolved.
-Song at al. [@songNovelMembranedependentSwitch2012a] previously investigated a fragment of talin consisting of F2-F3 and an inhibiting rod segment and suggested a pull-push mechanism, whereby negatively charged PIP~2~ attracts its positively charged binding surface on F2-F3 and simultaneously repels the negatively charged surface of the inhibitive rod segment.
-However, this still leaves open the question of how talin can establish a first contact with the membrane and remain within a sufficient proximity for this effect to kick in.
+Song at al. [@songNovelMembranedependentSwitch2012a] previously investigated a fragment of Talin consisting of F2-F3 and an inhibiting rod segment and suggested a pull-push mechanism, whereby negatively charged PIP~2~ attracts its positively charged binding surface on F2-F3 and simultaneously repels the negatively charged surface of the inhibitive rod segment.
+However, this still leaves open the question of how Talin can establish a first contact with the membrane and remain within a sufficient proximity for this effect to kick in.
 
 ::::{#fig-structure layout="[[1], [1,1], [1]]"}
 
@@ -131,36 +133,34 @@ However, this still leaves open the question of how talin can establish a first 
 A schematic overview of Talin and our simulation setup.
 **a\)**
 A schematic rendering of full-length Talin over a POPC membrane enriched with PIP~2~ in the upper leaflet.
-The subdomains under scrutiny in this publication, namely F0-F3, which comprise the N-terminal FERM domain (or talin head) are highlighted in pastel colors (green, cyan, yellow, magenta).
+The subdomains under scrutiny in this publication, namely F0-F3, which comprise the N-terminal FERM domain (or Talin head), are highlighted in pastel colors (green, cyan, yellow, magenta).
 The two major PIP~2~ binding sites in F2-F3 are marked with red spheres.
-An integrin binding site also resides in this area.
-Klapholz et al. [@klapholzTalinMasterIntegrin2017] provide an excellent review of Talin's central role in the focal adhesion complex and list further binding sites.
-The talin rod segments (or talin tail) are numbered R1 to R13.
-Note that under physiological conditions, with talin experiencing force from bound actin, the angle between the FERM domain and the talin rod would be more akin to 30° as opposed to the linear structure shown here for illustrative purposes.
+The Talin rod segments (or Talin tail) are numbered R1 to R13.
+Note that under physiological conditions, with Talin experiencing force from bound actin, the angle between the FERM domain and the Talin rod would be more akin to 30° as opposed to the linear structure shown here for illustrative purposes.
 Tails of an integrin $\alpha$ and $\beta$ heterodimer reaching through the lipid bilayer are represented in green.
 **b\)**
 A schematic rendering of the autoinhibited structure of Talin as crystallized by Dedden et al. [@deddenArchitectureTalin1Reveals2019a] in combination with a cartoon representation in **c)**.
 The completed FERM structure by Elliott et al. [@elliottStructureTalinHead2010], with our addition of the modelled F1 loop, is fitted to the autoinhibited structure, as the latter does not include F0-F1 due to their flexibility.
 The complete FERM structure can be explored interactively in the context of our simulation system in @sec-system.
-The main PIP~2~-binding sites in F2-F3 are occluded by rod domain 12 Additionally, R9 covers up the integrin binding site.
+The main PIP~2~-binding sites in F2-F3 are occluded by rod domain 12.
 ::::
 
-Here we test the hypothesis that the flexible F1 loop inserted into Talin's FERM domain serves as an additional PIP~2~ interaction site that is readily accessible to PIP~2~ even in Talin's autoinhibited conformation and further mechanically stabilizes Talin's interaction with the membrane.
-To this end, we modelled the loop, which due to its high flexibility, is not included in crystal structures of the FERM domain, such as PDB-ID 3IVF by Elliot et al. [@elliottStructureTalinHead2010].
+We hypothesized that the flexible F1 loop inserted into Talin's FERM domain serves as an additional PIP~2~ interaction site. As such it would be readily accessible to PIP~2~ even in Talin's autoinhibited conformation and would further mechanically stabilize Talin's interaction with the membrane.
+To test this hypothesis, we modelled the loop, which, due to its high flexibility, is not included in crystal structures of the FERM domain, such as PDB-ID 3IVF by Elliot et al. [@elliottStructureTalinHead2010].
 
-With a complete structure of the talin FERM domain we investigated the role of the F1 loop through molecular dynamics simulations, which had previously also proven useful to detect the recognition of PIP~2~ in membranes by PH domains [@buyanMultiscaleSimulationsSuggest2016] or the FERM domain of Focal Adhesion Kinase [@zhouMechanismFocalAdhesion2015].
+With a complete structure of the Talin FERM domain we investigated the role of the F1 loop through atomistic molecular dynamics (MD) simulations, which had previously also proven useful to detect the recognition of PIP~2~ in membranes by PH domains [@buyanMultiscaleSimulationsSuggest2016] or the FERM domain of Focal Adhesion Kinase [@zhouMechanismFocalAdhesion2015].
 
 In F0-F1 simulations, we found the loop to have a clear propensity to interact with the PIP~2~-containing membrane.
-Moreover, it is to be able to establish a first contact with the membrane even from unfavorable initial orientations due to its large search volume.
+It is able to establish a first contact with the membrane even from unfavorable initial orientations due to its large search volume.
 Furthermore, we show with simulations of the full-length FERM domain that once the loop has established an initial contact, it can anchor the FERM domain to the membrane and establish the known major binding sites in F2-F3.
 
-These results provide mechanistic insight into the role of membrane interactions for the localization of Talin at the center of the focal adhesion complex and highlight the role of secondary flexible binding surfaces for membrane recognition.
+These results provide mechanistic insight Talin--PIP~2~ interactions and highlight the role of secondary intrinsically disordered binding surfaces for membrane recognition.
 
 # Materials and Methods
 
 ## Molecular dynamics with GROMACS
 
-Molecular dynamics simulations were performed with GROMACS [@berendsenGROMACSMessagepassingParallel1995; @abrahamGROMACSHighPerformance2015] version 2020.03 [@lindahlGROMACS2020Source2020].
+MD simulations were performed with GROMACS [@berendsenGROMACSMessagepassingParallel1995; @abrahamGROMACSHighPerformance2015] version 2020.03 [@lindahlGROMACS2020Source2020].
 A crystal structure of the Talin FERM domain by Elliot et al. [@elliottStructureTalinHead2010] with the PDB-ID 3IVF was used as the basis of all simulations.
 
 The missing F1 domain loop between residues L133 and W144 was modeled using MODELLER [@marti-renomComparativeProteinStructure2000; @webbComparativeProteinStructure2016] via the interface to Chimera [@pettersenUCSFChimeraVisualization2004], followed by equilibration with GROMACS.
@@ -356,7 +356,7 @@ The known PIP~2~ interaction sites K272 of F2 and K316, K324, E342, and K343 of 
 
 # Discussion and Outlook
 
-Using molecular dynamics simulations, we provide mechanistic insight into the membrane recognition dynamics of Talin.
+Using MD simulations, we provide mechanistic insight into the membrane recognition dynamics of Talin.
 This adds a new mode of interaction that helps to explain how Talin can find the membrane even when its main PIP~2~ (and integrin) binding sites in F2 and F3 [@chinthalapudiInteractionTalinCell2018a] (see figure @fig-ferm-memb-system ) are blocked by autoinhibition [@deddenArchitectureTalin1Reveals2019a].
 This interaction mode is not characterized by strong binding sites interacting with one molecule of PIP~2~ each, as would be the conclusion from crystallographic data alone.
 Rather the cumulative diffuse interaction of multiple PIP~2~ with multiple residues is what keeps the protein anchored to the membrane.
@@ -365,7 +365,7 @@ While crystal structures of proteins in complex with PIP~2~ typically show a one
 Similar results have been observed for Pleckstrin Homology (PH) domain proteins by Naughton et al. [@naughtonModesInteractionPleckstrin2018].
 According to their study, this simultaneous binding of multiple PIP~2~ molecules contributes to the high affinity of the membrane interaction.
 
-Our molecular dynamics simulations suggest that the F1 loop can find favorable interactions with PIP~2~ across large distances in a large search volume due to its flexibility.
+Our MD simulations suggest that the F1 loop can find favorable interactions with PIP~2~ across large distances in a large search volume due to its flexibility.
 A similar mechanism has also been shown by Shoemakter et al. [@shoemakerSpeedingMolecularRecognition2000] and was fittingly coined "fly-casting".
 In the aforementioned publication they focus on the interaction of unfolded regions with DNA.
 Our simulations now provide an example for the concept applied to protein-lipid interactions.
@@ -383,7 +383,7 @@ As it is dragged along the membrane, the diffuse interactions of the F1 loop and
 This could further localize Talin at active focal adhesion sites.
 
 We conclusively show that the F1 loop is able to interact with the membrane even from most unfavorable positions.
-We propose that talin mutants lacking the loop, or specifically the basic residues in said loop, will show reduced or at least slowed-down focal adhesion maturation, increased lateral diffusion of talin under force and faster focal adhesion disassembly.
+We propose that Talin mutants lacking the loop, or specifically the basic residues in said loop, will show reduced or at least slowed-down focal adhesion maturation, increased lateral diffusion of Talin under force and faster focal adhesion disassembly.
 
 But recognition is only the first step.
 It would indeed be fascinating to also provide mechanistic ideas for the resolution of the autoinhibition by all-atom simulations of the FERM domain that also include an inhibiting rod segment.
