@@ -224,12 +224,11 @@ Of 358 runs ^[6 replicas each for 60 angles minus 2 runs lost to a storage failu
 
 
 
-
 ::: {.content-visible when-format="html"}
 @fig-f0f1-ri-npip and @fig-f0f1-residues highlight the residues involved in the interaction.
 :::
 
-::: {.content-visible when-format="pdf"}
+::: {.content-hidden when-format="html"}
 @fig-f0f1-ri-npip highlights the residues involved in the interaction.
 :::
 
@@ -300,7 +299,11 @@ The most prominent residues are highlighted in **b)**.
 
 ## The F1 loop maintains FERM--PIP~2~ interactions and facilitates further membrane contacts
 
+To test the strength of the PIP~2 interactions and the role
+
 We chose a representative conformation from the rotational sampling as a starting point for force-probe simulations of F0-F1 perpendicular to the membrane  to test the strength of the interaction (@fig-f0f1-vert-pull).
+
+
 An exemplary render of one of the simulations can be seen in @fig-f0f1-pull-run-1.
 Pulling F0-F1 off the membrane requires peak forces of 100--120\ pN, during which the interacting residues only very gradually loose contact (@fig-f0f1-vert-pull).
 This highlights the strong anchoring capabilities of the F1 loop.
@@ -316,7 +319,7 @@ Their high flexibility allows them to remain in contact with the membrane over l
 
 ![](./assets/vmd/f0f1-pulling/vert-pull.png)
 :::
-::: {.content-visible when-format="pdf"}
+::: {.content-hidden when-format="html"}
 ![](./assets/vmd/f0f1-pulling/f0f1-pull-start.png){width=30%}
 ![](./assets/vmd/f0f1-pulling/vert-pull.png){width=30%}
 ![](./assets/vmd/f0f1-pulling/f0f1-pull-end.png){width=30%}
@@ -420,7 +423,7 @@ This work was supported by the Klaus Tschira Foundation.
 
 ## Simulation System {#sec-system}
 
-:::: {.content-visible when-format="pdf"}
+:::: {.content-hidden when-format="html"}
 :::callout-note
 This interactive display is only available in the web version: <https://hits-mbm-dev.github.io/paper-talin-loop/>
 :::
