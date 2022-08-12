@@ -80,11 +80,11 @@ This is a draft and as such subject to change.
 
 ::::callout-tip
 The source repository for this paper lives [here](https://github.com/hits-mbm-dev/paper-talin-loop).
-The pdf version of this paper lives [here](./index.pdf).
+You can choose your favorite format for the manuscript and poster:
 
-You can find the poster that goes along with the paper presented at the [Annual Meeting of the Biophysical Society 2022](https://www.biophysics.org/2022meeting#)
-in your favorite format here:
-
+- [manuscript web/html](https://hits-mbm-dev.github.io/paper-talin-loop/)
+- [manuscript print/pdf](./index.pdf)
+- [manuscript print/docx](./index.docx)
 - [poster web/html](./poster.html)
 - [poster print/pdf](./poster.pdf)
 ::::
@@ -199,7 +199,7 @@ Plots were generated with ggplot2 [@ggplot].
 Interactive structure representations are embedded using Mol\* [@molstar].
 Schematic visualizations were rendered with blender [@blender] and VMD [@vmd].
 Files relevant to this work that are too big to be uploaded to this repository, such as trajectories and blender files, will be uploaded to a separate location.
-This manuscript and the matching poster were generated with [quarto](https://quarto.org/) [@quarto; @knitr; @rbetterposter].
+This manuscript was generated with [quarto](https://quarto.org/) [@quarto; @knitr; @rbetterposter].
 
 ::: {.content-visible when-format="html"}
 The plotting code and computational graph of `targets` is available in [this document](./_analysis.html).
@@ -221,6 +221,9 @@ However, even in its most unfavorable starting orientation (180°, oriented away
 
 Once contact has been made, it becomes exceedingly unlikely for F0-F1 to dissociate from the membrane (@fig-f0f1-retention).
 Of 358 runs ^[6 replicas each for 60 angles minus 2 runs lost to a storage failure], 89 runs never made contact with the membrane, but out of the 269 that did, only 10 eventually dissociated.
+
+
+
 
 ::: {.content-visible when-format="html"}
 @fig-f0f1-ri-npip and @fig-f0f1-residues highlight the residues involved in the interaction.
@@ -295,7 +298,7 @@ The most prominent residues are highlighted in **b)**.
 (For the print version it is just a placeholder image. The video is available in the web-version (<https://hits-mbm-dev.github.io/paper-talin-loop>) or here: <https://youtu.be/s5yya0XeNTA>).
 :::::
 
-## The F1 loop can facilitate further membrane contacts
+## The F1 loop maintains FERM--PIP~2~ interactions and facilitates further membrane contacts
 
 We chose a representative conformation from the rotational sampling as a starting point for force-probe simulations of F0-F1 perpendicular to the membrane  to test the strength of the interaction (@fig-f0f1-vert-pull).
 An exemplary render of one of the simulations can be seen in @fig-f0f1-pull-run-1.
