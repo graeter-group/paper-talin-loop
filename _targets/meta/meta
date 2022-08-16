@@ -6,7 +6,7 @@ combine_f0f1_matrices_per_run_angle|function|50c4c857219dd384|||||||||||||||
 combine_ferm_matrices_per_run|function|32b39a11c3abbd23|||||||||||||||
 combine_interacting|function|3f87c92c9e0d2e23|||||||||||||||
 compute_sequence|function|6663dc1a7a7944ac|||||||||||||||
-custom_theme|function|e5cd3cb87b7655c5|||||||||||||||
+custom_theme|function|2f48827e84dd2672|||||||||||||||
 CUTOFF|stem|e72e99c77795cc5d|16c46ca58ea71bcf|ef46db3751d8e999|1671245083||t19178.4204282407s|b6d2e014b07bc296|51|rds|local|vector|||0||
 data_path_prefix|stem|4eac864b2d53364a|374e594f719c1386|ef46db3751d8e999|928519711||t19178.4204282407s|ff026697d66e9a9f|75|rds|local|vector|||0||
 data_path_prefix_basement|stem|6a1bcbdf406bad17|dcf0075e1da053cf|ef46db3751d8e999|-1921495429||t19178.4204282407s|8619def19bb20a44|79|rds|local|vector|||0||
@@ -784,6 +784,7 @@ read_pulling_dist_matrices|function|f7b0e414b7409c10|||||||||||||||
 read_rotsample_distance_matrices|function|8ea2ae8e14aa662f|||||||||||||||
 rolling|stem|f42dcd460c4b31e2|8bba979ed04fd106|d244bc91f7a0c095|863546801||t19178.5025347222s|143a6769125ab521|26295|rds|local|vector|||0.555||
 rolling_regardless_of_contact|stem|f4b46aa94cd028af|7689b2eab0210969|e79e3b7aed940c8a|-730914088||t19178.5014930556s|20b85de5a5106c71|30256|rds|local|vector|||0.764||
+sem|function|71486c66d0dee269|||||||||||||||
 sequence|stem|301ae5726575e815|5585d3019966e92e|e179fbf46cac6c5d|-848493182||t19178.4937384259s|ba4d23b20e1bd39a|19398|rds|local|vector|||19.592||
 stuck|stem|1436ff190c3b76d2|ee8e6ea2f3eba4d7|443831f002a43ef5|718350641||t19178.5025231481s|53c93953a72b96c1|178|rds|local|vector|||0.03||
 summarize_interacting|function|19f5c591b72132ca|||||||||||||||

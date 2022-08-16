@@ -42,7 +42,8 @@ tar_make()
 ```
 
 ```{r tar-network}
-tar_visnetwork(callr_arguments = list(show = FALSE))
+tar_visnetwork()
+# callr_arguments = list(show = FALSE)
 ```
 
 ## Notes
@@ -246,7 +247,7 @@ plt2 <- stuck |>
   geom_text(vjust = 1.1, position = "stack", fontface = "bold", size = 3, color = "white") +
   scale_x_continuous(breaks = NULL) +
   scale_fill_manual(values = c( "grey30", HITS_MAGENTA, HITS_BLUE)) +
-  labs(x = "", y = "", title = "summary") +
+  labs(x = "total", y = "", title = "") +
   theme(
     legend.position = "top",
     axis.text = element_blank(),
@@ -288,7 +289,7 @@ plt_contacts <- f0f1_pulling_interacting |>
   summarise(contacts = sum(n_pip > 0)) |>  
   ggplot(aes(frame * 0.03, contacts)) +
   geom_line(aes(group = run), alpha = 0.6) +
-  geom_line(data = ~filter(.x, run == 4), aes(group = run), alpha = 0.6, color = HITS_MAGENTA) +
+  # geom_line(data = ~filter(.x, run == 4), aes(group = run), alpha = 0.6, color = HITS_MAGENTA) +
   labs(x = "distance [nm]",
        y = "# interacting residues"
        )
@@ -297,7 +298,7 @@ plt_curves <- f0f1_pulling_smooth |>
   ggplot(aes(time / 1e3 *  0.03, f)) +
   geom_line(aes(group = run), alpha = 0.3) +
   geom_smooth(aes(group = run), se = FALSE, color = HITS_BLUE) +
-  geom_smooth(data = ~filter(.x, run == 4), aes(group = run), se = FALSE, color = HITS_MAGENTA) +
+  # geom_smooth(data = ~filter(.x, run == 4), aes(group = run), se = FALSE, color = HITS_MAGENTA) +
   labs(x = "distance [nm]",
        y = "force [pN]",
        caption = "pulling rate: 0.03 nm/ns") +
