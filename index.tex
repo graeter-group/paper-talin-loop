@@ -289,13 +289,13 @@ more than 120 words.
 \end{sigstatement}
 
 
-\end{frontmatter}\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, borderline west={3pt}{0pt}{shadecolor}, breakable, interior hidden, sharp corners, enhanced, frame hidden]}{\end{tcolorbox}}\fi
+\end{frontmatter}\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[enhanced, borderline west={3pt}{0pt}{shadecolor}, breakable, boxrule=0pt, interior hidden, frame hidden, sharp corners]}{\end{tcolorbox}}\fi
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, opacitybacktitle=0.6, colback=white, toptitle=1mm, bottomtitle=1mm, arc=.35mm, leftrule=.75mm, left=2mm, colbacktitle=quarto-callout-warning-color!10!white, breakable, colframe=quarto-callout-warning-color-frame, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, titlerule=0mm, rightrule=.15mm, bottomrule=.15mm, toprule=.15mm, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, rightrule=.15mm, titlerule=0mm, leftrule=.75mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, arc=.35mm, colframe=quarto-callout-warning-color-frame, bottomtitle=1mm, colbacktitle=quarto-callout-warning-color!10!white, toprule=.15mm, bottomrule=.15mm, opacityback=0, colback=white, breakable, coltitle=black, toptitle=1mm, opacitybacktitle=0.6]
 This is a draft and as such subject to change.
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, opacitybacktitle=0.6, colback=white, toptitle=1mm, bottomtitle=1mm, arc=.35mm, leftrule=.75mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, colframe=quarto-callout-tip-color-frame, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, titlerule=0mm, rightrule=.15mm, bottomrule=.15mm, toprule=.15mm, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, rightrule=.15mm, titlerule=0mm, leftrule=.75mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, arc=.35mm, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm, bottomrule=.15mm, opacityback=0, colback=white, breakable, coltitle=black, toptitle=1mm, opacitybacktitle=0.6]
 
 The source repository for this paper lives
 \href{https://github.com/hits-mbm-dev/paper-talin-loop}{here}. You can
@@ -594,7 +594,10 @@ Once contact has been made, it becomes exceedingly unlikely for F0-F1 to
 dissociate from the membrane (Figure~\ref{fig-f0f1-retention}). Of 358
 runs \footnote{6 replicas each for 60 angles minus 2 runs lost to a
   storage failure}, 89 runs never made contact with the membrane, but
-out of the 269 that did, only 10 eventually dissociated.
+out of the 269 that did, only 10 eventually dissociated. Thus, the
+simulated timeframe of 200~ns per trajectory allowed for the observation
+of some reversibility of FERM--PIP\textsubscript{2} binding, albeit only
+for weakly bound cases and at a small rate of 3.7\%.
 
 Figure~\ref{fig-f0f1-ri-npip} highlights the residues involved in the
 interaction.
@@ -778,18 +781,23 @@ available in the web-version
 
 \end{figure}
 
-\hypertarget{the-f1-loop-maintains-fermpip2-interactions-and-facilitates-further-membrane-contacts}{%
-\subsection{\texorpdfstring{The F1 loop maintains
-FERM--PIP\textsubscript{2} interactions and facilitates further membrane
-contacts}{The F1 loop maintains FERM--PIP2 interactions and facilitates further membrane contacts}}\label{the-f1-loop-maintains-fermpip2-interactions-and-facilitates-further-membrane-contacts}}
+\hypertarget{the-f1-loop-maintains-and-further-facilitates-formation-of-fermpip2-interactions}{%
+\subsection{\texorpdfstring{The F1 loop maintains and further
+facilitates formation of FERM--PIP\textsubscript{2}
+interactions}{The F1 loop maintains and further facilitates formation of FERM--PIP2 interactions}}\label{the-f1-loop-maintains-and-further-facilitates-formation-of-fermpip2-interactions}}
+
+To test the strength of the PIP\textasciitilde2 interactions and the
+role
 
 We chose a representative conformation from the rotational sampling as a
 starting point for force-probe simulations of F0-F1 perpendicular to the
 membrane to test the strength of the interaction
-(Figure~\ref{fig-f0f1-vert-pull}). An exemplary render of one of the
-simulations can be seen in Figure~\ref{fig-f0f1-pull-run-1}. Pulling
-F0-F1 off the membrane requires peak forces of 100--120~pN, during which
-the interacting residues only very gradually loose contact
+(Figure~\ref{fig-f0f1-vert-pull}).
+
+An exemplary render of one of the simulations can be seen in
+Figure~\ref{fig-f0f1-pull-run-1}. Pulling F0-F1 off the membrane
+requires peak forces of 100--120~pN, during which the interacting
+residues only very gradually loose contact
 (Figure~\ref{fig-f0f1-vert-pull}). This highlights the strong anchoring
 capabilities of the F1 loop. As seen in
 Figure~\ref{fig-f0f1-vert-pull-contacts}, during pulling residues not
@@ -1427,7 +1435,7 @@ mechanistic insights into mechanoactivation of focal adhesion kinase}.
 \hypertarget{sec-system}{%
 \subsection{Simulation System}\label{sec-system}}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, opacitybacktitle=0.6, colback=white, toptitle=1mm, bottomtitle=1mm, arc=.35mm, leftrule=.75mm, left=2mm, colbacktitle=quarto-callout-note-color!10!white, breakable, colframe=quarto-callout-note-color-frame, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, titlerule=0mm, rightrule=.15mm, bottomrule=.15mm, toprule=.15mm, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, rightrule=.15mm, titlerule=0mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, arc=.35mm, colframe=quarto-callout-note-color-frame, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toprule=.15mm, bottomrule=.15mm, opacityback=0, colback=white, breakable, coltitle=black, toptitle=1mm, opacitybacktitle=0.6]
 This interactive display is only available in the web version:
 \url{https://hits-mbm-dev.github.io/paper-talin-loop/}
 \end{tcolorbox}
@@ -1435,7 +1443,7 @@ This interactive display is only available in the web version:
 \hypertarget{scripts}{%
 \subsection{Scripts}\label{scripts}}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, opacitybacktitle=0.6, colback=white, toptitle=1mm, bottomtitle=1mm, arc=.35mm, leftrule=.75mm, left=2mm, colbacktitle=quarto-callout-note-color!10!white, breakable, colframe=quarto-callout-note-color-frame, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, titlerule=0mm, rightrule=.15mm, bottomrule=.15mm, toprule=.15mm, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, rightrule=.15mm, titlerule=0mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, arc=.35mm, colframe=quarto-callout-note-color-frame, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toprule=.15mm, bottomrule=.15mm, opacityback=0, colback=white, breakable, coltitle=black, toptitle=1mm, opacitybacktitle=0.6]
 Analysis scripts, setup scripts and production trajectories will be
 uploaded and linked here.
 \end{tcolorbox}

@@ -221,7 +221,7 @@ However, even in its most unfavorable starting orientation (180°, oriented away
 
 Once contact has been made, it becomes exceedingly unlikely for F0-F1 to dissociate from the membrane (@fig-f0f1-retention).
 Of 358 runs ^[6 replicas each for 60 angles minus 2 runs lost to a storage failure], 89 runs never made contact with the membrane, but out of the 269 that did, only 10 eventually dissociated.
-
+Thus, the simulated timeframe of 200\ ns per trajectory allowed for the observation of some reversibility of FERM--PIP~2~ binding, albeit only for weakly bound cases and at a small rate of 3.7%.
 
 
 ::: {.content-visible when-format="html"}
@@ -297,9 +297,11 @@ The most prominent residues are highlighted in **b)**.
 (For the print version it is just a placeholder image. The video is available in the web-version (<https://hits-mbm-dev.github.io/paper-talin-loop>) or here: <https://youtu.be/s5yya0XeNTA>).
 :::::
 
-## The F1 loop maintains FERM--PIP~2~ interactions and facilitates further membrane contacts
+## The F1 loop maintains and further facilitates formation of FERM--PIP~2~ interactions 
 
 To test the strength of the PIP~2 interactions and the role
+
+<!-- TODO -->
 
 We chose a representative conformation from the rotational sampling as a starting point for force-probe simulations of F0-F1 perpendicular to the membrane  to test the strength of the interaction (@fig-f0f1-vert-pull).
 
