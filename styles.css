@@ -1,13 +1,13 @@
 
-.anchored .figure-caption {
-  text-transform: uppercase;
-  font-weight: bold;
-  color: black;
-  font-style: normal;
-  position: absolute;
-  top: 0px;
-  left: -18px;
-}
+/* .anchored .figure-caption { */
+/*   text-transform: uppercase; */
+/*   font-weight: bold; */
+/*   color: black; */
+/*   font-style: normal; */
+/*   position: absolute; */
+/*   top: 0px; */
+/*   left: -18px; */
+/* } */
 
 .video-container {
   position: relative;
