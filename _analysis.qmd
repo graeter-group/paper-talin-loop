@@ -6,9 +6,10 @@ format:
   html:
     theme: [default, hits.scss]
     code-tools: true
+    code-fold: true
     toc: true
 execute:
-  echo: false
+  echo: true
   warning: false
   message: false
 knitr:
@@ -42,17 +43,8 @@ tar_make()
 ```
 
 ```{r tar-network}
-tar_visnetwork()
-# callr_arguments = list(show = FALSE)
+tar_visnetwork(callr_arguments = list(show = FALSE))
 ```
-
-## Notes
-
--   Data loss due to disk failure:
-    -   rotational sampling
-        -   run2/angle_204: corrupted 00143.dat.csv, 00166.dat.csv
-        -   run3/angle_234: corrupted after first 4 frames
-        -   run4/angle_348: corrupted
 
 # Plots
 
@@ -78,6 +70,43 @@ tar_load(f0f1_pulling_interacting)
 ```
 
 ## Rotational sampling of F0F1
+
+- Data loss due to disk failure:
+  - run4/angle_348: corrupted
+  - run2/angle_204: corrupted only frames 00143 and 00166
+  - run3/angle_234: corrupted after first 4 frames
+
+```{r}
+anti_join(
+  expand_grid(run = 1:6, angle = seq(0, 354, 6)),
+  distinct(interacting, run, angle)
+)
+```
+
+```{r}
+interacting |> 
+  drop_na() |> 
+  count(run, angle) |> 
+  filter(n != max(n))
+```
+
+```{r}
+anti_join(
+  expand_grid(frame = 0:200, i = 1:197),
+  interacting |> 
+    filter(run == 2, angle == 204) |> 
+    distinct(frame, i)
+  )
+```
+
+```{r}
+interacting |> 
+  drop_na() |> 
+  group_by(run, angle) |> 
+  summarise(frame = max(frame)) |> 
+  ungroup() |> 
+  filter(frame != max(frame))
+```
 
 ```{r f0f1-ri-angle-npip}
 paths <- c("{data_path_prefix}papers/paper-talin-loop/assets/blender/render-rotsample/frame0001.png",
