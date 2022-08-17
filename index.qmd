@@ -78,11 +78,6 @@ bibliography: references.bib
 ::::callout-tip
 This is a draft and as such subject to change.
 The source repository for this manuscript lives at <https://github.com/hits-mbm-dev/paper-talin-loop>.
-
-:::{#qrcode .content-hidden when-format="html"}
-![](./www/qrcode.png){width=15%}
-:::
-
 The manuscript and poster are available in multiple formats:
 
 - manuscript web/html: <https://hits-mbm-dev.github.io/paper-talin-loop/>
