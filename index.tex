@@ -255,12 +255,12 @@ intrinsically disordered regions in protein--membrane interactions.
 \end{sigstatement}
 
 
-\end{frontmatter}\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, sharp corners, interior hidden, enhanced, boxrule=0pt, breakable, frame hidden]}{\end{tcolorbox}}\fi
+\end{frontmatter}\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[sharp corners, boxrule=0pt, interior hidden, borderline west={3pt}{0pt}{shadecolor}, enhanced, breakable, frame hidden]}{\end{tcolorbox}}\fi
 
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, bottomrule=.15mm, rightrule=.15mm, colback=white, left=2mm, opacitybacktitle=0.6, leftrule=.75mm, opacityback=0, toprule=.15mm, arc=.35mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, toptitle=1mm, colframe=quarto-callout-tip-color-frame, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, coltitle=black, colback=white, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, left=2mm, breakable, opacityback=0, toprule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, arc=.35mm, opacitybacktitle=0.6, bottomrule=.15mm, leftrule=.75mm]
 
 This is a draft and as such subject to change. The source repository for
 this manuscript lives at
@@ -495,8 +495,8 @@ crystal structure of the Talin FERM domain by Elliot et al.
 (\protect\hyperlink{ref-elliottStructureTalinHead2010}{14}) with the
 PDB-ID 3IVF was used as the basis of all simulations.
 
-The missing F1 domain loop between residues L133 and W144 was modeled
-using MODELLER
+The deleted or missing residues (134-172) belonging to the F1 domain
+loop were modeled using MODELLER
 (\protect\hyperlink{ref-marti-renomComparativeProteinStructure2000}{29},
 \protect\hyperlink{ref-webbComparativeProteinStructure2016}{30}) via the
 interface to Chimera
@@ -504,12 +504,13 @@ interface to Chimera
 followed by equilibration with GROMACS. The resulting conformation was
 compared to an NMR structure of the F1 domain (PDB-ID 2KC2) by Goult et
 al. (\protect\hyperlink{ref-goultStructureDoubleUbiquitinlike2010}{13}).
-
-The missing residue M1 was also added. The missing residues I399 and
-L400 were not modeled, leaving us with a continuous sequence from
-residue 1 to 398. Simulations were performed with the CHARM36 force
-field. Topologies, including the membrane, were generated with the
-CHARM-GUI web app
+The missing residue M1 was also added. Residues D125 and E126 are
+missing from our structure and the missing residues I399 and L400 were
+not modeled. This leaves us with a sequence from residue 1 to 398 with a
+shift by 2 in numbering compared to the canonical TLN1\_MOUSE Talin-1
+sequence (uniprot ID P26039) after residue 124. Simulations were
+performed with the CHARM36 force field. Topologies, including the
+membrane, were generated with the CHARM-GUI web app
 (\protect\hyperlink{ref-brooksCHARMMBiomolecularSimulation2009}{32}--\protect\hyperlink{ref-leeCHARMMGUIInputGenerator2016}{34})
 and GROMACS tools. All simulations used the TIP3P water model and were
 neutralized with 0.15 mol/L of NaCl. A 6-step equilibration was
@@ -636,27 +637,21 @@ can cover with its high flexibility (see Figure~\ref{fig-loop-rmsf}).
 \subcaption{\label{fig-f0f1-ri-angle}~}
 \end{minipage}%
 
-\caption{\label{fig-loop-importance}Rotational sampling of F0-F1.
-\textbf{a)} Snapshots from a simulation involving F0-F1 over a POPC
-membrane containing 10\% PIP\textsubscript{2} in the upper leaflet. POPC
-is not rendered and PIP\textsubscript{2} is shown as light grey stick
-models that turn thicker for those molecules that are currently
-interacting with residues of the protein. Those residues are then shown
-as dark blue stick models. Once the F1 loop has made contact with the
-membrane it can act as an anchor and facilitate further contacts,
-ultimately pulling the protein onto the membrane. In order to test if
-this interaction of the loop with the membrane is just the result of a
-biased starting position with the loop already pointing downwards, we
-sampled 60 different starting positions, rotated equally spaced around
-the horizontal axis, with 6 replicates each. \textbf{b)} Average number
-of PIP\textsubscript{2} molecules bound per residue along the F0-F1
-sequence (x-axis) as a heatmap summarizing 358 simulations from the
-rotational sampling with the starting angle on the y-axis. Each
-simulation is 200~ns long. 0° equates to the loop pointing downwards
-towards the membrane. The heatmap color represents the mean number of
-PIP\textsubscript{2} molecules that are in close contact with the
-respective residue summarized over time and replicates for that specific
-angle.}
+\caption{\label{fig-loop-importance}Rotational sampling of F0-F1 reveals
+the lipid binding capabilities of the F1 loop. \textbf{a)} Snapshots
+from a simulation involving F0-F1 over a POPC membrane containing 10\%
+PIP\textsubscript{2} in the upper leaflet. POPC is not rendered and
+PIP\textsubscript{2} is shown as light grey stick models that turn
+thicker for those molecules that are currently interacting with residues
+of the protein. Those residues in question are then shown as dark blue
+stick models. \textbf{b)} Time-averaged number of PIP\textsubscript{2}
+molecules bound per residue along the F0-F1 sequence (x-axis) as a
+heatmap summarizing 358 simulations from a rotational sampling, with the
+starting angle on the y-axis. We sampled 60 different starting
+positions, rotated equally spaced around the horizontal axis, with 6
+replicates each. Each simulation is 200~ns long. 0° corresponds to the
+loop pointing downwards towards the membrane, as shown in the smaller
+renders to the left of the heatmap.}
 
 \end{figure}
 
@@ -703,14 +698,13 @@ after more than 3 residues had already made contact.
 \end{minipage}%
 
 \caption{\label{fig-loop-importance-2}FERM--PIP\textsubscript{2}
-contacts dynamically and reversibly accumulate. \textbf{a)} Heatmap of
-the time evolution of the number of PIP\textsubscript{2} molecules at
-the respective time and angle summarized over all residues and
-replicates. Angles in which the loop is already favored towards the
-membrane tend to make contact faster. \textbf{b)} Time evolution of the
-simulations shows the number of interacting residues gradually
-increasing as the anchored protein gets pulled closer towards the
-membrane by the forming interactions.}
+contacts are reversible, but dynamically accumulate. \textbf{a)} Heatmap
+of the time evolution of the average number of PIP\textsubscript{2}
+molecules per residue at the respective time (y-axis) and angle
+(x-axis). \textbf{b)} Time evolution (x-axis) of the number of residues
+currently interacting with PIP\textsubscript{2} (y-axis) shows binding
+and unbinding events and an eventual accumulation of contacts. Unbinding
+becomes excedingly unlikely as the number of contacts increases.}
 
 \end{figure}
 
@@ -742,17 +736,18 @@ membrane by the forming interactions.}
 \subcaption{\label{fig-f1f1-residues}~}
 \end{minipage}%
 
-\caption{\label{fig-f0f1-residues}PIP\textsubscript{2}-interacting
-residues of F0-F1. \textbf{a)} The Mean interaction scores of the
-individual residues across all simulations that made contact with the
+\caption{\label{fig-f0f1-residues}Lysine and Arginine residues are
+crucial for the PIP\textsubscript{2}-interaction of F0-F1. \textbf{a)}
+The Mean interaction scores of the individual residues across all
+simulations of the rotational sampling that made contact with the
 membrane. Color represents the isoelectric point of the amino acid in
 isolation (blue = basic, magenta = acidic). A number of very prominent
 lysines can be observed, as well as a cluster of residues belonging to
-the F1 loop. The most prominent residues are highlighted in \textbf{b)}.
-(For the print version it is just a placeholder image. The video is
-available in the web-version
-(\url{https://hits-mbm-dev.github.io/paper-talin-loop}) or here:
-\url{https://youtu.be/s5yya0XeNTA}).}
+the F1 loop, which is highlighted with a grey backdrop. The most
+prominent residues are highlighted in \textbf{b)}. (For the print
+version it is just a placeholder image. The video is available in the
+web-version (\url{https://hits-mbm-dev.github.io/paper-talin-loop}) or
+here: \url{https://youtu.be/s5yya0XeNTA}).}
 
 \end{figure}
 
@@ -1426,7 +1421,7 @@ mechanistic insights into mechanoactivation of focal adhesion kinase}.
 \hypertarget{sec-system}{%
 \subsection{Simulation System}\label{sec-system}}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomrule=.15mm, rightrule=.15mm, colback=white, left=2mm, opacitybacktitle=0.6, leftrule=.75mm, opacityback=0, toprule=.15mm, arc=.35mm, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, toptitle=1mm, colframe=quarto-callout-note-color-frame, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, coltitle=black, colback=white, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, colframe=quarto-callout-note-color-frame, bottomtitle=1mm, left=2mm, breakable, opacityback=0, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, arc=.35mm, opacitybacktitle=0.6, bottomrule=.15mm, leftrule=.75mm]
 This interactive display is only available in the web version:
 \url{https://hits-mbm-dev.github.io/paper-talin-loop/}
 \end{tcolorbox}
