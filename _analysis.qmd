@@ -48,6 +48,13 @@ tar_visnetwork(callr_arguments = list(show = FALSE))
 
 # Plots
 
+Asp125 and Glu126 missing -> sequence shifted by 2 afterwards.
+
+```{r}
+tar_read(sequence)
+```
+
+
 ## Load data
 
 ```{r load-data}
