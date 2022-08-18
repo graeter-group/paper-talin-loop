@@ -24,7 +24,7 @@ list(
     path_sequence,
     {
       prefix <- data_path_prefix
-      glue("{prefix}master/tln1-data/Q9Y490.fasta")
+      glue("{prefix}master/tln1-data/ferm.fasta")
     },
     format = "file"
   ),
