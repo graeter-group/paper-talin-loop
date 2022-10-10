@@ -344,10 +344,6 @@ The highlighted residues include K272 of F2 and K316, K324, E342, and K343 of F3
 Importantly, the loop shows a very dense cluster of PIP~2~ interactions, with interaction scores ($\bar n_{PIP_2}$) very similar to these previously known PIP~2~-interacting residues. 
 The F1 loop thus complements these known binding sites with an additional specific binding site, again comprising primarily lysines.
 
-<!-- Simulations with the full-length FERM domain show that with the loop as an initial membrane contact, known PIP~2~ binding sites can also be established ([@fig-ferm-ri-npip; @fig-ferm-memb-system]). -->
-<!-- The highlighted residues include K272 of F2 and K316, K324, E342, and K343 of F3, which have been shown to be crucial for the membrane interaction of Talin and subsequent integrin activation by Chinthalapudi et al. [@chinthalapudiInteractionTalinCell2018a]. -->
-<!-- The F1 loop thus complements these known binding sites with an additional specific binding site, again comprising primarily lysines. -->
-
 :::: {#fig-ferm-further layout="[[1],[1]]"}
 
 ![ ](./results/plots/ferm-ri-npip-1.png){#fig-ferm-ri-npip}
@@ -364,7 +360,7 @@ The known PIP~2~ interaction sites K272 of F2 and K316, K324, E342, and K343 of 
 # Discussion and Outlook
 
 Using atomistic MD simulations, we provide mechanistic insight into the membrane recognition dynamics of Talin.
-Our simulations propose a new mode of interaction that helps to explain how Talin can find the membrane even when its main PIP~2~ (and integrin) binding sites in F2 and F3 [@chinthalapudiInteractionTalinCell2018a] (see figure @fig-ferm-memb-system ) are blocked by autoinhibition [@deddenArchitectureTalin1Reveals2019a].
+Our simulations propose a new mode of interaction that helps to explain how Talin can bind the membrane even when its main PIP~2~ (and integrin) binding sites in F2 and F3 [@chinthalapudiInteractionTalinCell2018a] (see figure @fig-ferm-memb-system ) are blocked by autoinhibition [@deddenArchitectureTalin1Reveals2019a].
 Specifically, we find the unique unstructured, 33-residue-long insertion into the F1 domain, the F1 loop, to provide a strong interaction anchor to PIP~2~-containing membranes.
 
 Overall, the FERM--membrane interaction mode is not characterized by singular binding sites interacting with one molecule of PIP~2~ each, as would be the conclusion from crystallographic data alone.
@@ -374,12 +370,15 @@ While crystal structures of proteins in complex with PIP~2~ typically show a one
 Similar results have been observed for Pleckstrin Homology (PH) domain proteins by Naughton et al. [@naughtonModesInteractionPleckstrin2018].
 According to their study, this simultaneous binding of multiple PIP~2~ molecules contributes to the high affinity of the membrane interaction.
 
-Our MD simulations suggest that the F1 loop can find favorable interactions with PIP~2~ across large distances in a large search volume due to its flexibility and can maintain this contact when Talin is pulled off of the membrane over distances as large as 7\ nm.
+Our MD simulations suggest that the F1 loop can find favorable interactions with PIP~2~ across large distances and in a large search volume.
+We find this to be the disordered loop's high flexiblity.
+The F1 loop can maintain the membrane contacts when Talin is pulled off of the membrane over distances as large as 7\ nm.
 A similar mechanism has also been shown by Shoemaker et al. [@shoemakerSpeedingMolecularRecognition2000] and was fittingly coined "fly-casting".
 In the aforementioned publication they focus on the interaction of unfolded regions with DNA.
 Our simulations now provide an example for the concept applied to protein-lipid interactions.
 It is well worth noting that, although we mention the greater search space of the F1 loop as its advantage in recognizing PIP~2~, it has also been argued that the kinetic advantage of the fly-casting mechanism comes mainly from the reduction in free energy as the disordered region folds around the interaction target [@huangKineticAdvantageIntrinsically2009].
 This can also be argued here, as the loop can flexibly adapt its conformation to the membrane and the dynamic distribution of PIP~2~ lipids therein.
+As such it can bind in a multivalent fashion, with several basic residues binding to several PIP~2~ lipids.
 
 Fast binding kinetics are crucial for Talin's function at focal adhesion sites.
 As the PIP~2~ concentrations increases at the active focal adhesion site, Talin's FERM F1 loop can perform rapid recognition.
@@ -387,19 +386,19 @@ The flexibility of the loop also allows it to anchor the protein at the membrane
 This is akin to the elastic response seen in focal adhesion kinase (FAK) under force, in which a 49-residue-long linker allows for buffering of the force [@bauerStructuralMechanisticInsights2019].
 Here, Talin's F1 loop can extend and thereby maintain the interactions, which could help rapid rebinding when the force is relieved.
 
-In our force probe simulations, we pulled F0F1 orthogonally off of the membrane.
-This was useful in showing the full extension and force resistance of the loop.
+In our force probe simulations, we pulled F0F1 orthogonally off the membrane.
+This allowed us to assess the full extension and force resistance of the loop.
 _In vivo_, however, Talin's FERM domain is subjected to forces acting at a 30° angle.
 This might imply an additional function for the FERM domain.
 As it is dragged along the membrane, the diffuse interactions of the F1 loop and main interaction sites in F2-F3 with PIP~2~ would increase lateral friction along the membrane as the PIP~2~ concentration increases.
 This could further localize Talin at active focal adhesion sites even in the presence of forces acting parallel to the membrane.
 
-We conclusively show that the F1 loop is able to interact with the membrane even from most unfavorable positions.
-We propose that Talin mutants lacking the loop, or specifically the basic residues in said loop, will show reduced or at least slowed-down focal adhesion maturation, increased lateral diffusion of Talin under force and faster focal adhesion disassembly.
+We conclusively show that the F1 loop is able to interact with the membrane even from most unfavorable orientations.
+We propose that Talin mutants lacking the loop, or specifically the basic residues in said loop, will show reduced or at least slowed-down focal adhesion maturation, increased lateral diffusion of Talin under force, and faster focal adhesion disassembly.
 
 Recognition is only the first step.
-Indeed, the mechanistic details of how Talin's autoinhibition is resolved remain to be shown by larger simulations including the inhibiting rod segment.
-These larger-scale simulations might then be able to provide evidence for the push--pull mechanism proposed by Song et al. [@songNovelMembranedependentSwitch2012a] or result in novel ideas.
+The mechanistic details of how Talin's autoinhibition is resolved remain to be shown by larger simulations including the inhibiting rod segment.
+These larger-scale simulations might then be able to provide evidence for the push--pull mechanism proposed by Song et al. [@songNovelMembranedependentSwitch2012a] or might reveal how the early F1-loop mediated membrane interactions identified in this study might effect the subsequent steps for Talin activation.
 In conclusion, we propose positively charged, intrinsically disordered regions in Talin's FERM domain and potentially other PIP~2~-binding domains to promote recognition and to help maintain the membrane interaction under force.
 
 # Author Contributions
@@ -408,13 +407,11 @@ Conceived and designed the experiments:\ JB FF FG.
 Performed the experiments:\ JB FF.
 Analyzed the data:\ JB FF.
 Contributed reagents/materials/analysis tools:\ FF.
-Wrote the paper:\ JB.
+Wrote the paper:\ JB FF.
 
 # Acknowledgments
 
-This work was supported by the Klaus Tschira Foundation.
-
-This project has received funding from the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation programme (grant agreement No. 101002812).
+This work was supported by the Klaus Tschira Foundation and the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation programme (grant agreement No. 101002812).
 
 # References
 
