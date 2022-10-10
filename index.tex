@@ -200,18 +200,18 @@ as an initial PIP\textsubscript{2} recognition site}
 \runningtitle{Intrinsically disordered region of Talin's FERM domain
 functions as an initial PIP\textsubscript{2} recognition site}
 
-  \author[1,2,*]
+  \author[1,2]
   {Jannik Buhr}
   \author[1,2]
   {Florian Franz}
-  \author[1,2]
+  \author[1,2,*]
   {Frauke Gräter}
 
 \affil[1]{Heidelberg Institute for Theoretical Studies}
 \affil[2]{Interdisciplinary Center for Scientific Computing, Heidelberg
 University}
 
-  \corrauthor[*]{jannik.buhr@h-its.org}
+  \corrauthor[*]{Frauke.Graeter@h-its.org}
 
 \runningauthor{Jannik Buhr, Florian Franz, Frauke Gräter}
 
@@ -229,14 +229,16 @@ autoinhibitory structure of Talin, where the known PIP\textsubscript{2}
 interaction sites are covered up, lead us to hypothesize that a hitherto
 less examined loop insertion of the FERM domain acts as an additional
 and initial site of contact. We evaluated direct interactions of Talin
-with a PIP\textsubscript{2} membrane by means of atomistic
-molecular dynamics (MD) simulations. We show that this unstructured,
+with a PIP\textsubscript{2} membrane by means of atomistic molecular
+dynamics (MD) simulations. We show that this unstructured,
 33-residue-long loop strongly interacts with PIP\textsubscript{2} and
-can facilitate further membrane contacts including the canonical PIP\textsubscript{2} interactions by serving as a flexible membrane
-anchor. Under force as present at FAs, the
-extensible FERM loop ensures Talin to maintain membrane contacts when
-pulled away from the membrane by up to 7~nm. We identify key basic residues of the anchor mediating the highly dynamic Talin-membrane interaction. Our results put
-forward an intrinsically disordered loop as a key and highly adaptable
+can facilitate further membrane contacts, including the canonical
+PIP\textsubscript{2} interactions, by serving as a flexible membrane
+anchor. Under force as present at FAs, the extensible FERM loop ensures
+Talin to maintain membrane contacts when pulled away from the membrane
+by up to 7~nm. We identify key basic residues of the anchor mediating
+the highly dynamic Talin-membrane interaction. Our results put forward
+an intrinsically disordered loop as a key and highly adaptable
 PIP\textsubscript{2} recognition site of Talin and potentially other
 PIP\textsubscript{2}-binding mechano-proteins.
 \end{abstract}
@@ -254,12 +256,12 @@ intrinsically disordered regions in protein--membrane interactions.
 \end{sigstatement}
 
 
-\end{frontmatter}\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[breakable, interior hidden, sharp corners, borderline west={3pt}{0pt}{shadecolor}, enhanced, frame hidden, boxrule=0pt]}{\end{tcolorbox}}\fi
+\end{frontmatter}\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[frame hidden, boxrule=0pt, sharp corners, interior hidden, breakable, enhanced, borderline west={3pt}{0pt}{shadecolor}]}{\end{tcolorbox}}\fi
 
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, colback=white, toprule=.15mm, rightrule=.15mm, bottomrule=.15mm, coltitle=black, opacitybacktitle=0.6, opacityback=0, colframe=quarto-callout-tip-color-frame, breakable, titlerule=0mm, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, left=2mm, colbacktitle=quarto-callout-tip-color!10!white]
+\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, left=2mm, arc=.35mm, leftrule=.75mm, colback=white, colframe=quarto-callout-tip-color-frame, coltitle=black, bottomrule=.15mm, breakable, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, toptitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, opacityback=0, titlerule=0mm, toprule=.15mm]
 
 This is a draft and as such subject to change. The source repository for
 this manuscript lives at
@@ -289,8 +291,8 @@ adhesion sites for a multitude of biological processes. Contact with the
 extracellular matrix and surrounding cells regulates growth,
 differentiation, motility and even apoptosis
 (\protect\hyperlink{ref-vogelLocalForceGeometry2006}{1}--\protect\hyperlink{ref-miroshnikovaAdhesionForcesCortical2018}{4}).
-The multiprotein focal adhesion complex is responsible for translating between
-and integrating biochemical and mechanical signals for both
+The multiprotein focal adhesion complex is responsible for translating
+between and integrating biochemical and mechanical signals for both
 outside--in and inside--out
 activation(\protect\hyperlink{ref-thamilselvanPressureActivatesColon2004}{5},
 \protect\hyperlink{ref-pelletierActivationStateIntegrin1995}{6}).
@@ -591,7 +593,7 @@ Materials.
 When simulating only F0F1 over a POPC membrane containing 10\%
 PIP\textsubscript{2}, we noticed that the F1 loop had a clear propensity
 to establish contact with the membrane. Once the contact had been
-established the protein was anchored strongly enough for more contacts
+established, the protein was anchored strongly enough for more contacts
 to evolve with time, pulling the protein onto the membrane
 (Figure~\ref{fig-f0f1-snapshots}). In order to control for a potential
 bias towards the loop as a result of the starting position, we performed
@@ -654,15 +656,16 @@ renders to the left of the heatmap.}
 
 \end{figure}
 
-Once a contact has been made, it becomes exceedingly unlikely for F0F1 to
-dissociate from the membrane (Figure~\ref{fig-f0f1-retention}). Out of
-358 runs\footnote{6 replicas each for 60 angles minus 2 runs lost to a
-  storage failure}, 89 runs never made contact with the membrane, but
+Once a contact has been made, it becomes exceedingly unlikely for F0F1
+to dissociate from the membrane (Figure~\ref{fig-f0f1-retention}). Out
+of 358 runs\footnote{6 replicas each for 60 angles minus 2 runs lost to
+  a storage failure}, 89 runs never made contact with the membrane, but
 out of the 269 that did, only 10 eventually dissociated. Thus, the
 simulated timeframe of 200~ns per trajectory allowed for the observation
 of some reversibility of FERM--PIP\textsubscript{2} binding, albeit only
-for weakly bound cases and at a small rate of 3.7\%. Dissociation from the membrane never occurred on the simulated time scale
-after more than 3 residues had already made contact.
+for weakly bound cases and at a small rate of 3.7\%. Dissociation from
+the membrane never occurred on the simulated time scale after more than
+3 residues had already made contact.
 
 \begin{figure}
 
@@ -696,30 +699,36 @@ after more than 3 residues had already made contact.
 \subcaption{\label{fig-f0f1-retention}~}
 \end{minipage}%
 
-\caption{\label{fig-loop-importance-2}Loop-PIP\textsubscript{2}
-contacts dynamically accumulate and are mediated by basic residues. \textbf{a)} Heatmap
-of the time evolution of the average number of PIP\textsubscript{2}
-molecules per residue at the respective time (y-axis) and angle
-(x-axis). \textbf{b)} Time evolution (x-axis) of the number of residues
-currently interacting with PIP\textsubscript{2} (y-axis) shows binding
-and unbinding events and an eventual accumulation of contacts. Unbinding
-becomes exceedingly unlikely as the number of contacts increases.}
+\caption{\label{fig-loop-importance-2}Loop--PIP\textsubscript{2}
+contacts dynamically accumulate and are mediated by basic residues.
+\textbf{a)} Heatmap of the time evolution of the average number of
+PIP\textsubscript{2} molecules per residue at the respective time
+(y-axis) and angle (x-axis). \textbf{b)} Time evolution (x-axis) of the
+number of residues currently interacting with PIP\textsubscript{2}
+(y-axis) shows binding and unbinding events and an eventual accumulation
+of contacts. Unbinding becomes exceedingly unlikely as the number of
+contacts increases.}
 
 \end{figure}
 
 Figure~\ref{fig-f0f1-residues} highlights the residues involved in the
-interaction of F0-F1 with PIP\textsubscript{2}. We observe a number of prominent lysines and arginines,
-both positively charged residues, across the whole F0-F1 fragment to compensate the negative charge on
+interaction of F0F1 with PIP\textsubscript{2}. We observe a number of
+prominent lysines and arginines, both positively charged residues,
+across the whole F0F1 fragment to compensate for the negative charge on
 PIP\textsubscript{2}. The loop region, highlighted with a grey backdrop
 in Figure~\ref{fig-f0f1-ri-npip}, is particularly dense in positively
-charged residues, albeit the number of PIP\textsubscript{2} contacts per basic residue is only marginally higher in this region than elsewhere. Arginines and lysines in regions outside of the disordered loop complement the binding once initial
-contacts have been established with the loop, and further strengthen the interaction.
-F0 at the N-terminus (left) is quite flexible as well (see
-Figure~\ref{fig-loop-rmsf}) and can thus reasonably contribute towards
-membrane binding. The C-terminus of the F1 domain, instead, harbors the interface towards the F2 domain and the two PIP\textsubscript{2}-interacting residues identified here will be
-more occluded \emph{in vivo}. Indeed, simulations of the full-length
-FERM domain in the later part of this work do not show these interactions
-anymore (Figure~\ref{fig-ferm-ri-npip}).
+charged residues, albeit the number of PIP\textsubscript{2} contacts per
+basic residue is only marginally higher in this region than elsewhere.
+Arginines and lysines in regions outside of the disordered loop
+complement the binding once initial contacts have been established with
+the loop, and further strengthen the interaction. F0 at the N-terminus
+(left) is quite flexible as well (see Figure~\ref{fig-loop-rmsf}) and
+can thus reasonably contribute towards membrane binding. The C-terminus
+of the F1 domain, instead, harbors the interface towards the F2 domain
+and the two PIP\textsubscript{2}-interacting residues identified here
+will be more occluded \emph{in vivo}. Indeed, simulations of the
+full-length FERM domain in the later part of this work do not show these
+interactions anymore (Figure~\ref{fig-ferm-ri-npip}).
 
 \begin{figure}
 
@@ -751,14 +760,16 @@ anymore (Figure~\ref{fig-ferm-ri-npip}).
 
 \caption{\label{fig-f0f1-residues}Lysine and arginine residues are
 crucial for the PIP\textsubscript{2}-interaction of F0F1. \textbf{a)}
-The mean interaction scores (see Methods? should be explained) nPIP2 of the individual residues across all
-simulations of the rotational sampling that made contact with the
-membrane. Color represents the isoelectric point of the amino acid in
-isolation (blue = basic, magenta = acidic). A number of very prominent
-lysines can be observed, as well as a cluster of residues belonging to
-the F1 loop, which is highlighted with a grey backdrop. The most
-prominent residues are highlighted in \textbf{b)}. For the print version
-it is a snapshot render. The video is also available here:
+The average number of PIP\textsubscript{2} molecules
+(\(\bar n_{PIP_2}\)) interacting (see Figure~\ref{fig-r-hist} for the
+interaction distance definition) with the individual residues per frame
+across all simulations of the rotational sampling that made contact with
+the membrane. Color represents the isoelectric point of the amino acid
+in isolation (blue = basic, magenta = acidic). A number of very
+prominent lysines can be observed, as well as a cluster of residues
+belonging to the F1 loop, which is highlighted with a grey backdrop. The
+most prominent residues are highlighted in \textbf{b)}. For the print
+version it is a snapshot render. The video is also available here:
 \url{https://youtu.be/s5yya0XeNTA}).}
 
 \end{figure}
@@ -775,15 +786,16 @@ membrane in additional force-probe MD simulations
 simulations can be seen in Figure~\ref{fig-f0f1-pull-run-1}. Pulling
 F0F1 off the membrane requires peak forces of 100--120~pN, during which
 the interacting residues only very gradually loose contact
-(Figure~\ref{fig-f0f1-vert-pull}), as the high flexibility of the F1-loop
+(Figure~\ref{fig-f0f1-vert-pull}), as the high flexibility of F1-loop
 allows the residues to remain in contact even as the distance increases
 up to a delta of 7~nm. Replicate 4 stands out as the highest curve, as
 in this run the interactions were so so strong that a total of 3
 molecules of PIP\textsubscript{2} were pulled out of the membrane (1 by
-F0 and 2 by the F1 loop). A snapshot of this
-can be seen in Figure~\ref{fig-f0f1-vert-pull-run4}. This highlights the strong anchoring capabilities of the F1 loop. 
-As
-seen in Figure~\ref{fig-f0f1-vert-pull-contacts}, during pulling
+F0 and 2 by the F1 loop). A snapshot of this can be seen in
+Figure~\ref{fig-f0f1-vert-pull-run4}. This highlights the strong
+anchoring capabilities of the F1 loop.
+
+As seen in Figure~\ref{fig-f0f1-vert-pull-contacts}, during pulling
 residues not belonging to the F1 loop loose contact first, while the
 loop stays attached. The F1 loop works in conjunction with the F0
 subdomain (see Figure~\ref{fig-f0f1-vert-pull-residues}). Their high
@@ -845,9 +857,8 @@ of 6 force-probe MD simulations pulling F0F1 off the membrane. For the
 print version we show a series of three snapshots, the video is
 available here: \url{https://youtu.be/-eZ2orx7QRE}. It starts from a
 snapshot of F0F1 in its bound conformation taken from the rotational
-sampling and gets pulled upwards from its C-terminus. The direction of
-force is shown in the snapshot as a red arrow. \textbf{b)} Number of
-interacting residues (top panel) and the force (bottom panel) as a
+sampling and gets pulled upwards from its C-terminus. \textbf{b)} Number
+of interacting residues (top panel) and the force (bottom panel) as a
 function of distance (x-axis) as F0F1 gets pulled off the membrane at a
 constant rate of 0.03~nm/ns. \textbf{c)} Time evolution of the number of
 contacts for residues belonging to the F1 loop (x-axis) and other
@@ -858,15 +869,28 @@ shown in Figure~\ref{fig-f0f1-ri-npip}.}
 
 \end{figure}
 
-Having established the prominent role of the F1-loop in positioning F0F1 at the membrane and establishing PIP\textsubscript{2} contacts, we next examined this role in the larger context of the full FERM domain. XXX independent simulations were initiated with the FERM domain XXX [oriented with the loop towards the membrane? at which distance? Differing across simulation by what? just very short but that one understands without reading the method details]
-These simulations highlight the prominent role of the F1-loop in membrane interactions, now in the context of the full-length FERM domain (Fig. XXX, compare to Fig. 4a,b). They also reproduce the canonical PIP\textsubscript{2} contacts in F2 and F3 known from previous studies, validating our MD simulations. The
-highlighted residues include K272 of F2 and K316, K324, E342, and K343
-of F3, which have been shown to be crucial for the membrane interaction
-of Talin and subsequent integrin activation by Chinthalapudi et al.
+Having established the prominent role of the F1-loop in positioning F0F1
+at the membrane and establishing PIP\textsubscript{2} contacts, we next
+examined this role in the larger context of the full FERM domain. 6
+independent simulations were initiated with the full-length FERM domain
+oriented in such that the tip of the F1-loop was in contact with at
+least one molecule of PIP\textsubscript{2} with varying local
+environments (see Section~\ref{sec-system} for one example). These
+simulations highlight the prominent role of the F1-loop in membrane
+interactions, now in the context of the full-length FERM domain
+(Figure~\ref{fig-ferm-ri-npip}, compare to
+Figure~\ref{fig-f0f1-ri-npip}). They also reproduce the canonical
+PIP\textsubscript{2} contacts in F2 and F3 known from previous studies,
+validating our MD simulations. The highlighted residues include K272 of
+F2 and K316, K324, E342, and K343 of F3, which have been shown to be
+crucial for the membrane interaction of Talin and subsequent integrin
+activation by Chinthalapudi et al.
 (\protect\hyperlink{ref-chinthalapudiInteractionTalinCell2018a}{20}).
-Importantly, the loop shows a very dense cluster of PIP\textsubscript{2} interactions, with interaction scores very similar to these previously known PIP\textsubscript{2}-interacting residues. 
-The F1 loop thus complements these known binding sites with an
-additional specific binding site, again comprising primarily lysines.
+Importantly, the loop shows a very dense cluster of PIP\textsubscript{2}
+interactions, with interaction scores (\(\bar n_{PIP_2}\)) very similar
+to these previously known PIP\textsubscript{2}-interacting residues. The
+F1 loop thus complements these known binding sites with an additional
+specific binding site, again comprising primarily lysines.
 
 \begin{figure}
 
@@ -901,11 +925,12 @@ additional specific binding site, again comprising primarily lysines.
 \end{minipage}%
 
 \caption{\label{fig-ferm-further}Simulation of the full-length FERM
-domain over a 10\% PIP\textsubscript{2}-membrane. \textbf{a)} The Mean
-interaction scores of the individual residues across 6 simulations.
-Color represents the isoelectric point of the amino acid in isolation
-(blue = basic, magenta = acidic). The known PIP\textsubscript{2}
-interaction sites K272 of F2 and K316, K324, E342, and K343 of F3
+domain over a 10\% PIP\textsubscript{2}-membrane. \textbf{a)} The
+average number of PIP\textsubscript{2} molecules interacting with the
+individual residues across 6 simulations. Color represents the
+isoelectric point of the amino acid in isolation (blue = basic, magenta
+= acidic). The known PIP\textsubscript{2} interaction sites K272 of F2
+and K316, K324, E342, and K343 of F3
 (\protect\hyperlink{ref-chinthalapudiInteractionTalinCell2018a}{20}) are
 highlighted with red lines on the x-axis colorbar and can also be seen
 in the cartoon representation in \textbf{b)} where the interacting
@@ -919,7 +944,7 @@ models.}
 
 Using atomistic MD simulations, we provide mechanistic insight into the
 membrane recognition dynamics of Talin. Our simulations propose a new
-mode of interaction that helps to explain how Talin can bind the
+mode of interaction that helps to explain how Talin can find the
 membrane even when its main PIP\textsubscript{2} (and integrin) binding
 sites in F2 and F3
 (\protect\hyperlink{ref-chinthalapudiInteractionTalinCell2018a}{20})
@@ -953,8 +978,8 @@ PIP\textsubscript{2} molecules contributes to the high affinity of the
 membrane interaction.
 
 Our MD simulations suggest that the F1 loop can find favorable
-interactions with PIP\textsubscript{2} across large distances and in a large
-search volume. We find this to be due to the disordered loop's high flexiblity. The F1 loop can maintain the membrane contacts when
+interactions with PIP\textsubscript{2} across large distances in a large
+search volume due to its flexibility and can maintain this contact when
 Talin is pulled off of the membrane over distances as large as 7~nm. A
 similar mechanism has also been shown by Shoemaker et al.
 (\protect\hyperlink{ref-shoemakerSpeedingMolecularRecognition2000}{50})
@@ -970,7 +995,7 @@ interaction target
 (\protect\hyperlink{ref-huangKineticAdvantageIntrinsically2009}{51}).
 This can also be argued here, as the loop can flexibly adapt its
 conformation to the membrane and the dynamic distribution of
-PIP\textsubscript{2} lipids therein. Ass such it can bind in a multivalent fashion, with several basic residues binding to several PIP\textsubscript{2} lipids.
+PIP\textsubscript{2} lipids therein.
 
 Fast binding kinetics are crucial for Talin's function at focal adhesion
 sites. As the PIP\textsubscript{2} concentrations increases at the
@@ -984,8 +1009,8 @@ in which a 49-residue-long linker allows for buffering of the force
 Here, Talin's F1 loop can extend and thereby maintain the interactions,
 which could help rapid rebinding when the force is relieved.
 
-In our force probe simulations, we pulled F0F1 orthogonally off the
-membrane. This allowed to assess the full extension and force
+In our force probe simulations, we pulled F0F1 orthogonally off of the
+membrane. This was useful in showing the full extension and force
 resistance of the loop. \emph{In vivo}, however, Talin's FERM domain is
 subjected to forces acting at a 30° angle. This might imply an
 additional function for the FERM domain. As it is dragged along the
@@ -996,18 +1021,19 @@ This could further localize Talin at active focal adhesion sites even in
 the presence of forces acting parallel to the membrane.
 
 We conclusively show that the F1 loop is able to interact with the
-membrane even from most unfavorable orientations. We propose that Talin
+membrane even from most unfavorable positions. We propose that Talin
 mutants lacking the loop, or specifically the basic residues in said
 loop, will show reduced or at least slowed-down focal adhesion
-maturation, increased lateral diffusion of Talin under force, and faster
+maturation, increased lateral diffusion of Talin under force and faster
 focal adhesion disassembly.
 
-Recognition is only the first step. The mechanistic details of
+Recognition is only the first step. Indeed, the mechanistic details of
 how Talin's autoinhibition is resolved remain to be shown by larger
 simulations including the inhibiting rod segment. These larger-scale
 simulations might then be able to provide evidence for the push--pull
 mechanism proposed by Song et al.
-(\protect\hyperlink{ref-songNovelMembranedependentSwitch2012a}{12}), or might reveal how the early F1-loop mediated membrane interactions identified in this study might effect the subsequent steps for Talin activation. In conclusion, we propose positively charged,
+(\protect\hyperlink{ref-songNovelMembranedependentSwitch2012a}{12}) or
+result in novel ideas. In conclusion, we propose positively charged,
 intrinsically disordered regions in Talin's FERM domain and potentially
 other PIP\textsubscript{2}-binding domains to promote recognition and to
 help maintain the membrane interaction under force.
@@ -1017,12 +1043,14 @@ help maintain the membrane interaction under force.
 
 Conceived and designed the experiments:~JB FF FG. Performed the
 experiments:~JB FF. Analyzed the data:~JB FF. Contributed
-reagents/materials/analysis tools:~FF. Wrote the paper:~JB FF.
+reagents/materials/analysis tools:~FF. Wrote the paper:~JB.
 
 \hypertarget{acknowledgments}{%
 \section{Acknowledgments}\label{acknowledgments}}
 
-This work was supported by the Klaus Tschira Foundation and the European Research Council
+This work was supported by the Klaus Tschira Foundation.
+
+This project has received funding from the European Research Council
 (ERC) under the European Union's Horizon 2020 research and innovation
 programme (grant agreement No.~101002812).
 
@@ -1436,9 +1464,11 @@ mechanistic insights into mechanoactivation of focal adhesion kinase}.
 \hypertarget{sec-system}{%
 \subsection{Simulation System}\label{sec-system}}
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, colback=white, toprule=.15mm, rightrule=.15mm, bottomrule=.15mm, coltitle=black, opacitybacktitle=0.6, opacityback=0, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, left=2mm, colbacktitle=quarto-callout-note-color!10!white]
+\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, left=2mm, arc=.35mm, leftrule=.75mm, colback=white, colframe=quarto-callout-note-color-frame, coltitle=black, bottomrule=.15mm, breakable, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, toptitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, opacityback=0, titlerule=0mm, toprule=.15mm]
+
 This interactive display is only available in the web version:
 \url{https://hits-mbm-dev.github.io/paper-talin-loop/}
+
 \end{tcolorbox}
 
 \hypertarget{scripts}{%

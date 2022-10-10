@@ -1,5 +1,7 @@
 -- for development:
-local p = quarto.utils.dump
+local p = function (x)
+  quarto.log.output(x)
+end
 
 ---@type boolean
 local useIframes = false
@@ -84,7 +86,7 @@ end
 ---@return string
 local function wrapInlineIframe(viewerFunctionString)
   return [[
-    <iframe id="${frameId}" class="molstar-app" seamless allow="fullscreen" srcdoc='
+    <iframe id="${appId}" class="molstar-app" seamless allow="fullscreen" srcdoc='
     <html>
     <head>
     <script type="text/javascript" src="./molstar.js"></script>
@@ -129,6 +131,9 @@ local function createViewer(args)
     trajExtension = args.trajExtension,
     volumeUrl = args.volumeUrl,
     volumeExtension = args.volumeExtension,
+    snapshotUrl = args.snapshotUrl,
+    snapshotExtension = args.snapshotExtension,
+    afdb = args.afdb,
     data = args.data,
     options = mergeMolstarOptions(args.userOptions)
   }
@@ -174,6 +179,10 @@ local function createViewer(args)
       ]
     );
     ]]
+  elseif args.snapshotUrl and args.snapshotExtension then
+    viewerFunction = 'viewer.loadSnapshotFromUrl(url="${snapshotUrl}", "${snapshotExtension}");'
+  elseif args.afdb then
+    viewerFunction = 'viewer.loadAlphaFoldDb(afdb="${afdb}")'
   else -- otherwise read from url (local or remote)
     viewerFunction = 'viewer.loadStructureFromUrl("${url}", format="${urlExtension}");'
   end
@@ -200,6 +209,24 @@ return {
     })
   end,
 
+  ['mol-afdb'] = function(args, kwargs)
+    -- return early if the output format is unsupported
+    if not quarto.doc.isFormat("html:js") then
+      return pandoc.Null()
+    end
+
+    addDependencies()
+
+    local afdb = pandoc.utils.stringify(args[1])
+    local appId = 'app-' .. afdb
+
+    return pandoc.RawBlock('html', createViewer {
+      appId = appId,
+      afdb = afdb,
+      userOptions = kwargs
+    })
+  end,
+
   ['mol-url'] = function(args, kwargs, meta)
     if not quarto.doc.isFormat("html:js") then
       return pandoc.Null()
@@ -210,8 +237,10 @@ return {
     local url = pandoc.utils.stringify(args[1])
     local appId = 'app-' .. url
     local urlExtension = fileExt(url)
-
-    local molstarMeta = pandoc.utils.stringify(meta['molstar'])
+    local molstarMeta = ''
+    if meta.molstar then
+      molstarMeta = pandoc.utils.stringify(meta.molstar)
+    end
     local pdbContent
     if molstarMeta == 'embed' and not useIframes then
       ---@type string|nil
@@ -222,6 +251,24 @@ return {
       url = url,
       data = pdbContent,
       urlExtension = urlExtension,
+      userOptions = kwargs
+    })
+  end,
+  
+  ['mol-snapshot'] = function(args, kwargs, meta)
+    if not quarto.doc.isFormat("html:js") then
+      return pandoc.Null()
+    end
+
+    addDependencies()
+
+    local url = pandoc.utils.stringify(args[1])
+    local appId = 'app-' .. url
+
+    return pandoc.RawBlock('html', createViewer {
+      appId = appId,
+      snapshotUrl = url,
+      snapshotExtension = fileExt(url),
       userOptions = kwargs
     })
   end,
