@@ -419,6 +419,8 @@ This work was supported by the Klaus Tschira Foundation and the European Researc
 :::{#refs}
 :::
 
+\newpage
+
 # Supplementary Material
 
 ## Simulation System {#sec-system}
@@ -471,12 +473,6 @@ Run 4 of the vertical pulling of F0F1. Interactions between the protein and PIP~
 integrator              = md
 dt                      = 0.002
 nsteps                  = 100000000
-nstxout                 = 5000
-nstvout                 = 5000
-nstfout                 = 50000
-nstcalcenergy           = 100
-nstenergy               = 1000
-nstlog                  = 1000
 cutoff-scheme           = Verlet
 nstlist                 = 20
 rlist                   = 1.2

@@ -256,12 +256,12 @@ intrinsically disordered regions in protein--membrane interactions.
 \end{sigstatement}
 
 
-\end{frontmatter}\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[enhanced, boxrule=0pt, breakable, interior hidden, sharp corners, borderline west={3pt}{0pt}{shadecolor}, frame hidden]}{\end{tcolorbox}}\fi
+\end{frontmatter}\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[frame hidden, boxrule=0pt, interior hidden, breakable, borderline west={3pt}{0pt}{shadecolor}, enhanced, sharp corners]}{\end{tcolorbox}}\fi
 
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
 
-\begin{tcolorbox}[enhanced jigsaw, bottomrule=.15mm, toptitle=1mm, leftrule=.75mm, breakable, toprule=.15mm, colframe=quarto-callout-tip-color-frame, colbacktitle=quarto-callout-tip-color!10!white, opacityback=0, opacitybacktitle=0.6, colback=white, left=2mm, arc=.35mm, coltitle=black, bottomtitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, rightrule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, opacityback=0, coltitle=black, bottomtitle=1mm, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, breakable, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, leftrule=.75mm, colframe=quarto-callout-tip-color-frame, opacitybacktitle=0.6, rightrule=.15mm, titlerule=0mm, arc=.35mm, colback=white]
 
 This is a draft and as such subject to change. The source repository for
 this manuscript lives at
@@ -1461,13 +1461,15 @@ mechanistic insights into mechanoactivation of focal adhesion kinase}.
 
 \end{CSLReferences}
 
+\newpage
+
 \hypertarget{supplementary-material}{%
 \section{Supplementary Material}\label{supplementary-material}}
 
 \hypertarget{sec-system}{%
 \subsection{Simulation System}\label{sec-system}}
 
-\begin{tcolorbox}[enhanced jigsaw, bottomrule=.15mm, toptitle=1mm, leftrule=.75mm, breakable, toprule=.15mm, colframe=quarto-callout-note-color-frame, colbacktitle=quarto-callout-note-color!10!white, opacityback=0, opacitybacktitle=0.6, colback=white, left=2mm, arc=.35mm, coltitle=black, bottomtitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, rightrule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, opacityback=0, coltitle=black, bottomtitle=1mm, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, breakable, left=2mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, leftrule=.75mm, colframe=quarto-callout-note-color-frame, opacitybacktitle=0.6, rightrule=.15mm, titlerule=0mm, arc=.35mm, colback=white]
 
 This interactive display is only available in the web version:
 \url{https://hits-mbm-dev.github.io/paper-talin-loop/}
@@ -1656,12 +1658,6 @@ K 362 & 0.447 \\
 integrator              = md
 dt                      = 0.002
 nsteps                  = 100000000
-nstxout                 = 5000
-nstvout                 = 5000
-nstfout                 = 50000
-nstcalcenergy           = 100
-nstenergy               = 1000
-nstlog                  = 1000
 cutoff-scheme           = Verlet
 nstlist                 = 20
 rlist                   = 1.2
