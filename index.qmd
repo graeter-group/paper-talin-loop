@@ -2,6 +2,7 @@
 title: "Intrinsically disordered region of Talin's FERM domain functions as an initial PIP~2~ recognition site"
 date: today
 date-format: long
+published-title: Last Updated
 author:
   - name: Jannik Buhr
     url: https://jmbuhr.de
