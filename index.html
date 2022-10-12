@@ -9,7 +9,7 @@
 <meta name="author" content="Jannik Buhr">
 <meta name="author" content="Florian Franz">
 <meta name="author" content="Frauke Gräter">
-<meta name="dcterms.date" content="2022-10-11">
+<meta name="dcterms.date" content="2022-10-12">
 <meta name="keywords" content="Molecular Dynamics, Talin, Focal Adhesion, Mechanosensing, Disorder, IDP, IDR">
 
 <title>Intrinsically disordered region of Talin’s FERM domain functions as an initial PIP2 recognition site</title>
@@ -105,6 +105,7 @@ div.csl-indent {
   </ul></li>
   <li><a href="#discussion-and-outlook" id="toc-discussion-and-outlook" class="nav-link" data-scroll-target="#discussion-and-outlook">Discussion and Outlook</a></li>
   <li><a href="#author-contributions" id="toc-author-contributions" class="nav-link" data-scroll-target="#author-contributions">Author Contributions</a></li>
+  <li><a href="#declaration-of-interests" id="toc-declaration-of-interests" class="nav-link" data-scroll-target="#declaration-of-interests">Declaration of Interests</a></li>
   <li><a href="#acknowledgments" id="toc-acknowledgments" class="nav-link" data-scroll-target="#acknowledgments">Acknowledgments</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   <li><a href="#supplementary-material" id="toc-supplementary-material" class="nav-link" data-scroll-target="#supplementary-material">Supplementary Material</a>
@@ -181,7 +182,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Last Updated</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 11, 2022</p>
+      <p class="date">October 12, 2022</p>
     </div>
   </div>
   
@@ -409,7 +410,7 @@ Tip
 <p></p><figcaption class="figure-caption">Figure&nbsp;5: Vertical pulling of F0F1 highlights the F1 loop’s flexibility and ability to maintain contacts with the membrane over large distances. <strong>a)</strong> Representative render of one of 6 force-probe MD simulations pulling F0F1 off the membrane. For the print version we show a series of three snapshots, the video is available here: <a href="https://youtu.be/-eZ2orx7QRE" class="uri">https://youtu.be/-eZ2orx7QRE</a>. It starts from a snapshot of F0F1 in its bound conformation taken from the rotational sampling and gets pulled upwards from its C-terminus. <strong>b)</strong> Number of interacting residues (top panel) and the force (bottom panel) as a function of distance (x-axis) as F0F1 gets pulled off the membrane at a constant rate of 0.03&nbsp;nm/ns. <strong>c)</strong> Time evolution of the number of contacts for residues belonging to the F1 loop (x-axis) and other residues (y-axis). Lighter shades of blue correspond to a later time in the simulation. Black dots mark the starting positions. The non-loop contacts are mostly supplied by the residues of the F0 N-terminus also shown in <a href="#fig-f0f1-ri-npip">Figure&nbsp;4 (a)</a>.</figcaption><p></p>
 </figure>
 </div>
-<p>Having established the prominent role of the F1-loop in positioning F0F1 at the membrane and establishing PIP<sub>2</sub> contacts, we next examined this role in the larger context of the full FERM domain. 6 independent simulations were initiated with the full-length FERM domain oriented in such that the tip of the F1-loop was in contact with at least one molecule of PIP<sub>2</sub> with varying local environments (see <a href="#sec-system">Section&nbsp;8.1</a> for one example). These simulations highlight the prominent role of the F1-loop in membrane interactions, now in the context of the full-length FERM domain (<a href="#fig-ferm-ri-npip">Figure&nbsp;6 (a)</a>, compare to <a href="#fig-f0f1-ri-npip">Figure&nbsp;4 (a)</a>). They also reproduce the canonical PIP<sub>2</sub> contacts in F2 and F3 known from previous studies, validating our MD simulations. The highlighted residues include K272 of F2 and K316, K324, E342, and K343 of F3, which have been shown to be crucial for the membrane interaction of Talin and subsequent integrin activation by Chinthalapudi et al. <span class="citation" data-cites="chinthalapudiInteractionTalinCell2018a">(<a href="#ref-chinthalapudiInteractionTalinCell2018a" role="doc-biblioref">20</a>)</span>. Importantly, the loop shows a very dense cluster of PIP<sub>2</sub> interactions, with interaction scores (<span class="math inline">\bar n_{PIP_2}</span>) very similar to these previously known PIP<sub>2</sub>-interacting residues. The F1 loop thus complements these known binding sites with an additional specific binding site, again comprising primarily lysines.</p>
+<p>Having established the prominent role of the F1-loop in positioning F0F1 at the membrane and establishing PIP<sub>2</sub> contacts, we next examined this role in the larger context of the full FERM domain. 6 independent simulations were initiated with the full-length FERM domain oriented in such that the tip of the F1-loop was in contact with at least one molecule of PIP<sub>2</sub> with varying local environments (see <a href="#sec-system">Section&nbsp;9.1</a> for one example). These simulations highlight the prominent role of the F1-loop in membrane interactions, now in the context of the full-length FERM domain (<a href="#fig-ferm-ri-npip">Figure&nbsp;6 (a)</a>, compare to <a href="#fig-f0f1-ri-npip">Figure&nbsp;4 (a)</a>). They also reproduce the canonical PIP<sub>2</sub> contacts in F2 and F3 known from previous studies, validating our MD simulations. The highlighted residues include K272 of F2 and K316, K324, E342, and K343 of F3, which have been shown to be crucial for the membrane interaction of Talin and subsequent integrin activation by Chinthalapudi et al. <span class="citation" data-cites="chinthalapudiInteractionTalinCell2018a">(<a href="#ref-chinthalapudiInteractionTalinCell2018a" role="doc-biblioref">20</a>)</span>. Importantly, the loop shows a very dense cluster of PIP<sub>2</sub> interactions, with interaction scores (<span class="math inline">\bar n_{PIP_2}</span>) very similar to these previously known PIP<sub>2</sub>-interacting residues. The F1 loop thus complements these known binding sites with an additional specific binding site, again comprising primarily lysines.</p>
 <div id="fig-ferm-further" class="quarto-layout-panel">
 <figure class="figure">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -451,6 +452,10 @@ Tip
 <h1>Author Contributions</h1>
 <p>Conceived and designed the experiments:&nbsp;JB FF FG. Performed the experiments:&nbsp;JB FF. Analyzed the data:&nbsp;JB FF. Contributed reagents/materials/analysis tools:&nbsp;FF. Wrote the paper:&nbsp;JB FF.</p>
 </section>
+<section id="declaration-of-interests" class="level1">
+<h1>Declaration of Interests</h1>
+<p>The authors declare no competing interests.</p>
+</section>
 <section id="acknowledgments" class="level1">
 <h1>Acknowledgments</h1>
 <p>This work was supported by the Klaus Tschira Foundation and the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation programme (grant agreement No.&nbsp;101002812).</p>
@@ -465,7 +470,7 @@ Tip
 <h2 class="anchored" data-anchor-id="sec-system">Simulation System</h2>
     <div id="app-./www/system-tln-memb.pdb" class="molstar-app"></div>
     <script type="text/javascript">
-    molstar.Viewer.create("app-./www/system-tln-memb.pdb", {"viewportShowSelectionMode":false,"layoutShowLog":false,"viewportShowExpand":true,"layoutShowSequence":false,"layoutShowRemoteState":false,"layoutIsExpanded":false,"emdbProvider":"rcsb","pdbProvider":"rcsb","layoutShowControls":false,"viewportShowAnimation":true,"layoutShowLeftPanel":true}).then(viewer => {
+    molstar.Viewer.create("app-./www/system-tln-memb.pdb", {"viewportShowSelectionMode":false,"layoutShowRemoteState":false,"layoutShowLog":false,"viewportShowAnimation":true,"layoutShowControls":false,"layoutShowLeftPanel":true,"emdbProvider":"rcsb","layoutIsExpanded":false,"layoutShowSequence":false,"pdbProvider":"rcsb","viewportShowExpand":true}).then(viewer => {
     viewer.loadStructureFromUrl("./www/system-tln-memb.pdb", format="pdb");    });
     </script>
     
