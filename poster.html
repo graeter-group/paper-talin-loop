@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-    <meta charset="utf-8">
+<script src="poster_files/libs/clipboard/clipboard.min.js"></script>
+<script src="poster_files/libs/quarto-html/tabby.min.js"></script>
+<script src="poster_files/libs/quarto-html/popper.min.js"></script>
+<script src="poster_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="poster_files/libs/quarto-html/anchor.min.js"></script>
+<link href="poster_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="poster_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="poster_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="poster_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="generator" content="pandoc">
     <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/png" href="www/hits-logo.png">
     
     
-    <meta name="date" content="2022-02-20">
+    
     <title>Intrinsically disordered region of talin’s FERM domain functions as an initial PIP2 recognition site</title>
 
-        <script src="poster_files/libs/clipboard/clipboard.min.js"></script>
-        <script src="poster_files/libs/quarto-html/tabby.min.js"></script>
-        <script src="poster_files/libs/quarto-html/popper.min.js"></script>
-        <script src="poster_files/libs/quarto-html/tippy.umd.min.js"></script>
-        <script src="poster_files/libs/quarto-html/anchor.min.js"></script>
-        <link href="poster_files/libs/quarto-html/tippy.css" rel="stylesheet">
-        <link href="poster_files/libs/quarto-html/light-border.css" rel="stylesheet">
-        <link href="poster_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet">
-        <link id="quarto-text-highlighting-styles" href="poster_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
     
     
 
@@ -65,32 +64,32 @@
 <div id="fig-structure" class="quarto-figure quarto-figure-center anchored">
 <figure>
 <p><img src="assets/blender/render-align/frame0000.png" class="wrapping img-fluid"></p>
-<p></p><figcaption aria-hidden="true">Figure 1: The autoinhibited (Cryo-EM) structure of Talin1 found by <span class="citation" data-cites="deddenArchitectureTalin1Reveals2019a">Dedden et al. (<a href="#ref-deddenArchitectureTalin1Reveals2019a" role="doc-biblioref">2019</a>)</span> aligned with the structure of the FERM domain by <span class="citation" data-cites="elliottStructureTalinHead2010">Elliott et al. (<a href="#ref-elliottStructureTalinHead2010" role="doc-biblioref">2010</a>)</span> and the modelled flexible loop in F1 (darker cyan)</figcaption><p></p>
+<p></p><figcaption>Figure&nbsp;1: The autoinhibited (Cryo-EM) structure of Talin1 found by <span class="citation" data-cites="deddenArchitectureTalin1Reveals2019a">Dedden et al. (<a href="#ref-deddenArchitectureTalin1Reveals2019a" role="doc-biblioref">2019</a>)</span> aligned with the structure of the FERM domain by <span class="citation" data-cites="elliottStructureTalinHead2010">Elliott et al. (<a href="#ref-elliottStructureTalinHead2010" role="doc-biblioref">2010</a>)</span> and the modelled flexible loop in F1 (darker cyan)</figcaption><p></p>
 </figure>
 </div>
 <p>Focal adhesions mediate the interaction of the cytoskeleton with the extracellular matrix (ECM). Talin is a central regulator and adaptorprotein of the multiprotein focal adhesion complexes and is responsible for integrin activation and force-sensing. We evaluated direct interactions of talin with the membrane lipid phosphatidylinositol 4,5-bisphosphate (PIP<sub>2</sub>) by means of molecular dynamics simulations. A newly published autoinhibitory structure of talin, where common PIP<sub>2</sub> interaction sites are covered up, sparked our curiosity for a hitherto less examined loop as a potential site of first contact. We show that this unstructured loop in the F1 subdomain of the talin1 FERM domain is able to interact with PIP<sub>2</sub> and can facilitate further interactions by serving as a flexible membrane anchor.</p>
 <div id="fig-rot-sample" class="quarto-figure quarto-figure-center anchored">
 <figure>
 <p><img src="assets/results/plots/f0f1-ri-angle-npip-1.png" class="center img-fluid" style="width:80.0%"></p>
-<p></p><figcaption aria-hidden="true">Figure 2: A rotational sampling of the F0F1 domain reaveals the strong propensity of the F1 loop to interact with the membrane. Even in the most unfavorable position, the loop still has a high probability to find the membrane and interact with PIP<sub>2</sub> due to the large search space it can cover.</figcaption><p></p>
+<p></p><figcaption>Figure&nbsp;2: A rotational sampling of the F0F1 domain reaveals the strong propensity of the F1 loop to interact with the membrane. Even in the most unfavorable position, the loop still has a high probability to find the membrane and interact with PIP<sub>2</sub> due to the large search space it can cover.</figcaption><p></p>
 </figure>
 </div>
 <div id="fig-f0f1-residues" class="quarto-figure quarto-figure-center anchored">
 <figure>
 <p><img src="./assets/vmd/f0f1/residues.png" class="center img-fluid" style="width:80.0%"></p>
-<p></p><figcaption aria-hidden="true">Figure 3: The residues of F0F1 interacting with PIP<sub>2</sub> are highlighted in blue, with their CA-atoms labelled</figcaption><p></p>
+<p></p><figcaption>Figure&nbsp;3: The residues of F0F1 interacting with PIP<sub>2</sub> are highlighted in blue, with their CA-atoms labelled</figcaption><p></p>
 </figure>
 </div>
 </div>
 <div id="right-bar">
-<div class="quarto-layout-panel">
+<div id="fig-attach-detach" class="quarto-layout-panel">
 <figure>
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img src="assets/results/plots/f0f1-retention-1.png" class="img-fluid"></p>
-<p></p><figcaption aria-hidden="true">&nbsp;</figcaption><p></p>
+<p></p><figcaption>&nbsp;</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -98,12 +97,12 @@
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img src="assets/results/plots/f0f1-vert-pull-1.png" class="img-fluid"></p>
-<p></p><figcaption aria-hidden="true">&nbsp;</figcaption><p></p>
+<p></p><figcaption>&nbsp;</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
-<p></p><figcaption aria-hidden="true">Figure 4: <strong>Left</strong>: Once a certain number of residues are interacting, it becomes highly unlikely for F0F1 to dissociate from the membrane. <strong>Right</strong>: Pulling bound F0F1 from the membrane does need some force, but the most important aspect for remaining bound is its flexibility. This allows it to remain in contact with PIP<sub>2</sub> even at large distances.</figcaption><p></p>
+<p></p><figcaption>Figure&nbsp;4: <strong>Left</strong>: Once a certain number of residues are interacting, it becomes highly unlikely for F0F1 to dissociate from the membrane. <strong>Right</strong>: Pulling bound F0F1 from the membrane does need some force, but the most important aspect for remaining bound is its flexibility. This allows it to remain in contact with PIP<sub>2</sub> even at large distances.</figcaption><p></p>
 </figure>
 </div>
 <!-- ![](assets/results/plots/f0f1-ri-npip-1.png){width=60% .center} -->
@@ -112,7 +111,7 @@
 <div id="fig-ferm-residue" class="quarto-figure quarto-figure-center anchored">
 <figure>
 <p><img src="assets/results/plots/ferm-ri-npip-1.png" class="img-fluid"></p>
-<p></p><figcaption aria-hidden="true">Figure 5: Once contact has been established via the loop, simulations with the full lenght FERM domain show that known PIP<sub>2</sub> interaction sites are recovered. The location of binding surfaces found by <span class="citation" data-cites="chinthalapudiInteractionTalinCell2018a">Chinthalapudi, Rangarajan, and Izard (<a href="#ref-chinthalapudiInteractionTalinCell2018a" role="doc-biblioref">2018</a>)</span> are highlighted with red lines on the schematic: K272 of F2 and K316, K324, E342, and K343 of F3.</figcaption><p></p>
+<p></p><figcaption>Figure&nbsp;5: Once contact has been established via the loop, simulations with the full lenght FERM domain show that known PIP<sub>2</sub> interaction sites are recovered. The location of binding surfaces found by <span class="citation" data-cites="chinthalapudiInteractionTalinCell2018a">Chinthalapudi, Rangarajan, and Izard (<a href="#ref-chinthalapudiInteractionTalinCell2018a" role="doc-biblioref">2018</a>)</span> are highlighted with red lines on the schematic: K272 of F2 and K316, K324, E342, and K343 of F3.</figcaption><p></p>
 </figure>
 </div>
 <h2 id="acknowledgments" class="anchored">Acknowledgments</h2>
@@ -164,6 +163,24 @@ new QRCode(document.getElementById("qrcode"), {
 
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
   const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
   tabsets.forEach(function(tabset) {
     const tabby = new Tabby('#' + tabset.id);
@@ -189,7 +206,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -217,31 +251,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>

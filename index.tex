@@ -256,12 +256,12 @@ intrinsically disordered regions in protein--membrane interactions.
 \end{sigstatement}
 
 
-\end{frontmatter}\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[breakable, borderline west={3pt}{0pt}{shadecolor}, boxrule=0pt, enhanced, frame hidden, sharp corners, interior hidden]}{\end{tcolorbox}}\fi
+\end{frontmatter}\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, breakable, frame hidden, interior hidden, enhanced, boxrule=0pt, sharp corners]}{\end{tcolorbox}}\fi
 
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, colback=white, opacityback=0, rightrule=.15mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, titlerule=0mm, breakable, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, coltitle=black, bottomtitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, left=2mm, leftrule=.75mm, toptitle=1mm, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, toprule=.15mm, toptitle=1mm, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, coltitle=black, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, bottomtitle=1mm, arc=.35mm, left=2mm, colback=white]
 
 This is a draft and as such subject to change. The source repository for
 this manuscript lives at
@@ -1050,6 +1050,11 @@ Conceived and designed the experiments:~JB FF FG. Performed the
 experiments:~JB FF. Analyzed the data:~JB FF. Contributed
 reagents/materials/analysis tools:~FF. Wrote the paper:~JB FF.
 
+\hypertarget{declaration-of-interests}{%
+\section{Declaration of Interests}\label{declaration-of-interests}}
+
+The authors declare no competing interests.
+
 \hypertarget{acknowledgments}{%
 \section{Acknowledgments}\label{acknowledgments}}
 
@@ -1461,13 +1466,15 @@ mechanistic insights into mechanoactivation of focal adhesion kinase}.
 
 \end{CSLReferences}
 
+\newpage
+
 \hypertarget{supplementary-material}{%
 \section{Supplementary Material}\label{supplementary-material}}
 
 \hypertarget{sec-system}{%
 \subsection{Simulation System}\label{sec-system}}
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, colback=white, opacityback=0, rightrule=.15mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, titlerule=0mm, breakable, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, coltitle=black, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, left=2mm, leftrule=.75mm, toptitle=1mm, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, toprule=.15mm, toptitle=1mm, breakable, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, rightrule=.15mm, colframe=quarto-callout-note-color-frame, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, bottomtitle=1mm, arc=.35mm, left=2mm, colback=white]
 
 This interactive display is only available in the web version:
 \url{https://hits-mbm-dev.github.io/paper-talin-loop/}
@@ -1656,12 +1663,6 @@ K 362 & 0.447 \\
 integrator              = md
 dt                      = 0.002
 nsteps                  = 100000000
-nstxout                 = 5000
-nstvout                 = 5000
-nstfout                 = 50000
-nstcalcenergy           = 100
-nstenergy               = 1000
-nstlog                  = 1000
 cutoff-scheme           = Verlet
 nstlist                 = 20
 rlist                   = 1.2

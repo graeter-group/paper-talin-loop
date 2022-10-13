@@ -35,7 +35,7 @@ format:
       size: "250"
     mathjax: false
     self-contained: false
-bibliography: eeferences.bib
+bibliography: references.bib
 
 ---
 
