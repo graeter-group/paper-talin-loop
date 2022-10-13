@@ -1,7 +1,7 @@
 source("R/globals.R")
 source("R/functions.R")
 
-tar_option_set(memory ="transient")
+tar_option_set(memory = "transient")
 
 plan(callr)
 
@@ -11,11 +11,7 @@ list(
 #### globals ####
   tar_target(
     data_path_prefix,
-    "/hits/fast/mbm/buhrjk/"
-  ),
-  tar_target(
-    data_path_prefix_basement,
-    "/hits/basement/mbm/buhrjk/"
+    "/hits/fast/mbm/buhrjk/master/"
   ),
   tar_target(
     CUTOFF, 0.25
@@ -24,7 +20,7 @@ list(
     path_sequence,
     {
       prefix <- data_path_prefix
-      glue("{prefix}master/tln1-data/ferm.fasta")
+      glue("{prefix}/tln1-data/ferm.fasta")
     },
     format = "file"
   ),
@@ -62,7 +58,7 @@ list(
     ferm_pip_sites,
     tribble(
       ~ri,
-      272, 
+      272,
       316,
       324,
       342,
@@ -76,12 +72,12 @@ list(
     # manually invalidated, does not watch the filesystem
     paths_f0f1_rot_sample_runs,
     {
-      prefix <- data_path_prefix_basement
+      prefix <- data_path_prefix
       setup <- crossing(
         run = 1:6,
         angles = seq(0, 354, by = 6)
       )
-      paths <- glue("{prefix}tln1_f0f1_rot_sample/f0f1_rot_sample_run{setup$run}/angle_{setup$angles}/conan/matrices/filtered")
+      paths <- glue("{prefix}/tln1_f0f1_rot_sample/f0f1_rot_sample_run{setup$run}/angle_{setup$angles}/conan/matrices/filtered")
       paths
     }
   ),
@@ -110,63 +106,63 @@ list(
   ),
   tar_target(
     first_frames,
-    interacting %>%
-      group_by(run, angle, frame) %>%
-      summarise(n_i = sum(n_pip > 0)) %>%
-      mutate(cs = cumsum(n_i)) %>%
-      filter(cs > 0) %>%
-      group_by(run, angle) %>%
+    interacting |>
+      group_by(run, angle, frame) |>
+      summarise(n_i = sum(n_pip > 0)) |>
+      mutate(cs = cumsum(n_i)) |>
+      filter(cs > 0) |>
+      group_by(run, angle) |>
       summarise(first_frame = min(frame))
   ),
   tar_target(
     docked,
-    interacting %>%
-      left_join(first_frames) %>%
-      distinct(run, angle, docked = !is.na(first_frame)) %>%
+    interacting |>
+      left_join(first_frames) |>
+      distinct(run, angle, docked = !is.na(first_frame)) |>
       count(angle, docked)
   ),
   tar_target(
     from_first_contact,
-    interacting %>%
-      left_join(first_frames) %>%
-      filter(!is.na(first_frame), frame >= first_frame) %>%
+    interacting |>
+      left_join(first_frames) |>
+      filter(!is.na(first_frame), frame >= first_frame) |>
       select(-first_frame)
   ),
   tar_target(
     rolling,
-    from_first_contact %>%
-      group_by(run, angle, frame) %>%
-      summarise(n_i = sum(n_pip > 0)) %>%
-      group_by(run, angle) %>%
-      arrange(run, angle, frame) %>%
+    from_first_contact |>
+      group_by(run, angle, frame) |>
+      summarise(n_i = sum(n_pip > 0)) |>
+      group_by(run, angle) |>
+      arrange(run, angle, frame) |>
       mutate(n_i = zoo::rollmedian(x = n_i, k = 5, fill = NA),
              delta = c(0, diff(n_i, 1)),
-             time = frame - min(frame)) %>%
-      ungroup() %>%
-      filter(!is.na(n_i), !is.na(delta)) %>%
+             time = frame - min(frame)) |>
+      ungroup() |>
+      filter(!is.na(n_i), !is.na(delta)) |>
       select(-frame)
   ),
   tar_target(
     rolling_regardless_of_contact,
-    interacting %>%
-      group_by(run, angle, frame) %>%
-      summarise(n_i = sum(n_pip > 0)) %>%
-      group_by(run, angle) %>%
-      arrange(run, angle, frame) %>%
+    interacting |>
+      group_by(run, angle, frame) |>
+      summarise(n_i = sum(n_pip > 0)) |>
+      group_by(run, angle) |>
+      arrange(run, angle, frame) |>
       mutate(n_i = zoo::rollmedian(x = n_i, k = 5, fill = NA),
              delta = c(0, diff(n_i, 1)),
-             time = frame - min(frame)) %>%
-      ungroup() %>%
-      filter(!is.na(n_i), !is.na(delta)) %>%
+             time = frame - min(frame)) |>
+      ungroup() |>
+      filter(!is.na(n_i), !is.na(delta)) |>
       select(-frame)
   ),
   tar_target(
     stuck,
-    rolling_regardless_of_contact %>%
-      group_by(run, angle) %>%
+    rolling_regardless_of_contact |>
+      group_by(run, angle) |>
       summarise(contact = sum(n_i) > 0,
-                final_contact = last(n_i) > 0) %>%
-      ungroup() %>%
+                final_contact = last(n_i) > 0) |>
+      ungroup() |>
       mutate(
         stuck = case_when(
           contact & final_contact  ~ "retention",
@@ -174,27 +170,27 @@ list(
           contact & !final_contact ~ "no retention",
           TRUE ~ "something went wrong with my boolean logic"
         )
-      ) %>%
+      ) |>
       count(stuck)
   ),
   tar_target(
     f0f1_top_interacting,
-    interacting %>% 
-      group_by(i) %>% 
-      summarise(n_pip = mean(n_pip)) %>% 
-      left_join(sequence) %>% 
-      filter(n_pip > 0.1) %>% 
-      mutate(residue = paste(res, i)) %>% 
+    interacting |>
+      group_by(i) |>
+      summarise(n_pip = mean(n_pip)) |>
+      left_join(sequence) |>
+      filter(n_pip > 0.1) |>
+      mutate(residue = paste(res, i)) |>
       select(residue, mean_n_pip = n_pip)
   ),
   tar_target(
     f0f1_top_interacting_table,
     {
       path_f0f1_top_interacting_md <- "results/tables/f0f1-top-interacting-tbl.md"
-      f0f1_top_interacting %>%
+      f0f1_top_interacting |>
         kable(format = "pipe",
               digits = 3,
-              caption = "Top residues interacting with F0F1 {#tbl-f0f1-top-interacting}") %>%
+              caption = "Top residues interacting with F0F1 {#tbl-f0f1-top-interacting}") |>
         write_lines(path_f0f1_top_interacting_md)
       path_f0f1_top_interacting_md
     },
@@ -207,7 +203,7 @@ list(
     paths_f0f1_pulling_dists,
     {
       prefix <- data_path_prefix
-      glue("{prefix}master/f0f1-vert-pulling/conan_run{1:6}/matrices/filtered/")
+      glue("{prefix}/f0f1-vert-pulling/conan_run{1:6}/matrices/filtered/")
     },
     format = "file"
   ),
@@ -215,32 +211,32 @@ list(
     paths_f0f1_pulling_xvg,
     {
       prefix <- data_path_prefix
-      fs::dir_ls(glue("{prefix}master/f0f1-vert-pulling/"), glob = "*.xvg")
+      fs::dir_ls(glue("{prefix}/f0f1-vert-pulling/"), glob = "*.xvg")
     },
     format = "file"
   ),
   tar_target(
     f0f1_pulling_dists,
-    paths_f0f1_pulling_dists %>%
-      unclass() %>%
-      set_names() %>%
+    paths_f0f1_pulling_dists |>
+      unclass() |>
+      set_names() |>
       future_map_dfr(possibly(read_pulling_dist_matrices, tibble(frame = NA)),
-                     .id = "path") %>%
+                     .id = "path") |>
       mutate(run = parse_number(str_extract(path, "conan_run\\d+")))
   ),
   tar_target(
     f0f1_pulling_interacting,
-    f0f1_pulling_dists %>%
-      group_by(run, frame, i) %>%
-      summarise(n_pip = sum(r <= CUTOFF)) %>%
+    f0f1_pulling_dists |>
+      group_by(run, frame, i) |>
+      summarise(n_pip = sum(r <= CUTOFF)) |>
       ungroup()
   ),
   tar_target(
     f0f1_pulling,
-    paths_f0f1_pulling_xvg %>%
-      unclass() %>%
-      set_names(basename) %>%
-      map_dfr(parse_pullf_xvg, .id = "path") %>%
+    paths_f0f1_pulling_xvg |>
+      unclass() |>
+      set_names(basename) |>
+      map_dfr(parse_pullf_xvg, .id = "path") |>
       extract(path, c("speed", "run", "type"),
               regex = "pull_(\\d+)_?(run\\w)?_pull(\\w)") |>
       mutate(run = parse_number(run)) |>
@@ -269,9 +265,9 @@ list(
   tar_target(
     paths_ferm_distances,
     {
-      prefix <- data_path_prefix_basement
+      prefix <- data_path_prefix
       run <- 1:6
-      paths <- glue("{prefix}tln1_ferm_memb/run_{run}/conan/matrices/filtered/")
+      paths <- glue("{prefix}/tln1_ferm_memb/run_{run}/conan/matrices/filtered/")
       paths
     }
   ),
@@ -295,22 +291,22 @@ list(
   ),
   tar_target(
     ferm_top_interacting,
-    ferm_interacting %>% 
-      group_by(i) %>% 
-      summarise(n_pip = mean(n_pip)) %>% 
-      left_join(sequence) %>% 
-      filter(n_pip > 0.1) %>% 
-      mutate(residue = paste(res, i)) %>% 
+    ferm_interacting |>
+      group_by(i) |>
+      summarise(n_pip = mean(n_pip)) |>
+      left_join(sequence) |>
+      filter(n_pip > 0.1) |>
+      mutate(residue = paste(res, i)) |>
       select(residue, mean_n_pip = n_pip)
   ),
   tar_target(
     ferm_top_interacting_table,
     {
       path_ferm_top_interacting_md <- "results/tables/ferm-top-interacting-tbl.md"
-      ferm_top_interacting %>% 
+      ferm_top_interacting |>
         kable(format = "pipe",
               digits = 3,
-              caption = "Top residues interacting with FERM {#tbl-ferm-top-interacting}") %>%
+              caption = "Top residues interacting with FERM {#tbl-ferm-top-interacting}") |>
         write_lines(path_ferm_top_interacting_md)
       path_ferm_top_interacting_md
     },

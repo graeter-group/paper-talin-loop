@@ -58,7 +58,6 @@ tar_read(sequence)
 ## Load data
 
 ```{r load-data}
-tar_load(data_path_prefix)
 tar_load(CUTOFF)
 tar_load(from_first_contact)
 tar_load(interacting)
@@ -116,11 +115,11 @@ interacting |>
 ```
 
 ```{r f0f1-ri-angle-npip}
-paths <- c("{data_path_prefix}papers/paper-talin-loop/assets/blender/render-rotsample/frame0001.png",
-    "{data_path_prefix}papers/paper-talin-loop/assets/blender/render-rotsample/frame0004.png",
-    "{data_path_prefix}papers/paper-talin-loop/assets/blender/render-rotsample/frame0003.png",
-    "{data_path_prefix}papers/paper-talin-loop/assets/blender/render-rotsample/frame0002.png",
-    "{data_path_prefix}papers/paper-talin-loop/assets/blender/render-rotsample/frame0001.png") |>  map_chr(glue)
+paths <- c("./assets/blender/render-rotsample/frame0001.png",
+    "./assets/blender/render-rotsample/frame0004.png",
+    "./assets/blender/render-rotsample/frame0003.png",
+    "./assets/blender/render-rotsample/frame0002.png",
+    "./assets/blender/render-rotsample/frame0001.png") |>  map_chr(glue)
 
 render_png <- function(p) {grid::rasterGrob(png::readPNG(p))}
 pngs <- map(paths, render_png)
