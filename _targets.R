@@ -6,7 +6,6 @@ tar_option_set(memory = "transient")
 plan(callr)
 
 
-
 list(
 #### globals ####
   tar_target(

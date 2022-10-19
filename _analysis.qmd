@@ -27,6 +27,12 @@ knitr:
 editor: source
 ---
 
+:::{.callout-tip}
+To reproduce the graphics generated here, download the raw data from the archive and replace the value of the target `data_path_prefix` in `_targets.R` with the path to that data.
+Then use the next two code chunks to load packages and functions and run the targets pipeline (`tar_make()`).
+The raw data will then be processed such that you can load it in this document.
+:::
+
 # Setup
 
 ```{r}
