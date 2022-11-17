@@ -108,7 +108,7 @@ A second integrin binding site is located in the rod domain 11 (R11) [@horwitzIn
 Talin interacts with the cytoskeleton through actin binding sites (F2-F3, R4-R8, R13-DH) [@mccannLWEQModuleConserved1997].
 The review by Klapholz et al. [@klapholzTalinMasterIntegrin2017] provides an excellent overview of the many interaction sites of Talin and their central role in the focal adhesion complex.
 
-The mechanistic role of the disordered F1 loop in the many aspects of Talin function remains elusive.
+The mechanistic role of the disordered loop in the F1 domain in the many aspects of Talin function remains elusive.
 Its overall positive charge renders it a prime candidate as a PIP~2~ binding site.
 However, previous studies only identified a minor role of the loop in PIP~2~ binding compared to F2-F3 [@chinthalapudiInteractionTalinCell2018a; @saltelNewPIP22009].
 On the other hand, the F1 loop has been shown to contribute to Talin-mediated integrin activation [@goultStructureDoubleUbiquitinlike2010].
