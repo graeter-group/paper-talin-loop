@@ -165,8 +165,8 @@ The resulting conformation was compared to an NMR structure of the F1 domain (PD
 The missing residue M1 was also added.
 Residues D125 and E126 are missing from our structure and the missing residues I399 and L400 were not modeled.
 This leaves us with a sequence from residue 1 to 398 with a shift by 2 in numbering compared to the canonical TLN1_MOUSE Talin-1 sequence (uniprot ID P26039) after residue 124.
-Simulations were performed with the CHARM36 force field.
-Topologies, including the membrane, were generated with the CHARM-GUI web app [@brooksCHARMMBiomolecularSimulation2009; @joCHARMMGUIWebbasedGraphical2008; @leeCHARMMGUIInputGenerator2016] and GROMACS tools.
+Simulations were performed with the CHARMM36 force field.
+Topologies, including the membrane, were generated with the CHARMM-GUI web app [@brooksCHARMMBiomolecularSimulation2009; @joCHARMMGUIWebbasedGraphical2008; @leeCHARMMGUIInputGenerator2016] and GROMACS tools.
 All simulations used the TIP3P water model and were neutralized with 0.15 mol/L of NaCl. A 6-step equilibration was performed after gradient decent energy minimization while gradually relieving restraints on protein and membrane atoms.
 Production runs used a timestep of 2 fs, a Verlet cut-off scheme for Van-der-Waals interactions and the Particle Mesh Ewald (PME) method for long-range electrostatics.
 NPT-ensembles were achieved by Nosé-Hoover temperature coupling [@hooverCanonicalDynamicsEquilibrium1985; @noseUnifiedFormulationConstant1984] and Parinello-Rahman pressure coupling [@parrinelloPolymorphicTransitionsSingle1981].
@@ -294,7 +294,7 @@ The video is also available here: <https://youtu.be/s5yya0XeNTA>).
 To examine the strength of the PIP~2 interactions and the role of the F1 loop in maintaining it, we pulled F0F1 vertically off the membrane in additional force-probe MD simulations (@fig-f0f1-vert-pull).
 An exemplary render of one of the simulations can be seen in @fig-f0f1-pull-run-1.
 Pulling F0F1 off the membrane requires peak forces of 100--120\ pN, during which the interacting residues only very gradually loose contact (@fig-f0f1-vert-pull), as the high flexibility of F1-loop allows the residues to remain in contact even as the distance increases up to a delta of 7\ nm.
-Replicate 4 stands out as the highest curve, as in this run the interactions were so so strong that a total of 3 molecules of PIP~2~ were pulled out of the membrane (1 by F0 and 2 by the F1 loop).
+Replicate 4 stands out as the highest curve, as in this run the interactions were so strong that a total of 3 molecules of PIP~2~ were pulled out of the membrane (1 by F0 and 2 by the F1 loop).
 A snapshot of this can be seen in @fig-f0f1-vert-pull-run4.
 This highlights the strong anchoring capabilities of the F1 loop.
 
