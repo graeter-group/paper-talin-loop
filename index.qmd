@@ -51,7 +51,7 @@ abstract: |
 sigstatement: |
   FERM domains are modular domains that often harbor PIP~2~ binding sites and serve as anchoring points to membranes.
   Talin's FERM domain features a peculiar long and disordered loop, the function of which has remained fully elusive.
-  We here show by means of atomistic Molecular Dynamics simulations that the loop serves as a first PIP~2~ interaction site and flexible anchor to the membrane.
+  We here show by means of atomistic molecular dynamics simulations that the loop serves as a first PIP~2~ interaction site and flexible anchor to the membrane.
   This provides mechanistic insight into the role of intrinsically disordered regions in protein--membrane interactions.
 image: ./assets/blender/render/frame0001.png
 license: CC BY
@@ -471,7 +471,7 @@ Run 4 of the vertical pulling of F0F1. Interactions between the protein and PIP~
 
 {{< include ./results/tables/ferm-top-interacting-tbl.md >}}
 
-### Molecular Dynamics Parameters {#sec-prod-mdp}
+### Molecular dynamics Parameters {#sec-prod-mdp}
 
 ```
 integrator              = md
