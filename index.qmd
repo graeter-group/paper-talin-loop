@@ -192,6 +192,7 @@ However, due to a hardware failure, 2 of these 360 runs are corrupted and thus e
 From this rotational sampling, we selected representative conformations with loop-membrane interactions as the basis of 6 equilibrium simulations of the complete FERM domain over a POPC membrane with 26 PIP~2~ lipids out of a total of 273 lipids in the upper leaflet.
 Each simulation ran for 400\ ns.
 The initial conformations for perpendicular pulling simulations of the F0F1 subdomains to gauge interaction strength were also chose from the rotational sampling set.
+The pulling simulations used an umbrella potential applied to the C-terminus with a harmonic force constant of 500 kJ/mol/nm^2^ and a constant speed of 0.03 m/s (See Supplementary Data in `f0f1-vert-pulling/pull_00003.mdp`)
 
 Distance information was extracted from trajectories with gromacs tools interfaced via CONAN [@mercadanteCONANToolDecode2018].
 
