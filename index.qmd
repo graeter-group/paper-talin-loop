@@ -182,6 +182,8 @@ The F0F1 FERM sub domains (residues 1 to 197) were simulated to evaluate protein
 This entailed placing the protein 1.5\ nm away from a 1-palmitoyl-2-oleoyl-glycero-3-phosphocholine (POPC) membrane,
 where 12 of the 119 lipids in the upper leaflet were replaced with PIP~2~.
 This results in a physiological concentration of 10% PIP~2~.
+The PIP~2~ molecules used in the simulutions have a charge of -4, consisten with the deprotonation state of the phosphate groups at physiological pH [@mclaughlinPIP2ProteinsInteractions2002].
+
 60 different starting orientations of the protein where generate, spanning a rotation of 360 degrees.
 The protein was rotated in such a way that the respective closest residue had the same distance to the membrane for the 0° and the 180° starting positions.
 6 replicates of each orientation were run for 200\ ns each.
