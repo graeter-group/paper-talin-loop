@@ -167,7 +167,10 @@ Residues D125 and E126 are missing from our structure and the missing residues I
 This leaves us with a sequence from residue 1 to 398 with a shift by 2 in numbering compared to the canonical TLN1_MOUSE Talin-1 sequence (uniprot ID P26039) after residue 124.
 Simulations were performed with the CHARMM36 force field.
 Topologies, including the membrane, were generated with the CHARMM-GUI web app [@brooksCHARMMBiomolecularSimulation2009; @joCHARMMGUIWebbasedGraphical2008; @leeCHARMMGUIInputGenerator2016] and GROMACS tools.
-All simulations used the TIP3P water model and were neutralized with 0.15 mol/L of NaCl. A 6-step equilibration was performed after gradient decent energy minimization while gradually relieving restraints on protein and membrane atoms.
+All simulations used the TIP3P water model and were neutralized with 0.15 mol/L of NaCl.
+A 6-step equilibration was performed after gradient descent energy minimization while gradually relieving restraints on protein and membrane atoms.
+This followed the standard procedure recommended by CHARMM-GUI.
+The exact Molecular Dynamics Parameter (mdp) files are provided in the data (see Supplementary Material) in the `assets` folder of each simulation system.
 Production runs used a timestep of 2 fs, a Verlet cut-off scheme for Van-der-Waals interactions and the Particle Mesh Ewald (PME) method for long-range electrostatics.
 NPT-ensembles were achieved by Nosé-Hoover temperature coupling [@hooverCanonicalDynamicsEquilibrium1985; @noseUnifiedFormulationConstant1984] and Parinello-Rahman pressure coupling [@parrinelloPolymorphicTransitionsSingle1981].
 An example `.mdp`-file can be found in the Supplementary Materials.
@@ -440,7 +443,10 @@ This interactive display is only available in the web version: <https://hits-mbm
 ## Scripts
 
 Data analysis code is available at <https://hits-mbm-dev.github.io/paper-talin-loop/_analysis.html> and in the repository at <https://github.com/hits-mbm-dev/paper-talin-loop>.
-Raw trajectories are available here: TODO (upload in process)
+
+## Input files and raw data {#sec-data}
+
+Input files and raw data are available on [heiData](https://heidata.uni-heidelberg.de/) here: TODO (upload in process)
 
 ## Supplementary Plots and Tables
 
@@ -471,7 +477,9 @@ Run 4 of the vertical pulling of F0F1. Interactions between the protein and PIP~
 
 {{< include ./results/tables/ferm-top-interacting-tbl.md >}}
 
-### Molecular dynamics Parameters {#sec-prod-mdp}
+## Molecular dynamics Parameters
+
+### Production runs {#sec-prod-mdp}
 
 ```
 integrator              = md
