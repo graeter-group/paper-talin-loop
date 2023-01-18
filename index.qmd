@@ -240,7 +240,7 @@ Rotational sampling of F0F1 reveals the lipid binding capabilities of the F1 loo
 **a\)**
 Snapshots from a simulation involving F0F1 over a POPC membrane containing 10% PIP~2~ in the upper leaflet.
 POPC is not rendered and PIP~2~ is shown as light grey stick models that turn thicker for those molecules that are currently interacting with residues of the protein.
-Those residues in question are then shown as dark blue stick models.
+The PIP~2~-binding residues are then shown as dark blue stick models.
 **b\)**
 Time-averaged number of PIP~2~ molecules bound per residue along the F0F1 sequence (x-axis) as a heatmap summarizing 358 simulations from a rotational sampling, with the starting angle on the y-axis.
 We sampled 60 different starting positions, rotated equally spaced around the horizontal axis, with 6 replicates each.
