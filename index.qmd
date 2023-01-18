@@ -149,7 +149,7 @@ With a complete structure of the Talin FERM domain, we investigated the role of 
 
 In F0F1 simulations, we found the loop to have a clear propensity to interact with the PIP~2~-containing membrane.
 It is able to establish a first contact with the membrane even from unfavorable initial orientations due to its large search volume.
-Furthermore, we show with simulations of the full-length FERM domain that once the loop has established an initial contact, it can anchor the FERM domain to the membrane and establish the known major binding sites in F2-F3.
+Furthermore, we show with simulations of the full-length FERM domain that once the loop has established an initial contact, it can anchor the FERM domain to the membrane and allow the known major binding sites in F2-F3 to form.
 
 These results provide mechanistic insight Talin--PIP~2~ interactions and highlight the role of secondary intrinsically disordered binding surfaces for membrane recognition.
 
