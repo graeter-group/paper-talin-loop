@@ -221,8 +221,9 @@ The resulting system that provides the basis for our simulations can be explored
 When simulating only F0F1 over a POPC membrane containing 10% PIP~2~, we noticed that the F1 loop had a clear propensity to establish contact with the membrane.
 Once the contact had been established, the protein was anchored strongly enough for more contacts to evolve with time, pulling the protein onto the membrane ([@fig-f0f1-snapshots]).
 In order to control for a potential bias towards the loop as a result of the starting position, we performed a rotational sampling of the system, where the starting angle of the loop with respect to the membrane was varied across 60 equally spaced angles.
-@fig-f0f1-ri-angle shows that independent of the starting position, the loop is able to find the membrane and bind to it, though this does happen earlier in the simulation when the loop starts favorably oriented towards the membrane (@fig-f0f1-angle-frame).
-However, even in its most unfavorable starting orientation (180°, oriented away from the membrane) the loop is able to find the membrane due to the large search space it can cover with its high flexibility (see @fig-loop-rmsf).
+@fig-f0f1-ri-angle shows that independent of the starting position, the loop is able to find the membrane and bind to it.
+This is due to the large search space it can cover with its high flexibility (see @fig-loop-rmsf).
+Binding happens earlier in the simulation when the loop starts oriented favorably towards the membrane (@fig-f0f1-angle-frame, 0\ °).
 
 :::::{#fig-loop-importance layout="[[1],[1]]"}
 :::{#fig-f0f1-snapshots}
