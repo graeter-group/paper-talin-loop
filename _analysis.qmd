@@ -37,7 +37,6 @@ The raw data will then be processed such that you can load it in this document.
 
 ```{r}
 source("./R/globals.R")
-source("./R/functions.R")
 ```
 
 # Data processing pipeline
@@ -178,10 +177,23 @@ main <- (plt / anot) +
 ```
 
 ```{r f0f1-ri-npip}
+CHARGE_COLORS = c(
+  "negative" = HITS_MAGENTA,
+  "positive" = HITS_BLUE,
+  "neutral" = "grey50"
+)
+
 plt <- from_first_contact |>
   group_by(i) |> 
   summarise(n_pip = mean(n_pip)) |>
   left_join(sequence, by = "i") |>
+  mutate(
+    charge = case_when(
+      PI > 7.0 ~ "positive",
+      PI < 6.0 ~ "negative",
+      TRUE ~ "neutral"
+    )
+  ) |>
   ggplot(aes(x = i, y = n_pip)) + 
   annotate(geom = "rect",
            xmin = 140, xmax = 164,
@@ -189,18 +201,15 @@ plt <- from_first_contact |>
            color = NA,
            fill = "black",
            alpha = 0.05) +
-  geom_col(aes(fill = PI),
+  geom_col(aes(fill = charge),
            alpha = 1,
            width = 0.8,
-           show.legend = FALSE) +
-  geom_text(aes(label = res, color = PI),
+           show.legend = TRUE) +
+  geom_text(aes(label = res, color = charge),
             fontface = "bold",
             vjust = -0.2,
-            data = ~ filter(.x, n_pip > 0.1)) +
-  scale_color_gradient2(low = HITS_MAGENTA,
-                        mid = "grey90", high = HITS_BLUE, midpoint = 7) +
-  scale_fill_gradient2(low = HITS_MAGENTA,
-                       mid = "grey90", high = HITS_BLUE, midpoint = 7) +
+            data = ~ filter(.x, n_pip > 0.1), show.legend = FALSE) +
+  scale_fill_manual(values = CHARGE_COLORS, aesthetics = c("fill", "color")) +
   scale_y_continuous(expand = expansion(mult = c(0, 0.1))) +
   labs(y = expression(n[PIP[2]])) +
   coord_cartesian(clip = "off", xlim = c(0, 207)) +
@@ -212,13 +221,11 @@ plt <- from_first_contact |>
 
 grobs <- ggplotGrob(plt)
 
-plt <- plt +
-  guides(
-      color = guide_colorbar(
-        barheight = unit(0.7, "grobheight", data = grobs$grobs),
-        frame.colour = "black")
-  )
-
+# plt <- plt +
+#   guides(
+#       fill = guide_legend()
+#   )
+#
 
 anot <- ggplot(ferm_annotation[1:3, ]) +
   aes(
@@ -463,7 +470,7 @@ plt <- f0f1_pulling_interacting |>
        # caption = "pulling rate: 0.03 nm/ns"/
        )
 
-anot <- ggplot(ferm_annotation[1:3,]) +
+anot <- ggplot(ferm_annotation[1:3, ]) +
   aes(
     ymin = 0, ymax = 10,
     xmin = imin, xmax = imax,
@@ -540,6 +547,13 @@ plt <- ferm_interacting |>
   group_by(i) |> 
   summarise(n_pip = mean(n_pip)) |> 
   left_join(sequence) |> 
+  mutate(
+    charge = case_when(
+      PI > 7.0 ~ "positive",
+      PI < 6.0 ~ "negative",
+      TRUE ~ "neutral"
+    )
+  ) |>
   ggplot(aes(x = i, y = n_pip)) + 
   annotate(geom = "rect",
            xmin = 140, xmax = 164,
@@ -547,18 +561,14 @@ plt <- ferm_interacting |>
            color = NA,
            fill = "black",
            alpha = 0.05) +
-  geom_col(aes(fill = PI),
+  geom_col(aes(fill = charge),
            alpha = 1,
-           width = 0.8,
-           show.legend = FALSE) +
-  geom_text(aes(label = res, color = PI),
+           width = 0.8) +
+  geom_text(aes(label = res, color = charge),
             fontface = "bold",
             vjust = -0.2,
-            data = ~ filter(.x, n_pip > 0.1)) +
-  scale_color_gradient2(low = HITS_MAGENTA,
-                        mid = "grey90", high = HITS_BLUE, midpoint = 7) +
-  scale_fill_gradient2(low = HITS_MAGENTA,
-                       mid = "grey90", high = HITS_BLUE, midpoint = 7) +
+            data = ~ filter(.x, n_pip > 0.1), show.legend = FALSE) +
+  scale_fill_manual(values = CHARGE_COLORS, aesthetics = c("fill", "color")) +
   scale_y_continuous(expand = expansion(mult = c(0, 0.1))) +
   scale_x_continuous(breaks = seq(0, 400, 50)) +
   labs(y = expression(n[PIP[2]])) +
