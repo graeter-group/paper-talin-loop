@@ -163,7 +163,7 @@ A crystal structure of the Talin FERM domain by Elliot et al. [@elliottStructure
 The deleted or missing residues (134-172) belonging to the F1 domain loop were modeled using MODELLER [@marti-renomComparativeProteinStructure2000; @webbComparativeProteinStructure2016] via the interface to Chimera [@pettersenUCSFChimeraVisualization2004], followed by equilibration with GROMACS.
 The resulting conformation was compared to an NMR structure of the F1 domain (PDB-ID 2KC2) by Goult et al. [@goultStructureDoubleUbiquitinlike2010].
 The missing residue M1 was also added.
-Residues D125 and E126 are missing from our structure and the missing residues I399 and L400 were not modeled.
+The missing residues D125 and E126 as well as I399 and L400 were not modelled, as they are far from the region of interest (the F1-loop)
 This leaves us with a sequence from residue 1 to 398 with a shift by 2 in numbering compared to the canonical TLN1_MOUSE Talin-1 sequence (uniprot ID P26039) after residue 124.
 Simulations were performed with the CHARMM36 force field.
 Topologies, including the membrane, were generated with the CHARMM-GUI web app [@brooksCHARMMBiomolecularSimulation2009; @joCHARMMGUIWebbasedGraphical2008; @leeCHARMMGUIInputGenerator2016] and GROMACS tools.
