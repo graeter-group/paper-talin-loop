@@ -55,11 +55,6 @@ tar_visnetwork(callr_arguments = list(show = FALSE))
 
 Asp125 and Glu126 missing -> sequence shifted by 2 afterwards.
 
-```{r}
-tar_read(sequence)
-```
-
-
 ## Load data
 
 ```{r}
@@ -78,6 +73,19 @@ tar_load(f0f1_pulling_smooth)
 tar_load(f0f1_pulling_peaks)
 tar_load(ferm_pip_sites)
 tar_load(f0f1_pulling_interacting)
+
+aa <- read_tsv("./assets/tables/aa.tsv") |>
+  mutate(
+    charge = str_remove(`Net charge at pH 7.4`, ",.+")
+  ) |>
+  select(`1`, `3`, charge)
+
+CHARGE_COLORS = c(
+  "Negative" = HITS_MAGENTA,
+  "Positive" = HITS_BLUE,
+  "Neutral" = "grey50"
+)
+
 ```
 
 ## Rotational sampling of F0F1
@@ -176,24 +184,21 @@ main <- (plt / anot) +
   plot_layout(widths = c(1, 10))
 ```
 
-```{r f0f1-ri-npip}
-CHARGE_COLORS = c(
-  "negative" = HITS_MAGENTA,
-  "positive" = HITS_BLUE,
-  "neutral" = "grey50"
-)
+```{r}
+update <- function(data, row, colname, value) {
+  col <- rlang::as_name(rlang::enquo(colname))
+  data[row, col] <- value
+  data
+}
+```
 
+```{r f0f1-ri-npip}
 plt <- from_first_contact |>
   group_by(i) |> 
   summarise(n_pip = mean(n_pip)) |>
   left_join(sequence, by = "i") |>
-  mutate(
-    charge = case_when(
-      PI > 7.0 ~ "positive",
-      PI < 6.0 ~ "negative",
-      TRUE ~ "neutral"
-    )
-  ) |>
+  left_join(aa, by = c('res' = '1')) |>
+  update(1, charge, "Positive") |>
   ggplot(aes(x = i, y = n_pip)) + 
   annotate(geom = "rect",
            xmin = 140, xmax = 164,
@@ -209,7 +214,10 @@ plt <- from_first_contact |>
             fontface = "bold",
             vjust = -0.2,
             data = ~ filter(.x, n_pip > 0.1), show.legend = FALSE) +
-  scale_fill_manual(values = CHARGE_COLORS, aesthetics = c("fill", "color")) +
+  scale_fill_manual(
+    values = CHARGE_COLORS, aesthetics = c("fill", "color"),
+    name = "Net Charge at pH 7.4"
+  ) +
   scale_y_continuous(expand = expansion(mult = c(0, 0.1))) +
   labs(y = expression(n[PIP[2]])) +
   coord_cartesian(clip = "off", xlim = c(0, 207)) +
@@ -217,15 +225,14 @@ plt <- from_first_contact |>
     x = "residue index",
     y = expression(bar(n)[PIP[2]]),
     ) +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    legend.position = c(0, 1),
+    legend.justification = c(0, 1),
+    legend.title = element_text(size = 12)
+  )
 
 grobs <- ggplotGrob(plt)
-
-# plt <- plt +
-#   guides(
-#       fill = guide_legend()
-#   )
-#
 
 anot <- ggplot(ferm_annotation[1:3, ]) +
   aes(
@@ -298,7 +305,13 @@ plt1 <- f0f1_time_ri |>
 plt2 <- stuck |>
   ggplot(aes(x = 0, fill = stuck, n, label = paste0(n))) +
   geom_col(position = "stack") +
-  geom_text(vjust = 1.1, position = "stack", fontface = "bold", size = 3, color = "white") +
+  geom_text(
+    vjust = 1.1,
+    position = "stack",
+    fontface = "bold",
+    size = 3,
+    color = "white"
+  ) +
   scale_x_continuous(breaks = NULL) +
   scale_fill_manual(values = c("grey30", HITS_MAGENTA, HITS_BLUE)) +
   labs(x = "total", y = "", title = "") +
@@ -547,13 +560,8 @@ plt <- ferm_interacting |>
   group_by(i) |> 
   summarise(n_pip = mean(n_pip)) |> 
   left_join(sequence) |> 
-  mutate(
-    charge = case_when(
-      PI > 7.0 ~ "positive",
-      PI < 6.0 ~ "negative",
-      TRUE ~ "neutral"
-    )
-  ) |>
+  left_join(aa, by = c('res' = '1')) |>
+  update(1, charge, "Positive") |>
   ggplot(aes(x = i, y = n_pip)) + 
   annotate(geom = "rect",
            xmin = 140, xmax = 164,
@@ -568,7 +576,10 @@ plt <- ferm_interacting |>
             fontface = "bold",
             vjust = -0.2,
             data = ~ filter(.x, n_pip > 0.1), show.legend = FALSE) +
-  scale_fill_manual(values = CHARGE_COLORS, aesthetics = c("fill", "color")) +
+  scale_fill_manual(
+    values = CHARGE_COLORS, aesthetics = c("fill", "color"),
+    name = "Net Charge at pH 7.4"
+  ) +
   scale_y_continuous(expand = expansion(mult = c(0, 0.1))) +
   scale_x_continuous(breaks = seq(0, 400, 50)) +
   labs(y = expression(n[PIP[2]])) +
@@ -577,7 +588,12 @@ plt <- ferm_interacting |>
     x = "residue index",
     y = expression(bar(n)[PIP[2]])
     ) +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    legend.position = c(0, 1),
+    legend.justification = c(0, 1),
+    legend.title = element_text(size = 12)
+  )
 
 grobs <- ggplotGrob(plt)
 

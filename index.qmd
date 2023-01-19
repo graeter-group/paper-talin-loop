@@ -291,7 +291,7 @@ Indeed, simulations of the full-length FERM domain in the later part of this wor
 Lysine and arginine residues are crucial for the PIP~2~-interaction of F0F1.
 **a\)**
 The average number of PIP~2~ molecules ($\bar n_{PIP_2}$) interacting (see @fig-r-hist for the interaction distance definition) with the individual residues per frame across all simulations of the rotational sampling that made contact with the membrane.
-Color represents the isoelectric point of the amino acid in isolation (blue = basic, magenta = acidic).
+Color represents the charge of the amino acid at pH 7.4 (blue = positive/basic, magenta = negative/acidic).
 A number of very prominent lysines can be observed, as well as a cluster of residues belonging to the F1 loop, which is highlighted with a grey backdrop.
 The most prominent residues are highlighted in **b)**.
 For the print version it is a snapshot render.
@@ -363,7 +363,7 @@ The F1 loop thus complements these known binding sites with an additional specif
 Simulation of the full-length FERM domain over a 10% PIP~2~-membrane.
 **a\)**
 The average number of PIP~2~ molecules interacting with the individual residues across 6 simulations.
-Color represents the isoelectric point of the amino acid in isolation (blue = basic, magenta = acidic).
+Color represents the charge of the amino acid at pH 7.4 (blue = positive/basic, magenta = negative/acidic).
 The known PIP~2~ interaction sites K272 of F2 and K316, K324, E342, and K343 of F3 [@chinthalapudiInteractionTalinCell2018a] are highlighted with red lines on the x-axis colorbar and can also be seen in the cartoon representation in **b\)** where the interacting residues with a score greater than 0.2 are displayed as dark blue stick models.
 ::::
 
