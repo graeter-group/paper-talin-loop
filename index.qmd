@@ -149,7 +149,7 @@ With a complete structure of the Talin FERM domain, we investigated the role of 
 
 In F0F1 simulations, we found the loop to have a clear propensity to interact with the PIP~2~-containing membrane.
 It is able to establish a first contact with the membrane even from unfavorable initial orientations due to its large search volume.
-Furthermore, we show with simulations of the full-length FERM domain that once the loop has established an initial contact, it can anchor the FERM domain to the membrane and establish the known major binding sites in F2-F3.
+Furthermore, we show with simulations of the full-length FERM domain that once the loop has established an initial contact, it can anchor the FERM domain to the membrane and allow the known major binding sites in F2-F3 to form.
 
 These results provide mechanistic insight Talin--PIP~2~ interactions and highlight the role of secondary intrinsically disordered binding surfaces for membrane recognition.
 
@@ -163,11 +163,14 @@ A crystal structure of the Talin FERM domain by Elliot et al. [@elliottStructure
 The deleted or missing residues (134-172) belonging to the F1 domain loop were modeled using MODELLER [@marti-renomComparativeProteinStructure2000; @webbComparativeProteinStructure2016] via the interface to Chimera [@pettersenUCSFChimeraVisualization2004], followed by equilibration with GROMACS.
 The resulting conformation was compared to an NMR structure of the F1 domain (PDB-ID 2KC2) by Goult et al. [@goultStructureDoubleUbiquitinlike2010].
 The missing residue M1 was also added.
-Residues D125 and E126 are missing from our structure and the missing residues I399 and L400 were not modeled.
+The missing residues D125 and E126 as well as I399 and L400 were not modelled, as they are far from the region of interest (the F1-loop)
 This leaves us with a sequence from residue 1 to 398 with a shift by 2 in numbering compared to the canonical TLN1_MOUSE Talin-1 sequence (uniprot ID P26039) after residue 124.
 Simulations were performed with the CHARMM36 force field.
 Topologies, including the membrane, were generated with the CHARMM-GUI web app [@brooksCHARMMBiomolecularSimulation2009; @joCHARMMGUIWebbasedGraphical2008; @leeCHARMMGUIInputGenerator2016] and GROMACS tools.
-All simulations used the TIP3P water model and were neutralized with 0.15 mol/L of NaCl. A 6-step equilibration was performed after gradient decent energy minimization while gradually relieving restraints on protein and membrane atoms.
+All simulations used the TIP3P water model and were neutralized with 0.15 mol/L of NaCl.
+A 6-step equilibration was performed after gradient descent energy minimization while gradually relieving restraints on protein and membrane atoms.
+This followed the standard procedure recommended by CHARMM-GUI.
+The exact Molecular Dynamics Parameter (mdp) files are provided in the data (https://doi.org/10.11588/data/BQTQUN) in the `assets` folder of each simulation system.
 Production runs used a timestep of 2 fs, a Verlet cut-off scheme for Van-der-Waals interactions and the Particle Mesh Ewald (PME) method for long-range electrostatics.
 NPT-ensembles were achieved by Nosé-Hoover temperature coupling [@hooverCanonicalDynamicsEquilibrium1985; @noseUnifiedFormulationConstant1984] and Parinello-Rahman pressure coupling [@parrinelloPolymorphicTransitionsSingle1981].
 An example `.mdp`-file can be found in the Supplementary Materials.
@@ -176,15 +179,20 @@ The initial equilibrium simulation of the completed FERM domain was run for 75 n
 Subsequently, the root mean squared fluctuation (RMSF) was calculated with GROMACS tools.
 
 The F0F1 FERM sub domains (residues 1 to 197) were simulated to evaluate protein-membrane association using a rotational sampling approach.
-This entailed placing the protein 1.5\ nm away from a 1-palmitoyl-2-oleoyl-glycero-3-phosphocholine (POPC) membrane in a total of 60 orientations spanning a rotation of 360 degrees.
+This entailed placing the protein 1.5\ nm away from a 1-palmitoyl-2-oleoyl-glycero-3-phosphocholine (POPC) membrane,
+where 12 of the 119 lipids in the upper leaflet were replaced with PIP~2~.
+This results in a physiological concentration of 10% PIP~2~.
+The PIP~2~ molecules used in the simulutions have a charge of -4, consisten with the deprotonation state of the phosphate groups at physiological pH [@mclaughlinPIP2ProteinsInteractions2002].
+
+60 different starting orientations of the protein where generate, spanning a rotation of 360 degrees.
 The protein was rotated in such a way that the respective closest residue had the same distance to the membrane for the 0° and the 180° starting positions.
 6 replicates of each orientation were run for 200\ ns each.
 However, due to a hardware failure, 2 of these 360 runs are corrupted and thus excluded from the analysis.
-Of the 119 lipids in the upper leaflet of the POPC membrane, 12 lipids were replaced with PIP~2~, which results in a physiological concentration of 10% PIP~2~.
 
 From this rotational sampling, we selected representative conformations with loop-membrane interactions as the basis of 6 equilibrium simulations of the complete FERM domain over a POPC membrane with 26 PIP~2~ lipids out of a total of 273 lipids in the upper leaflet.
 Each simulation ran for 400\ ns.
 The initial conformations for perpendicular pulling simulations of the F0F1 subdomains to gauge interaction strength were also chose from the rotational sampling set.
+The pulling simulations used an umbrella potential applied to the C-terminus with a harmonic force constant of 500 kJ/mol/nm^2^ and a constant speed of 0.03 m/s (See Supplementary Data in `f0f1-vert-pulling/pull_00003.mdp`)
 
 Distance information was extracted from trajectories with gromacs tools interfaced via CONAN [@mercadanteCONANToolDecode2018].
 
@@ -213,8 +221,9 @@ The resulting system that provides the basis for our simulations can be explored
 When simulating only F0F1 over a POPC membrane containing 10% PIP~2~, we noticed that the F1 loop had a clear propensity to establish contact with the membrane.
 Once the contact had been established, the protein was anchored strongly enough for more contacts to evolve with time, pulling the protein onto the membrane ([@fig-f0f1-snapshots]).
 In order to control for a potential bias towards the loop as a result of the starting position, we performed a rotational sampling of the system, where the starting angle of the loop with respect to the membrane was varied across 60 equally spaced angles.
-@fig-f0f1-ri-angle shows that independent of the starting position, the loop is able to find the membrane and bind to it, though this does happen earlier in the simulation when the loop starts favorably oriented towards the membrane (@fig-f0f1-angle-frame).
-However, even in its most unfavorable starting orientation (180°, oriented away from the membrane) the loop is able to find the membrane due to the large search space it can cover with its high flexibility (see @fig-loop-rmsf).
+@fig-f0f1-ri-angle shows that independent of the starting position, the loop is able to find the membrane and bind to it.
+This is due to the large search space it can cover with its high flexibility (see @fig-loop-rmsf).
+Binding happens earlier in the simulation when the loop starts oriented favorably towards the membrane (@fig-f0f1-angle-frame, 0\ °).
 
 :::::{#fig-loop-importance layout="[[1],[1]]"}
 :::{#fig-f0f1-snapshots}
@@ -231,7 +240,7 @@ Rotational sampling of F0F1 reveals the lipid binding capabilities of the F1 loo
 **a\)**
 Snapshots from a simulation involving F0F1 over a POPC membrane containing 10% PIP~2~ in the upper leaflet.
 POPC is not rendered and PIP~2~ is shown as light grey stick models that turn thicker for those molecules that are currently interacting with residues of the protein.
-Those residues in question are then shown as dark blue stick models.
+The PIP~2~-binding residues are then shown as dark blue stick models.
 **b\)**
 Time-averaged number of PIP~2~ molecules bound per residue along the F0F1 sequence (x-axis) as a heatmap summarizing 358 simulations from a rotational sampling, with the starting angle on the y-axis.
 We sampled 60 different starting positions, rotated equally spaced around the horizontal axis, with 6 replicates each.
@@ -291,7 +300,7 @@ The video is also available here: <https://youtu.be/s5yya0XeNTA>).
 
 ## The F1 loop maintains and further facilitates formation of FERM--PIP~2~ interactions 
 
-To examine the strength of the PIP~2 interactions and the role of the F1 loop in maintaining it, we pulled F0F1 vertically off the membrane in additional force-probe MD simulations (@fig-f0f1-vert-pull).
+To examine the strength of the PIP~2~ interactions and the role of the F1 loop in maintaining it, we pulled F0F1 vertically off the membrane in additional force-probe MD simulations (@fig-f0f1-vert-pull).
 An exemplary render of one of the simulations can be seen in @fig-f0f1-pull-run-1.
 Pulling F0F1 off the membrane requires peak forces of 100--120\ pN, during which the interacting residues only very gradually loose contact (@fig-f0f1-vert-pull), as the high flexibility of F1-loop allows the residues to remain in contact even as the distance increases up to a delta of 7\ nm.
 Replicate 4 stands out as the highest curve, as in this run the interactions were so strong that a total of 3 molecules of PIP~2~ were pulled out of the membrane (1 by F0 and 2 by the F1 loop).
@@ -440,7 +449,10 @@ This interactive display is only available in the web version: <https://hits-mbm
 ## Scripts
 
 Data analysis code is available at <https://hits-mbm-dev.github.io/paper-talin-loop/_analysis.html> and in the repository at <https://github.com/hits-mbm-dev/paper-talin-loop>.
-Raw trajectories are available here: TODO (upload in process)
+
+## Input files and raw data {#sec-data}
+
+Input files and raw data are available on [heiData](https://heidata.uni-heidelberg.de/) here: https://doi.org/10.11588/data/BQTQUN
 
 ## Supplementary Plots and Tables
 
@@ -471,7 +483,9 @@ Run 4 of the vertical pulling of F0F1. Interactions between the protein and PIP~
 
 {{< include ./results/tables/ferm-top-interacting-tbl.md >}}
 
-### Molecular dynamics Parameters {#sec-prod-mdp}
+## Molecular dynamics Parameters
+
+### Production runs {#sec-prod-mdp}
 
 ```
 integrator              = md

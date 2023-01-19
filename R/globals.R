@@ -31,3 +31,4 @@ HITS_YELLOW <- "#ffcc00"
 HITS_COLORS <- c(HITS_BLUE, HITS_GREEN, HITS_MAGENTA, HITS_YELLOW)
 binary_colors <- c(HITS_BLUE, HITS_MAGENTA)
 
+source("./R/functions.R")
