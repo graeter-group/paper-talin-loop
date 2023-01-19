@@ -282,7 +282,7 @@ Indeed, simulations of the full-length FERM domain in the later part of this wor
 ::: {.content-visible when-format="html" }
 ![](./assets/vmd/f0f1/residues.mp4)
 :::
-:::{.content-visible when-format="pdf" width=20%}
+:::{.content-hidden when-format="html" width=20%}
 ![](./assets/vmd/f0f1/residues.png)
 :::
  
@@ -470,9 +470,12 @@ Input files and raw data are available on [heiData](https://heidata.uni-heidelbe
 
 
 **a\)**
-RMSF [nm] of the c$\alpha$ of individual residues in an equilibrium simulation shown by coloring the backbone The loop is highly flexible.
+RMSF [nm] of the C~$\alpha$~ of individual residues in an equilibrium simulation shown by coloring the backbone.
+The loop is highly flexible.
 **b\)**
 A density plot of distances between PIP~2~ and the protein residues to decide on a cutoff for defining interactions A distance of 0.25\ nm was chosen.
+**c\)**
+A heatmap of the number of PIP~2~ molecules bound per residue over time for the 6 individual simulations with the whole FERM domain over the membrane.
 **d\)**
 A closer look at the residues involved in the interaction during pulling reveals the instrumental role of both the F1 loop as well as the F0 subdomain in keeping the connection to the membrane.
 **e\)**
