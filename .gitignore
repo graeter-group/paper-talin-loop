@@ -14,3 +14,4 @@ assets/results/videos/*
 *.aux
 *.log
 .luarc.json
+tmp.R
