@@ -42,8 +42,8 @@ link-citations: true
 abstract: |
   Focal adhesions (FAs) mediate the interaction of the cytoskeleton with the extracellular matrix (ECM) in a highly dynamic fashion.
   Talin is a central regulator, adaptor protein and mechano-sensor of focal adhesion complexes. For recruitment and firm attachment at FAs, Talin’s N-terminal FERM domain binds to phosphatidylinositol 4,5-bisphosphate (PIP~2~)-enriched membranes.
-  A newly published autoinhibitory structure of Talin, where the known PIP~2~ interaction sites are covered up, lead us to hypothesize that a hitherto less examined loop insertion of the FERM domain acts as an additional and initial site of contact.
-  We evaluated direct interactions of Talin with a PIP~2~ membrane by means of atomistic molecular dynamics (MD) simulations.
+  A newly published autoinhibitory structure of Talin-1, where the known PIP~2~ interaction sites are covered up, lead us to hypothesize that a hitherto less examined loop insertion of the FERM domain acts as an additional and initial site of contact.
+  We evaluated direct interactions of Talin-1 with a PIP~2~ membrane by means of atomistic molecular dynamics (MD) simulations.
   We show that this unstructured, 33-residue-long loop strongly interacts with PIP~2~ and can facilitate further membrane contacts, including the canonical PIP~2~ interactions, by serving as a flexible membrane anchor.
   Under force as present at FAs, the extensible FERM loop ensures Talin to maintain membrane contacts when pulled away from the membrane by up to 7\ nm.
   We identify key basic residues of the anchor mediating the highly dynamic Talin-membrane interaction.
@@ -101,7 +101,9 @@ Talin contains an N-terminal FERM domain (F for 4.1 protein, E for ezrin, R for 
 It does so via a conserved binding motif for phosphatidylinositol 4,5-bisphosphate (PIP~2~), which is enriched at active focal adhesion sites [@maniFERMDomainPhosphoinositide2011; @dasMolecularMechanotransductionPathway2015; @songNovelMembranedependentSwitch2012a].
 The main PIP~2~ binding sites are located in F2 and F3 (highlighted as red spheres in @fig-tln-schema-long).
 
-Notably, the Talin1 FERM domain differs from other FERM proteins through the addition of the F0 subdomain, which is connected to F1 via a charged interface, as well as an insertion in F1, a flexible loop with helical propensity and basic residues [@goultStructureDoubleUbiquitinlike2010].
+Two isoforms exist of Talin, Talin-1 and Talin-2, encoded by the _tln1_ and _tln2_ genes.
+This work refers to Talin-1 if not otherwise stated.
+Notably, the Talin-1 FERM domain differs from other FERM proteins through the addition of the F0 subdomain, which is connected to F1 via a charged interface, as well as an insertion in F1, a flexible loop with helical propensity and basic residues [@goultStructureDoubleUbiquitinlike2010].
 Additionally, Talin's FERM domain exists in an extended conformation, as opposed to the cloverleaf-like conformation of other FERM proteins [@elliottStructureTalinHead2010].
 F3 also has a binding site for $\beta$-integrin tails [@calderwoodTalinHeadDomain1999] and is partly responsible for the enrichment of PIP~2~ at the membrane through a binding site for PIPKI$\gamma$ [@calderwoodTalinsKindlinsPartners2013].
 A second integrin binding site is located in the rod domain 11 (R11) [@horwitzInteractionPlasmaMembrane1986].
@@ -114,7 +116,7 @@ However, previous studies only identified a minor role of the loop in PIP~2~ bin
 On the other hand, the F1 loop has been shown to contribute to Talin-mediated integrin activation [@goultStructureDoubleUbiquitinlike2010].
 
 It was previously shown that F3 can interact with R9, which impedes integrin activation [@bannoSubcellularLocalizationTalin2012].
-Furthermore, in a recently determined cryo-electron microscopy structure of autoinhibited Talin1, Dedden et al. [@deddenArchitectureTalin1Reveals2019a] showed that the rod domains R9 and R12 shield the established PIP~2~ binding surface and the integrin binding site in F3 (see [@fig-tln-schema-autoinhib; @fig-tln-align-autoinhib]).
+Furthermore, in a recently determined cryo-electron microscopy structure of autoinhibited Talin-1, Dedden et al. [@deddenArchitectureTalin1Reveals2019a] showed that the rod domains R9 and R12 shield the established PIP~2~ binding surface and the integrin binding site in F3 (see [@fig-tln-schema-autoinhib; @fig-tln-align-autoinhib]).
 This beckons the question how this autoinhibition can be resolved.
 Song at al. [@songNovelMembranedependentSwitch2012a] previously investigated a fragment of Talin consisting of F2-F3 and an inhibiting rod segment and suggested a pull-push mechanism, whereby negatively charged PIP~2~ attracts its positively charged binding surface on F2-F3 and simultaneously repels the negatively charged surface of the inhibitory rod segment.
 However, this still leaves open the question of how Talin can establish a first contact with the membrane and remain within a sufficient proximity for this effect to kick in.
