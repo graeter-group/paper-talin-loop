@@ -121,7 +121,7 @@ However, this still leaves open the question of how Talin can establish a first 
 
 ::::{#fig-structure layout="[[1], [1,1], [1]]"}
 
-![ ](./assets/blender/render/frame0000.png){#fig-tln-schema-long}
+![ ](./assets/blender/render/frame0000-label.png){#fig-tln-schema-long}
 
 ![ ](./assets/blender/render/frame0001.png){#fig-tln-schema-autoinhib}
 
@@ -129,7 +129,7 @@ However, this still leaves open the question of how Talin can establish a first 
 
 A schematic overview of Talin and our simulation setup.
 **a\)**
-A schematic rendering of full-length Talin over a POPC membrane enriched with PIP~2~ in the upper leaflet.
+A schematic rendering of full-length Talin over a POPC membrane enriched with PIP~2~ in the upper, intracellular leaflet.
 The subdomains under scrutiny in this publication, namely F0-F3, which comprise the N-terminal FERM domain (or Talin head), are highlighted in pastel colors (green, cyan, yellow, magenta).
 The two major PIP~2~ binding sites in F2-F3 are marked with red spheres.
 The Talin rod segments (or Talin tail) are numbered R1 to R13.
