@@ -432,20 +432,22 @@ plt_contacts <- f0f1_pulling_interacting |>
   group_by(run, frame) |>
   summarise(contacts = sum(n_pip > 0)) |>
   ggplot(aes(frame * 0.03, contacts)) +
-  geom_line(aes(group = run), alpha = 0.6) +
+  geom_line(aes(group = run, lty = (run == 4)), alpha = 0.6) +
   labs(
     x = "distance [nm]",
     y = "# interacting residues"
-  )
+  ) +
+  guides(lty = "none")
 
 plt_curves <- f0f1_pulling_smooth |> 
   ggplot(aes(time / 1e3 *  0.03, f)) +
-  geom_line(aes(group = run), alpha = 0.3) +
-  geom_smooth(aes(group = run), se = FALSE, color = HITS_BLUE) +
+  geom_line(aes(group = run, lty = (run == 4)), alpha = 0.3) +
+  geom_smooth(aes(group = run, lty = (run == 4)), se = FALSE, color = HITS_BLUE) +
   labs(x = "distance [nm]",
        y = "force [pN]",
        caption = "pulling rate: 0.03 nm/ns") +
-  coord_cartesian(ylim = c(0, 150))
+  coord_cartesian(ylim = c(0, 150)) +
+  guides(lty = "none")
 
 (plt_contacts / plt_curves)
 ```

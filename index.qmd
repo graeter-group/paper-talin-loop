@@ -305,7 +305,7 @@ The video is also available here: <https://youtu.be/s5yya0XeNTA>).
 To examine the strength of the PIP~2~ interactions and the role of the F1 loop in maintaining it, we pulled F0F1 vertically off the membrane in additional force-probe MD simulations (@fig-f0f1-vert-pull).
 An exemplary render of one of the simulations can be seen in @fig-f0f1-pull-run-1.
 Pulling F0F1 off the membrane requires peak forces of 100--120\ pN, during which the interacting residues only very gradually loose contact (@fig-f0f1-vert-pull), as the high flexibility of F1-loop allows the residues to remain in contact even as the distance increases up to a delta of 7\ nm.
-Replicate 4 stands out as the highest curve, as in this run the interactions were so strong that a total of 3 molecules of PIP~2~ were pulled out of the membrane (1 by F0 and 2 by the F1 loop).
+Replicate 4 stands out as the highest curve (dashed lines), as in this run the interactions were so strong that a total of 3 molecules of PIP~2~ were pulled out of the membrane (1 by F0 and 2 by the F1 loop).
 A snapshot of this can be seen in @fig-f0f1-vert-pull-run4.
 This highlights the strong anchoring capabilities of the F1 loop.
 
