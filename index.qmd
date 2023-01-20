@@ -456,7 +456,7 @@ Input files and raw data are available on [heiData](https://heidata.uni-heidelbe
 
 ## Supplementary Plots and Tables
 
-::: {#fig-suppl layout="[[1,1],[1,1],[1]]"}
+::: {#fig-suppl layout="[[1,1],[1,1],[1,1]]"}
 
 ![ ](./assets/results/figures/loop-rmsf.png){#fig-loop-rmsf}
 
@@ -467,6 +467,10 @@ Input files and raw data are available on [heiData](https://heidata.uni-heidelbe
 ![ ](./results/plots/f0f1-vert-pull-residues-1.png){#fig-f0f1-vert-pull-residues}
 
 ![ ](./assets/vmd/f0f1-pulling/snapshot-run4.png){#fig-f0f1-vert-pull-run4}
+
+![ ](./results/plots/si-f0f1-first-contact-frame-1.png){#fig-f0f1-time-to-contact}
+
+![ ](./results/plots/si-f0f1-angle-first-to-find-1.png){#fig-f0f1-first-to-find}
 
 
 **a\)**
@@ -480,6 +484,11 @@ A heatmap of the number of PIP~2~ molecules bound per residue over time for the 
 A closer look at the residues involved in the interaction during pulling reveals the instrumental role of both the F1 loop as well as the F0 subdomain in keeping the connection to the membrane.
 **e\)**
 Run 4 of the vertical pulling of F0F1. Interactions between the protein and PIP~2~ were so strong that a total of 3 molecules of PIP~2~ (gray) were pulled out of the membrane (1 by F0 (green) and 2 by the F1 loop (blue)).
+**f\)**
+Time to first contact of a residue with PIP~2~ in the rotational sampling of F0-F1.
+Residues belonging to the F1 loop on average make contact earlier.
+**g\)**
+Number of times a residue belonging to a region made the first contact in the rotational sampling for F0-F1.
 :::
 
 {{< include ./results/tables/f0f1-top-interacting-tbl.md >}}

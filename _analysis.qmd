@@ -272,6 +272,80 @@ plt + guides(fill = guide_colorbar(barheight = unit(0.7, "grobheight",
   frame.colour = "black"))
 ```
 
+```{r}
+#| label: si-f0f1-first-contact-frame
+interacting |>
+  group_by(run, angle, i) |>
+  arrange(frame) |>
+  filter(n_pip > 0) |>
+  slice_min(frame) |>
+  group_by(i, angle) |>
+  summarise(frame = mean(frame)) |>
+  ungroup() |>
+  mutate(
+    region = case_when(
+     between(i, 135, 168) ~ " ",
+     between(i, 1, 84) ~ "f0",
+     between(i, 85, 207) ~ "f1",
+     TRUE ~ "rest"
+    ),
+  ) |>
+  ggplot(aes(region, frame)) +
+  geom_violin(aes(fill = region)) +
+  # ggbeeswarm::geom_quasirandom(width = 0.4) +
+  stat_summary(fun = "mean", geom = "crossbar", width = 0.7, size = 1) +
+  scale_x_discrete(labels = c("f1-loop", "f0", "f1"), name = "") +
+  scale_fill_discrete(type = ferm_colors) +
+  guides(fill = "none") +
+  labs(y = "first contact time [ns]")
+```
+
+```{r}
+interacting |>
+  group_by(run, angle, i) |>
+  arrange(frame) |>
+  filter(n_pip > 0) |>
+  slice_min(frame) |>
+  group_by(i, angle) |>
+  summarise(frame = mean(frame)) |>
+  ungroup() |>
+  mutate(
+    region = case_when(
+     between(i, 135, 168) ~ "f1-loop",
+     between(i, 1, 84) ~ "f0",
+     between(i, 85, 207) ~ "f1",
+     TRUE ~ "rest"
+    ),
+  ) |>
+  (\(x) t.test(frame ~ region == "f1-loop", data = x))()
+```
+
+```{r}
+#| label: si-f0f1-angle-first-to-find
+interacting |>
+  group_by(run, angle, i) |>
+  arrange(frame) |>
+  filter(n_pip > 0) |>
+  slice_min(frame) |>
+  ungroup() |>
+  drop_na() |>
+  mutate(
+    region = case_when(
+     between(i, 135, 168) ~ " ",
+     between(i, 1, 84) ~ "f0",
+     between(i, 85, 207) ~ "f1",
+     TRUE ~ "rest"
+    ),
+    angle = cut(angle, breaks = seq(0, 360, by = 24), include.lowest = TRUE)
+  ) |>
+  ggplot(aes(angle, fill = region)) +
+  geom_bar(position = "dodge2") +
+  scale_fill_discrete(type = ferm_colors, labels = c("f1-loop", "f0", "f1")) +
+  scale_y_continuous(expand = c(0, 1)) +
+  theme(axis.text.x = element_text(size = 10, angle = 45, hjust = 1)) +
+  labs(y = "# region made first contact")
+```
+
 ```{r f0f1-retention}
 f0f1_stickiness <- rolling |>
   group_by(run, angle) |>
