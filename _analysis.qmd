@@ -127,7 +127,8 @@ interacting |>
   filter(frame != max(frame))
 ```
 
-```{r f0f1-ri-angle-npip}
+```{r}
+#| label: f0f1-ri-angle-npip
 paths <- c("./assets/blender/render-rotsample/frame0001.png",
     "./assets/blender/render-rotsample/frame0004.png",
     "./assets/blender/render-rotsample/frame0003.png",
@@ -147,6 +148,7 @@ plt <- from_first_contact |>
   ggplot(aes(i, angle, fill = n_pip)) + 
   geom_raster() +
   scale_fill_gradient(low = "white", high = HITS_BLUE) +
+  scale_y_continuous(breaks = seq(0, 360, 90)) +
   coord_cartesian(clip = "off", xlim = c(0, 207)) +
   labs(
       x = "residue index",
@@ -218,7 +220,7 @@ plt <- from_first_contact |>
     values = CHARGE_COLORS, aesthetics = c("fill", "color"),
     name = "Net Charge at pH 7.4"
   ) +
-  scale_y_continuous(expand = expansion(mult = c(0, 0.1))) +
+  scale_y_continuous(breaks = seq(0, 360, 90), expand = expansion(mult = c(0, 0.1))) +
   labs(y = expression(n[PIP[2]])) +
   coord_cartesian(clip = "off", xlim = c(0, 207)) +
   labs(
@@ -258,6 +260,7 @@ plt <- interacting |>
   ggplot(aes(angle, frame, fill = pip)) +
   geom_raster() +
   scale_fill_gradient(low = "white", high = HITS_BLUE) +
+  scale_x_continuous(breaks = seq(0, 360, 90)) +
   guides(color = guide_colorbar(barheight = 16)) +
   labs(
     fill = expression(bar(n)[PIP[2]]),
@@ -336,7 +339,7 @@ interacting |>
      between(i, 85, 207) ~ "f1",
      TRUE ~ "rest"
     ),
-    angle = cut(angle, breaks = seq(0, 360, by = 24), include.lowest = TRUE)
+    angle = cut(angle, breaks = seq(0, 360, by = 60), include.lowest = TRUE)
   ) |>
   ggplot(aes(angle, fill = region)) +
   geom_bar(position = "dodge2") +
