@@ -1495,6 +1495,8 @@ ferm_interacting_per_run_e4ccb691|branch|a5d0784ed4bbeb6e|dff9cde5951a8646|08e50
 ferm_interacting_per_run_e590999c|branch|75585f9f8ab6cf6c|dff9cde5951a8646|dcedc5d197dbf537|576114753||t19284.3790277778s|e53be854132c6494|12419|rds|local|vector|ferm_interacting_per_run||2.219||
 ferm_interacting_per_run_edd662c5|branch|a4a4bfffe08d3b2d|dff9cde5951a8646|4e29d229339b935b|443061766||t19284.3802083333s|66e81522e76b6120|11375|rds|local|vector|ferm_interacting_per_run||2.203||
 ferm_pip_sites|stem|219e4cbd52914c67|530e7d040f2b4b00|1150c144da75b892|-683619631||t19178.4204282407s|dd5db50a8149e5ce|152|rds|local|vector|||0.002||
+ferm_rmsd|stem|c213c9d637f0185c|e6fa4d49b5380616|d4c3fceca6eb851f|-915553044||t19380.6244675926s|bcd92380b70bdcec|3313|rds|local|vector|||2.253||
+ferm_rmsf|stem|c213c9d637f0185c|e6fa4d49b5380616|d4c3fceca6eb851f|-1423669150||t19380.6358101852s|bcd92380b70bdcec|3313|rds|local|vector|||0.23||
 ferm_top_interacting|stem|741020879b528fca|07ccc7fc65c99780|b9769b9f575f3245|-658546206||t19284.3871412037s|a1796479d644fa59|472|rds|local|vector|||0.06||
 ferm_top_interacting_table|stem|9f9ba8f824a05205|d93e74e18f59f336|20a4dfb6bb70f9e8|-267142314|results/tables/ferm-top-interacting-tbl.md|t19284.3871412037s|e3779e907981a3c9|692|file|local|vector|||0.204||
 first_frames|stem|9342099f2578ee27|9006721ca6e28a49|fd572375fec042aa|-824280696||t19284.3802314815s|4fed1eb4d73aae89|1524|rds|local|vector|||2.402||
