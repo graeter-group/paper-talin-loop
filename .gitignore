@@ -15,3 +15,5 @@ assets/results/videos/*
 *.log
 .luarc.json
 tmp.R
+*_cache
+**unnamed-chunk*
