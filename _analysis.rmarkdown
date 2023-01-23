@@ -27,6 +27,7 @@ knitr:
 editor: source
 ---
 
+
 :::{.callout-tip}
 To reproduce the graphics generated here, download the raw data from the archive and replace the value of the target `data_path_prefix` in `_targets.R` with the path to that data.
 Then use the next two code chunks to load packages and functions and run the targets pipeline (`tar_make()`).
@@ -35,11 +36,14 @@ The raw data will then be processed such that you can load it in this document.
 
 # Setup
 
+
 ```{r}
 source("./R/globals.R")
 ```
 
+
 # Data processing pipeline
+
 
 ```{r tar-make}
 #| eval: false
@@ -51,11 +55,13 @@ tar_make()
 tar_visnetwork(callr_arguments = list(show = FALSE))
 ```
 
+
 # Plots
 
 Asp125 and Glu126 missing -> sequence shifted by 2 afterwards.
 
 ## Load data
+
 
 ```{r}
 f0f1_run1 <- tar_read(f0f1_rot_sample_distances_per_run, branches = 1:60)
@@ -89,12 +95,14 @@ CHARGE_COLORS = c(
 )
 ```
 
+
 ## Rotational sampling of F0F1
 
 - Data loss due to disk failure:
   - run4/angle_348: corrupted
   - run2/angle_204: corrupted only frames 00143 and 00166
   - run3/angle_234: corrupted after first 4 frames
+
 
 ```{r}
 anti_join(
@@ -426,7 +434,9 @@ plt <- f0f1_run1 |>
 plt
 ```
 
+
 ## Vertical pulling of F0F1
+
 
 ```{r f0f1-vert-pull}
 plt_contacts <- f0f1_pulling_interacting |>
@@ -460,8 +470,10 @@ f0f1_pulling_interacting |>
   summarise(sum(n_pip > 0))
 ```
 
+
 -   Run 4 looks interesting.
 -   PIP~2~s get pulled out of the membrane, one lodges itself near F0, two more get pulled out by the loop.
+
 
 ```{r f0f1-vert-pull-contacts}
 # loop: 135 to 168
@@ -580,7 +592,9 @@ anot <- ggplot(ferm_annotation[1:3, ]) +
   plot_annotation()
 ```
 
+
 ## Equilibrium simulations of FERM
+
 
 ```{r ferm-time-ri-npip-single-run}
 plt <- ferm_interacting |> 
@@ -704,11 +718,13 @@ anot <- ggplot(ferm_annotation) +
   plot_annotation()
 ```
 
+
 ## SI
 
 ### RMSF
 
 Root mean squared fluctiation of the residues of the FERM domain in equilibrium simulaiton compared to the RMSF of the structure ensemble of the NMR structure of F1 (pdb id 2KC2).
+
 
 ```{r}
 #| label: ferm-rmsf
