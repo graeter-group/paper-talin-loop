@@ -35,6 +35,15 @@ list(
         col_types = "id")
   ),
   tar_target(
+    nmr_rmsf,
+    "./assets/structures/2kc2-rmsf.xvg" |>
+      read_lines(skip_empty_rows = TRUE) |>
+      str_replace("@", "#") |>
+      read_table(col_names = c("residue", "rmsd"),
+        comment = "#",
+        col_types = "id")
+  ),
+  tar_target(
     ferm_annotation,
     tribble(
       ~imin, ~imax, ~domain,
