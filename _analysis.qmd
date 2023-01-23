@@ -73,7 +73,7 @@ tar_load(f0f1_pulling_smooth)
 tar_load(f0f1_pulling_peaks)
 tar_load(ferm_pip_sites)
 tar_load(f0f1_pulling_interacting)
-tar_load(ferm_rmsd)
+tar_load(ferm_rmsf)
 
 aa <- read_tsv("./assets/tables/aa.tsv") |>
   mutate(
@@ -708,7 +708,28 @@ anot <- ggplot(ferm_annotation) +
 ### RMSD
 
 ```{r}
-rmsd
+#| label: ferm-rmsf
+ferm_rmsf |>
+  ggplot(aes(residue, rmsd)) +
+  geom_line() +
+  annotate(geom = "rect",
+    xmin = 135, xmax = 168,
+    ymin = 0, ymax = Inf,
+    color = NA,
+    fill = "black",
+    alpha = 0.05) +
+  geom_rect(
+    data = ferm_annotation,
+    inherit.aes = FALSE,
+    aes(xmin = imin, xmax = imax, fill = domain),
+    ymin = 0, ymax = 0.03
+  ) +
+  labs(
+    x = "residue index",
+    y = "rmsf [nm]"
+  ) +
+  scale_fill_discrete(type = ferm_colors) +
+  guides(fill = "none")
 ```
 
 

@@ -26,7 +26,7 @@ list(
     compute_sequence(path_sequence)
   ),
   tar_target(
-    ferm_rmsd,
+    ferm_rmsf,
     "./assets/structures/ferm-rmsf.xvg" |>
       read_lines(skip_empty_rows = TRUE) |>
       str_replace("@", "#") |>
