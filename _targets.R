@@ -1,13 +1,11 @@
 source("R/globals.R")
-source("R/functions.R")
 
 tar_option_set(memory = "transient")
-
 plan(callr)
 
 
 list(
-#### globals ####
+  #### globals ####
   tar_target(
     data_path_prefix,
     "/hits/fast/mbm/buhrjk/master/"
@@ -26,6 +24,15 @@ list(
   tar_target(
     sequence,
     compute_sequence(path_sequence)
+  ),
+  tar_target(
+    ferm_rmsd,
+    "./assets/structures/ferm-rmsf.xvg" |>
+      read_lines(skip_empty_rows = TRUE) |>
+      str_replace("@", "#") |>
+      read_table(col_names = c("residue", "rmsd"),
+        comment = "#",
+        col_types = "id")
   ),
   tar_target(
     ferm_annotation,

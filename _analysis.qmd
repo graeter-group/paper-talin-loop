@@ -73,6 +73,7 @@ tar_load(f0f1_pulling_smooth)
 tar_load(f0f1_pulling_peaks)
 tar_load(ferm_pip_sites)
 tar_load(f0f1_pulling_interacting)
+tar_load(ferm_rmsd)
 
 aa <- read_tsv("./assets/tables/aa.tsv") |>
   mutate(
@@ -85,7 +86,6 @@ CHARGE_COLORS = c(
   "Positive" = HITS_BLUE,
   "Neutral" = "grey50"
 )
-
 ```
 
 ## Rotational sampling of F0F1
@@ -702,3 +702,13 @@ anot <- ggplot(ferm_annotation) +
   plot_layout(heights = c(20, 1)) +
   plot_annotation()
 ```
+
+## SI
+
+### RMSD
+
+```{r}
+rmsd
+```
+
+
