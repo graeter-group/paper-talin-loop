@@ -178,7 +178,7 @@ NPT-ensembles were achieved by Nosé-Hoover temperature coupling [@hooverCanonic
 An example `.mdp`-file can be found in the Supplementary Materials.
 
 The initial equilibrium simulation of the completed FERM domain was run for 75 ns.
-Subsequently, the root mean squared fluctuation (RMSF) was calculated with GROMACS tools.
+Subsequently, the root mean squared fluctuation (RMSF) was calculated with GROMACS tools (see Supplementary Material @fig-loop-rmsf).
 
 The F0F1 FERM sub domains (residues 1 to 197) were simulated to evaluate protein-membrane association using a rotational sampling approach.
 This entailed placing the protein 1.5\ nm away from a 1-palmitoyl-2-oleoyl-glycero-3-phosphocholine (POPC) membrane,
@@ -217,7 +217,7 @@ The plotting code and computational graph of `targets` is available in [this doc
 ## The F1 loop can act as a point of first contact
 
 The high flexibility of the F1 loop gave use the confidence to model it from sequence.
-It retained its flexibility in equilibrium simulations (@fig-loop-rmsf), which in combination with comparisons to NMR structures [@goultStructureDoubleUbiquitinlike2010] confirmed this approach.
+It retained its flexibility in equilibrium simulations (@fig-loop-rmsf), which in combination with comparisons to NMR structures [@goultStructureDoubleUbiquitinlike2010] confirmed this approach (see Supplementary Material @fig-loop-rmsf).
 The resulting system that provides the basis for our simulations can be explored interactively in the Supplementary Materials.
 
 When simulating only F0F1 over a POPC membrane containing 10% PIP~2~, we noticed that the F1 loop had a clear propensity to establish contact with the membrane.
@@ -226,6 +226,7 @@ In order to control for a potential bias towards the loop as a result of the sta
 @fig-f0f1-ri-angle shows that independent of the starting position, the loop is able to find the membrane and bind to it.
 This is due to the large search space it can cover with its high flexibility (see @fig-loop-rmsf).
 Binding happens earlier in the simulation when the loop starts oriented favorably towards the membrane (@fig-f0f1-angle-frame, 0\ °).
+While @fig-f0f1-snapshots shows one example of a bound conformation, a conformation for each starting angle can be seen in the Supplementary Material @sec-system.
 
 :::::{#fig-loop-importance layout="[[1],[1]]"}
 :::{#fig-f0f1-snapshots}
@@ -255,7 +256,6 @@ Out of 358 runs^[6 replicas each for 60 angles minus 2 runs lost to a storage fa
 Thus, the simulated timeframe of 200\ ns per trajectory allowed for the observation of some reversibility of FERM--PIP~2~ binding, albeit only for weakly bound cases and at a small rate of 3.7%.
 Dissociation from the membrane never occurred on the simulated time scale after more than 3 residues had already made contact.
 
-
 ::::: {#fig-loop-importance-2 layout="[[1],[1]]"}
 ![ ](./results/plots/f0f1-angle-frame-npip-1.png){#fig-f0f1-angle-frame}
 
@@ -270,6 +270,7 @@ Unbinding becomes exceedingly unlikely as the number of contacts increases.
 :::::
 
 @fig-f0f1-residues highlights the residues involved in the interaction of F0F1 with PIP~2~.
+The ensemble of final bound conformations from the simulations can be seen in the Supplementary Material in @sec-system.
 We observe a number of prominent lysines and arginines, both positively charged residues, across the whole F0F1 fragment to compensate for the negative charge on PIP~2~.
 The loop region, highlighted with a grey backdrop in @fig-f0f1-ri-npip, is particularly dense in positively charged residues, albeit the number of PIP~2~ contacts per basic residue is only marginally higher in this region than elsewhere. Arginines and lysines in regions outside of the disordered loop complement the binding once initial
 contacts have been established with the loop, and further strengthen the interaction.
@@ -354,6 +355,7 @@ These simulations highlight the prominent role of the F1-loop in membrane intera
 They also reproduce the canonical PIP~2~ contacts in F2 and F3 known from previous studies, validating our MD simulations.
 The highlighted residues include K272 of F2 and K316, K324, E342, and K343 of F3, which have been shown to be crucial for the membrane interaction of Talin and subsequent integrin activation by Chinthalapudi et al. [@chinthalapudiInteractionTalinCell2018a].
 Importantly, the loop shows a very dense cluster of PIP~2~ interactions, with interaction scores ($\bar n_{PIP_2}$) very similar to these previously known PIP~2~-interacting residues. 
+The interacting conformations can be seen in context in the Supplementary Material @sec-system.
 The F1 loop thus complements these known binding sites with an additional specific binding site, again comprising primarily lysines.
 
 :::: {#fig-ferm-further layout="[[1],[1]]"}
@@ -438,15 +440,32 @@ This work was supported by the Klaus Tschira Foundation and the European Researc
 
 # Supplementary Material
 
-## Simulation System {#sec-system}
+## Simulation Systems and Structures {#sec-system}
 
 :::: {.content-hidden when-format="html"}
 :::callout-note
-This interactive display is only available in the web version: <https://hits-mbm-dev.github.io/paper-talin-loop/>
+These interactive displays are only available in the web version: <https://hits-mbm-dev.github.io/paper-talin-loop/>
 :::
 ::::
 
+:::: {.content-visible when-format="html"}
+### NMR Ensemble of F1: 2KC2 [@goultStructureDoubleUbiquitinlike2010] {#sec-nmr}
+{{< mol-rcsb 2KC2 >}}
+
+### Ensemble of last frames of the F0F1 Rotational Sampling
+{{< mol-traj ./assets/structures/f0f1-rot-sample-last-frames.gro ./assets/structures/f0f1-rot-sample-last-frames.xtc  >}}
+
+<!-- TODO: update after calculation -->
+
+### Ensemble of last frames of the FERM simulations
+
+<!-- TODO: update after calculation -->
+
+### FERM domain over a POPC/PIP~2~ membrane {#sec-ferm-system}
+
 {{< mol-url ./www/system-tln-memb.pdb >}}
+::::
+
 
 ## Scripts
 
@@ -461,7 +480,7 @@ Input files and raw data are available on [heiData](https://heidata.uni-heidelbe
 ::: {#fig-suppl layout="[[1,1],[1,1],[1,1]]"}
 
 :::{#fig-loop-rmsf layout-nrow=2 .noborder}
-![ ](./assets/results/figures/loop-rmsf.png)
+![ ](./assets/results/figures/loop-rmsf-transparent.png)
 ![ ](./results/plots/ferm-rmsf-1.png)
 
  
@@ -481,7 +500,9 @@ Input files and raw data are available on [heiData](https://heidata.uni-heidelbe
 
 
 **a\)**
-RMSF [nm] of the C~$\alpha$~ of individual residues in an equilibrium simulation shown by coloring the backbone.
+A plot of the RMSF [nm] (Root Mean Squared Fluctuation) per residue in an equilibrium simulation of the full-length FERM domain.
+The additional blue line shows the RMSF of the NMR ensemble of F1 (2KC2 [@goultStructureDoubleUbiquitinlike2010]).
+Additionally, the relative magnitude of the RMSF is shown by coloring the backbone in a render of the FERM structure.
 The loop is highly flexible.
 **b\)**
 A density plot of distances between PIP~2~ and the protein residues to decide on a cutoff for defining interactions A distance of 0.25\ nm was chosen.
@@ -492,24 +513,16 @@ A closer look at the residues involved in the interaction during pulling reveals
 **e\)**
 Run 4 of the vertical pulling of F0F1. Interactions between the protein and PIP~2~ were so strong that a total of 3 molecules of PIP~2~ (gray) were pulled out of the membrane (1 by F0 (green) and 2 by the F1 loop (blue)).
 **f\)**
-Time to first contact of a residue with PIP~2~ in the rotational sampling of F0-F1.
+Time to first contact of a residue with PIP~2~ in the rotational sampling of F0F1.
 Residues belonging to the F1 loop on average make contact earlier.
 **g\)**
-Number of times a residue belonging to a region made the first contact in the rotational sampling for F0-F1.
+Number of times a residue belonging to a region made the first contact in the rotational sampling for F0F1.
 :::
-
-:::: {.content-hidden when-format="html"}
-:::callout-note
-This interactive display is only available in the web version: <https://hits-mbm-dev.github.io/paper-talin-loop/>
-:::
-::::
-
-{{< mol-rcsb 2KC2 >}}
-
 
 {{< include ./results/tables/f0f1-top-interacting-tbl.md >}}
 
 {{< include ./results/tables/ferm-top-interacting-tbl.md >}}
+
 
 ## Molecular dynamics Parameters
 
