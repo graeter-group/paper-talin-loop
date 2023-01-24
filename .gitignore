@@ -8,6 +8,8 @@
 assets/results/videos/*
 *.xtc
 *.gro
+!/assets/structures/f0f1-rot-sample-last-frames.gro
+!/assets/structures/f0f1-rot-sample-last-frames.xtc
 *.blend
 *.wrl
 .nfs*
