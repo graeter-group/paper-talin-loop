@@ -315,7 +315,7 @@ The F1 loop works in conjunction with the F0 subdomain (see @fig-f0f1-vert-pull-
 Their high flexibility allows them to remain in contact with the membrane over large distances, which would allow for a spring-like re-establishing of more contacts should the force be alleviated.
 In two cases the last interacting residue was part of the F1 loop, while in three cases the N-terminus of the F0 domain stayed attached for longest.
 
-:::: {#fig-f0f1-vert-pull layout="[[1],[1], [1]]"}
+:::: {#fig-f0f1-vert-pull layout="[[1],[1,1]]"}
 
 :::{#fig-f0f1-pull-run-1}
 ::: {.content-visible when-format="html" layout="[2.2,1]" .noborder}
