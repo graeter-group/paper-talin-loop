@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.83">
+<meta name="generator" content="quarto-1.3.124">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -59,6 +59,8 @@ div.csl-indent {
 <link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="index_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="index_files/libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="index_files/libs/quarto-contrib/videojs/video.min.js"></script>
+<link href="index_files/libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
 <script src="index_files/libs/quarto-contrib/molstar-v3.13.0/molstar.js"></script>
 <link href="index_files/libs/quarto-contrib/molstar-v3.13.0/molstar.css" rel="stylesheet">
 <link href="index_files/libs/quarto-contrib/molstar-v3.13.0/app-container.css" rel="stylesheet">
@@ -132,7 +134,7 @@ div.csl-indent {
   <div class="quarto-title-meta-heading">Affiliations</div>
   
     <div class="quarto-title-meta-contents">
-    <a href="https://jmbuhr.de">Jannik Buhr</a> <a href="https://orcid.org/0000-0002-9350-2629" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a>
+    <p class="author"><a href="https://jmbuhr.de">Jannik Buhr</a> <a href="https://orcid.org/0000-0002-9350-2629" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
   </div>
     <div class="quarto-title-meta-contents">
         <p class="affiliation">
@@ -147,7 +149,7 @@ div.csl-indent {
           </p>
       </div>
       <div class="quarto-title-meta-contents">
-    Florian Franz 
+    <p class="author">Florian Franz </p>
   </div>
     <div class="quarto-title-meta-contents">
         <p class="affiliation">
@@ -162,7 +164,7 @@ div.csl-indent {
           </p>
       </div>
       <div class="quarto-title-meta-contents">
-    <a href="https://www.h-its.org/people/prof-dr-frauke-grater/">Frauke Gräter</a> <a href="https://orcid.org/0000-0003-2891-3381" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a>
+    <p class="author"><a href="https://www.h-its.org/people/prof-dr-frauke-grater/">Frauke Gräter</a> <a href="https://orcid.org/0000-0003-2891-3381" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
   </div>
     <div class="quarto-title-meta-contents">
         <p class="affiliation">
@@ -280,9 +282,7 @@ Tip
 <section id="automation-data-analysis-and-availability" class="level2">
 <h2 class="anchored" data-anchor-id="automation-data-analysis-and-availability">Automation, Data Analysis and Availability</h2>
 <p>Setup scripts written in bash are available for all simulations shown in this work. Computations for data analysis were tracked with the targets R package <span class="citation" data-cites="landauTargetsPackageDynamic2021">(<a href="#ref-landauTargetsPackageDynamic2021" role="doc-biblioref">40</a>)</span>. Plots were generated with ggplot2 <span class="citation" data-cites="ggplot">(<a href="#ref-ggplot" role="doc-biblioref">41</a>)</span>. Interactive structure representations are embedded using Mol* <span class="citation" data-cites="molstar">(<a href="#ref-molstar" role="doc-biblioref">42</a>)</span>. Schematic visualizations were rendered with blender <span class="citation" data-cites="blender">(<a href="#ref-blender" role="doc-biblioref">43</a>)</span> and VMD <span class="citation" data-cites="vmd">(<a href="#ref-vmd" role="doc-biblioref">44</a>)</span>. Files relevant to this work that are too big to be uploaded to this repository, such as trajectories and blender files, will be uploaded to a separate location. This manuscript was generated with <a href="https://quarto.org/">quarto</a> <span class="citation" data-cites="quarto knitr rbetterposter">(<a href="#ref-quarto" role="doc-biblioref">45</a>–<a href="#ref-rbetterposter" role="doc-biblioref">47</a>)</span>.</p>
-<div>
 <p>The plotting code and computational graph of <code>targets</code> is available in <a href="./_analysis.html">this document</a>.</p>
-</div>
 </section>
 </section>
 <section id="results" class="level1">
@@ -356,37 +356,35 @@ Tip
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div id="fig-f1f1-residues" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 100.0%;justify-content: center;">
 <figure class="figure">
-<div>
-<p><video src="./assets/vmd/f0f1/residues.mp4" class="img-fluid" controls=""><a href="./assets/vmd/f0f1/residues.mp4">Video</a></video></p>
-</div>
+<div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="./assets/vmd/f0f1/residues.mp4"></video></div>
 <p></p><figcaption class="figure-caption">(b) &nbsp;</figcaption><p></p>
 </figure>
 </div>
 </div>
-<p></p><figcaption class="figure-caption">Figure&nbsp;4: Lysine and arginine residues are crucial for the PIP<sub>2</sub>-interaction of F0F1. <strong>a)</strong> The average number of PIP<sub>2</sub> molecules (<span class="math inline">\bar n_{PIP_2}</span>) interacting (see <a href="#fig-r-hist">Figure&nbsp;7 (b)</a> for the interaction distance definition) with the individual residues per frame across all simulations of the rotational sampling that made contact with the membrane. Color represents the charge of the amino acid at pH 7.4 (blue = positive/basic, magenta = negative/acidic). A number of very prominent lysines can be observed, as well as a cluster of residues belonging to the F1 loop, which is highlighted with a grey backdrop. The most prominent residues are highlighted in <strong>b)</strong>. For the print version it is a snapshot render. The video is also available here: <a href="https://youtu.be/s5yya0XeNTA" class="uri">https://youtu.be/s5yya0XeNTA</a>).</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4: Lysine and arginine residues are crucial for the PIP<sub>2</sub>-interaction of F0F1. <strong>a)</strong> The average number of PIP<sub>2</sub> molecules (<span class="math inline">\bar n_{PIP_2}</span>) interacting (see <a href="#fig-r-hist">Figure&nbsp;7 (c)</a> for the interaction distance definition) with the individual residues per frame across all simulations of the rotational sampling that made contact with the membrane. Color represents the charge of the amino acid at pH 7.4 (blue = positive/basic, magenta = negative/acidic). A number of very prominent lysines can be observed, as well as a cluster of residues belonging to the F1 loop, which is highlighted with a grey backdrop. The most prominent residues are highlighted in <strong>b)</strong>. For the print version it is a snapshot render. The video is also available here: <a href="https://youtu.be/s5yya0XeNTA" class="uri">https://youtu.be/s5yya0XeNTA</a>).</figcaption><p></p>
 </figure>
 </div>
 </section>
 <section id="the-f1-loop-maintains-and-further-facilitates-formation-of-fermpip2-interactions" class="level2">
 <h2 class="anchored" data-anchor-id="the-f1-loop-maintains-and-further-facilitates-formation-of-fermpip2-interactions">The F1 loop maintains and further facilitates formation of FERM–PIP<sub>2</sub> interactions</h2>
-<p>To examine the strength of the PIP<sub>2</sub> interactions and the role of the F1 loop in maintaining it, we pulled F0F1 vertically off the membrane in additional force-probe MD simulations (<a href="#fig-f0f1-vert-pull">Figure&nbsp;5</a>). An exemplary render of one of the simulations can be seen in <a href="#fig-f0f1-pull-run-1">Figure&nbsp;5 (a)</a>. Pulling F0F1 off the membrane requires peak forces of 100–120&nbsp;pN, during which the interacting residues only very gradually loose contact (<a href="#fig-f0f1-vert-pull">Figure&nbsp;5</a>), as the high flexibility of F1-loop allows the residues to remain in contact even as the distance increases up to a delta of 7&nbsp;nm. Replicate 4 stands out as the highest curve (dashed lines), as in this run the interactions were so strong that a total of 3 molecules of PIP<sub>2</sub> were pulled out of the membrane (1 by F0 and 2 by the F1 loop). A snapshot of this can be seen in <a href="#fig-f0f1-vert-pull-run4">Figure&nbsp;7 (e)</a>. This highlights the strong anchoring capabilities of the F1 loop.</p>
-<p>As seen in <a href="#fig-f0f1-vert-pull-contacts">Figure&nbsp;5 (c)</a>, during pulling residues not belonging to the F1 loop loose contact first, while the loop stays attached. The F1 loop works in conjunction with the F0 subdomain (see <a href="#fig-f0f1-vert-pull-residues">Figure&nbsp;7 (d)</a>). Their high flexibility allows them to remain in contact with the membrane over large distances, which would allow for a spring-like re-establishing of more contacts should the force be alleviated. In two cases the last interacting residue was part of the F1 loop, while in three cases the N-terminus of the F0 domain stayed attached for longest.</p>
+<p>To examine the strength of the PIP<sub>2</sub> interactions and the role of the F1 loop in maintaining it, we pulled F0F1 vertically off the membrane in additional force-probe MD simulations (<a href="#fig-f0f1-vert-pull">Figure&nbsp;5</a>). An exemplary render of one of the simulations can be seen in <a href="#fig-f0f1-pull-run-1">Figure&nbsp;5 (a)</a>. Pulling F0F1 off the membrane requires peak forces of 100–120&nbsp;pN, during which the interacting residues only very gradually loose contact (<a href="#fig-f0f1-vert-pull">Figure&nbsp;5</a>), as the high flexibility of F1-loop allows the residues to remain in contact even as the distance increases up to a delta of 7&nbsp;nm. Replicate 4 stands out as the highest curve (dashed lines), as in this run the interactions were so strong that a total of 3 molecules of PIP<sub>2</sub> were pulled out of the membrane (1 by F0 and 2 by the F1 loop). A snapshot of this can be seen in <a href="#fig-f0f1-vert-pull-run4">Figure&nbsp;7 (f)</a>. This highlights the strong anchoring capabilities of the F1 loop.</p>
+<p>As seen in <a href="#fig-f0f1-vert-pull-contacts">Figure&nbsp;5 (c)</a>, during pulling residues not belonging to the F1 loop loose contact first, while the loop stays attached. The F1 loop works in conjunction with the F0 subdomain (see <a href="#fig-f0f1-vert-pull-residues">Figure&nbsp;7 (e)</a>). Their high flexibility allows them to remain in contact with the membrane over large distances, which would allow for a spring-like re-establishing of more contacts should the force be alleviated. In two cases the last interacting residue was part of the F1 loop, while in three cases the N-terminus of the F0 domain stayed attached for longest.</p>
 <div id="fig-f0f1-vert-pull" class="quarto-layout-panel">
 <figure class="figure">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div id="fig-f0f1-pull-run-1" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 100.0%;justify-content: center;">
 <figure class="figure">
-<div class="content-visible noborder quarto-layout-panel" data-when-format="html">
+<div class="noborder quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell" style="flex-basis: 68.8%;justify-content: center;">
-<p><video src="./assets/vmd/f0f1-pulling/f0f1-run1.mp4" class="img-fluid" controls=""><a href="./assets/vmd/f0f1-pulling/f0f1-run1.mp4">Video</a></video></p>
+<div class="quarto-video"><video id="video_shortcode_videojs_video2" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="./assets/vmd/f0f1-pulling/f0f1-run1.mp4"></video></div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 31.3%;justify-content: center;">
 <p><img src="./assets/vmd/f0f1-pulling/f0f1-pull-middle.png" class="img-fluid figure-img"></p>
 </div>
 </div>
 </div>
-<p></p><figcaption class="figure-caption">(a) &nbsp;</figcaption><p></p>
+<p></p><figcaption class="figure-caption">(a) <strong>?(caption)</strong></figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -629,12 +627,11 @@ Tip
 <h1>Supplementary Material</h1>
 <section id="sec-system" class="level2">
 <h2 class="anchored" data-anchor-id="sec-system">Simulation Systems and Structures</h2>
-<div>
 <section id="sec-nmr" class="level3">
 <h3 class="anchored" data-anchor-id="sec-nmr">NMR Ensemble of F1: 2KC2 <span class="citation" data-cites="goultStructureDoubleUbiquitinlike2010">(<a href="#ref-goultStructureDoubleUbiquitinlike2010" role="doc-biblioref">13</a>)</span></h3>
     <div id="app-2KC2" class="molstar-app"></div>
     <script type="text/javascript">
-    molstar.Viewer.create("app-2KC2", {"layoutShowControls":false,"layoutShowRemoteState":false,"layoutShowLog":false,"layoutShowLeftPanel":true,"layoutShowSequence":false,"emdbProvider":"rcsb","viewportShowExpand":true,"pdbProvider":"rcsb","layoutIsExpanded":false,"viewportShowAnimation":true,"viewportShowSelectionMode":false}).then(viewer => {
+    molstar.Viewer.create("app-2KC2", {"layoutShowLog":false,"layoutShowLeftPanel":true,"layoutShowRemoteState":false,"layoutShowSequence":false,"layoutShowControls":false,"pdbProvider":"rcsb","emdbProvider":"rcsb","viewportShowAnimation":true,"viewportShowSelectionMode":false,"viewportShowExpand":true,"layoutIsExpanded":false}).then(viewer => {
     viewer.loadPdb("2KC2");    });
     </script>
     
@@ -643,7 +640,7 @@ Tip
 <h3 class="anchored" data-anchor-id="ensemble-of-last-frames-of-the-f0f1-rotational-sampling">Ensemble of last frames of the F0F1 Rotational Sampling</h3>
     <div id="app-./assets/structures/f0f1-rot-sample-last-frames.gro./assets/structures/f0f1-rot-sample-last-frames.xtc" class="molstar-app"></div>
     <script type="text/javascript">
-    molstar.Viewer.create("app-./assets/structures/f0f1-rot-sample-last-frames.gro./assets/structures/f0f1-rot-sample-last-frames.xtc", {"layoutShowControls":false,"layoutShowRemoteState":false,"layoutShowLog":false,"layoutShowLeftPanel":true,"layoutShowSequence":false,"emdbProvider":"rcsb","viewportShowExpand":true,"pdbProvider":"rcsb","layoutIsExpanded":false,"viewportShowAnimation":true,"viewportShowSelectionMode":false}).then(viewer => {
+    molstar.Viewer.create("app-./assets/structures/f0f1-rot-sample-last-frames.gro./assets/structures/f0f1-rot-sample-last-frames.xtc", {"layoutShowLog":false,"layoutShowLeftPanel":true,"layoutShowRemoteState":false,"layoutShowSequence":false,"layoutShowControls":false,"pdbProvider":"rcsb","emdbProvider":"rcsb","viewportShowAnimation":true,"viewportShowSelectionMode":false,"viewportShowExpand":true,"layoutIsExpanded":false}).then(viewer => {
         viewer.loadTrajectory(
     {
       model: {
@@ -668,12 +665,11 @@ Tip
 <h3 class="anchored" data-anchor-id="sec-ferm-system">FERM domain over a POPC/PIP<sub>2</sub> membrane</h3>
     <div id="app-./www/system-tln-memb.pdb" class="molstar-app"></div>
     <script type="text/javascript">
-    molstar.Viewer.create("app-./www/system-tln-memb.pdb", {"layoutShowControls":false,"layoutShowRemoteState":false,"layoutShowLog":false,"layoutShowLeftPanel":true,"layoutShowSequence":false,"emdbProvider":"rcsb","viewportShowExpand":true,"pdbProvider":"rcsb","layoutIsExpanded":false,"viewportShowAnimation":true,"viewportShowSelectionMode":false}).then(viewer => {
+    molstar.Viewer.create("app-./www/system-tln-memb.pdb", {"layoutShowLog":false,"layoutShowLeftPanel":true,"layoutShowRemoteState":false,"layoutShowSequence":false,"layoutShowControls":false,"pdbProvider":"rcsb","emdbProvider":"rcsb","viewportShowAnimation":true,"viewportShowSelectionMode":false,"viewportShowExpand":true,"layoutIsExpanded":false}).then(viewer => {
     viewer.loadStructureFromUrl("./www/system-tln-memb.pdb", format="pdb");    });
     </script>
     
 </section>
-</div>
 </section>
 <section id="scripts" class="level2">
 <h2 class="anchored" data-anchor-id="scripts">Scripts</h2>
@@ -688,20 +684,18 @@ Tip
 <div id="fig-suppl" class="quarto-layout-panel">
 <figure class="figure">
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div id="fig-loop-rmsf" class="noborder quarto-layout-panel quarto-layout-cell quarto-layout-cell-subref" data-ref-parent="fig-suppl" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-loop-rmsf" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<p><img src="./assets/results/figures/loop-rmsf-transparent.png" class="img-fluid figure-img" alt="&nbsp;"> <img src="./results/plots/ferm-rmsf-1.png" class="img-fluid figure-img" alt="&nbsp;"></p>
-</div>
-</div>
+<p><img src="./results/plots/ferm-rmsf-1.png" class="img-fluid figure-img" data-ref-parent="fig-suppl"></p>
 <p></p><figcaption class="figure-caption">(a) &nbsp;</figcaption><p></p>
 </figure>
 </div>
+</div>
 <div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-r-hist" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-loop-rmsf-render" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="./results/plots/f0f1-distance-cutoff-1.png" class="img-fluid figure-img" data-ref-parent="fig-suppl"></p>
+<p><img src="./assets/results/figures/loop-rmsf-transparent.png" class="img-fluid figure-img" data-ref-parent="fig-suppl"></p>
 <p></p><figcaption class="figure-caption">(b) &nbsp;</figcaption><p></p>
 </figure>
 </div>
@@ -709,17 +703,17 @@ Tip
 </div>
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-ferm-time-ri-npip-all" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-r-hist" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="./results/plots/ferm-time-ri-npip-all-1.png" class="img-fluid figure-img" data-ref-parent="fig-suppl"></p>
+<p><img src="./results/plots/f0f1-distance-cutoff-1.png" class="img-fluid figure-img" data-ref-parent="fig-suppl"></p>
 <p></p><figcaption class="figure-caption">(c) &nbsp;</figcaption><p></p>
 </figure>
 </div>
 </div>
 <div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-f0f1-vert-pull-residues" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-ferm-time-ri-npip-all" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="./results/plots/f0f1-vert-pull-residues-1.png" class="img-fluid figure-img" data-ref-parent="fig-suppl"></p>
+<p><img src="./results/plots/ferm-time-ri-npip-all-1.png" class="img-fluid figure-img" data-ref-parent="fig-suppl"></p>
 <p></p><figcaption class="figure-caption">(d) &nbsp;</figcaption><p></p>
 </figure>
 </div>
@@ -727,17 +721,17 @@ Tip
 </div>
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-f0f1-vert-pull-run4" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-f0f1-vert-pull-residues" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="./assets/vmd/f0f1-pulling/snapshot-run4.png" class="img-fluid figure-img" data-ref-parent="fig-suppl"></p>
+<p><img src="./results/plots/f0f1-vert-pull-residues-1.png" class="img-fluid figure-img" data-ref-parent="fig-suppl"></p>
 <p></p><figcaption class="figure-caption">(e) &nbsp;</figcaption><p></p>
 </figure>
 </div>
 </div>
 <div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-f0f1-time-to-contact" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-f0f1-vert-pull-run4" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="./results/plots/si-f0f1-first-contact-frame-1.png" class="img-fluid figure-img" data-ref-parent="fig-suppl"></p>
+<p><img src="./assets/vmd/f0f1-pulling/snapshot-run4.png" class="img-fluid figure-img" data-ref-parent="fig-suppl"></p>
 <p></p><figcaption class="figure-caption">(f) &nbsp;</figcaption><p></p>
 </figure>
 </div>
@@ -745,15 +739,23 @@ Tip
 </div>
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-f0f1-first-to-find" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-f0f1-time-to-contact" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="./results/plots/si-f0f1-angle-first-to-find-1.png" class="img-fluid figure-img" data-ref-parent="fig-suppl"></p>
+<p><img src="./results/plots/si-f0f1-first-contact-frame-1.png" class="img-fluid figure-img" data-ref-parent="fig-suppl"></p>
 <p></p><figcaption class="figure-caption">(g) &nbsp;</figcaption><p></p>
 </figure>
 </div>
 </div>
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-f0f1-first-to-find" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="./results/plots/si-f0f1-angle-first-to-find-1.png" class="img-fluid figure-img" data-ref-parent="fig-suppl"></p>
+<p></p><figcaption class="figure-caption">(h) &nbsp;</figcaption><p></p>
+</figure>
 </div>
-<p></p><figcaption class="figure-caption">Figure&nbsp;7: <strong>a)</strong> A plot of the RMSF [nm] (Root Mean Squared Fluctuation) per residue in an equilibrium simulation of the full-length FERM domain. The additional blue line shows the RMSF of the NMR ensemble of F1 (2KC2 <span class="citation" data-cites="goultStructureDoubleUbiquitinlike2010">(<a href="#ref-goultStructureDoubleUbiquitinlike2010" role="doc-biblioref">13</a>)</span>). Additionally, the relative magnitude of the RMSF is shown by coloring the backbone in a render of the FERM structure. The loop is highly flexible. <strong>b)</strong> A density plot of distances between PIP<sub>2</sub> and the protein residues to decide on a cutoff for defining interactions A distance of 0.25&nbsp;nm was chosen. <strong>c)</strong> A heatmap of the number of PIP<sub>2</sub> molecules bound per residue over time for the 6 individual simulations with the whole FERM domain over the membrane. <strong>d)</strong> A closer look at the residues involved in the interaction during pulling reveals the instrumental role of both the F1 loop as well as the F0 subdomain in keeping the connection to the membrane. <strong>e)</strong> Run 4 of the vertical pulling of F0F1. Interactions between the protein and PIP<sub>2</sub> were so strong that a total of 3 molecules of PIP<sub>2</sub> (gray) were pulled out of the membrane (1 by F0 (green) and 2 by the F1 loop (blue)). <strong>f)</strong> Time to first contact of a residue with PIP<sub>2</sub> in the rotational sampling of F0F1. Residues belonging to the F1 loop on average make contact earlier. <strong>g)</strong> Number of times a residue belonging to a region made the first contact in the rotational sampling for F0F1.</figcaption><p></p>
+</div>
+</div>
+<p></p><figcaption class="figure-caption">Figure&nbsp;7: <strong>a)</strong> A plot of the RMSF [nm] (Root Mean Squared Fluctuation) per residue in an equilibrium simulation of the full-length FERM domain. The additional blue line shows the RMSF of the NMR ensemble of F1 (2KC2 <span class="citation" data-cites="goultStructureDoubleUbiquitinlike2010">(<a href="#ref-goultStructureDoubleUbiquitinlike2010" role="doc-biblioref">13</a>)</span>). <strong>b)</strong> The relative magnitude of the RMSF is shown by coloring the backbone in a render of the FERM structure. <strong>c)</strong> A density plot of distances between PIP<sub>2</sub> and the protein residues to decide on a cutoff for defining interactions A distance of 0.25&nbsp;nm was chosen. <strong>d)</strong> A heatmap of the number of PIP<sub>2</sub> molecules bound per residue over time for the 6 individual simulations with the whole FERM domain over the membrane. <strong>e)</strong> A closer look at the residues involved in the interaction during pulling reveals the instrumental role of both the F1 loop as well as the F0 subdomain in keeping the connection to the membrane. <strong>f)</strong> Run 4 of the vertical pulling of F0F1. Interactions between the protein and PIP<sub>2</sub> were so strong that a total of 3 molecules of PIP<sub>2</sub> (gray) were pulled out of the membrane (1 by F0 (green) and 2 by the F1 loop (blue)). <strong>g)</strong> Time to first contact of a residue with PIP<sub>2</sub> in the rotational sampling of F0F1. Residues belonging to the F1 loop on average make contact earlier. <strong>h)</strong> Number of times a residue belonging to a region made the first contact in the rotational sampling for F0F1.</figcaption><p></p>
 </figure>
 </div>
 <div id="tbl-f0f1-top-interacting" class="anchored">
@@ -1235,6 +1237,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -1275,6 +1363,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<script>videojs(video_shortcode_videojs_video1);</script>
+<script>videojs(video_shortcode_videojs_video2);</script>
 
 
 
