@@ -17,3 +17,5 @@ assets/results/videos/*
 tmp.R
 *_cache
 **unnamed-chunk*
+_analysis.knit.md
+_analysis.rmarkdown
