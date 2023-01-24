@@ -523,20 +523,23 @@ df |>
 ```
 
 ```{r f0f1-vert-pull-contacts-time}
+colors <- c("#19217d", "#7d127f", "#be0170", "#eb3456", "#ff6d35", "#ffa600")
 df |> 
-  ggplot(aes(`TRUE`, `FALSE`, color = frame, group = paste(run))) +
-  geom_path() +
-  geom_point(data = points, color = "black") +
+  ggplot(aes(`TRUE`, `FALSE`, color = factor(run), group = paste(run))) +
+  geom_path(size = 0.8) +
+  geom_point(data = points, color = "black", size = 3) +
   geom_path(
     aes(group = paste(run, end)),
     color = "black",
     data = arrows_end,
     arrow = arrow(angle = 15, ends = "last", type = "closed",
-                  length = unit(0.4, "lines")),
+                  length = unit(0.5, "lines")),
   ) +
-  scale_color_gradient(high = "#98cde9", low = "#003063") +
+  # scale_color_gradient(high = "#98cde9", low = "#003063") +
+  # scale_colour_brewer(type = "qual", palette = "Set1") +
+  scale_color_manual(values = colors) +
   coord_equal() +
-  guides(color = "none") +
+  guides(color = "none", alpha = "none") +
   labs(
     x = "loop contacts",
     y = "non loop contacts",
