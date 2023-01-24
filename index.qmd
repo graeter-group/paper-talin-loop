@@ -139,7 +139,7 @@ Note that under physiological conditions, with Talin experiencing force from bou
 Tails of an integrin $\alpha$ and $\beta$ heterodimer reaching through the lipid bilayer are represented in green.
 **b\)**
 A schematic rendering of the autoinhibited structure of Talin as crystallized by Dedden et al. [@deddenArchitectureTalin1Reveals2019a] in combination with a cartoon representation in **c)**.
-The completed FERM structure by Elliott et al. [@elliottStructureTalinHead2010], with our addition of the modelled F1 loop, is fitted to the autoinhibited structure, as the latter does not include F0F1 due to their flexibility.
+The completed FERM structure by Elliott et al. [@elliottStructureTalinHead2010], with our addition of the modelled F1 loop, is fitted to the autoinhibited structure, as the latter does not include F0F1 due to their flexibility, to visualize the occlusion.
 The complete FERM structure can be explored interactively in the context of our simulation system in the Supplementary Materials.
 The main PIP~2~-binding sites in F2-F3 are occluded by rod domain 12.
 ::::
@@ -330,7 +330,8 @@ In two cases the last interacting residue was part of the F1 loop, while in thre
 ![](./assets/vmd/f0f1-pulling/f0f1-pull-middle.png){width=20%}
 ![](./assets/vmd/f0f1-pulling/f0f1-pull-end.png){width=35%}
 :::
- 
+
+ 
 :::
 
 ![ ](./results/plots/f0f1-vert-pull-1.png){#fig-f0f1-vert-pull-force}
