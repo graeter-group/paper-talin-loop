@@ -460,7 +460,12 @@ Input files and raw data are available on [heiData](https://heidata.uni-heidelbe
 
 ::: {#fig-suppl layout="[[1,1],[1,1],[1,1]]"}
 
-![ ](./assets/results/figures/loop-rmsf.png){#fig-loop-rmsf}
+:::{#fig-loop-rmsf layout-nrow=2 .noborder}
+![ ](./assets/results/figures/loop-rmsf.png)
+![ ](./results/plots/ferm-rmsf-1.png)
+
+ 
+:::
 
 ![ ](./results/plots/f0f1-distance-cutoff-1.png){#fig-r-hist}
 
@@ -492,6 +497,15 @@ Residues belonging to the F1 loop on average make contact earlier.
 **g\)**
 Number of times a residue belonging to a region made the first contact in the rotational sampling for F0-F1.
 :::
+
+:::: {.content-hidden when-format="html"}
+:::callout-note
+This interactive display is only available in the web version: <https://hits-mbm-dev.github.io/paper-talin-loop/>
+:::
+::::
+
+{{< mol-rcsb 2KC2 >}}
+
 
 {{< include ./results/tables/f0f1-top-interacting-tbl.md >}}
 
