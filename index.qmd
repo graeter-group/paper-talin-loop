@@ -462,11 +462,9 @@ These interactive displays are only available in the web version: <https://hits-
 ### Ensemble of last frames of the F0F1 Rotational Sampling
 {{< mol-traj ./assets/structures/f0f1-rot-sample-last-frames.gro ./assets/structures/f0f1-rot-sample-last-frames.xtc  >}}
 
-<!-- TODO: update after calculation -->
-
 ### Ensemble of last frames of the FERM simulations
 
-<!-- TODO: update after calculation -->
+{{< mol-traj ./assets/structures/ferm-last-frames.gro ./assets/structures/ferm-last-frames.xtc >}}
 
 ### FERM domain over a POPC/PIP~2~ membrane {#sec-ferm-system}
 
