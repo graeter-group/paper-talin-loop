@@ -420,7 +420,12 @@ We propose that Talin mutants lacking the loop, or specifically the basic residu
 Recognition is only the first step.
 The mechanistic details of how Talin's autoinhibition is resolved remain to be shown by larger simulations including the inhibiting rod segment.
 These larger-scale simulations might then be able to provide evidence for the push--pull mechanism proposed by Song et al. [@songNovelMembranedependentSwitch2012a] or might reveal how the early F1-loop mediated membrane interactions identified in this study might effect the subsequent steps for Talin activation.
-In conclusion, we propose positively charged, intrinsically disordered regions in Talin's FERM domain and potentially other PIP~2~-binding domains to promote recognition and to help maintain the membrane interaction under force.
+
+As the F1-loop has been shown to contribute to integrin activation [@goultStructureDoubleUbiquitinlike2010], it will also be insightful to simulate a system including the integrin tail.
+This is a promising approch, since other computational studies have also found PIP~2~ to be crucial, not just for the membrane interaction, but also the formation of the protein--protein complex.
+The cloverleaf-like FERM domain of Moesin, for example, interacts with the cytoplasmic domain of L-Selectin mediated by PIP~2~ [@sunMolecularDynamicsAssociation2018] and PIP~2~ enables the formation of the CD44-FERM complex for Radixin [@sunMolecularMechanismBidirectional2020].
+
+In conclusion, we propose positively charged, intrinsically disordered regions in Talin's FERM domain and potentially other PIP~2~-binding domains to promote fast recognition and to help maintain the membrane interaction under force.
 
 # Author Contributions
 
