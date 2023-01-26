@@ -257,12 +257,12 @@ intrinsically disordered regions in protein--membrane interactions.
 \end{sigstatement}
 
 
-\end{frontmatter}\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[frame hidden, boxrule=0pt, interior hidden, borderline west={3pt}{0pt}{shadecolor}, sharp corners, breakable, enhanced]}{\end{tcolorbox}}\fi
+\end{frontmatter}\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[breakable, boxrule=0pt, sharp corners, borderline west={3pt}{0pt}{shadecolor}, enhanced, frame hidden, interior hidden]}{\end{tcolorbox}}\fi
 
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, toprule=.15mm, arc=.35mm, titlerule=0mm, left=2mm, toptitle=1mm, colback=white, bottomtitle=1mm, leftrule=.75mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, rightrule=.15mm, bottomrule=.15mm, opacitybacktitle=0.6, breakable, colbacktitle=quarto-callout-tip-color!10!white]
+\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, colback=white, colbacktitle=quarto-callout-tip-color!10!white, breakable, leftrule=.75mm, opacityback=0, rightrule=.15mm, bottomtitle=1mm, opacitybacktitle=0.6, toptitle=1mm, titlerule=0mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
 
 This is a draft and as such subject to change. The source repository for
 this manuscript lives at
@@ -1073,10 +1073,26 @@ mechanism proposed by Song et al.
 (\protect\hyperlink{ref-songNovelMembranedependentSwitch2012a}{12}) or
 might reveal how the early F1-loop mediated membrane interactions
 identified in this study might effect the subsequent steps for Talin
-activation. In conclusion, we propose positively charged, intrinsically
-disordered regions in Talin's FERM domain and potentially other
-PIP\textsubscript{2}-binding domains to promote recognition and to help
-maintain the membrane interaction under force.
+activation.
+
+As the F1-loop has been shown to contribute to integrin activation
+(\protect\hyperlink{ref-goultStructureDoubleUbiquitinlike2010}{13}), it
+will also be insightful to simulate a system including the integrin
+tail. This is a promising approch, since other computational studies
+have also found PIP\textsubscript{2} to be crucial, not just for the
+membrane interaction, but also the formation of the protein--protein
+complex. The cloverleaf-like FERM domain of Moesin, for example,
+interacts with the cytoplasmic domain of L-Selectin mediated by
+PIP\textsubscript{2}
+(\protect\hyperlink{ref-sunMolecularDynamicsAssociation2018}{55}) and
+PIP\textsubscript{2} enables the formation of the CD44-FERM complex for
+Radixin
+(\protect\hyperlink{ref-sunMolecularMechanismBidirectional2020}{56}).
+
+In conclusion, we propose positively charged, intrinsically disordered
+regions in Talin's FERM domain and potentially other
+PIP\textsubscript{2}-binding domains to promote fast recognition and to
+help maintain the membrane interaction under force.
 
 \hypertarget{author-contributions}{%
 \section{Author Contributions}\label{author-contributions}}
@@ -1516,6 +1532,23 @@ Bennett, and W.F. DeGrado. 2012.
 the {\(B\)}3-integrin cytosolic domain is modulated by its phospholipid
 bilayer environment}. \emph{Proceedings of the National Academy of
 Sciences}. 109:793--798.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-sunMolecularDynamicsAssociation2018}{}}%
+\CSLLeftMargin{55. }%
+\CSLRightInline{Sun, F., C.F.E. Schroer, L. Xu, H. Yin, S.J. Marrink,
+and S.-Z. Luo. 2018.
+\href{https://doi.org/10.1016/j.bpj.2018.02.034}{Molecular {Dynamics} of
+the {Association} of {L-Selectin} and {FERM Regulated} by {PIP2}}.
+\emph{Biophysical Journal}. 114:1858--1868.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-sunMolecularMechanismBidirectional2020}{}}%
+\CSLLeftMargin{56. }%
+\CSLRightInline{Sun, F., C.F.E. Schroer, C.R. Palacios, L. Xu, S.-Z.
+Luo, and S.J. Marrink. 2020.
+\href{https://doi.org/10.1371/journal.pcbi.1007777}{Molecular mechanism
+for bidirectional regulation of {CD44} for lipid raft affiliation by
+palmitoylations and {PIP2}}. \emph{PLOS Computational Biology}.
+16:e1007777.}
 
 \end{CSLReferences}
 
