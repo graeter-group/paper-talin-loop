@@ -442,15 +442,13 @@ structure shown here for illustrative purposes. Tails of an integrin
 are represented in green. \textbf{b)} A schematic rendering of the
 autoinhibited structure of Talin as crystallized by Dedden et al.
 (\protect\hyperlink{ref-deddenArchitectureTalin1Reveals2019a}{23}) in
-combination with a cartoon representation in \textbf{c)}. The completed
-FERM structure by Elliott et al.
+combination with a cartoon representation in \textbf{c)}. The primary PIP\textsubscript{2} binding site of F2-F3 is occluded in talin, while the loops of F1 is accessible, as evident when fitting the F0-F3 structure by Elliott et al.
 (\protect\hyperlink{ref-elliottStructureTalinHead2010}{14}), with our
-addition of the modelled F1 loop, is fitted to the autoinhibited
-structure, as the latter does not include F0F1 due to their flexibility,
-to visualize the occlusion. The complete FERM structure can be explored
+addition of the modelled F1 loop, to the autoinhibited
+structure, which lacks F0F1. The main PIP\textsubscript{2}-binding sites in
+F2-F3 are occluded by rod domain 12. The complete FERM structure can be explored
 interactively in the context of our simulation system in the
-Supplementary Materials. The main PIP\textsubscript{2}-binding sites in
-F2-F3 are occluded by rod domain 12.}
+Supplementary Materials. }
 
 \end{figure}
 
@@ -510,7 +508,7 @@ compared to an NMR structure of the F1 domain (PDB-ID 2KC2) by Goult et
 al. (\protect\hyperlink{ref-goultStructureDoubleUbiquitinlike2010}{13}).
 The missing residue M1 was also added. The missing residues D125 and
 E126 as well as I399 and L400 were not modelled, as they are far from
-the region of interest (the F1-loop) This leaves us with a sequence from
+the region of interest (the F1-loop). This leaves us with a sequence from
 residue 1 to 398 with a shift by 2 in numbering compared to the
 canonical TLN1\_MOUSE Talin-1 sequence (uniprot ID P26039) after residue
 124. Simulations were performed with the CHARMM36 force field.
@@ -520,7 +518,7 @@ web app
 and GROMACS tools. All simulations used the TIP3P water model and were
 neutralized with 0.15 mol/L of NaCl. A 6-step equilibration was
 performed after gradient descent energy minimization while gradually
-relieving restraints on protein and membrane atoms. This followed the
+relieving restraints on protein and membrane atoms from XXX to XXX. This followed the
 standard procedure recommended by CHARMM-GUI. The exact Molecular
 Dynamics Parameter (mdp) files are provided in the data
 (https://doi.org/10.11588/data/BQTQUN) in the \texttt{assets} folder of
@@ -547,7 +545,7 @@ entailed placing the protein 1.5~nm away from a
 of the 119 lipids in the upper leaflet were replaced with
 PIP\textsubscript{2}. This results in a physiological concentration of
 10\% PIP\textsubscript{2}. The PIP\textsubscript{2} molecules used in
-the simulutions have a charge of -4, consisten with the deprotonation
+the simulutions have a charge of -4, consistent with the deprotonation
 state of the phosphate groups at physiological pH
 (\protect\hyperlink{ref-mclaughlinPIP2ProteinsInteractions2002}{38}).
 
@@ -600,11 +598,8 @@ was generated with \href{https://quarto.org/}{quarto}
 contact}\label{the-f1-loop-can-act-as-a-point-of-first-contact}}
 
 The high flexibility of the F1 loop gave use the confidence to model it
-from sequence. It retained its flexibility in equilibrium simulations
-(Figure~\ref{fig-loop-rmsf}), which in combination with comparisons to
-NMR structures
-(\protect\hyperlink{ref-goultStructureDoubleUbiquitinlike2010}{13})
-confirmed this approach (see Supplementary Material
+from sequence. It retained its flexibility in equilibrium simulations, in close agreement to the conformational flexibility reflected in the NMR ensemble of the F1 domain 
+(\protect\hyperlink{ref-goultStructureDoubleUbiquitinlike2010}{13}) (see Supplementary Material
 Figure~\ref{fig-loop-rmsf}). The resulting system that provides the
 basis for our simulations can be explored interactively in the
 Supplementary Materials.
@@ -621,7 +616,7 @@ loop with respect to the membrane was varied across 60 equally spaced
 angles. Figure~\ref{fig-f0f1-ri-angle} shows that independent of the
 starting position, the loop is able to find the membrane and bind to it.
 This is due to the large search space it can cover with its high
-flexibility (see Figure~\ref{fig-loop-rmsf}). Binding happens earlier in
+flexibility (see Figure~\ref{fig-loop-rmsf}). Expectedly, binding happens earlier in
 the simulation when the loop starts oriented favorably towards the
 membrane (Figure~\ref{fig-f0f1-angle-frame}, 0~°). While
 Figure~\ref{fig-f0f1-snapshots} shows one example of a bound
@@ -1704,15 +1699,15 @@ Tables}\label{supplementary-plots-and-tables}}
 \subcaption{\label{fig-f0f1-first-to-find}~}
 \end{minipage}%
 
-\caption{\label{fig-suppl}\textbf{a)} A plot of the RMSF {[}nm{]} (Root
-Mean Squared Fluctuation) per residue in an equilibrium simulation of
-the full-length FERM domain. The additional blue line shows the RMSF of
-the NMR ensemble of F1 (2KC2
-(\protect\hyperlink{ref-goultStructureDoubleUbiquitinlike2010}{13})).
+\caption{\label{fig-suppl}\textbf{a)} Root
+Mean Squared Fluctuation (RMSF) per residue in an equilibrium simulation of
+the full-length FERM domain (black). The additional blue line shows the RMSF of
+the NMR ensemble of F1 for comparison (2KC2
+(\protect\hyperlink{ref-goultStructureDoubleUbiquitinlike2010}{13})). The region of the loop in F1 is highlighted by a grey shade. Color bars as in Fig. 6a. 
 \textbf{b)} The relative magnitude of the RMSF is shown by coloring the
-backbone in a render of the FERM structure. \textbf{c)} A density plot
+backbone in a render of the FERM structure. \textbf{c)} Density plot
 of distances between PIP\textsubscript{2} and the protein residues to
-decide on a cutoff for defining interactions A distance of 0.25~nm was
+decide on a cutoff for defining interactions. A distance of 0.25~nm was
 chosen. \textbf{d)} A heatmap of the number of PIP\textsubscript{2}
 molecules bound per residue over time for the 6 individual simulations
 with the whole FERM domain over the membrane. \textbf{e)} A closer look
