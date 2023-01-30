@@ -460,12 +460,18 @@ These interactive displays are available in the web version: <https://hits-mbm-d
 
 :::: {.content-visible when-format="html"}
 ### NMR Ensemble of F1: 2KC2 [@goultStructureDoubleUbiquitinlike2010] {#sec-nmr}
+
 {{< mol-rcsb 2KC2 >}}
 
 ### Ensemble of last frames of the F0F1 Rotational Sampling
+
+Here, we show exemplary final frames of replicate 1 of the rotational sampling simulations with one structure for each starting angle.
+
 {{< mol-traj ./assets/structures/f0f1-rot-sample-last-frames.gro ./assets/structures/f0f1-rot-sample-last-frames.xtc  >}}
 
 ### Ensemble of last frames of the FERM simulations
+
+Here, we show the final frames of the full-length FERM simulations with one structure for each of the 6 replicates.
 
 {{< mol-traj ./assets/structures/ferm-last-frames.gro ./assets/structures/ferm-last-frames.xtc >}}
 
@@ -522,6 +528,16 @@ Time to first contact of a residue with PIP~2~ in the rotational sampling of F0F
 Residues belonging to the F1 loop on average make contact earlier.
 **h\)**
 Number of times a residue belonging to a region made the first contact in the rotational sampling for F0F1.
+:::
+
+
+
+::: {#fig-suppl-2 layout="[[1,1],[1,1],[1,1]]"}
+
+![ ](./assets/structures/2kc2-ensemble-10.png){#fig-nmr-ensemble}
+
+**a\)**
+NMR ensemble of F1, pdb ID 2KC2 [@goultStructureDoubleUbiquitinlike2010]
 :::
 
 {{< include ./results/tables/f0f1-top-interacting-tbl.md >}}
