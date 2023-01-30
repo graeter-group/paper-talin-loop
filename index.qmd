@@ -139,9 +139,9 @@ Note that under physiological conditions, with talin experiencing force from bou
 Tails of an integrin $\alpha$ and $\beta$ heterodimer reaching through the lipid bilayer are represented in green.
 **b\)**
 A schematic rendering of the autoinhibited structure of talin as crystallized by Dedden et al. [@deddenArchitectureTalin1Reveals2019a] in combination with a cartoon representation in **c)**.
-The completed FERM structure by Elliott et al. [@elliottStructureTalinHead2010], with our addition of the modelled F1 loop, is fitted to the autoinhibited structure, as the latter does not include F0F1 due to their flexibility, to visualize the occlusion.
-The complete FERM structure can be explored interactively in the context of our simulation system in the Supplementary Materials.
+The primary PIP~2~ binding site of F2-F3 is occluded in talin, while the loops of F1 is accessible, as evident when fitting the F0-F3 structure by Elliott et al. [@elliottStructureTalinHead2010], with our addition of the modelled F1 loop, to the autoinhibited structure, which lacks F0F1.
 The main PIP~2~-binding sites in F2-F3 are occluded by rod domain 12.
+The complete FERM structure can be explored interactively in the context of our simulation system in the Supplementary Materials.
 ::::
 
 We hypothesized that the flexible F1 loop inserted into talin's FERM domain serves as an additional PIP~2~ interaction site. As such it would be readily accessible to PIP~2~ even in talin's autoinhibited conformation and would further mechanically stabilize talin's interaction with the membrane.
@@ -165,13 +165,13 @@ A crystal structure of the talin FERM domain by Elliot et al. [@elliottStructure
 The deleted or missing residues (134-172) belonging to the F1 domain loop were modeled using MODELLER [@marti-renomComparativeProteinStructure2000; @webbComparativeProteinStructure2016] via the interface to Chimera [@pettersenUCSFChimeraVisualization2004], followed by equilibration with GROMACS.
 The resulting conformation was compared to an NMR structure of the F1 domain (PDB-ID 2KC2) by Goult et al. [@goultStructureDoubleUbiquitinlike2010].
 The missing residue M1 was also added.
-The missing residues D125 and E126 as well as I399 and L400 were not modelled, as they are far from the region of interest (the F1-loop)
+The missing residues D125 and E126 as well as I399 and L400 were not modelled, as they are far from the region of interest (the F1-loop).
 This leaves us with a sequence from residue 1 to 398 with a shift by 2 in numbering compared to the canonical TLN1_MOUSE talin-1 sequence (uniprot ID P26039) after residue 124.
 Simulations were performed with the CHARMM36 force field.
 Topologies, including the membrane, were generated with the CHARMM-GUI web app [@brooksCHARMMBiomolecularSimulation2009; @joCHARMMGUIWebbasedGraphical2008; @leeCHARMMGUIInputGenerator2016] and GROMACS tools.
 All simulations used the TIP3P water model and were neutralized with 0.15 mol/L of NaCl.
-A 6-step equilibration was performed after gradient descent energy minimization while gradually relieving restraints on protein and membrane atoms.
-This followed the standard procedure recommended by CHARMM-GUI.
+A 6-step equilibration was performedafter gradient descent energy minimization.
+This followed the standard procedure recommended by CHARMM-GUI, where restraints on protein and membrane atoms were gradually relieved in six steps from 1000 and 4000\ kJ/mol/nm^2^ for the membrane and protein atoms on time scales of 25-100\ ps, followed by 5\ ns of equilibration with only protein atoms subjected to 50 kJ/mol/nm^2^ position restraints.
 The exact Molecular Dynamics Parameter (mdp) files are provided in the data (https://doi.org/10.11588/data/BQTQUN) in the `assets` folder of each simulation system.
 Production runs used a timestep of 2 fs, a Verlet cut-off scheme for Van-der-Waals interactions and the Particle Mesh Ewald (PME) method for long-range electrostatics.
 NPT-ensembles were achieved by Nosé-Hoover temperature coupling [@hooverCanonicalDynamicsEquilibrium1985; @noseUnifiedFormulationConstant1984] and Parinello-Rahman pressure coupling [@parrinelloPolymorphicTransitionsSingle1981].
@@ -184,7 +184,7 @@ The F0F1 FERM sub domains (residues 1 to 197) were simulated to evaluate protein
 This entailed placing the protein 1.5\ nm away from a 1-palmitoyl-2-oleoyl-glycero-3-phosphocholine (POPC) membrane,
 where 12 of the 119 lipids in the upper leaflet were replaced with PIP~2~.
 This results in a physiological concentration of 10% PIP~2~.
-The PIP~2~ molecules used in the simulutions have a charge of -4, consisten with the deprotonation state of the phosphate groups at physiological pH [@mclaughlinPIP2ProteinsInteractions2002].
+The PIP~2~ molecules used in the simulutions have a charge of -4, consistent with the deprotonation state of the phosphate groups at physiological pH [@mclaughlinPIP2ProteinsInteractions2002].
 
 60 different starting orientations of the protein where generate, spanning a rotation of 360 degrees.
 The protein was rotated in such a way that the respective closest residue had the same distance to the membrane for the 0° and the 180° starting positions.
@@ -217,7 +217,7 @@ The plotting code and computational graph of `targets` is available in [this doc
 ## The F1 loop can act as a point of first contact
 
 The high flexibility of the F1 loop gave use the confidence to model it from sequence.
-It retained its flexibility in equilibrium simulations (@fig-loop-rmsf), which in combination with comparisons to NMR structures [@goultStructureDoubleUbiquitinlike2010] confirmed this approach (see Supplementary Material @fig-loop-rmsf).
+It retained its flexibility in equilibrium simulations, in close agreement with the conformational flexibility reflected in the NMR ensemble of the F1 domain  [@goultStructureDoubleUbiquitinlike2010] confirmed this approach (see Supplementary Material @fig-loop-rmsf).
 The resulting system that provides the basis for our simulations can be explored interactively in the Supplementary Materials.
 
 When simulating only F0F1 over a POPC membrane containing 10% PIP~2~, we noticed that the F1 loop had a clear propensity to establish contact with the membrane.
@@ -225,7 +225,7 @@ Once the contact had been established, the protein was anchored strongly enough 
 In order to control for a potential bias towards the loop as a result of the starting position, we performed a rotational sampling of the system, where the starting angle of the loop with respect to the membrane was varied across 60 equally spaced angles.
 @fig-f0f1-ri-angle shows that independent of the starting position, the loop is able to find the membrane and bind to it.
 This is due to the large search space it can cover with its high flexibility (see @fig-loop-rmsf).
-Binding happens earlier in the simulation when the loop starts oriented favorably towards the membrane (@fig-f0f1-angle-frame, 0\ °).
+Expectedly, binding happens earlier in the simulation when the loop starts oriented favorably towards the membrane (@fig-f0f1-angle-frame, 0\ °).
 While @fig-f0f1-snapshots shows one example of a bound conformation, a conformation for each starting angle can be seen in the [Supplementary Material](#sec-system).
 
 :::::{#fig-loop-importance layout="[[1],[1]]"}
@@ -347,7 +347,7 @@ It starts from a snapshot of F0F1 in its bound conformation taken from the rotat
 Number of interacting residues (top panel) and the force (bottom panel) as a function of distance (x-axis) as F0F1 gets pulled off the membrane at a constant rate of 0.03\ nm/ns.
 **c\)**
 Time evolution of the number of contacts for residues belonging to the F1 loop (x-axis) and other residues (y-axis).
-Lighter shades of blue correspond to a later time in the simulation.
+Traces are colored by replicate.
 Black dots mark the starting positions.
 The non-loop contacts are mostly supplied by the residues of the F0 N-terminus also shown in @fig-f0f1-ri-npip.
 ::::
