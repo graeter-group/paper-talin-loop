@@ -226,7 +226,7 @@ In order to control for a potential bias towards the loop as a result of the sta
 @fig-f0f1-ri-angle shows that independent of the starting position, the loop is able to find the membrane and bind to it.
 This is due to the large search space it can cover with its high flexibility (see @fig-loop-rmsf).
 Binding happens earlier in the simulation when the loop starts oriented favorably towards the membrane (@fig-f0f1-angle-frame, 0\ °).
-While @fig-f0f1-snapshots shows one example of a bound conformation, a conformation for each starting angle can be seen in the Supplementary Material @sec-system.
+While @fig-f0f1-snapshots shows one example of a bound conformation, a conformation for each starting angle can be seen in the [Supplementary Material](#sec-system).
 
 :::::{#fig-loop-importance layout="[[1],[1]]"}
 :::{#fig-f0f1-snapshots}
@@ -270,7 +270,7 @@ Unbinding becomes exceedingly unlikely as the number of contacts increases.
 :::::
 
 @fig-f0f1-residues highlights the residues involved in the interaction of F0F1 with PIP~2~.
-The ensemble of final bound conformations from the simulations can be seen in the Supplementary Material in @sec-system.
+The ensemble of final bound conformations from the simulations can be seen in the [Supplementary Material](#sec-system).
 We observe a number of prominent lysines and arginines, both positively charged residues, across the whole F0F1 fragment to compensate for the negative charge on PIP~2~.
 The loop region, highlighted with a grey backdrop in @fig-f0f1-ri-npip, is particularly dense in positively charged residues, albeit the number of PIP~2~ contacts per basic residue is only marginally higher in this region than elsewhere. Arginines and lysines in regions outside of the disordered loop complement the binding once initial
 contacts have been established with the loop, and further strengthen the interaction.
@@ -353,12 +353,12 @@ The non-loop contacts are mostly supplied by the residues of the F0 N-terminus a
 ::::
 
 Having established the prominent role of the F1-loop in positioning F0F1 at the membrane and establishing PIP~2~ contacts, we next examined this role in the larger context of the full FERM domain.
-6 independent simulations were initiated with the full-length FERM domain oriented in such that the tip of the F1-loop was in contact with at least one molecule of PIP~2~ with varying local environments (see @sec-system for one example).
+6 independent simulations were initiated with the full-length FERM domain oriented in such that the tip of the F1-loop was in contact with at least one molecule of PIP~2~ with varying local environments (see [Simulation Systems and Structures](#sec-system) for one example).
 These simulations highlight the prominent role of the F1-loop in membrane interactions, now in the context of the full-length FERM domain (@fig-ferm-ri-npip, compare to @fig-f0f1-ri-npip).
 They also reproduce the canonical PIP~2~ contacts in F2 and F3 known from previous studies, validating our MD simulations.
 The highlighted residues include K272 of F2 and K316, K324, E342, and K343 of F3, which have been shown to be crucial for the membrane interaction of talin and subsequent integrin activation by Chinthalapudi et al. [@chinthalapudiInteractionTalinCell2018a].
 Importantly, the loop shows a very dense cluster of PIP~2~ interactions, with interaction scores ($\bar n_{PIP_2}$) very similar to these previously known PIP~2~-interacting residues. 
-The interacting conformations can be seen in context in the Supplementary Material @sec-system.
+The interacting conformations can be seen in context in the [Supplementary Material](#sec-system).
 The F1 loop thus complements these known binding sites with an additional specific binding site, again comprising primarily lysines.
 
 :::: {#fig-ferm-further layout="[[1],[1]]"}
