@@ -147,7 +147,7 @@ The main PIP~2~-binding sites in F2-F3 are occluded by rod domain 12.
 We hypothesized that the flexible F1 loop inserted into talin's FERM domain serves as an additional PIP~2~ interaction site. As such it would be readily accessible to PIP~2~ even in talin's autoinhibited conformation and would further mechanically stabilize talin's interaction with the membrane.
 To test this hypothesis, we modelled the loop, which, due to its high flexibility, is not included in crystal structures of the FERM domain, such as PDB-ID 3IVF by Elliot et al. [@elliottStructureTalinHead2010].
 
-With a complete structure of the talin FERM domain, we investigated the role of the F1 loop through atomistic molecular dynamics (MD) simulations, which had previously also proven useful to detect the recognition of PIP~2~ in membranes by PH domains [@buyanMultiscaleSimulationsSuggest2016] or the FERM domain of Focal Adhesion Kinase [@zhouMechanismFocalAdhesion2015].
+With a complete structure of the talin FERM domain, we investigated the role of the F1 loop through atomistic molecular dynamics (MD) simulations, which had previously also proven useful to detect the recognition of PIP~2~ in membranes by PH domains [@buyanMultiscaleSimulationsSuggest2016] or the FERM domain of focal adhesion kinase [@zhouMechanismFocalAdhesion2015].
 
 In F0F1 simulations, we found the loop to have a clear propensity to interact with the PIP~2~-containing membrane.
 It is able to establish a first contact with the membrane even from unfavorable initial orientations due to its large search volume.
