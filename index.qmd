@@ -489,7 +489,16 @@ Data analysis code is available at <https://hits-mbm-dev.github.io/paper-talin-l
 
 Input files and raw data are available on [heiData](https://heidata.uni-heidelberg.de/) here: https://doi.org/10.11588/data/BQTQUN
 
+<!--
+\newpage
+-->
+
+::::{.content-visible when-format="pdf"}
+\onecolumn
+::::
+
 ## Supplementary Plots and Tables
+
 
 ::: {#fig-suppl layout="[[1,1],[1,1],[1,1]]"}
 
@@ -501,6 +510,21 @@ Input files and raw data are available on [heiData](https://heidata.uni-heidelbe
 
 ![ ](./results/plots/ferm-time-ri-npip-all-1.png){#fig-ferm-time-ri-npip-all}
 
+
+**a\)**
+Root Mean Squared Fluctuation (RMSF) per residue in an equilibrium simulation of the full-length FERM domain (black).
+The additional blue line shows the RMSF of the NMR ensemble of F1 for comparison (2KC2 [@goultStructureDoubleUbiquitinlike2010]).
+The region of the loop in F1 is highlighted by a grey shade. Color bars as in @fig-ferm-memb-system.
+**b\)**
+The relative magnitude of the RMSF is shown by coloring the backbone in a render of the FERM structure.
+**c\)**
+Density plot of distances between PIP~2~ and the protein residues to decide on a cutoff for defining interactions.
+A distance of 0.25\ nm was chosen.
+**d\)**
+A heatmap of the number of PIP~2~ molecules bound per residue over time for the 6 individual simulations with the whole FERM domain over the membrane.
+:::
+
+::: {#fig-suppl-2 layout="[[1,1],[1,1],[1,1]]"}
 ![ ](./results/plots/f0f1-vert-pull-residues-1.png){#fig-f0f1-vert-pull-residues}
 
 ![ ](./assets/vmd/f0f1-pulling/snapshot-run4.png){#fig-f0f1-vert-pull-run4}
@@ -509,36 +533,30 @@ Input files and raw data are available on [heiData](https://heidata.uni-heidelbe
 
 ![ ](./results/plots/si-f0f1-angle-first-to-find-1.png){#fig-f0f1-first-to-find}
 
-
 **a\)**
-A plot of the RMSF [nm] (Root Mean Squared Fluctuation) per residue in an equilibrium simulation of the full-length FERM domain.
-The additional blue line shows the RMSF of the NMR ensemble of F1 (2KC2 [@goultStructureDoubleUbiquitinlike2010]).
-**b\)**
-The relative magnitude of the RMSF is shown by coloring the backbone in a render of the FERM structure.
-**c\)**
-A density plot of distances between PIP~2~ and the protein residues to decide on a cutoff for defining interactions A distance of 0.25\ nm was chosen.
-**d\)**
-A heatmap of the number of PIP~2~ molecules bound per residue over time for the 6 individual simulations with the whole FERM domain over the membrane.
-**e\)**
 A closer look at the residues involved in the interaction during pulling reveals the instrumental role of both the F1 loop as well as the F0 subdomain in keeping the connection to the membrane.
-**f\)**
+**b\)**
 Run 4 of the vertical pulling of F0F1. Interactions between the protein and PIP~2~ were so strong that a total of 3 molecules of PIP~2~ (gray) were pulled out of the membrane (1 by F0 (green) and 2 by the F1 loop (blue)).
-**g\)**
+**c\)**
 Time to first contact of a residue with PIP~2~ in the rotational sampling of F0F1.
 Residues belonging to the F1 loop on average make contact earlier.
-**h\)**
+**d\)**
 Number of times a residue belonging to a region made the first contact in the rotational sampling for F0F1.
 :::
 
 
-
-::: {#fig-suppl-2 layout="[[1,1],[1,1],[1,1]]"}
+::: {#fig-suppl-3 layout="[[1,1],[1,1],[1,1]]"}
 
 ![ ](./assets/structures/2kc2-ensemble-10.png){#fig-nmr-ensemble}
 
 **a\)**
 NMR ensemble of F1, pdb ID 2KC2 [@goultStructureDoubleUbiquitinlike2010]
 :::
+
+
+::::{.content-visible when-format="pdf"}
+\twocolumn
+::::
 
 {{< include ./results/tables/f0f1-top-interacting-tbl.md >}}
 
