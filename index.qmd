@@ -217,7 +217,7 @@ The plotting code and computational graph of `targets` is available in [this doc
 ## The F1 loop can act as a point of first contact
 
 The high flexibility of the F1 loop gave use the confidence to model it from sequence.
-It retained its flexibility in equilibrium simulations, in close agreement with the conformational flexibility reflected in the NMR ensemble of the F1 domain  [@goultStructureDoubleUbiquitinlike2010] confirmed this approach (see Supplementary Material @fig-loop-rmsf, @fig-loop-rmsf-render and @fig-nmr-ensemble).
+It retained its flexibility in equilibrium simulations, in close agreement with the conformational flexibility reflected in the NMR ensemble of the F1 domain  [@goultStructureDoubleUbiquitinlike2010] confirmed this approach (see Supplementary Material @fig-loop-rmsf, @fig-loop-rmsf-render and @fig-nmr-ensemble with @fig-ferm-ensemble).
 The resulting system that provides the basis for our simulations can be explored interactively in the Supplementary Materials.
 
 When simulating only F0F1 over a POPC membrane containing 10% PIP~2~, we noticed that the F1 loop had a clear propensity to establish contact with the membrane.
@@ -551,8 +551,13 @@ Number of times a residue belonging to a region made the first contact in the ro
 
 ![ ](./assets/structures/2kc2-ensemble-10.png){#fig-nmr-ensemble}
 
+![ ](./assets/structures/ferm-eq-ensemble-10.png){#fig-ferm-ensemble}
+
 **a\)**
 NMR ensemble of F1, pdb ID 2KC2 [@goultStructureDoubleUbiquitinlike2010]
+**b\)**
+Ensemble of the F1 domain in equilibrium simulations of the completed FERM domain.
+The other domains (F0,F2,F3) are not shown, but their steric influence can be seen, as the flexible loop can now no longer occupy the space of the F2 domain as in the NMR structure in **a**.
 :::
 
 
