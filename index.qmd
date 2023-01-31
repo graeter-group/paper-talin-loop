@@ -178,7 +178,7 @@ NPT-ensembles were achieved by Nosé-Hoover temperature coupling [@hooverCanonic
 An example `.mdp`-file can be found in the Supplementary Materials.
 
 The initial equilibrium simulation of the completed FERM domain was run for 75 ns.
-Subsequently, the root mean squared fluctuation (RMSF) was calculated with GROMACS tools (see Supplementary Material @fig-loop-rmsf).
+Subsequently, the root mean squared fluctuation (RMSF) was calculated with GROMACS tools (see Supplementary Material @fig-loop-rmsf and @fig-loop-rmsf-render).
 
 The F0F1 FERM sub domains (residues 1 to 197) were simulated to evaluate protein-membrane association using a rotational sampling approach.
 This entailed placing the protein 1.5\ nm away from a 1-palmitoyl-2-oleoyl-glycero-3-phosphocholine (POPC) membrane,
@@ -217,15 +217,16 @@ The plotting code and computational graph of `targets` is available in [this doc
 ## The F1 loop can act as a point of first contact
 
 The high flexibility of the F1 loop gave use the confidence to model it from sequence.
-It retained its flexibility in equilibrium simulations, in close agreement with the conformational flexibility reflected in the NMR ensemble of the F1 domain  [@goultStructureDoubleUbiquitinlike2010] confirmed this approach (see Supplementary Material @fig-loop-rmsf).
+It retained its flexibility in equilibrium simulations, in close agreement with the conformational flexibility reflected in the NMR ensemble of the F1 domain  [@goultStructureDoubleUbiquitinlike2010] confirmed this approach (see Supplementary Material @fig-loop-rmsf, @fig-loop-rmsf-render and @fig-nmr-ensemble).
 The resulting system that provides the basis for our simulations can be explored interactively in the Supplementary Materials.
 
 When simulating only F0F1 over a POPC membrane containing 10% PIP~2~, we noticed that the F1 loop had a clear propensity to establish contact with the membrane.
 Once the contact had been established, the protein was anchored strongly enough for more contacts to evolve with time, pulling the protein onto the membrane ([@fig-f0f1-snapshots]).
 In order to control for a potential bias towards the loop as a result of the starting position, we performed a rotational sampling of the system, where the starting angle of the loop with respect to the membrane was varied across 60 equally spaced angles.
 @fig-f0f1-ri-angle shows that independent of the starting position, the loop is able to find the membrane and bind to it.
+A residue of the F1 loop is likely to be the first to establish membrane contact even in simulations where the loop starts oriented away from the membrane (@fig-f0f1-first-to-find).
 This is due to the large search space it can cover with its high flexibility (see @fig-loop-rmsf).
-Expectedly, binding happens earlier in the simulation when the loop starts oriented favorably towards the membrane (@fig-f0f1-angle-frame, 0\ °).
+Expectedly, binding happens earlier in the simulation when the loop starts oriented favorably towards the membrane (@fig-f0f1-angle-frame, 0\ °) and the time to first contact is shorter for residues of the F1 loop (@fig-f0f1-time-to-contact).
 While @fig-f0f1-snapshots shows one example of a bound conformation, a conformation for each starting angle can be seen in the [Supplementary Material](#sec-system).
 
 :::::{#fig-loop-importance layout="[[1],[1]]"}
@@ -354,6 +355,7 @@ The non-loop contacts are mostly supplied by the residues of the F0 N-terminus a
 
 Having established the prominent role of the F1-loop in positioning F0F1 at the membrane and establishing PIP~2~ contacts, we next examined this role in the larger context of the full FERM domain.
 6 independent simulations were initiated with the full-length FERM domain oriented in such that the tip of the F1-loop was in contact with at least one molecule of PIP~2~ with varying local environments (see [Simulation Systems and Structures](#sec-system) for one example).
+Individual interaction heatmaps for each run can be found in the Supplementary Material @fig-ferm-time-ri-npip-all.
 These simulations highlight the prominent role of the F1-loop in membrane interactions, now in the context of the full-length FERM domain (@fig-ferm-ri-npip, compare to @fig-f0f1-ri-npip).
 They also reproduce the canonical PIP~2~ contacts in F2 and F3 known from previous studies, validating our MD simulations.
 The highlighted residues include K272 of F2 and K316, K324, E342, and K343 of F3, which have been shown to be crucial for the membrane interaction of talin and subsequent integrin activation by Chinthalapudi et al. [@chinthalapudiInteractionTalinCell2018a].
@@ -411,7 +413,7 @@ As it is dragged along the membrane, the diffuse interactions of the F1 loop and
 This could further localize talin at active focal adhesion sites even in the presence of forces acting parallel to the membrane.
 
 We conclusively show that the F1 loop is able to interact with the membrane even from most unfavorable orientations.
-But role of the F1 loop in this is kinetic in nature.
+The role of the F1 loop in this is kinetic in nature.
 Previous studies have shown F0F1 to not significantly influence the binding equilibrium of a FERM domain to immobilized PIP~2~-containing membranes compared to constructs containing only F2F3 [@mooreAffinityTalin1V3integrin2012a].
 And when the main binding site in F2F3 was mutated, another study using lipid co-sedimention found that the F1-loop alone does not suffice to restore lipid binding [@chinthalapudiInteractionTalinCell2018a].
 Our study suggests that while the stoichiometries might remain unchanged, the equilibrium should be reached faster.
@@ -541,7 +543,7 @@ Run 4 of the vertical pulling of F0F1. Interactions between the protein and PIP~
 Time to first contact of a residue with PIP~2~ in the rotational sampling of F0F1.
 Residues belonging to the F1 loop on average make contact earlier.
 **d\)**
-Number of times a residue belonging to a region made the first contact in the rotational sampling for F0F1.
+Number of times a residue belonging to a region made the first contact in the rotational sampling of F0F1.
 :::
 
 
