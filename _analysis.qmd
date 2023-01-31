@@ -221,7 +221,7 @@ plt <- from_first_contact |>
     values = CHARGE_COLORS, aesthetics = c("fill", "color"),
     name = "Net Charge at pH 7.4"
   ) +
-  scale_y_continuous(breaks = seq(0, 360, 90), expand = expansion(mult = c(0, 0.1))) +
+  # scale_y_continuous(breaks = seq(0, 360, 90), expand = expansion(mult = c(0, 0.1))) +
   labs(y = expression(n[PIP[2]])) +
   coord_cartesian(clip = "off", xlim = c(0, 207)) +
   labs(
@@ -706,6 +706,67 @@ anot <- ggplot(ferm_annotation) +
   plot_layout(heights = c(20, 1)) +
   plot_annotation()
 ```
+
+```{r}
+#| label: ferm-f0f1-loop-comparison
+f0f1_interacting <- from_first_contact |>
+  group_by(i) |> 
+  summarise(n_pip = mean(n_pip))
+
+  ferm_interacting |> 
+  group_by(i) |> 
+  summarise(n_pip = mean(n_pip)) |> 
+  left_join(sequence) |> 
+  left_join(aa, by = c('res' = '1')) |>
+  update(1, charge, "Positive") |>
+  left_join(f0f1_interacting, by = c('i'),
+      suffix = c('_ferm', '_f0f1')) |>
+  replace_na(list(`n_pip.y` = 0)) |>
+  filter(between(i, 135, 170)) |>
+  pivot_longer(
+      starts_with('n_pip'),
+      names_to = 'simulation',
+      names_prefix = 'n_pip_',
+      values_to = 'n_pip') |>
+  group_by(simulation) |>
+  mutate(n_pip = n_pip / max(n_pip, na.rm = TRUE)) |>
+  ungroup() |>
+  ggplot(aes(x = i, y = n_pip)) + 
+  annotate(geom = "rect",
+      xmin = 140, xmax = 164,
+      ymin = 0, ymax = Inf,
+      color = NA,
+      fill = "black",
+      alpha = 0.05) +
+  geom_col(aes(fill = simulation),
+      alpha = 1,
+      width = 0.8,
+      position = 'dodge2') +
+  geom_text(aes(label = res),
+      fontface = "bold",
+      vjust = -0.2,
+      data = ~ filter(.x, n_pip > 0.1) |>
+        group_by(i) |> slice_max(n_pip),
+      show.legend = FALSE) +
+  scale_fill_manual(
+      values = c(HITS_BLUE, HITS_GREEN), aesthetics = c("fill"),
+      name = "Simulation System"
+      ) +
+  scale_y_continuous(expand = expansion(mult = c(0, 0.1))) +
+  scale_x_continuous(breaks = seq(140, 170, 4)) +
+# coord_cartesian(clip = "off", xlim = c(0, 400)) +
+  labs(
+      x = "residue index",
+      y = expression(paste('standardized ', bar(n)[PIP[2]]))
+      ) +
+  theme(
+      axis.text.x = element_text(angle = 45, hjust = 1),
+      legend.position = c(0, 1),
+      legend.justification = c(0, 1),
+      legend.title = element_text(size = 12)
+      )
+```
+
 
 ## SI
 

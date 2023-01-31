@@ -257,12 +257,12 @@ intrinsically disordered regions in protein--membrane interactions.
 \end{sigstatement}
 
 
-\end{frontmatter}\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[enhanced, boxrule=0pt, sharp corners, interior hidden, borderline west={3pt}{0pt}{shadecolor}, breakable, frame hidden]}{\end{tcolorbox}}\fi
+\end{frontmatter}\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[enhanced, boxrule=0pt, interior hidden, borderline west={3pt}{0pt}{shadecolor}, frame hidden, breakable, sharp corners]}{\end{tcolorbox}}\fi
 
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
 
-\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, opacityback=0, colback=white, coltitle=black, colbacktitle=quarto-callout-tip-color!10!white, breakable, bottomtitle=1mm, titlerule=0mm, toptitle=1mm, bottomrule=.15mm, left=2mm, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, arc=.35mm, toprule=.15mm, leftrule=.75mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, leftrule=.75mm, left=2mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, opacityback=0, coltitle=black, colback=white, rightrule=.15mm, opacitybacktitle=0.6, breakable, toptitle=1mm, bottomrule=.15mm, toprule=.15mm, bottomtitle=1mm, arc=.35mm]
 
 This is a draft and as such subject to change. The source repository for
 this manuscript lives at
@@ -610,9 +610,9 @@ NMR ensemble of the F1 domain
 (\protect\hyperlink{ref-goultStructureDoubleUbiquitinlike2010}{13})
 confirmed this approach (see Supplementary Material
 Figure~\ref{fig-loop-rmsf}, Figure~\ref{fig-loop-rmsf-render} and
-Figure~\ref{fig-nmr-ensemble}). The resulting system that provides the
-basis for our simulations can be explored interactively in the
-Supplementary Materials.
+Figure~\ref{fig-nmr-ensemble} with Figure~\ref{fig-ferm-ensemble}). The
+resulting system that provides the basis for our simulations can be
+explored interactively in the Supplementary Materials.
 
 When simulating only F0F1 over a POPC membrane containing 10\%
 PIP\textsubscript{2}, we noticed that the F1 loop had a clear propensity
@@ -1066,17 +1066,26 @@ loop in this is kinetic in nature. Previous studies have shown F0F1 to
 not significantly influence the binding equilibrium of a FERM domain to
 immobilized PIP\textsubscript{2}-containing membranes compared to
 constructs containing only F2F3
-(\protect\hyperlink{ref-mooreAffinityTalin1V3integrin2012a}{54}). And
+(\protect\hyperlink{ref-mooreAffinityTalin1V3integrin2012a}{54}). Also,
 when the main binding site in F2F3 was mutated, another study using
 lipid co-sedimention found that the F1-loop alone does not suffice to
 restore lipid binding
 (\protect\hyperlink{ref-chinthalapudiInteractionTalinCell2018a}{20}).
-Our study suggests that while the stoichiometries might remain
-unchanged, the equilibrium should be reached faster. We propose that
-talin mutants lacking the loop, or specifically the basic residues in
-said loop, will show reduced or at least slowed-down focal adhesion
-maturation, increased lateral diffusion of talin under force, and faster
-focal adhesion disassembly.
+Our study suggests that while the thermodynamics of binding might remain
+unchanged, the equilibrium should be reached faster due to the presence
+of the loop. We propose that talin mutants lacking the loop, or
+specifically the basic residues in said loop, will show reduced or at
+least slowed-down focal adhesion maturation, increased lateral diffusion
+of talin under force, and faster focal adhesion disassembly. We note
+that given the high disorder of the F1 loop, we speculate that this
+interaction is rather unspecific compared to the
+PIP\textsubscript{2}-specific F2F3 site, and interactions with
+PIP\textsubscript{3} are also likely to form. To what extent our
+conclusions are also applicable to talin-2 remains to be shown. Given
+the high sequence similarity and conservation of the F1 loop
+(\protect\hyperlink{ref-goultStructureDoubleUbiquitinlike2010}{13}), we
+speculate that it plays a similar role as early PIP\textsubscript{2}
+anchor in the talin-2 isoform as well.
 
 Recognition is only the first step. The mechanistic details of how
 talin's autoinhibition is resolved remain to be shown by larger
@@ -1769,9 +1778,29 @@ in the rotational sampling of F0F1.}
 
 \subcaption{\label{fig-nmr-ensemble}~}
 \end{minipage}%
+%
+\begin{minipage}[t]{0.50\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics{./assets/structures/ferm-eq-ensemble-10.png}
+
+}
+
+}
+
+\subcaption{\label{fig-ferm-ensemble}~}
+\end{minipage}%
 
 \caption{\label{fig-suppl-3}\textbf{a)} NMR ensemble of F1, pdb ID 2KC2
-(\protect\hyperlink{ref-goultStructureDoubleUbiquitinlike2010}{13})}
+(\protect\hyperlink{ref-goultStructureDoubleUbiquitinlike2010}{13})
+\textbf{b)} Ensemble of the F1 domain in equilibrium simulations of the
+completed FERM domain. The other domains (F0,F2,F3) are not shown, but
+their steric influence can be seen, as the flexible loop can now no
+longer occupy the space of the F2 domain as in the NMR structure in
+\textbf{a}.}
 
 \end{figure}
 
