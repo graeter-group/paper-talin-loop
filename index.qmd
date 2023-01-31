@@ -415,9 +415,12 @@ This could further localize talin at active focal adhesion sites even in the pre
 We conclusively show that the F1 loop is able to interact with the membrane even from most unfavorable orientations.
 The role of the F1 loop in this is kinetic in nature.
 Previous studies have shown F0F1 to not significantly influence the binding equilibrium of a FERM domain to immobilized PIP~2~-containing membranes compared to constructs containing only F2F3 [@mooreAffinityTalin1V3integrin2012a].
-And when the main binding site in F2F3 was mutated, another study using lipid co-sedimention found that the F1-loop alone does not suffice to restore lipid binding [@chinthalapudiInteractionTalinCell2018a].
-Our study suggests that while the stoichiometries might remain unchanged, the equilibrium should be reached faster.
+Also, when the main binding site in F2F3 was mutated, another study using lipid co-sedimention found that the F1-loop alone does not suffice to restore lipid binding [@chinthalapudiInteractionTalinCell2018a].
+Our study suggests that while the thermodynamics of binding might remain unchanged, the equilibrium should be reached faster due to the presence of the loop.
 We propose that talin mutants lacking the loop, or specifically the basic residues in said loop, will show reduced or at least slowed-down focal adhesion maturation, increased lateral diffusion of talin under force, and faster focal adhesion disassembly.
+We note that given the high disorder of the F1 loop, we speculate that this interaction is rather unspecific compared to the PIP~2~-specific F2F3 site, and interactions with PIP~3~ are also likely to form.
+To what extent our conclusions are also applicable to talin-2 remains to be shown.
+Given the high sequence similarity and conservation of the F1 loop [@goultStructureDoubleUbiquitinlike2010], we speculate that it plays a similar role as early PIP~2~ anchor in the talin-2 isoform as well.
 
 Recognition is only the first step.
 The mechanistic details of how talin's autoinhibition is resolved remain to be shown by larger simulations including the inhibiting rod segment.
