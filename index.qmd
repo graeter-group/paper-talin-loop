@@ -94,10 +94,10 @@ The multiprotein focal adhesion complex is responsible for translating between a
 At the center of the focal adhesion complex sits the adaptor protein talin, which dynamically unfolds and refolds under force [@yaoMechanicalResponseTalin2016].
 A schematic of talin can be seen in @fig-tln-schema-long.
 Through interaction with integrin tails (dark green) [@tadokoroTalinBindingIntegrin2003], which in turn interact with collagen fibers via their heads, it links the extracellular matrix to the intracellular cytoskeleton by directly interacting with actin.
-talin also features specific interactions with the membrane.
+Talin also features specific interactions with the membrane.
 Their formation, mechanical stability and role in mechanosensing remain to be fully resolved.
 
-talin contains an N-terminal FERM domain (F for 4.1 protein, E for ezrin, R for radixin and M for moesin), which is composed of the subdomains F0 to F3 and provides a link to the cytosolic side of the plasma membrane [@chishtiFERMDomainUnique1998].
+Talin contains an N-terminal FERM domain (F for 4.1 protein, E for ezrin, R for radixin and M for moesin), which is composed of the subdomains F0 to F3 and provides a link to the cytosolic side of the plasma membrane [@chishtiFERMDomainUnique1998].
 It does so via a conserved binding motif for phosphatidylinositol 4,5-bisphosphate (PIP~2~), which is enriched at active focal adhesion sites [@maniFERMDomainPhosphoinositide2011; @dasMolecularMechanotransductionPathway2015; @songNovelMembranedependentSwitch2012a].
 The main PIP~2~ binding sites are located in F2 and F3 (highlighted as red spheres in @fig-tln-schema-long).
 
@@ -107,7 +107,7 @@ Notably, the talin-1 FERM domain differs from other FERM proteins through the ad
 Additionally, talin's FERM domain exists in an extended conformation, as opposed to the cloverleaf-like conformation of other FERM proteins [@elliottStructureTalinHead2010].
 F3 also has a binding site for $\beta$-integrin tails [@calderwoodTalinHeadDomain1999] and is partly responsible for the enrichment of PIP~2~ at the membrane through a binding site for PIPKI$\gamma$ [@calderwoodTalinsKindlinsPartners2013].
 A second integrin binding site is located in the rod domain 11 (R11) [@horwitzInteractionPlasmaMembrane1986].
-talin interacts with the cytoskeleton through actin binding sites (F2-F3, R4-R8, R13-DH) [@mccannLWEQModuleConserved1997].
+Talin interacts with the cytoskeleton through actin binding sites (F2-F3, R4-R8, R13-DH) [@mccannLWEQModuleConserved1997].
 The review by Klapholz et al. [@klapholzTalinMasterIntegrin2017] provides an excellent overview of the many interaction sites of talin and their central role in the focal adhesion complex.
 
 The mechanistic role of the disordered loop in the F1 domain in the many aspects of talin function remains elusive.
