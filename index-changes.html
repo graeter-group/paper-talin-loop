@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.146">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Jannik Buhr">
+<meta name="author" content="Florian Franz">
+<meta name="author" content="Frauke Gräter">
+<meta name="dcterms.date" content="2023-02-01">
+<meta name="keywords" content="Molecular Dynamics, Talin, Focal Adhesion, Mechanosensing, Disorder, IDP, IDR">
+
+<title>Intrinsically disordered region of talin’s FERM domain functions as an initial PIP2 recognition site</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="index-changes_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index-changes_files/libs/quarto-html/quarto.js"></script>
+<script src="index-changes_files/libs/quarto-html/popper.min.js"></script>
+<script src="index-changes_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="index-changes_files/libs/quarto-html/anchor.min.js"></script>
+<link href="index-changes_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index-changes_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="index-changes_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="index-changes_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="index-changes_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="index-changes_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="index-changes_files/libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="index-changes_files/libs/quarto-contrib/videojs/video.min.js"></script>
+<link href="index-changes_files/libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
+<script src="index-changes_files/libs/quarto-contrib/molstar-v3.13.0/molstar.js"></script>
+<link href="index-changes_files/libs/quarto-contrib/molstar-v3.13.0/molstar.css" rel="stylesheet">
+<link href="index-changes_files/libs/quarto-contrib/molstar-v3.13.0/app-container.css" rel="stylesheet">
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+
+<link rel="stylesheet" href="_extensions/hits-mbm-dev/hits/styles.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#materials-and-methods" id="toc-materials-and-methods" class="nav-link" data-scroll-target="#materials-and-methods">Materials and Methods</a>
+  <ul class="collapse">
+  <li><a href="#molecular-dynamics-with-gromacs" id="toc-molecular-dynamics-with-gromacs" class="nav-link" data-scroll-target="#molecular-dynamics-with-gromacs">Molecular dynamics with GROMACS</a></li>
+  <li><a href="#automation-data-analysis-and-availability" id="toc-automation-data-analysis-and-availability" class="nav-link" data-scroll-target="#automation-data-analysis-and-availability">Automation, Data Analysis and Availability</a></li>
+  </ul></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a>
+  <ul class="collapse">
+  <li><a href="#the-f1-loop-can-act-as-a-point-of-first-contact" id="toc-the-f1-loop-can-act-as-a-point-of-first-contact" class="nav-link" data-scroll-target="#the-f1-loop-can-act-as-a-point-of-first-contact">The F1 loop can act as a point of first contact</a></li>
+  <li><a href="#the-f1-loop-maintains-and-further-facilitates-formation-of-fermpip2-interactions" id="toc-the-f1-loop-maintains-and-further-facilitates-formation-of-fermpip2-interactions" class="nav-link" data-scroll-target="#the-f1-loop-maintains-and-further-facilitates-formation-of-fermpip2-interactions">The F1 loop maintains and further facilitates formation of FERM–PIP<sub>2</sub> interactions</a></li>
+  </ul></li>
+  <li><a href="#discussion-and-outlook" id="toc-discussion-and-outlook" class="nav-link" data-scroll-target="#discussion-and-outlook">Discussion and Outlook</a></li>
+  <li><a href="#author-contributions" id="toc-author-contributions" class="nav-link" data-scroll-target="#author-contributions">Author Contributions</a></li>
+  <li><a href="#declaration-of-interests" id="toc-declaration-of-interests" class="nav-link" data-scroll-target="#declaration-of-interests">Declaration of Interests</a></li>
+  <li><a href="#acknowledgments" id="toc-acknowledgments" class="nav-link" data-scroll-target="#acknowledgments">Acknowledgments</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#supplementary-material" id="toc-supplementary-material" class="nav-link" data-scroll-target="#supplementary-material">Supplementary Material</a>
+  <ul class="collapse">
+  <li><a href="#sec-system" id="toc-sec-system" class="nav-link" data-scroll-target="#sec-system">Simulation <span class="red" style="color: red;">Systems and Structures</span></a></li>
+  <li><a href="#scripts" id="toc-scripts" class="nav-link" data-scroll-target="#scripts">Scripts</a></li>
+  <li><a href="#sec-data" id="toc-sec-data" class="nav-link" data-scroll-target="#sec-data">Input files and raw data</a></li>
+  <li><a href="#supplementary-plots-and-tables" id="toc-supplementary-plots-and-tables" class="nav-link" data-scroll-target="#supplementary-plots-and-tables"><span class="red" style="color: red;">Supplementary Plots and Tables</span></a></li>
+  <li><a href="#molecular-dynamics-parameters" id="toc-molecular-dynamics-parameters" class="nav-link" data-scroll-target="#molecular-dynamics-parameters">Molecular dynamics Parameters</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index-changes.pdf"><i class="bi bi-file-pdf"></i>PDF (bj)</a></li></ul></div></nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Intrinsically disordered region of talin’s FERM domain functions as an initial PIP<sub>2</sub> recognition site</h1>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Authors</div>
+  <div class="quarto-title-meta-heading">Affiliations</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author"><a href="https://jmbuhr.de">Jannik Buhr</a> <a href="https://orcid.org/0000-0002-9350-2629" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            <a href="https://www.h-its.org/">
+            Heidelberg Institute for Theoretical Studies
+            </a>
+          </p>
+        <p class="affiliation">
+            <a href="https://typo.iwr.uni-heidelberg.de/home">
+            Interdisciplinary Center for Scientific Computing, Heidelberg University
+            </a>
+          </p>
+      </div>
+      <div class="quarto-title-meta-contents">
+    <p class="author">Florian Franz </p>
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            <a href="https://www.h-its.org/">
+            Heidelberg Institute for Theoretical Studies
+            </a>
+          </p>
+        <p class="affiliation">
+            <a href="https://typo.iwr.uni-heidelberg.de/home">
+            Interdisciplinary Center for Scientific Computing, Heidelberg University
+            </a>
+          </p>
+      </div>
+      <div class="quarto-title-meta-contents">
+    <p class="author"><a href="https://www.h-its.org/people/prof-dr-frauke-grater/">Frauke Gräter</a> <a href="https://orcid.org/0000-0003-2891-3381" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            <a href="https://www.h-its.org/">
+            Heidelberg Institute for Theoretical Studies
+            </a>
+          </p>
+        <p class="affiliation">
+            <a href="https://typo.iwr.uni-heidelberg.de/home">
+            Interdisciplinary Center for Scientific Computing, Heidelberg University
+            </a>
+          </p>
+      </div>
+    </div>
+
+<div class="quarto-title-meta">
+
+      
+    <div>
+    <div class="quarto-title-meta-heading">Last Updated</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 1, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+<div>
+  <div class="abstract">
+    <div class="abstract-title">Abstract</div>
+    <p>Focal adhesions (FAs) mediate the interaction of the cytoskeleton with the extracellular matrix (ECM) in a highly dynamic fashion. talin is a central regulator, adaptor protein and mechano-sensor of focal adhesion complexes. For recruitment and firm attachment at FAs, talin’s N-terminal FERM domain binds to phosphatidylinositol 4,5-bisphosphate (PIP<sub>2</sub>)-enriched membranes. A newly published autoinhibitory structure of talin-1, where the known PIP<sub>2</sub> interaction sites are covered up, lead us to hypothesize that a hitherto less examined loop insertion of the FERM domain acts as an additional and initial site of contact. We evaluated direct interactions of talin-1 with a PIP<sub>2</sub> membrane by means of atomistic <span class="red" style="color: red;">molecular dynamics</span> (MD) simulations. We show that this unstructured, 33-residue-long loop strongly interacts with PIP<sub>2</sub> and can facilitate further membrane contacts, including the canonical PIP<sub>2</sub> interactions, by serving as a flexible membrane anchor. Under force as present at FAs, the extensible FERM loop ensures talin to maintain membrane contacts when pulled away from the membrane by up to 7&nbsp;nm. We identify key basic residues of the anchor mediating the highly dynamic talin-membrane interaction. Our results put forward an intrinsically disordered loop as a key and highly adaptable PIP<sub>2</sub> recognition site of talin and potentially other PIP<sub>2</sub>-binding mechano-proteins.</p>
+  </div>
+</div>
+
+</header>
+
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<div class="callout callout-style-default callout-tip callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This is a draft and as such subject to change. The source repository for this manuscript lives at <a href="https://github.com/hits-mbm-dev/paper-talin-loop" class="uri">https://github.com/hits-mbm-dev/paper-talin-loop</a>. The manuscript and poster are available in multiple formats:</p>
+<ul>
+<li>manuscript web/html: <a href="https://hits-mbm-dev.github.io/paper-talin-loop/" class="uri">https://hits-mbm-dev.github.io/paper-talin-loop/</a></li>
+<li>manuscript print/pdf: <a href="https://hits-mbm-dev.github.io/paper-talin-loop/index.pdf" class="uri">https://hits-mbm-dev.github.io/paper-talin-loop/index.pdf</a></li>
+<li>poster web/html: <a href="https://hits-mbm-dev.github.io/paper-talin-loop/poster.html" class="uri">https://hits-mbm-dev.github.io/paper-talin-loop/poster.html</a></li>
+<li>poster print/pdf: <a href="https://hits-mbm-dev.github.io/paper-talin-loop/poster.pdf" class="uri">https://hits-mbm-dev.github.io/paper-talin-loop/poster.pdf</a></li>
+</ul>
+</div>
+</div>
+<p>Cells critically sense the mechanics of their environment at cell adhesion sites for a multitude of biological processes. Contact with the extracellular matrix and surrounding cells regulates growth, differentiation, motility and even apoptosis <span class="citation" data-cites="vogelLocalForceGeometry2006 oakesStressingLimitsFocal2014 schillerMechanosensitivityCompositionalDynamics2013 miroshnikovaAdhesionForcesCortical2018">(<a href="#ref-vogelLocalForceGeometry2006" role="doc-biblioref">1</a>–<a href="#ref-miroshnikovaAdhesionForcesCortical2018" role="doc-biblioref">4</a>)</span>. The multiprotein focal adhesion complex is responsible for translating between and integrating biochemical and mechanical signals for both outside–in and inside–out activation<span class="citation" data-cites="thamilselvanPressureActivatesColon2004 pelletierActivationStateIntegrin1995">(<a href="#ref-thamilselvanPressureActivatesColon2004" role="doc-biblioref">5</a>, <a href="#ref-pelletierActivationStateIntegrin1995" role="doc-biblioref">6</a>)</span>.</p>
+<p>At the center of the focal adhesion complex sits the adaptor protein talin, which dynamically unfolds and refolds under force <span class="citation" data-cites="yaoMechanicalResponseTalin2016">(<a href="#ref-yaoMechanicalResponseTalin2016" role="doc-biblioref">7</a>)</span>. A schematic of talin can be seen in <a href="#fig-tln-schema-long">Figure&nbsp;1 (a)</a>. Through interaction with integrin tails (dark green) <span class="citation" data-cites="tadokoroTalinBindingIntegrin2003">(<a href="#ref-tadokoroTalinBindingIntegrin2003" role="doc-biblioref">8</a>)</span>, which in turn interact with collagen fibers via their heads, it links the extracellular matrix to the intracellular cytoskeleton by directly interacting with actin. Talin also features specific interactions with the membrane. Their formation, mechanical stability and role in mechanosensing remain to be fully resolved.</p>
+<p>Talin contains an N-terminal FERM domain (F for 4.1 protein, E for ezrin, R for radixin and M for moesin), which is composed of the subdomains F0 to F3 and provides a link to the cytosolic side of the plasma membrane <span class="citation" data-cites="chishtiFERMDomainUnique1998">(<a href="#ref-chishtiFERMDomainUnique1998" role="doc-biblioref">9</a>)</span>. It does so via a conserved binding motif for phosphatidylinositol 4,5-bisphosphate (PIP<sub>2</sub>), which is enriched at active focal adhesion sites <span class="citation" data-cites="maniFERMDomainPhosphoinositide2011 dasMolecularMechanotransductionPathway2015 songNovelMembranedependentSwitch2012a">(<a href="#ref-maniFERMDomainPhosphoinositide2011" role="doc-biblioref">10</a>–<a href="#ref-songNovelMembranedependentSwitch2012a" role="doc-biblioref">12</a>)</span>. The main PIP<sub>2</sub> binding sites are located in F2 and F3 (highlighted as red spheres in <a href="#fig-tln-schema-long">Figure&nbsp;1 (a)</a>).</p>
+<p><span class="red" style="color: red;">Two isoforms exist of talin, talin-1 and talin-2, encoded by the <em>tln1</em> and <em>tln2</em> genes. This work refers to talin-1 if not otherwise stated. Notably, the talin-1 FERM domain differs from other FERM proteins through the addition of the F0 subdomain, which is connected to F1 via a charged interface, as well as an insertion in F1, a flexible loop with helical propensity and basic residues <span class="citation" data-cites="goultStructureDoubleUbiquitinlike2010">(<a href="#ref-goultStructureDoubleUbiquitinlike2010" role="doc-biblioref">13</a>)</span>.</span> Additionally, talin’s FERM domain exists in an extended conformation, as opposed to the cloverleaf-like conformation of other FERM proteins <span class="citation" data-cites="elliottStructureTalinHead2010">(<a href="#ref-elliottStructureTalinHead2010" role="doc-biblioref">14</a>)</span>. F3 also has a binding site for <span class="math inline">\beta</span>-integrin tails <span class="citation" data-cites="calderwoodTalinHeadDomain1999">(<a href="#ref-calderwoodTalinHeadDomain1999" role="doc-biblioref">15</a>)</span> and is partly responsible for the enrichment of PIP<sub>2</sub> at the membrane through a binding site for PIPKI<span class="math inline">\gamma</span> <span class="citation" data-cites="calderwoodTalinsKindlinsPartners2013">(<a href="#ref-calderwoodTalinsKindlinsPartners2013" role="doc-biblioref">16</a>)</span>. A second integrin binding site is located in the rod domain 11 (R11) <span class="citation" data-cites="horwitzInteractionPlasmaMembrane1986">(<a href="#ref-horwitzInteractionPlasmaMembrane1986" role="doc-biblioref">17</a>)</span>. Talin interacts with the cytoskeleton through actin binding sites (F2-F3, R4-R8, R13-DH) <span class="citation" data-cites="mccannLWEQModuleConserved1997">(<a href="#ref-mccannLWEQModuleConserved1997" role="doc-biblioref">18</a>)</span>. The review by Klapholz et al. <span class="citation" data-cites="klapholzTalinMasterIntegrin2017">(<a href="#ref-klapholzTalinMasterIntegrin2017" role="doc-biblioref">19</a>)</span> provides an excellent overview of the many interaction sites of talin and their central role in the focal adhesion complex.</p>
+<p>The mechanistic role of the disordered loop in the F1 domain in the many aspects of talin function remains elusive. Its overall positive charge renders it a prime candidate as a PIP<sub>2</sub> binding site. However, previous studies only identified a minor role of the loop in PIP<sub>2</sub> binding compared to F2-F3 <span class="citation" data-cites="chinthalapudiInteractionTalinCell2018a saltelNewPIP22009">(<a href="#ref-chinthalapudiInteractionTalinCell2018a" role="doc-biblioref">20</a>, <a href="#ref-saltelNewPIP22009" role="doc-biblioref">21</a>)</span>. On the other hand, the F1 loop has been shown to contribute to talin-mediated integrin activation <span class="citation" data-cites="goultStructureDoubleUbiquitinlike2010">(<a href="#ref-goultStructureDoubleUbiquitinlike2010" role="doc-biblioref">13</a>)</span>.</p>
+<p>It was previously shown that F3 can interact with R9, which impedes integrin activation <span class="citation" data-cites="bannoSubcellularLocalizationTalin2012">(<a href="#ref-bannoSubcellularLocalizationTalin2012" role="doc-biblioref">22</a>)</span>. Furthermore, in a recently determined cryo-electron microscopy structure of autoinhibited talin-1, Dedden et al. <span class="citation" data-cites="deddenArchitectureTalin1Reveals2019a">(<a href="#ref-deddenArchitectureTalin1Reveals2019a" role="doc-biblioref">23</a>)</span> showed that the rod domains R9 and R12 shield the established PIP<sub>2</sub> binding surface and the integrin binding site in F3 (see <a href="#fig-tln-schema-autoinhib">Figure&nbsp;1 (b)</a>, <a href="#fig-tln-align-autoinhib">Figure&nbsp;1 (c)</a>). This beckons the question how this autoinhibition can be resolved. Song at al. <span class="citation" data-cites="songNovelMembranedependentSwitch2012a">(<a href="#ref-songNovelMembranedependentSwitch2012a" role="doc-biblioref">12</a>)</span> previously investigated a fragment of talin consisting of F2-F3 and an inhibiting rod segment and suggested a pull-push mechanism, whereby negatively charged PIP<sub>2</sub> attracts its positively charged binding surface on F2-F3 and simultaneously repels the negatively charged surface of the inhibitory rod segment. However, this still leaves open the question of how talin can establish a first contact with the membrane and remain within a sufficient proximity for this effect to kick in.</p>
+<div id="fig-structure" class="quarto-layout-panel">
+<figure class="figure">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 100.0%;justify-content: center;">
+<div id="fig-tln-schema-long" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="./assets/blender/render/frame0000-label.png" class="img-fluid figure-img" data-ref-parent="fig-structure"></p>
+<p></p><figcaption class="figure-caption">(a) &nbsp;</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-tln-schema-autoinhib" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="./assets/blender/render/frame0001.png" class="img-fluid figure-img" data-ref-parent="fig-structure"></p>
+<p></p><figcaption class="figure-caption">(b) &nbsp;</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-tln-align-autoinhib" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="./assets/blender/render-align/frame0000.png" class="img-fluid figure-img" data-ref-parent="fig-structure"></p>
+<p></p><figcaption class="figure-caption">(c) &nbsp;</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: A schematic overview of talin and our simulation setup. <strong>a)</strong> A schematic rendering of full-length talin over a POPC membrane enriched with PIP<sub>2</sub> in the upper<span class="red" style="color: red;">, intracellular</span> leaflet. The subdomains under scrutiny in this publication, namely F0-F3, which comprise the N-terminal FERM domain (or talin head), are highlighted in pastel colors (green, cyan, yellow, magenta). The two major PIP<sub>2</sub> binding sites in F2-F3 are marked with red spheres. The talin rod segments (or talin tail) are numbered R1 to R13. Note that under physiological conditions, with talin experiencing force from bound actin, the angle between the FERM domain and the talin rod would be more akin to 30° as opposed to the linear structure shown here for illustrative purposes. Tails of an integrin <span class="math inline">\alpha</span> and <span class="math inline">\beta</span> heterodimer reaching through the lipid bilayer are represented in green. <strong>b)</strong> A schematic rendering of the autoinhibited structure of talin as crystallized by Dedden et al. <span class="citation" data-cites="deddenArchitectureTalin1Reveals2019a">(<a href="#ref-deddenArchitectureTalin1Reveals2019a" role="doc-biblioref">23</a>)</span> in combination with a cartoon representation in <strong>c)</strong>. <span class="red" style="color: red;">The primary PIP<sub>2</sub> binding site of F2-F3 is occluded in talin, while the loops of F1 is accessible, as evident when fitting the F0-F3 structure by Elliott et al. <span class="citation" data-cites="elliottStructureTalinHead2010">(<a href="#ref-elliottStructureTalinHead2010" role="doc-biblioref">14</a>)</span>, with our addition of the modelled F1 loop, to the autoinhibited structure, which lacks F0F1.</span> The main PIP<sub>2</sub>-binding sites in F2-F3 are occluded by rod domain 12. The complete FERM structure can be explored interactively in the context of our simulation system in the Supplementary Materials.</figcaption><p></p>
+</figure>
+</div>
+<p>We hypothesized that the flexible F1 loop inserted into talin’s FERM domain serves as an additional PIP<sub>2</sub> interaction site. As such it would be readily accessible to PIP<sub>2</sub> even in talin’s autoinhibited conformation and would further mechanically stabilize talin’s interaction with the membrane. To test this hypothesis, we modelled the loop, which, due to its high flexibility, is not included in crystal structures of the FERM domain, such as PDB-ID 3IVF by Elliot et al. <span class="citation" data-cites="elliottStructureTalinHead2010">(<a href="#ref-elliottStructureTalinHead2010" role="doc-biblioref">14</a>)</span>.</p>
+<p>With a complete structure of the talin FERM domain, we investigated the role of the F1 loop through atomistic molecular dynamics (MD) simulations, which had previously also proven useful to detect the recognition of PIP<sub>2</sub> in membranes by PH domains <span class="citation" data-cites="buyanMultiscaleSimulationsSuggest2016">(<a href="#ref-buyanMultiscaleSimulationsSuggest2016" role="doc-biblioref">24</a>)</span> or the FERM domain of <span class="red" style="color: red;">focal adhesion kinase</span> <span class="citation" data-cites="zhouMechanismFocalAdhesion2015">(<a href="#ref-zhouMechanismFocalAdhesion2015" role="doc-biblioref">25</a>)</span>.</p>
+<p>In F0F1 simulations, we found the loop to have a clear propensity to interact with the PIP<sub>2</sub>-containing membrane. It is able to establish a first contact with the membrane even from unfavorable initial orientations due to its large search volume. Furthermore, we show with simulations of the full-length FERM domain that once the loop has established an initial contact, it can anchor the FERM domain to the membrane and <span class="red" style="color: red;">allow</span> the known major binding sites in F2-F3 <span class="red" style="color: red;">to form</span>.</p>
+<p>These results provide mechanistic insight talin–PIP<sub>2</sub> interactions and highlight the role of secondary intrinsically disordered binding surfaces for membrane recognition.</p>
+</section>
+<section id="materials-and-methods" class="level1">
+<h1>Materials and Methods</h1>
+<section id="molecular-dynamics-with-gromacs" class="level2">
+<h2 class="anchored" data-anchor-id="molecular-dynamics-with-gromacs">Molecular dynamics with GROMACS</h2>
+<p>MD simulations were performed with GROMACS <span class="citation" data-cites="berendsenGROMACSMessagepassingParallel1995 abrahamGROMACSHighPerformance2015">(<a href="#ref-berendsenGROMACSMessagepassingParallel1995" role="doc-biblioref">26</a>, <a href="#ref-abrahamGROMACSHighPerformance2015" role="doc-biblioref">27</a>)</span> version 2020.03 <span class="citation" data-cites="lindahlGROMACS2020Source2020">(<a href="#ref-lindahlGROMACS2020Source2020" role="doc-biblioref">28</a>)</span>. A crystal structure of the talin FERM domain by Elliot et al. <span class="citation" data-cites="elliottStructureTalinHead2010">(<a href="#ref-elliottStructureTalinHead2010" role="doc-biblioref">14</a>)</span> with the PDB-ID 3IVF was used as the basis of all simulations.</p>
+<p>The deleted or missing residues (134-172) belonging to the F1 domain loop were modeled using MODELLER <span class="citation" data-cites="marti-renomComparativeProteinStructure2000 webbComparativeProteinStructure2016">(<a href="#ref-marti-renomComparativeProteinStructure2000" role="doc-biblioref">29</a>, <a href="#ref-webbComparativeProteinStructure2016" role="doc-biblioref">30</a>)</span> via the interface to Chimera <span class="citation" data-cites="pettersenUCSFChimeraVisualization2004">(<a href="#ref-pettersenUCSFChimeraVisualization2004" role="doc-biblioref">31</a>)</span>, followed by equilibration with GROMACS. The resulting conformation was compared to an NMR structure of the F1 domain (PDB-ID 2KC2) by Goult et al. <span class="citation" data-cites="goultStructureDoubleUbiquitinlike2010">(<a href="#ref-goultStructureDoubleUbiquitinlike2010" role="doc-biblioref">13</a>)</span>. The missing residue M1 was also added. <span class="red" style="color: red;">The missing residues D125 and E126 as well as I399 and L400 were not modelled, as they are far from the region of interest (the F1-loop). This leaves us with a sequence from residue 1 to 398 with a shift by 2 in numbering compared to the canonical TLN1_MOUSE talin-1 sequence (uniprot ID P26039) after residue 124. Simulations were performed with the CHARMM36 force field. Topologies, including the membrane, were generated with the CHARMM-GUI web app <span class="citation" data-cites="brooksCHARMMBiomolecularSimulation2009 joCHARMMGUIWebbasedGraphical2008 leeCHARMMGUIInputGenerator2016">(<a href="#ref-brooksCHARMMBiomolecularSimulation2009" role="doc-biblioref">32</a>–<a href="#ref-leeCHARMMGUIInputGenerator2016" role="doc-biblioref">34</a>)</span> and GROMACS tools. All simulations used the TIP3P water model and were neutralized with 0.15 mol/L of NaCl. A 6-step equilibration was performedafter gradient descent energy minimization. This followed the standard procedure recommended by CHARMM-GUI, where restraints on protein and membrane atoms were gradually relieved in six steps from 1000 and 4000&nbsp;kJ/mol/nm<sup>2</sup> for the membrane and protein atoms on time scales of 25-100&nbsp;ps, followed by 5&nbsp;ns of equilibration with only protein atoms subjected to 50 kJ/mol/nm<sup>2</sup> position restraints. The exact Molecular Dynamics Parameter (mdp) files are provided in the data (https://doi.org/10.11588/data/BQTQUN) in the <code>assets</code> folder of each simulation system.</span> Production runs used a timestep of 2 fs, a Verlet cut-off scheme for Van-der-Waals interactions and the Particle Mesh Ewald (PME) method for long-range electrostatics. NPT-ensembles were achieved by Nosé-Hoover temperature coupling <span class="citation" data-cites="hooverCanonicalDynamicsEquilibrium1985 noseUnifiedFormulationConstant1984">(<a href="#ref-hooverCanonicalDynamicsEquilibrium1985" role="doc-biblioref">35</a>, <a href="#ref-noseUnifiedFormulationConstant1984" role="doc-biblioref">36</a>)</span> and Parinello-Rahman pressure coupling <span class="citation" data-cites="parrinelloPolymorphicTransitionsSingle1981">(<a href="#ref-parrinelloPolymorphicTransitionsSingle1981" role="doc-biblioref">37</a>)</span>. An example <code>.mdp</code>-file can be found in the Supplementary Materials.</p>
+<p>The initial equilibrium simulation of the completed FERM domain was run for 75 ns. Subsequently, the root mean squared fluctuation (RMSF) was calculated with GROMACS tools <span class="red" style="color: red;">(see Supplementary Material <a href="#fig-loop-rmsf">Figure&nbsp;7 (a)</a> and <a href="#fig-loop-rmsf-render">Figure&nbsp;7 (b)</a>)</span>.</p>
+<p>The F0F1 FERM sub domains (residues 1 to 197) were simulated to evaluate protein-membrane association using a rotational sampling approach. <span class="red" style="color: red;">This entailed placing the protein 1.5&nbsp;nm away from a 1-palmitoyl-2-oleoyl-glycero-3-phosphocholine (POPC) membrane, where 12 of the 119 lipids in the upper leaflet were replaced with PIP<sub>2</sub>. This results in a physiological concentration of 10% PIP<sub>2</sub>. The PIP<sub>2</sub> molecules used in the simulutions have a charge of -4, consistent with the deprotonation state of the phosphate groups at physiological pH <span class="citation" data-cites="mclaughlinPIP2ProteinsInteractions2002">(<a href="#ref-mclaughlinPIP2ProteinsInteractions2002" role="doc-biblioref">38</a>)</span>.</span></p>
+<p><span class="red" style="color: red;">60 different starting orientations of the protein where generate, spanning a rotation of 360 degrees.</span> The protein was rotated in such a way that the respective closest residue had the same distance to the membrane for the 0° and the 180° starting positions. 6 replicates of each orientation were run for 200&nbsp;ns each. However, due to a hardware failure, 2 of these 360 runs are corrupted and thus excluded from the analysis.</p>
+<p>From this rotational sampling, we selected representative conformations with loop-membrane interactions as the basis of 6 equilibrium simulations of the complete FERM domain over a POPC membrane with 26 PIP<sub>2</sub> lipids out of a total of 273 lipids in the upper leaflet. Each simulation ran for 400&nbsp;ns. The initial conformations for perpendicular pulling simulations of the F0F1 subdomains to gauge interaction strength were also chose from the rotational sampling set. <span class="red" style="color: red;">The pulling simulations used an umbrella potential applied to the C-terminus with a harmonic force constant of 500 kJ/mol/nm<sup>2</sup> and a constant speed of 0.03 m/s (See Supplementary Data in <code>f0f1-vert-pulling/pull_00003.mdp</code>)</span></p>
+<p>Distance information was extracted from trajectories with gromacs tools interfaced via CONAN <span class="citation" data-cites="mercadanteCONANToolDecode2018">(<a href="#ref-mercadanteCONANToolDecode2018" role="doc-biblioref">39</a>)</span>.</p>
+</section>
+<section id="automation-data-analysis-and-availability" class="level2">
+<h2 class="anchored" data-anchor-id="automation-data-analysis-and-availability">Automation, Data Analysis and Availability</h2>
+<p>Setup scripts written in bash are available for all simulations shown in this work. Computations for data analysis were tracked with the targets R package <span class="citation" data-cites="landauTargetsPackageDynamic2021">(<a href="#ref-landauTargetsPackageDynamic2021" role="doc-biblioref">40</a>)</span>. Plots were generated with ggplot2 <span class="citation" data-cites="ggplot">(<a href="#ref-ggplot" role="doc-biblioref">41</a>)</span>. Interactive structure representations are embedded using Mol* <span class="citation" data-cites="molstar">(<a href="#ref-molstar" role="doc-biblioref">42</a>)</span>. Schematic visualizations were rendered with blender <span class="citation" data-cites="blender">(<a href="#ref-blender" role="doc-biblioref">43</a>)</span> and VMD <span class="citation" data-cites="vmd">(<a href="#ref-vmd" role="doc-biblioref">44</a>)</span>. Files relevant to this work that are too big to be uploaded to this repository, such as trajectories and blender files, will be uploaded to a separate location. This manuscript was generated with <a href="https://quarto.org/">quarto</a> <span class="citation" data-cites="quarto knitr rbetterposter">(<a href="#ref-quarto" role="doc-biblioref">45</a>–<a href="#ref-rbetterposter" role="doc-biblioref">47</a>)</span>.</p>
+<p>The plotting code and computational graph of <code>targets</code> is available in <a href="./_analysis.html">this document</a>.</p>
+</section>
+</section>
+<section id="results" class="level1">
+<h1>Results</h1>
+<section id="the-f1-loop-can-act-as-a-point-of-first-contact" class="level2">
+<h2 class="anchored" data-anchor-id="the-f1-loop-can-act-as-a-point-of-first-contact">The F1 loop can act as a point of first contact</h2>
+<p>The high flexibility of the F1 loop gave use the confidence to model it from sequence. It retained its flexibility in equilibrium simulations<span class="red" style="color: red;">, in close agreement with the conformational flexibility reflected in the NMR ensemble of the F1 domain <span class="citation" data-cites="goultStructureDoubleUbiquitinlike2010">(<a href="#ref-goultStructureDoubleUbiquitinlike2010" role="doc-biblioref">13</a>)</span>, which confirmed this approach (see Supplementary Material <a href="#fig-loop-rmsf">Figure&nbsp;7 (a)</a>, <a href="#fig-loop-rmsf-render">Figure&nbsp;7 (b)</a> and <a href="#fig-nmr-ensemble">Figure&nbsp;9 (a)</a> with <a href="#fig-ferm-ensemble">Figure&nbsp;9 (b)</a>)</span>. The resulting system that provides the basis for our simulations can be explored interactively in the Supplementary Materials.</p>
+<p>When simulating only F0F1 over a POPC membrane containing 10% PIP<sub>2</sub>, we noticed that the F1 loop had a clear propensity to establish contact with the membrane. Once the contact had been established, the protein was anchored strongly enough for more contacts to evolve with time, pulling the protein onto the membrane (<a href="#fig-f0f1-snapshots">Figure&nbsp;2 (a)</a>). In order to control for a potential bias towards the loop as a result of the starting position, we performed a rotational sampling of the system, where the starting angle of the loop with respect to the membrane was varied across 60 equally spaced angles. <span class="red" style="color: red;"><a href="#fig-f0f1-ri-angle">Figure&nbsp;2 (b)</a> shows that independent of the starting position, the loop is able to find the membrane and bind to it. A residue of the F1 loop is likely to be the first to establish membrane contact even in simulations where the loop starts oriented away from the membrane (<a href="#fig-f0f1-first-to-find">Figure&nbsp;8 (d)</a>). This is due to the large search space it can cover with its high flexibility (see <a href="#fig-loop-rmsf">Figure&nbsp;7 (a)</a>). Expectedly, binding happens earlier in the simulation when the loop starts oriented favorably towards the membrane (<a href="#fig-f0f1-angle-frame">Figure&nbsp;3 (a)</a>, 0&nbsp;°) and the time to first contact is shorter for residues of the F1 loop (<a href="#fig-f0f1-time-to-contact">Figure&nbsp;8 (c)</a>). While <a href="#fig-f0f1-snapshots">Figure&nbsp;2 (a)</a> shows one example of a bound conformation, a conformation for each starting angle can be seen in the <a href="#sec-system">Supplementary Material</a>.</span></p>
+<div id="fig-loop-importance" class="quarto-layout-panel">
+<figure class="figure">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div id="fig-f0f1-snapshots" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 100.0%;justify-content: center;">
+<figure class="figure">
+<p><img src="./assets/vmd/f0f1/unbround-trim.png" class="img-fluid figure-img" style="width:30.0%"> <img src="./assets/vmd/f0f1/anchored-trim.png" class="img-fluid figure-img" style="width:30.0%"> <img src="./assets/vmd/f0f1/bound-trim.png" class="img-fluid figure-img" style="width:30.0%"></p>
+<p></p><figcaption class="figure-caption">(a) &nbsp;</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 100.0%;justify-content: center;">
+<div id="fig-f0f1-ri-angle" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="./results/plots/f0f1-ri-angle-npip-1.png" class="img-fluid figure-img" data-ref-parent="fig-loop-importance"></p>
+<p></p><figcaption class="figure-caption">(b) &nbsp;</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2: Rotational sampling of F0F1 reveals the lipid binding capabilities of the F1 loop. <strong>a)</strong> Snapshots from a simulation involving F0F1 over a POPC membrane containing 10% PIP<sub>2</sub> in the upper leaflet. POPC is not rendered and PIP<sub>2</sub> is shown as light grey stick models that turn thicker for those molecules that are currently interacting with residues of the protein. <span class="red" style="color: red;">The PIP<sub>2</sub>-binding residues are then shown as dark blue stick models.</span> <strong>b)</strong> Time-averaged number of PIP<sub>2</sub> molecules bound per residue along the F0F1 sequence (x-axis) as a heatmap summarizing 358 simulations from a rotational sampling, with the starting angle on the y-axis. We sampled 60 different starting positions, rotated equally spaced around the horizontal axis, with 6 replicates each. Each simulation is 200&nbsp;ns long. 0° corresponds to the loop pointing downwards towards the membrane, as shown in the smaller renders to the left of the heatmap.</figcaption><p></p>
+</figure>
+</div>
+<p>Once a contact has been made, it becomes exceedingly unlikely for F0F1 to dissociate from the membrane (<a href="#fig-f0f1-retention">Figure&nbsp;3 (b)</a>). Out of 358 runs<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, 89 runs never made contact with the membrane, but out of the 269 that did, only 10 eventually dissociated. Thus, the simulated timeframe of 200&nbsp;ns per trajectory allowed for the observation of some reversibility of FERM–PIP<sub>2</sub> binding, albeit only for weakly bound cases and at a small rate of 3.7%. Dissociation from the membrane never occurred on the simulated time scale after more than 3 residues had already made contact.</p>
+<div id="fig-loop-importance-2" class="quarto-layout-panel">
+<figure class="figure">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 100.0%;justify-content: center;">
+<div id="fig-f0f1-angle-frame" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="./results/plots/f0f1-angle-frame-npip-1.png" class="img-fluid figure-img" data-ref-parent="fig-loop-importance-2"></p>
+<p></p><figcaption class="figure-caption">(a) &nbsp;</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 100.0%;justify-content: center;">
+<div id="fig-f0f1-retention" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="./results/plots/f0f1-retention-1.png" class="img-fluid figure-img" data-ref-parent="fig-loop-importance-2"></p>
+<p></p><figcaption class="figure-caption">(b) &nbsp;</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p></p><figcaption class="figure-caption">Figure&nbsp;3: Loop–PIP<sub>2</sub> contacts dynamically accumulate and are mediated by basic residues. <strong>a)</strong> Heatmap of the time evolution of the average number of PIP<sub>2</sub> molecules per residue at the respective time (y-axis) and angle (x-axis). <strong>b)</strong> Time evolution (x-axis) of the number of residues currently interacting with PIP<sub>2</sub> (y-axis) shows binding and unbinding events and an eventual accumulation of contacts. Unbinding becomes exceedingly unlikely as the number of contacts increases.</figcaption><p></p>
+</figure>
+</div>
+<p><a href="#fig-f0f1-residues">Figure&nbsp;4</a> highlights the residues involved in the interaction of F0F1 with PIP<sub>2</sub>. <span class="red" style="color: red;">The ensemble of final bound conformations from the simulations can be seen in the <a href="#sec-system">Supplementary Material</a>.</span> We observe a number of prominent lysines and arginines, both positively charged residues, across the whole F0F1 fragment to compensate for the negative charge on PIP<sub>2</sub>. The loop region, highlighted with a grey backdrop in <a href="#fig-f0f1-ri-npip">Figure&nbsp;4 (a)</a>, is particularly dense in positively charged residues, albeit the number of PIP<sub>2</sub> contacts per basic residue is only marginally higher in this region than elsewhere. Arginines and lysines in regions outside of the disordered loop complement the binding once initial contacts have been established with the loop, and further strengthen the interaction. F0 at the N-terminus (left) is quite flexible as well (see <a href="#fig-loop-rmsf">Figure&nbsp;7 (a)</a>) and can thus reasonably contribute towards membrane binding. The C-terminus of the F1 domain, instead, harbors the interface towards the F2 domain and the two PIP<sub>2</sub>-interacting residues identified here will be more occluded <em>in vivo</em>. Indeed, simulations of the full-length FERM domain in the later part of this work do not show these interactions anymore (<a href="#fig-ferm-ri-npip">Figure&nbsp;6 (a)</a>).</p>
+<div id="fig-f0f1-residues" class="quarto-layout-panel">
+<figure class="figure">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 100.0%;justify-content: center;">
+<div id="fig-f0f1-ri-npip" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="./results/plots/f0f1-ri-npip-1.png" class="img-fluid figure-img" data-ref-parent="fig-f0f1-residues"></p>
+<p></p><figcaption class="figure-caption">(a) &nbsp;</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div id="fig-f1f1-residues" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 100.0%;justify-content: center;">
+<figure class="figure">
+<div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="./assets/vmd/f0f1/residues.mp4"></video></div>
+<p></p><figcaption class="figure-caption">(b) &nbsp;</figcaption><p></p>
+</figure>
+</div>
+</div>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4: Lysine and arginine residues are crucial for the PIP<sub>2</sub>-interaction of F0F1. <strong>a)</strong> The average number of PIP<sub>2</sub> molecules (<span class="math inline">\bar n_{PIP_2}</span>) interacting (see <a href="#fig-r-hist">Figure&nbsp;7 (c)</a> for the interaction distance definition) with the individual residues per frame across all simulations of the rotational sampling that made contact with the membrane. <span class="red" style="color: red;">Color represents the charge of the amino acid at pH 7.4 (blue = positive/basic, magenta = negative/acidic).</span> A number of very prominent lysines can be observed, as well as a cluster of residues belonging to the F1 loop, which is highlighted with a grey backdrop. The most prominent residues are highlighted in <strong>b)</strong>. For the print version it is a snapshot render. The video is also available here: <a href="https://youtu.be/s5yya0XeNTA" class="uri">https://youtu.be/s5yya0XeNTA</a>).</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="the-f1-loop-maintains-and-further-facilitates-formation-of-fermpip2-interactions" class="level2">
+<h2 class="anchored" data-anchor-id="the-f1-loop-maintains-and-further-facilitates-formation-of-fermpip2-interactions">The F1 loop maintains and further facilitates formation of FERM–PIP<sub>2</sub> interactions</h2>
+<p>To examine the strength of the <span class="red" style="color: red;">PIP<sub>2</sub></span> interactions and the role of the F1 loop in maintaining it, we pulled F0F1 vertically off the membrane in additional force-probe MD simulations (<a href="#fig-f0f1-vert-pull">Figure&nbsp;5</a>). An exemplary render of one of the simulations can be seen in <a href="#fig-f0f1-pull-run-1">Figure&nbsp;5 (a)</a>. Pulling F0F1 off the membrane requires peak forces of 100–120&nbsp;pN, during which the interacting residues only very gradually loose contact (<a href="#fig-f0f1-vert-pull">Figure&nbsp;5</a>), as the high flexibility of F1-loop allows the residues to remain in contact even as the distance increases up to a delta of 7&nbsp;nm. Replicate 4 stands out as the highest curve <span class="red" style="color: red;">(dashed lines)</span>, as in this run the interactions were so strong that a total of 3 molecules of PIP<sub>2</sub> were pulled out of the membrane (1 by F0 and 2 by the F1 loop). A snapshot of this can be seen in <a href="#fig-f0f1-vert-pull-run4">Figure&nbsp;8 (b)</a>. This highlights the strong anchoring capabilities of the F1 loop.</p>
+<p>As seen in <a href="#fig-f0f1-vert-pull-contacts">Figure&nbsp;5 (c)</a>, during pulling residues not belonging to the F1 loop loose contact first, while the loop stays attached. The F1 loop works in conjunction with the F0 subdomain (see <a href="#fig-f0f1-vert-pull-residues">Figure&nbsp;8 (a)</a>). Their high flexibility allows them to remain in contact with the membrane over large distances, which would allow for a spring-like re-establishing of more contacts should the force be alleviated. In two cases the last interacting residue was part of the F1 loop, while in three cases the N-terminus of the F0 domain stayed attached for longest.</p>
+<div id="fig-f0f1-vert-pull" class="quarto-layout-panel">
+<figure class="figure">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div id="fig-f0f1-pull-run-1" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 100.0%;justify-content: center;">
+<figure class="figure">
+<div class="noborder quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 68.8%;justify-content: center;">
+<div class="quarto-video"><video id="video_shortcode_videojs_video2" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="./assets/vmd/f0f1-pulling/f0f1-run1.mp4"></video></div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 31.3%;justify-content: center;">
+<p><img src="./assets/vmd/f0f1-pulling/f0f1-pull-middle.png" class="img-fluid figure-img"></p>
+</div>
+</div>
+</div>
+<p></p><figcaption class="figure-caption">(a) &nbsp;</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-f0f1-vert-pull-force" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="./results/plots/f0f1-vert-pull-1.png" class="img-fluid figure-img" data-ref-parent="fig-f0f1-vert-pull"></p>
+<p></p><figcaption class="figure-caption">(b) &nbsp;</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-f0f1-vert-pull-contacts" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="./results/plots/f0f1-vert-pull-contacts-time-1.png" class="img-fluid figure-img" data-ref-parent="fig-f0f1-vert-pull"></p>
+<p></p><figcaption class="figure-caption">(c) &nbsp;</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p></p><figcaption class="figure-caption">Figure&nbsp;5: Vertical pulling of F0F1 highlights the F1 loop’s flexibility and ability to maintain contacts with the membrane over large distances. <strong>a)</strong> Representative render of one of 6 force-probe MD simulations pulling F0F1 off the membrane. For the print version we show a series of three snapshots, the video is available here: <a href="https://youtu.be/-eZ2orx7QRE" class="uri">https://youtu.be/-eZ2orx7QRE</a>. It starts from a snapshot of F0F1 in its bound conformation taken from the rotational sampling and gets pulled upwards from its C-terminus. <strong>b)</strong> Number of interacting residues (top panel) and the force (bottom panel) as a function of distance (x-axis) as F0F1 gets pulled off the membrane at a constant rate of 0.03&nbsp;nm/ns. <strong>c)</strong> Time evolution of the number of contacts for residues belonging to the F1 loop (x-axis) and other residues (y-axis). <span class="red" style="color: red;">Traces are colored by replicate.</span> Black dots mark the starting positions. The non-loop contacts are mostly supplied by the residues of the F0 N-terminus also shown in <a href="#fig-f0f1-ri-npip">Figure&nbsp;4 (a)</a>.</figcaption><p></p>
+</figure>
+</div>
+<p>Having established the prominent role of the F1-loop in positioning F0F1 at the membrane and establishing PIP<sub>2</sub> contacts, we next examined this role in the larger context of the full FERM domain. 6 independent simulations were initiated with the full-length FERM domain oriented in such that the tip of the F1-loop was in contact with at least one molecule of PIP<sub>2</sub> with varying local environments (see <a href="#sec-system">Simulation Systems and Structures</a> for one example). Individual interaction heatmaps for each run can be found in the Supplementary Material <a href="#fig-ferm-time-ri-npip-all">Figure&nbsp;7 (d)</a>. These simulations highlight the prominent role of the F1-loop in membrane interactions, now in the context of the full-length FERM domain (<a href="#fig-ferm-ri-npip">Figure&nbsp;6 (a)</a>, compare to <a href="#fig-f0f1-ri-npip">Figure&nbsp;4 (a)</a>). They also reproduce the canonical PIP<sub>2</sub> contacts in F2 and F3 known from previous studies, validating our MD simulations. The highlighted residues include K272 of F2 and K316, K324, E342, and K343 of F3, which have been shown to be crucial for the membrane interaction of talin and subsequent integrin activation by Chinthalapudi et al. <span class="citation" data-cites="chinthalapudiInteractionTalinCell2018a">(<a href="#ref-chinthalapudiInteractionTalinCell2018a" role="doc-biblioref">20</a>)</span>. Importantly, the loop shows a very dense cluster of PIP<sub>2</sub> interactions, with interaction scores (<span class="math inline">\bar n_{PIP_2}</span>) very similar to these previously known PIP<sub>2</sub>-interacting residues. <span class="red" style="color: red;">The interacting conformations can be seen in context in the <a href="#sec-system">Supplementary Material</a>.</span> The F1 loop thus complements these known binding sites with an additional specific binding site, again comprising primarily lysines.</p>
+<div id="fig-ferm-further" class="quarto-layout-panel">
+<figure class="figure">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 100.0%;justify-content: center;">
+<div id="fig-ferm-ri-npip" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="./results/plots/ferm-ri-npip-1.png" class="img-fluid figure-img" data-ref-parent="fig-ferm-further"></p>
+<p></p><figcaption class="figure-caption">(a) &nbsp;</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 100.0%;justify-content: center;">
+<div id="fig-ferm-memb-system" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="./assets/vmd/ferm/ferm-residues-transparent-arrows.png" class="img-fluid figure-img" data-ref-parent="fig-ferm-further"></p>
+<p></p><figcaption class="figure-caption">(b) &nbsp;</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6: Simulation of the full-length FERM domain over a 10% PIP<sub>2</sub>-membrane. <strong>a)</strong> The average number of PIP<sub>2</sub> molecules interacting with the individual residues across 6 simulations. <span class="red" style="color: red;">Color represents the charge of the amino acid at pH 7.4 (blue = positive/basic, magenta = negative/acidic).</span> The known PIP<sub>2</sub> interaction sites K272 of F2 and K316, K324, E342, and K343 of F3 <span class="citation" data-cites="chinthalapudiInteractionTalinCell2018a">(<a href="#ref-chinthalapudiInteractionTalinCell2018a" role="doc-biblioref">20</a>)</span> are highlighted with red lines on the x-axis colorbar and can also be seen in the cartoon representation in <strong>b)</strong> where the interacting residues with a score greater than 0.2 are displayed as dark blue stick models.</figcaption><p></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="discussion-and-outlook" class="level1">
+<h1>Discussion and Outlook</h1>
+<p>Using atomistic MD simulations, we provide mechanistic insight into the membrane recognition dynamics of talin. Our simulations propose a new mode of interaction that helps to explain how talin can bind the membrane even when its main PIP<sub>2</sub> (and integrin) binding sites in F2 and F3 <span class="citation" data-cites="chinthalapudiInteractionTalinCell2018a">(<a href="#ref-chinthalapudiInteractionTalinCell2018a" role="doc-biblioref">20</a>)</span> (see figure <a href="#fig-ferm-memb-system">Figure&nbsp;6 (b)</a> ) are blocked by autoinhibition <span class="citation" data-cites="deddenArchitectureTalin1Reveals2019a">(<a href="#ref-deddenArchitectureTalin1Reveals2019a" role="doc-biblioref">23</a>)</span>. Specifically, we find the unique unstructured, 33-residue-long insertion into the F1 domain, the F1 loop, to provide a strong interaction anchor to PIP<sub>2</sub>-containing membranes.</p>
+<p>Overall, the FERM–membrane interaction mode is not characterized by singular binding sites interacting with one molecule of PIP<sub>2</sub> each, as would be the conclusion from crystallographic data alone. Rather the cumulative diffuse interaction of multiple PIP<sub>2</sub> with multiple residues is what keeps the protein anchored to the membrane. This is particularly evident in the interaction with the flexible F1 loop, but also in the F0 domain. While crystal structures of proteins in complex with PIP<sub>2</sub> typically show a one-to-one ratio of lipid per binding site <span class="citation" data-cites="chinthalapudiLipidBindingPromotes2018 chinthalapudiInteractionTalinCell2018a jianMolecularBasisCooperative2015">(<a href="#ref-chinthalapudiInteractionTalinCell2018a" role="doc-biblioref">20</a>, <a href="#ref-chinthalapudiLipidBindingPromotes2018" role="doc-biblioref">48</a>, <a href="#ref-jianMolecularBasisCooperative2015" role="doc-biblioref">49</a>)</span>, possibly due to the nature of the experimental method, our simulations suggest multiple PIP<sub>2</sub> molecules binding simultaneously. Similar results have been observed for Pleckstrin Homology (PH) domain proteins by Naughton et al. <span class="citation" data-cites="naughtonModesInteractionPleckstrin2018">(<a href="#ref-naughtonModesInteractionPleckstrin2018" role="doc-biblioref">50</a>)</span>. According to their study, this simultaneous binding of multiple PIP<sub>2</sub> molecules contributes to the high affinity of the membrane interaction.</p>
+<p>Our MD simulations suggest that the F1 loop can find favorable interactions with PIP<sub>2</sub> across large distances and in a large search volume. We find this to be the disordered loop’s high flexiblity. The F1 loop can maintain the membrane contacts when talin is pulled off of the membrane over distances as large as 7&nbsp;nm. A similar mechanism has also been shown by Shoemaker et al. <span class="citation" data-cites="shoemakerSpeedingMolecularRecognition2000">(<a href="#ref-shoemakerSpeedingMolecularRecognition2000" role="doc-biblioref">51</a>)</span> and was fittingly coined “fly-casting”. In the aforementioned publication they focus on the interaction of unfolded regions with DNA. Our simulations now provide an example for the concept applied to protein-lipid interactions. It is well worth noting that, although we mention the greater search space of the F1 loop as its advantage in recognizing PIP<sub>2</sub>, it has also been argued that the kinetic advantage of the fly-casting mechanism comes mainly from the reduction in free energy as the disordered region folds around the interaction target <span class="citation" data-cites="huangKineticAdvantageIntrinsically2009">(<a href="#ref-huangKineticAdvantageIntrinsically2009" role="doc-biblioref">52</a>)</span>. This can also be argued here, as the loop can flexibly adapt its conformation to the membrane and the dynamic distribution of PIP<sub>2</sub> lipids therein. As such it can bind in a multivalent fashion, with several basic residues binding to several PIP<sub>2</sub> lipids.</p>
+<p>Fast binding kinetics are crucial for talin’s function at focal adhesion sites. As the PIP<sub>2</sub> concentrations increases at the active focal adhesion site, talin’s FERM F1 loop can perform rapid recognition. The flexibility of the loop also allows it to anchor the protein at the membrane even when being stretched under force (up to a delta of 7&nbsp;nm, as seen in <a href="#fig-f0f1-vert-pull">Figure&nbsp;5</a>). This is akin to the elastic response seen in focal adhesion kinase (FAK) under force, in which a 49-residue-long linker allows for buffering of the force <span class="citation" data-cites="bauerStructuralMechanisticInsights2019">(<a href="#ref-bauerStructuralMechanisticInsights2019" role="doc-biblioref">53</a>)</span>. Here, talin’s F1 loop can extend and thereby maintain the interactions, which could help rapid rebinding when the force is relieved.</p>
+<p>In our force probe simulations, we pulled F0F1 orthogonally off the membrane. This allowed us to assess the full extension and force resistance of the loop. <em>In vivo</em>, however, talin’s FERM domain is subjected to forces acting at a 30° angle. This might imply an additional function for the FERM domain. As it is dragged along the membrane, the diffuse interactions of the F1 loop and main interaction sites in F2-F3 with PIP<sub>2</sub> would increase lateral friction along the membrane as the PIP<sub>2</sub> concentration increases. This could further localize talin at active focal adhesion sites even in the presence of forces acting parallel to the membrane.</p>
+<p>We conclusively show that the F1 loop is able to interact with the membrane even from most unfavorable orientations. <span class="red" style="color: red;">The role of the F1 loop in this is kinetic in nature. Previous studies have shown F0F1 to not significantly influence the binding equilibrium of a FERM domain to immobilized PIP<sub>2</sub>-containing membranes compared to constructs containing only F2F3 <span class="citation" data-cites="mooreAffinityTalin1V3integrin2012a">(<a href="#ref-mooreAffinityTalin1V3integrin2012a" role="doc-biblioref">54</a>)</span>. Also, when the main binding site in F2F3 was mutated, another study using lipid co-sedimention found that the F1-loop alone does not suffice to restore lipid binding <span class="citation" data-cites="chinthalapudiInteractionTalinCell2018a">(<a href="#ref-chinthalapudiInteractionTalinCell2018a" role="doc-biblioref">20</a>)</span>. Our study suggests that while the thermodynamics of binding might remain unchanged, the equilibrium should be reached faster due to the presence of the loop. We propose that talin mutants lacking the loop, or specifically the basic residues in said loop, will show reduced or at least slowed-down focal adhesion maturation, increased lateral diffusion of talin under force, and faster focal adhesion disassembly. We note that given the high disorder of the F1 loop, we speculate that this interaction is rather unspecific compared to the PIP<sub>2</sub>-specific F2F3 site, and interactions with PIP<sub>3</sub> are also likely to form. To what extent our conclusions are also applicable to talin-2 remains to be shown. Given the high sequence similarity and conservation of the F1 loop <span class="citation" data-cites="goultStructureDoubleUbiquitinlike2010">(<a href="#ref-goultStructureDoubleUbiquitinlike2010" role="doc-biblioref">13</a>)</span>, we speculate that it plays a similar role as early PIP<sub>2</sub> anchor in the talin-2 isoform as well.</span></p>
+<p>Recognition is only the first step. <span class="red" style="color: red;">The mechanistic details of how talin’s autoinhibition is resolved remain to be shown by larger simulations including the inhibiting rod segment. These larger-scale simulations might then be able to provide evidence for the push–pull mechanism proposed by Song et al. <span class="citation" data-cites="songNovelMembranedependentSwitch2012a">(<a href="#ref-songNovelMembranedependentSwitch2012a" role="doc-biblioref">12</a>)</span> or might reveal how the early F1-loop mediated membrane interactions identified in this study might effect the subsequent steps for talin activation.</span></p>
+<p><span class="red" style="color: red;">As the F1-loop has been shown to contribute to integrin activation <span class="citation" data-cites="goultStructureDoubleUbiquitinlike2010">(<a href="#ref-goultStructureDoubleUbiquitinlike2010" role="doc-biblioref">13</a>)</span>, it will also be insightful to simulate a system including the integrin tail. This is a promising approch, since other computational studies have also found PIP<sub>2</sub> to be crucial, not just for the membrane interaction, but also the formation of the protein–protein complex. The cloverleaf-like FERM domain of Moesin, for example, interacts with the cytoplasmic domain of L-Selectin mediated by PIP<sub>2</sub> <span class="citation" data-cites="sunMolecularDynamicsAssociation2018">(<a href="#ref-sunMolecularDynamicsAssociation2018" role="doc-biblioref">55</a>)</span> and PIP<sub>2</sub> enables the formation of the CD44-FERM complex for Radixin <span class="citation" data-cites="sunMolecularMechanismBidirectional2020">(<a href="#ref-sunMolecularMechanismBidirectional2020" role="doc-biblioref">56</a>)</span>.</span></p>
+<p><span class="red" style="color: red;">In conclusion, we propose positively charged, intrinsically disordered regions in talin’s FERM domain and potentially other PIP<sub>2</sub>-binding domains to promote fast recognition and to help maintain the membrane interaction under force.</span></p>
+</section>
+<section id="author-contributions" class="level1">
+<h1>Author Contributions</h1>
+<p>Conceived and designed the experiments:&nbsp;JB FF FG. Performed the experiments:&nbsp;JB FF. Analyzed the data:&nbsp;JB FF. Contributed reagents/materials/analysis tools:&nbsp;FF. Wrote the paper:&nbsp;JB FF.</p>
+</section>
+<section id="declaration-of-interests" class="level1">
+<h1>Declaration of Interests</h1>
+<p>The authors declare no competing interests.</p>
+</section>
+<section id="acknowledgments" class="level1">
+<h1>Acknowledgments</h1>
+<p>This work was supported by the Klaus Tschira Foundation and the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation programme (grant agreement No.&nbsp;101002812).</p>
+</section>
+<section id="references" class="level1">
+<h1>References</h1>
+<div id="refs" class="references csl-bib-body" role="doc-bibliography">
+<div id="ref-vogelLocalForceGeometry2006" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Vogel, V., and M. Sheetz. 2006. <a href="https://doi.org/10.1038/nrm1890">Local force and geometry sensing regulate cell functions</a>. <em>Nature Reviews Molecular Cell Biology</em>. 7:265–275.</div>
+</div>
+<div id="ref-oakesStressingLimitsFocal2014" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Oakes, P.W., and M.L. Gardel. 2014. <a href="https://doi.org/10.1016/j.ceb.2014.06.003">Stressing the limits of focal adhesion mechanosensitivity</a>. <em>Current Opinion in Cell Biology</em>. 30:68–73.</div>
+</div>
+<div id="ref-schillerMechanosensitivityCompositionalDynamics2013" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Schiller, H.B., and R. Fässler. 2013. <a href="https://doi.org/10.1038/embor.2013.49">Mechanosensitivity and compositional dynamics of cellmatrix adhesions</a>. <em>EMBO reports</em>. 14:509–519.</div>
+</div>
+<div id="ref-miroshnikovaAdhesionForcesCortical2018" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Miroshnikova, Y.A., H.Q. Le, D. Schneider, T. Thalheim, M. Rübsam, N. Bremicker, J. Polleux, N. Kamprad, M. Tarantola, I. Wang, M. Balland, C.M. Niessen, J. Galle, and S.A. Wickström. 2018. <a href="https://doi.org/10.1038/s41556-017-0005-z">Adhesion forces and cortical tension couple cell proliferation and differentiation to drive epidermal stratification</a>. <em>Nature Cell Biology</em>. 20:69–80.</div>
+</div>
+<div id="ref-thamilselvanPressureActivatesColon2004" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Thamilselvan, V., and M.D. Basson. 2004. <a href="https://doi.org/10.1053/j.gastro.2003.10.078">Pressure activates colon cancer cell adhesion by inside-out focal adhesion complex and actin cytoskeletal signaling</a>. <em>Gastroenterology</em>. 126:8–18.</div>
+</div>
+<div id="ref-pelletierActivationStateIntegrin1995" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">Pelletier, A.J., T. Kunicki, Z.M. Ruggeri, and V. Quaranta. 1995. <a href="https://doi.org/10.1074/jbc.270.30.18133">The <span>Activation State</span> of the <span class="nocase">Integrin <span class="math inline">\alpha</span>IIb<span class="math inline">\beta</span>3 Affects Outside-in Signals Leading</span> to <span>Cell Spreading</span> and <span>Focal Adhesion Kinase Phosphorylation</span> *</a>. <em>Journal of Biological Chemistry</em>. 270:18133–18140.</div>
+</div>
+<div id="ref-yaoMechanicalResponseTalin2016" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">Yao, M., B.T. Goult, B. Klapholz, X. Hu, C.P. Toseland, Y. Guo, P. Cong, M.P. Sheetz, and J. Yan. 2016. <a href="https://doi.org/10.1038/ncomms11966">The mechanical response of talin</a>. <em>Nature Communications</em>. 7:11966.</div>
+</div>
+<div id="ref-tadokoroTalinBindingIntegrin2003" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">Tadokoro, S., S.J. Shattil, K. Eto, V. Tai, R.C. Liddington, J.M. de Pereda, M.H. Ginsberg, and D.A. Calderwood. 2003. <a href="https://doi.org/10.1126/science.1086652">Talin <span>Binding</span> to <span>Integrin</span> ß <span>Tails</span>: <span>A Final Common Step</span> in <span>Integrin Activation</span></a>. <em>Science</em>. 302:103–106.</div>
+</div>
+<div id="ref-chishtiFERMDomainUnique1998" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">9. </div><div class="csl-right-inline">Chishti, A.H., A.C. Kim, S.M. Marfatia, M. Lutchman, M. Hanspal, H. Jindal, S.-C. Liu, P.S. Low, G.A. Rouleau, N. Mohandas, J.A. Chasis, J.G. Conboy, P. Gascard, Y. Takakuwa, S.-C. Huang, E.J.B. Jr, A. Bretscher, R.G. Fehon, J.F. Gusella, V. Ramesh, F. Solomon, V.T. Marchesi, S. Tsukita, S. Tsukita, M. Arpin, D. Louvard, N.K. Tonks, J.M. Anderson, A.S. Fanning, P.J. Bryant, D.F. Woods, and K.B. Hoover. 1998. <a href="https://doi.org/10.1016/S0968-0004(98)01237-7">The <span>FERM</span> domain: A unique module involved in the linkage of cytoplasmic proteins to the membrane</a>. <em>Trends in Biochemical Sciences</em>. 23:281–282.</div>
+</div>
+<div id="ref-maniFERMDomainPhosphoinositide2011" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">10. </div><div class="csl-right-inline">Mani, T., R.F. Hennigan, L.A. Foster, D.G. Conrady, A.B. Herr, and W. Ip. 2011. <a href="https://doi.org/10.1128/MCB.00609-10"><span>FERM Domain Phosphoinositide Binding Targets Merlin</span> to the <span>Membrane</span> and <span>Is Essential</span> for <span>Its Growth-Suppressive Function</span></a>. <em>Molecular and Cellular Biology</em>. 31:1983–1996.</div>
+</div>
+<div id="ref-dasMolecularMechanotransductionPathway2015" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">11. </div><div class="csl-right-inline">Das, T., K. Safferling, S. Rausch, N. Grabe, H. Boehm, and J.P. Spatz. 2015. <a href="https://doi.org/10.1038/ncb3115">A molecular mechanotransduction pathway regulates collective migration of epithelial cells</a>. <em>Nature Cell Biology</em>. 17:276–287.</div>
+</div>
+<div id="ref-songNovelMembranedependentSwitch2012a" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">12. </div><div class="csl-right-inline">Song, X., J. Yang, J. Hirbawi, S. Ye, H.D. Perera, E. Goksoy, P. Dwivedi, E.F. Plow, R. Zhang, and J. Qin. 2012. <a href="https://doi.org/10.1038/cr.2012.97">A novel membrane-dependent on/off switch mechanism of talin <span>FERM</span> domain at sites of cell adhesion</a>. <em>Cell Research</em>. 22:1533–1545.</div>
+</div>
+<div id="ref-goultStructureDoubleUbiquitinlike2010" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">13. </div><div class="csl-right-inline">Goult, B.T., M. Bouaouina, P.R. Elliott, N. Bate, B. Patel, A.R. Gingras, J.G. Grossmann, G.C.K. Roberts, D.A. Calderwood, D.R. Critchley, and I.L. Barsukov. 2010. <a href="https://doi.org/10.1038/emboj.2010.4">Structure of a double ubiquitin-like domain in the talin head: A role in integrin activation</a>. <em>The EMBO Journal</em>. 29:1069–1080.</div>
+</div>
+<div id="ref-elliottStructureTalinHead2010" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">14. </div><div class="csl-right-inline">Elliott, P.R., B.T. Goult, P.M. Kopp, N. Bate, J.G. Grossmann, G.C.K. Roberts, D.R. Critchley, and I.L. Barsukov. 2010. <a href="https://doi.org/10.1016/j.str.2010.07.011">The <span>Structure</span> of the <span>Talin Head Reveals</span> a <span>Novel&nbsp;Extended Conformation</span> of the <span>FERM Domain</span></a>. <em>Structure(London, England:1993)</em>. 18:1289–1299.</div>
+</div>
+<div id="ref-calderwoodTalinHeadDomain1999" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">15. </div><div class="csl-right-inline">Calderwood, D.A., R. Zent, R. Grant, D.J.G. Rees, R.O. Hynes, and M.H. Ginsberg. 1999. <a href="https://doi.org/10.1074/jbc.274.40.28071">The <span>Talin Head Domain Binds</span> to <span>Integrin</span> <span><span class="math inline">\beta</span></span> <span>Subunit Cytoplasmic Tails</span> and <span>Regulates Integrin Activation</span> *</a>. <em>Journal of Biological Chemistry</em>. 274:28071–28074.</div>
+</div>
+<div id="ref-calderwoodTalinsKindlinsPartners2013" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">16. </div><div class="csl-right-inline">Calderwood, D.A., I.D. Campbell, and D.R. Critchley. 2013. <a href="https://doi.org/10.1038/nrm3624">Talins and kindlins: Partners in integrin-mediated adhesion</a>. <em>Nature Reviews Molecular Cell Biology</em>. 14:503–517.</div>
+</div>
+<div id="ref-horwitzInteractionPlasmaMembrane1986" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">17. </div><div class="csl-right-inline">Horwitz, A., K. Duggan, C. Buck, M.C. Beckerle, and K. Burridge. 1986. <a href="https://doi.org/10.1038/320531a0">Interaction of plasma membrane fibronectin receptor with talina transmembrane linkage</a>. <em>Nature</em>. 320:531–533.</div>
+</div>
+<div id="ref-mccannLWEQModuleConserved1997" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">18. </div><div class="csl-right-inline">McCann, R.O., and S.W. Craig. 1997. <a href="https://doi.org/10.1073/pnas.94.11.5679">The <span>I</span>/<span>LWEQ</span> module: A conserved sequence that signifies <span class="nocase">F-actin</span> binding in functionally diverse proteins from yeast to mammals</a>. <em>Proceedings of the National Academy of Sciences</em>. 94:5679–5684.</div>
+</div>
+<div id="ref-klapholzTalinMasterIntegrin2017" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">19. </div><div class="csl-right-inline">Klapholz, B., and N.H. Brown. 2017. <a href="https://doi.org/10.1242/jcs.190991">Talin the master of integrin adhesions</a>. <em>Journal of Cell Science</em>. 130:2435–2446.</div>
+</div>
+<div id="ref-chinthalapudiInteractionTalinCell2018a" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">20. </div><div class="csl-right-inline">Chinthalapudi, K., E.S. Rangarajan, and T. Izard. 2018. <a href="https://doi.org/10.1073/pnas.1806275115">The interaction of talin with the cell membrane is essential for integrin activation and focal adhesion formation</a>. <em>Proceedings of the National Academy of Sciences of the United States of America</em>. 115:10339–10344.</div>
+</div>
+<div id="ref-saltelNewPIP22009" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">21. </div><div class="csl-right-inline">Saltel, F., E. Mortier, V.P. Hytönen, M.-C. Jacquier, P. Zimmermann, V. Vogel, W. Liu, and B. Wehrle-Haller. 2009. <a href="https://doi.org/10.1083/jcb.200908134">New <span>PI</span>(4,5)<span>P2-</span> and membrane proximal integrinbinding motifs in the talin head control <span><span class="math inline">B</span></span>3-integrin clustering</a>. <em>Journal of Cell Biology</em>. 187:715–731.</div>
+</div>
+<div id="ref-bannoSubcellularLocalizationTalin2012" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">22. </div><div class="csl-right-inline">Banno, A., B.T. Goult, H. Lee, N. Bate, D.R. Critchley, and M.H. Ginsberg. 2012. <a href="https://doi.org/10.1074/jbc.M112.341214">Subcellular <span>Localization</span> of <span>Talin Is Regulated</span> by <span class="nocase">Inter-domain Interactions</span> *</a>. <em>Journal of Biological Chemistry</em>. 287:13799–13812.</div>
+</div>
+<div id="ref-deddenArchitectureTalin1Reveals2019a" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">23. </div><div class="csl-right-inline">Dedden, D., S. Schumacher, C.F. Kelley, M. Zacharias, C. Biertümpfel, R. Fässler, and N. Mizuno. 2019. <a href="https://doi.org/10.1016/j.cell.2019.08.034">The <span>Architecture</span> of <span>Talin1 Reveals</span> an <span>Autoinhibition Mechanism</span></a>. <em>Cell</em>. 179:120–131.e13.</div>
+</div>
+<div id="ref-buyanMultiscaleSimulationsSuggest2016" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">24. </div><div class="csl-right-inline">Buyan, A., A.C. Kalli, and M.S.P. Sansom. 2016. <a href="https://doi.org/10.1371/journal.pcbi.1005028">Multiscale <span>Simulations Suggest</span> a <span>Mechanism</span> for the <span>Association</span> of the <span>Dok7 PH Domain</span> with <span>PIP-Containing Membranes</span></a>. <em>PLOS Computational Biology</em>. 12:e1005028.</div>
+</div>
+<div id="ref-zhouMechanismFocalAdhesion2015" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">25. </div><div class="csl-right-inline">Zhou, J., C. Aponte-Santamaría, S. Sturm, J.T. Bullerjahn, A. Bronowska, and F. Gräter. 2015. <a href="https://doi.org/10.1371/journal.pcbi.1004593">Mechanism of <span>Focal Adhesion Kinase Mechanosensing</span></a>. <em>PLOS Computational Biology</em>. 11:e1004593.</div>
+</div>
+<div id="ref-berendsenGROMACSMessagepassingParallel1995" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">26. </div><div class="csl-right-inline">Berendsen, H.J.C., D. van der Spoel, and R. van Drunen. 1995. <a href="https://doi.org/10.1016/0010-4655(95)00042-E"><span>GROMACS</span>: <span>A</span> message-passing parallel molecular dynamics implementation</a>. <em>Computer Physics Communications</em>. 91:43–56.</div>
+</div>
+<div id="ref-abrahamGROMACSHighPerformance2015" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">27. </div><div class="csl-right-inline">Abraham, M.J., T. Murtola, R. Schulz, S. Páll, J.C. Smith, B. Hess, and E. Lindahl. 2015. <a href="https://doi.org/10.1016/j.softx.2015.06.001"><span>GROMACS</span>: <span>High</span> performance molecular simulations through multi-level parallelism from laptops to supercomputers</a>. <em>SoftwareX</em>. 1–2:19–25.</div>
+</div>
+<div id="ref-lindahlGROMACS2020Source2020" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">28. </div><div class="csl-right-inline">Lindahl, Abraham, Hess, and van der Spoel. 2020-01-01, 2020-01. <a href="https://doi.org/10.5281/zenodo.3562495"><span>GROMACS</span> 2020 source code</a>. <span>Zenodo</span>.</div>
+</div>
+<div id="ref-marti-renomComparativeProteinStructure2000" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">29. </div><div class="csl-right-inline">Martí-Renom, M.A., A.C. Stuart, A. Fiser, R. Sánchez, F. Melo, and A. Sali. 2000. <a href="https://doi.org/10.1146/annurev.biophys.29.1.291">Comparative protein structure modeling of genes and genomes</a>. <em>Annual Review of Biophysics and Biomolecular Structure</em>. 29:291–325.</div>
+</div>
+<div id="ref-webbComparativeProteinStructure2016" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">30. </div><div class="csl-right-inline">Webb, B., and A. Sali. 2016. <a href="https://doi.org/10.1002/cpps.20">Comparative <span>Protein Structure Modeling Using MODELLER</span></a>. <em>Current Protocols in Protein Science</em>. 86:2.9.1–2.9.37.</div>
+</div>
+<div id="ref-pettersenUCSFChimeraVisualization2004" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">31. </div><div class="csl-right-inline">Pettersen, E.F., T.D. Goddard, C.C. Huang, G.S. Couch, D.M. Greenblatt, E.C. Meng, and T.E. Ferrin. 2004. <a href="https://doi.org/10.1002/jcc.20084"><span class="nocase">UCSF Chimera–a</span> visualization system for exploratory research and analysis</a>. <em>Journal of Computational Chemistry</em>. 25:1605–1612.</div>
+</div>
+<div id="ref-brooksCHARMMBiomolecularSimulation2009" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">32. </div><div class="csl-right-inline">Brooks, B.R., C.L. Brooks, A.D. Mackerell, L. Nilsson, R.J. Petrella, B. Roux, Y. Won, G. Archontis, C. Bartels, S. Boresch, A. Caflisch, L. Caves, Q. Cui, A.R. Dinner, M. Feig, S. Fischer, J. Gao, M. Hodoscek, W. Im, K. Kuczera, T. Lazaridis, J. Ma, V. Ovchinnikov, E. Paci, R.W. Pastor, C.B. Post, J.Z. Pu, M. Schaefer, B. Tidor, R.M. Venable, H.L. Woodcock, X. Wu, W. Yang, D.M. York, and M. Karplus. 2009. <a href="https://doi.org/10.1002/jcc.21287"><span>CHARMM</span>: <span>The</span> biomolecular simulation program</a>. <em>Journal of Computational Chemistry</em>. 30:1545–1614.</div>
+</div>
+<div id="ref-joCHARMMGUIWebbasedGraphical2008" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">33. </div><div class="csl-right-inline">Jo, S., T. Kim, V.G. Iyer, and W. Im. 2008. <a href="https://doi.org/10.1002/jcc.20945"><span>CHARMM-GUI</span>: A web-based graphical user interface for <span>CHARMM</span></a>. <em>Journal of Computational Chemistry</em>. 29:1859–1865.</div>
+</div>
+<div id="ref-leeCHARMMGUIInputGenerator2016" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">34. </div><div class="csl-right-inline">Lee, J., X. Cheng, J.M. Swails, M.S. Yeom, P.K. Eastman, J.A. Lemkul, S. Wei, J. Buckner, J.C. Jeong, Y. Qi, S. Jo, V.S. Pande, D.A. Case, C.L. Brooks, A.D. MacKerell, J.B. Klauda, and W. Im. 2016. <a href="https://doi.org/10.1021/acs.jctc.5b00935"><span>CHARMM-GUI Input Generator</span> for <span>NAMD</span>, <span>GROMACS</span>, <span>AMBER</span>, <span>OpenMM</span>, and <span>CHARMM</span>/<span>OpenMM Simulations Using</span> the <span>CHARMM36 Additive Force Field</span></a>. <em>Journal of Chemical Theory and Computation</em>. 12:405–413.</div>
+</div>
+<div id="ref-hooverCanonicalDynamicsEquilibrium1985" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">35. </div><div class="csl-right-inline">Hoover, W.G. 1985. <a href="https://doi.org/10.1103/PhysRevA.31.1695">Canonical dynamics: <span>Equilibrium</span> phase-space distributions</a>. <em>Physical Review A</em>. 31:1695–1697.</div>
+</div>
+<div id="ref-noseUnifiedFormulationConstant1984" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">36. </div><div class="csl-right-inline">Nosé, S. 1984. <a href="https://doi.org/10.1063/1.447334">A unified formulation of the constant temperature molecular dynamics methods</a>. <em>The Journal of Chemical Physics</em>. 81:511–519.</div>
+</div>
+<div id="ref-parrinelloPolymorphicTransitionsSingle1981" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">37. </div><div class="csl-right-inline">Parrinello, M., and A. Rahman. 1981. <a href="https://doi.org/10.1063/1.328693">Polymorphic transitions in single crystals: <span>A</span> new molecular dynamics method</a>. <em>Journal of Applied Physics</em>. 52:7182–7190.</div>
+</div>
+<div id="ref-mclaughlinPIP2ProteinsInteractions2002" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">38. </div><div class="csl-right-inline">McLaughlin, S., J. Wang, A. Gambhir, and D. Murray. 2002. <a href="https://doi.org/10.1146/annurev.biophys.31.082901.134259"><span>PIP2</span> and <span>Proteins</span>: <span>Interactions</span>, <span>Organization</span>, and <span>Information Flow</span></a>. <em>Annual Review of Biophysics and Biomolecular Structure</em>. 31:151–175.</div>
+</div>
+<div id="ref-mercadanteCONANToolDecode2018" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">39. </div><div class="csl-right-inline">Mercadante, D., F. Gräter, and C. Daday. 2018. <a href="https://doi.org/10.1016/j.bpj.2018.01.033"><span>CONAN</span>: <span>A Tool</span> to <span>Decode Dynamical Information</span> from <span>Molecular Interaction Maps</span></a>. <em>Biophysical Journal</em>. 114:1267–1273.</div>
+</div>
+<div id="ref-landauTargetsPackageDynamic2021" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">40. </div><div class="csl-right-inline">Landau, W.M. 2021. The targets <span>R</span> package: A dynamic <span class="nocase">Make-like</span> function-oriented pipeline toolkit for reproducibility and high-performance computing. <em>Journal of Open Source Software</em>. 6:2959.</div>
+</div>
+<div id="ref-ggplot" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">41. </div><div class="csl-right-inline">Wickham, H. 2016. Ggplot2: <span>Elegant</span> graphics for data analysis. <span>Springer-Verlag New York</span>.</div>
+</div>
+<div id="ref-molstar" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">42. </div><div class="csl-right-inline">Sehnal, D., S. Bittrich, M. Deshpande, R. Svobodová, K. Berka, V. Bazgier, S. Velankar, S.K. Burley, J. Koča, and A.S. Rose. 2021. <a href="https://doi.org/10.1093/nar/gkab314">Mol* <span>Viewer</span>: Modern web app for <span>3D</span> visualization and analysis of large biomolecular structures</a>. <em>Nucleic Acids Research</em>. 49:W431–W437.</div>
+</div>
+<div id="ref-blender" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">43. </div><div class="csl-right-inline">Community, B.O. 2018. Blender - a <span>3D</span> modelling and rendering package.</div>
+</div>
+<div id="ref-vmd" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">44. </div><div class="csl-right-inline">Humphrey, W., A. Dalke, and K. Schulten. 1996. <span>VMD</span> <span>Visual Molecular Dynamics</span>. <em>Journal of Molecular Graphics</em>. 14:33–38.</div>
+</div>
+<div id="ref-quarto" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">45. </div><div class="csl-right-inline">Allaire, J.J., C. Teague, C. Scheidegger, Y. Xie, and C. Dervieux. 2022. <a href="https://doi.org/10.5281/zenodo.5960048">Quarto</a>.</div>
+</div>
+<div id="ref-knitr" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">46. </div><div class="csl-right-inline">Xie, Y. 2015. Dynamic documents with <span>R</span> and knitr. Second. <span>Boca Raton, Florida</span>: <span>Chapman and Hall/CRC</span>.</div>
+</div>
+<div id="ref-rbetterposter" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">47. </div><div class="csl-right-inline">Aden-Buie, G. 2022. Betterposter: <span>A</span> better scientific poster.</div>
+</div>
+<div id="ref-chinthalapudiLipidBindingPromotes2018" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">48. </div><div class="csl-right-inline">Chinthalapudi, K., V. Mandati, J. Zheng, A.J. Sharff, G. Bricogne, P.R. Griffin, J. Kissil, and T. Izard. 2018. <a href="https://doi.org/10.1038/s41467-018-03648-4">Lipid binding promotes the open conformation and tumor-suppressive activity of neurofibromin 2</a>. <em>Nature Communications</em>. 9:1338.</div>
+</div>
+<div id="ref-jianMolecularBasisCooperative2015" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">49. </div><div class="csl-right-inline">Jian, X., W.-K. Tang, P. Zhai, N.S. Roy, R. Luo, J.M. Gruschus, M.E. Yohe, P.-W. Chen, Y. Li, R.A. Byrd, D. Xia, and P.A. Randazzo. 2015. <a href="https://doi.org/10.1016/j.str.2015.08.008">Molecular <span>Basis</span> for <span>Cooperative Binding</span> of <span>Anionic Phospholipids</span> to the <span>PH Domain</span> of the <span>Arf GAP ASAP1</span></a>. <em>Structure</em>. 23:1977–1988.</div>
+</div>
+<div id="ref-naughtonModesInteractionPleckstrin2018" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">50. </div><div class="csl-right-inline">Naughton, F.B., A.C. Kalli, and M.S.P. Sansom. 2018. <a href="https://doi.org/10.1016/j.jmb.2017.12.011">Modes of <span>Interaction</span> of <span>Pleckstrin Homology Domains</span> with <span>Membranes</span>: <span>Toward</span> a <span>Computational Biochemistry</span> of <span>Membrane Recognition</span></a>. <em>Journal of Molecular Biology</em>. 430:372–388.</div>
+</div>
+<div id="ref-shoemakerSpeedingMolecularRecognition2000" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">51. </div><div class="csl-right-inline">Shoemaker, B.A., J.J. Portman, and P.G. Wolynes. 2000. <a href="https://doi.org/10.1073/pnas.160259697">Speeding molecular recognition by using the folding funnel: The fly-casting mechanism</a>. <em>Proceedings of the National Academy of Sciences of the United States of America</em>. 97:8868–8873.</div>
+</div>
+<div id="ref-huangKineticAdvantageIntrinsically2009" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">52. </div><div class="csl-right-inline">Huang, Y., and Z. Liu. 2009. <a href="https://doi.org/10.1016/j.jmb.2009.09.010">Kinetic <span>Advantage</span> of <span>Intrinsically Disordered Proteins</span> in <span>Coupled Folding</span>: <span>A Critical Assessment</span> of the <span>“<span>Fly-Casting</span>”</span> <span>Mechanism</span></a>. <em>Journal of Molecular Biology</em>. 393:1143–1159.</div>
+</div>
+<div id="ref-bauerStructuralMechanisticInsights2019" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">53. </div><div class="csl-right-inline">Bauer, M.S., F. Baumann, C. Daday, P. Redondo, E. Durner, M.A. Jobst, L.F. Milles, D. Mercadante, D.A. Pippig, H.E. Gaub, F. Gräter, and D. Lietha. 2019. <a href="https://doi.org/10.1073/pnas.1820567116">Structural and mechanistic insights into mechanoactivation of focal adhesion kinase</a>. <em>Proceedings of the National Academy of Sciences</em>. 116:6766–6774.</div>
+</div>
+<div id="ref-mooreAffinityTalin1V3integrin2012a" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">54. </div><div class="csl-right-inline">Moore, D.T., P. Nygren, H. Jo, K. Boesze-Battaglia, J.S. Bennett, and W.F. DeGrado. 2012. <a href="https://doi.org/10.1073/pnas.1117220108">Affinity of talin-1 for the <span><span class="math inline">B</span></span>3-integrin cytosolic domain is modulated by its phospholipid bilayer environment</a>. <em>Proceedings of the National Academy of Sciences</em>. 109:793–798.</div>
+</div>
+<div id="ref-sunMolecularDynamicsAssociation2018" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">55. </div><div class="csl-right-inline">Sun, F., C.F.E. Schroer, L. Xu, H. Yin, S.J. Marrink, and S.-Z. Luo. 2018. <a href="https://doi.org/10.1016/j.bpj.2018.02.034">Molecular <span>Dynamics</span> of the <span>Association</span> of <span>L-Selectin</span> and <span>FERM Regulated</span> by <span>PIP2</span></a>. <em>Biophysical Journal</em>. 114:1858–1868.</div>
+</div>
+<div id="ref-sunMolecularMechanismBidirectional2020" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">56. </div><div class="csl-right-inline">Sun, F., C.F.E. Schroer, C.R. Palacios, L. Xu, S.-Z. Luo, and S.J. Marrink. 2020. <a href="https://doi.org/10.1371/journal.pcbi.1007777">Molecular mechanism for bidirectional regulation of <span>CD44</span> for lipid raft affiliation by palmitoylations and <span>PIP2</span></a>. <em>PLOS Computational Biology</em>. 16:e1007777.</div>
+</div>
+</div>
+</section>
+<section id="supplementary-material" class="level1">
+<h1>Supplementary Material</h1>
+<section id="sec-system" class="level2">
+<h2 class="anchored" data-anchor-id="sec-system">Simulation <span class="red" style="color: red;">Systems and Structures</span></h2>
+<section id="sec-nmr" class="level3">
+<h3 class="anchored" data-anchor-id="sec-nmr">NMR Ensemble of F1: 2KC2 <span class="citation" data-cites="goultStructureDoubleUbiquitinlike2010">(<a href="#ref-goultStructureDoubleUbiquitinlike2010" role="doc-biblioref">13</a>)</span></h3>
+    <div id="app-2KC2" class="molstar-app"></div>
+    <script type="text/javascript">
+    molstar.Viewer.create("app-2KC2", {"layoutShowControls":false,"layoutShowRemoteState":false,"layoutShowLog":false,"layoutShowLeftPanel":true,"viewportShowSelectionMode":false,"pdbProvider":"rcsb","layoutShowSequence":false,"viewportShowAnimation":true,"layoutIsExpanded":false,"viewportShowExpand":true,"emdbProvider":"rcsb"}).then(viewer => {
+    viewer.loadPdb("2KC2");    });
+    </script>
+    
+</section>
+<section id="ensemble-of-last-frames-of-the-f0f1-rotational-sampling" class="level3">
+<h3 class="anchored" data-anchor-id="ensemble-of-last-frames-of-the-f0f1-rotational-sampling">Ensemble of last frames of the F0F1 Rotational Sampling</h3>
+<p><span class="red" style="color: red;">Here, we show exemplary final frames of replicate 1 of the rotational sampling simulations with one structure for each starting angle.</span></p>
+    <div id="app-./assets/structures/f0f1-rot-sample-last-frames.gro./assets/structures/f0f1-rot-sample-last-frames.xtc" class="molstar-app"></div>
+    <script type="text/javascript">
+    molstar.Viewer.create("app-./assets/structures/f0f1-rot-sample-last-frames.gro./assets/structures/f0f1-rot-sample-last-frames.xtc", {"layoutShowControls":false,"layoutShowRemoteState":false,"layoutShowLog":false,"layoutShowLeftPanel":true,"viewportShowSelectionMode":false,"pdbProvider":"rcsb","layoutShowSequence":false,"viewportShowAnimation":true,"layoutIsExpanded":false,"viewportShowExpand":true,"emdbProvider":"rcsb"}).then(viewer => {
+        viewer.loadTrajectory(
+    {
+      model: {
+        kind: "model-url", url: "./assets/structures/f0f1-rot-sample-last-frames.gro", format: "gro"
+      },
+      coordinates: {
+        kind: "coordinates-url", url: "./assets/structures/f0f1-rot-sample-last-frames.xtc",
+        format: "xtc", isBinary: true
+      }
+    }
+    );
+        });
+    </script>
+    
+</section>
+<section id="ensemble-of-last-frames-of-the-ferm-simulations" class="level3">
+<h3 class="anchored" data-anchor-id="ensemble-of-last-frames-of-the-ferm-simulations">Ensemble of last frames of the FERM simulations</h3>
+<p><span class="red" style="color: red;">Here, we show the final frames of the full-length FERM simulations with one structure for each of the 6 replicates.</span></p>
+    <div id="app-./assets/structures/ferm-last-frames.gro./assets/structures/ferm-last-frames.xtc" class="molstar-app"></div>
+    <script type="text/javascript">
+    molstar.Viewer.create("app-./assets/structures/ferm-last-frames.gro./assets/structures/ferm-last-frames.xtc", {"layoutShowControls":false,"layoutShowRemoteState":false,"layoutShowLog":false,"layoutShowLeftPanel":true,"viewportShowSelectionMode":false,"pdbProvider":"rcsb","layoutShowSequence":false,"viewportShowAnimation":true,"layoutIsExpanded":false,"viewportShowExpand":true,"emdbProvider":"rcsb"}).then(viewer => {
+        viewer.loadTrajectory(
+    {
+      model: {
+        kind: "model-url", url: "./assets/structures/ferm-last-frames.gro", format: "gro"
+      },
+      coordinates: {
+        kind: "coordinates-url", url: "./assets/structures/ferm-last-frames.xtc",
+        format: "xtc", isBinary: true
+      }
+    }
+    );
+        });
+    </script>
+    
+</section>
+<section id="sec-ferm-system" class="level3">
+<h3 class="anchored" data-anchor-id="sec-ferm-system">FERM domain over a POPC/PIP<sub>2</sub> membrane</h3>
+    <div id="app-./www/system-tln-memb.pdb" class="molstar-app"></div>
+    <script type="text/javascript">
+    molstar.Viewer.create("app-./www/system-tln-memb.pdb", {"layoutShowControls":false,"layoutShowRemoteState":false,"layoutShowLog":false,"layoutShowLeftPanel":true,"viewportShowSelectionMode":false,"pdbProvider":"rcsb","layoutShowSequence":false,"viewportShowAnimation":true,"layoutIsExpanded":false,"viewportShowExpand":true,"emdbProvider":"rcsb"}).then(viewer => {
+    viewer.loadStructureFromUrl("./www/system-tln-memb.pdb", format="pdb");    });
+    </script>
+    
+</section>
+</section>
+<section id="scripts" class="level2">
+<h2 class="anchored" data-anchor-id="scripts">Scripts</h2>
+<p>Data analysis code is available at <a href="https://hits-mbm-dev.github.io/paper-talin-loop/_analysis.html" class="uri">https://hits-mbm-dev.github.io/paper-talin-loop/_analysis.html</a> and in the repository at <a href="https://github.com/hits-mbm-dev/paper-talin-loop" class="uri">https://github.com/hits-mbm-dev/paper-talin-loop</a>.</p>
+</section>
+<section id="sec-data" class="level2">
+<h2 class="anchored" data-anchor-id="sec-data">Input files and raw data</h2>
+<p><span class="red" style="color: red;">Input files and raw data are available on <a href="https://heidata.uni-heidelberg.de/">heiData</a> here: <a href="https://doi.org/10.11588/data/BQTQUN" class="uri">https://doi.org/10.11588/data/BQTQUN</a></span></p>
+<!--
+\newpage
+-->
+</section>
+<section id="supplementary-plots-and-tables" class="level2">
+<h2 class="anchored" data-anchor-id="supplementary-plots-and-tables"><span class="red" style="color: red;">Supplementary Plots and Tables</span></h2>
+<div id="fig-suppl" class="quarto-layout-panel">
+<figure class="figure">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-loop-rmsf" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="./results/plots/ferm-rmsf-1.png" class="img-fluid figure-img" data-ref-parent="fig-suppl"></p>
+<p></p><figcaption class="figure-caption">(a) &nbsp;</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-loop-rmsf-render" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="./assets/results/figures/loop-rmsf-transparent.png" class="img-fluid figure-img" data-ref-parent="fig-suppl"></p>
+<p></p><figcaption class="figure-caption">(b) &nbsp;</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-r-hist" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="./results/plots/f0f1-distance-cutoff-1.png" class="img-fluid figure-img" data-ref-parent="fig-suppl"></p>
+<p></p><figcaption class="figure-caption">(c) &nbsp;</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-ferm-time-ri-npip-all" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="./results/plots/ferm-time-ri-npip-all-1.png" class="img-fluid figure-img" data-ref-parent="fig-suppl"></p>
+<p></p><figcaption class="figure-caption">(d) &nbsp;</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p></p><figcaption class="figure-caption">Figure&nbsp;7: <strong>a)</strong> Root Mean Squared Fluctuation (RMSF) per residue in an equilibrium simulation of the full-length FERM domain (black). The additional blue line shows the RMSF of the NMR ensemble of F1 for comparison (2KC2 <span class="citation" data-cites="goultStructureDoubleUbiquitinlike2010">(<a href="#ref-goultStructureDoubleUbiquitinlike2010" role="doc-biblioref">13</a>)</span>). The region of the loop in F1 is highlighted by a grey shade. Color bars as in <a href="#fig-ferm-memb-system">Figure&nbsp;6 (b)</a>. <strong>b)</strong> The relative magnitude of the RMSF is shown by coloring the backbone in a render of the FERM structure. <strong>c)</strong> Density plot of distances between PIP<sub>2</sub> and the protein residues to decide on a cutoff for defining interactions. A distance of 0.25&nbsp;nm was chosen. <strong>d)</strong> A heatmap of the number of PIP<sub>2</sub> molecules bound per residue over time for the 6 individual simulations with the whole FERM domain over the membrane.</figcaption><p></p>
+</figure>
+</div>
+<div id="fig-suppl-2" class="quarto-layout-panel">
+<figure class="figure">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-f0f1-vert-pull-residues" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="./results/plots/f0f1-vert-pull-residues-1.png" class="img-fluid figure-img" data-ref-parent="fig-suppl-2"></p>
+<p></p><figcaption class="figure-caption">(a) &nbsp;</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-f0f1-vert-pull-run4" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="./assets/vmd/f0f1-pulling/snapshot-run4.png" class="img-fluid figure-img" data-ref-parent="fig-suppl-2"></p>
+<p></p><figcaption class="figure-caption">(b) &nbsp;</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-f0f1-time-to-contact" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="./results/plots/si-f0f1-first-contact-frame-1.png" class="img-fluid figure-img" data-ref-parent="fig-suppl-2"></p>
+<p></p><figcaption class="figure-caption">(c) &nbsp;</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-f0f1-first-to-find" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="./results/plots/si-f0f1-angle-first-to-find-1.png" class="img-fluid figure-img" data-ref-parent="fig-suppl-2"></p>
+<p></p><figcaption class="figure-caption">(d) &nbsp;</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p></p><figcaption class="figure-caption">Figure&nbsp;8: <strong>a)</strong> A closer look at the residues involved in the interaction during pulling reveals the instrumental role of both the F1 loop as well as the F0 subdomain in keeping the connection to the membrane. <strong>b)</strong> Run 4 of the vertical pulling of F0F1. Interactions between the protein and PIP<sub>2</sub> were so strong that a total of 3 molecules of PIP<sub>2</sub> (gray) were pulled out of the membrane (1 by F0 (green) and 2 by the F1 loop (blue)). <strong>c)</strong> Time to first contact of a residue with PIP<sub>2</sub> in the rotational sampling of F0F1. Residues belonging to the F1 loop on average make contact earlier. <strong>d)</strong> Number of times a residue belonging to a region made the first contact in the rotational sampling of F0F1.</figcaption><p></p>
+</figure>
+</div>
+<div id="fig-suppl-3" class="quarto-layout-panel">
+<figure class="figure">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-nmr-ensemble" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="./assets/structures/2kc2-ensemble-10.png" class="img-fluid figure-img" data-ref-parent="fig-suppl-3"></p>
+<p></p><figcaption class="figure-caption">(a) &nbsp;</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-ferm-ensemble" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="./assets/structures/ferm-eq-ensemble-10.png" class="img-fluid figure-img" data-ref-parent="fig-suppl-3"></p>
+<p></p><figcaption class="figure-caption">(b) &nbsp;</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p></p><figcaption class="figure-caption">Figure&nbsp;9: <strong>a)</strong> NMR ensemble of F1, pdb ID 2KC2 <span class="citation" data-cites="goultStructureDoubleUbiquitinlike2010">(<a href="#ref-goultStructureDoubleUbiquitinlike2010" role="doc-biblioref">13</a>)</span> <strong>b)</strong> Ensemble of the F1 domain in equilibrium simulations of the completed FERM domain. The other domains (F0,F2,F3) are not shown, but their steric influence can be seen, as the flexible loop can now no longer occupy the space of the F2 domain as in the NMR structure in <strong>a</strong>.</figcaption><p></p>
+</figure>
+</div>
+<div id="tbl-f0f1-top-interacting" class="anchored">
+<table class="table">
+<caption>Table&nbsp;1: Top residues interacting with F0F1</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">residue</th>
+<th style="text-align: right;">mean_n_pip</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">M 1</td>
+<td style="text-align: right;">0.118</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">K 15</td>
+<td style="text-align: right;">0.114</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">R 30</td>
+<td style="text-align: right;">0.104</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">R 35</td>
+<td style="text-align: right;">0.155</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">K 98</td>
+<td style="text-align: right;">0.101</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">R 118</td>
+<td style="text-align: right;">0.127</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">R 144</td>
+<td style="text-align: right;">0.179</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">K 147</td>
+<td style="text-align: right;">0.155</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">R 151</td>
+<td style="text-align: right;">0.209</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">K 154</td>
+<td style="text-align: right;">0.144</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">K 155</td>
+<td style="text-align: right;">0.152</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">K 158</td>
+<td style="text-align: right;">0.154</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">K 160</td>
+<td style="text-align: right;">0.139</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">K 162</td>
+<td style="text-align: right;">0.107</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">R 193</td>
+<td style="text-align: right;">0.120</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tbl-ferm-top-interacting" class="anchored">
+<table class="table">
+<caption>Table&nbsp;2: Top residues interacting with FERM</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">residue</th>
+<th style="text-align: right;">mean_n_pip</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">M 1</td>
+<td style="text-align: right;">0.144</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">K 15</td>
+<td style="text-align: right;">0.154</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">T 16</td>
+<td style="text-align: right;">0.134</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">R 35</td>
+<td style="text-align: right;">0.202</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">R 74</td>
+<td style="text-align: right;">0.195</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">R 144</td>
+<td style="text-align: right;">0.555</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">K 145</td>
+<td style="text-align: right;">0.199</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">K 147</td>
+<td style="text-align: right;">0.426</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">R 151</td>
+<td style="text-align: right;">0.295</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">K 154</td>
+<td style="text-align: right;">0.149</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">K 155</td>
+<td style="text-align: right;">0.391</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">K 158</td>
+<td style="text-align: right;">0.506</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">K 160</td>
+<td style="text-align: right;">0.679</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">K 162</td>
+<td style="text-align: right;">0.174</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">K 254</td>
+<td style="text-align: right;">0.157</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">K 270</td>
+<td style="text-align: right;">0.242</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">K 272</td>
+<td style="text-align: right;">0.412</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">R 275</td>
+<td style="text-align: right;">0.416</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">K 314</td>
+<td style="text-align: right;">0.281</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">K 316</td>
+<td style="text-align: right;">0.310</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">K 320</td>
+<td style="text-align: right;">0.742</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">N 321</td>
+<td style="text-align: right;">0.298</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">K 322</td>
+<td style="text-align: right;">0.507</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">K 341</td>
+<td style="text-align: right;">0.248</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">K 362</td>
+<td style="text-align: right;">0.447</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="molecular-dynamics-parameters" class="level2">
+<h2 class="anchored" data-anchor-id="molecular-dynamics-parameters">Molecular dynamics Parameters</h2>
+<section id="sec-prod-mdp" class="level3">
+<h3 class="anchored" data-anchor-id="sec-prod-mdp">Production runs</h3>
+<pre><code>integrator              = md
+dt                      = 0.002
+nsteps                  = 100000000
+cutoff-scheme           = Verlet
+nstlist                 = 20
+rlist                   = 1.2
+coulombtype             = pme
+rcoulomb                = 1.2
+vdwtype                 = Cut-off
+vdw-modifier            = Force-switch
+rvdw_switch             = 1.0
+rvdw                    = 1.2
+tcoupl                  = Nose-Hoover
+tc_grps                 = SYSTEM
+tau_t                   = 1.0
+ref_t                   = 303.15
+pcoupl                  = Parrinello-Rahman
+pcoupltype              = semiisotropic
+tau_p                   = 5.0
+compressibility         = 4.5e-5  4.5e-5
+ref_p                   = 1.0     1.0
+constraints             = h-bonds
+constraint_algorithm    = LINCS
+continuation            = yes
+nstcomm                 = 100
+comm_mode               = linear
+comm_grps               = SYSTEM
+refcoord_scaling        = com</code></pre>
+</section>
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>6 replicas each for 60 angles minus 2 runs lost to a storage failure<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@misc{buhr2023,
+  author = {Jannik Buhr and Florian Franz and Frauke Gräter},
+  title = {Intrinsically Disordered Region of Talin’s {FERM} Domain
+    Functions as an Initial {PIP\textasciitilde2\textasciitilde{}}
+    Recognition Site},
+  date = {23-02-01},
+  langid = {en},
+  abstract = {Focal adhesions (FAs) mediate the interaction of the
+    cytoskeleton with the extracellular matrix (ECM) in a highly dynamic
+    fashion. talin is a central regulator, adaptor protein and
+    mechano-sensor of focal adhesion complexes. For recruitment and firm
+    attachment at FAs, talin’s N-terminal FERM domain binds to
+    phosphatidylinositol 4,5-bisphosphate
+    (PIP\textasciitilde2\textasciitilde)-enriched membranes. A newly
+    published autoinhibitory structure of talin-1, where the known
+    PIP\textasciitilde2\textasciitilde{} interaction sites are covered
+    up, lead us to hypothesize that a hitherto less examined loop
+    insertion of the FERM domain acts as an additional and initial site
+    of contact. We evaluated direct interactions of talin-1 with a
+    PIP\textasciitilde2\textasciitilde{} membrane by means of atomistic
+    {[}molecular dynamics{]}\{.red\} (MD) simulations. We show that this
+    unstructured, 33-residue-long loop strongly interacts with
+    PIP\textasciitilde2\textasciitilde{} and can facilitate further
+    membrane contacts, including the canonical
+    PIP\textasciitilde2\textasciitilde{} interactions, by serving as a
+    flexible membrane anchor. Under force as present at FAs, the
+    extensible FERM loop ensures talin to maintain membrane contacts
+    when pulled away from the membrane by up to 7\textbackslash{} nm. We
+    identify key basic residues of the anchor mediating the highly
+    dynamic talin-membrane interaction. Our results put forward an
+    intrinsically disordered loop as a key and highly adaptable
+    PIP\textasciitilde2\textasciitilde{} recognition site of talin and
+    potentially other PIP\textasciitilde2\textasciitilde-binding
+    mechano-proteins.}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-buhr2023" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
+<div class="">Jannik Buhr, Florian Franz, and Frauke Gräter.
+23AD. Intrinsically disordered region of talin’s FERM domain functions
+as an initial PIP~2~ recognition site.</div>
+</div></div></section></div></main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<script>videojs(video_shortcode_videojs_video1);</script>
+<script>videojs(video_shortcode_videojs_video2);</script>
+
+
+
+</body></html>
