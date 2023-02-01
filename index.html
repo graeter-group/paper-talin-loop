@@ -289,7 +289,7 @@ Tip
 <h1>Results</h1>
 <section id="the-f1-loop-can-act-as-a-point-of-first-contact" class="level2">
 <h2 class="anchored" data-anchor-id="the-f1-loop-can-act-as-a-point-of-first-contact">The F1 loop can act as a point of first contact</h2>
-<p>The high flexibility of the F1 loop gave use the confidence to model it from sequence. It retained its flexibility in equilibrium simulations, in close agreement with the conformational flexibility reflected in the NMR ensemble of the F1 domain <span class="citation" data-cites="goultStructureDoubleUbiquitinlike2010">(<a href="#ref-goultStructureDoubleUbiquitinlike2010" role="doc-biblioref">13</a>)</span> confirmed this approach (see Supplementary Material <a href="#fig-loop-rmsf">Figure&nbsp;7 (a)</a>, <a href="#fig-loop-rmsf-render">Figure&nbsp;7 (b)</a> and <a href="#fig-nmr-ensemble">Figure&nbsp;9 (a)</a> with <a href="#fig-ferm-ensemble">Figure&nbsp;9 (b)</a>). The resulting system that provides the basis for our simulations can be explored interactively in the Supplementary Materials.</p>
+<p>The high flexibility of the F1 loop gave use the confidence to model it from sequence. It retained its flexibility in equilibrium simulations, in close agreement with the conformational flexibility reflected in the NMR ensemble of the F1 domain <span class="citation" data-cites="goultStructureDoubleUbiquitinlike2010">(<a href="#ref-goultStructureDoubleUbiquitinlike2010" role="doc-biblioref">13</a>)</span>, which confirmed this approach (see Supplementary Material <a href="#fig-loop-rmsf">Figure&nbsp;7 (a)</a>, <a href="#fig-loop-rmsf-render">Figure&nbsp;7 (b)</a> and <a href="#fig-nmr-ensemble">Figure&nbsp;9 (a)</a> with <a href="#fig-ferm-ensemble">Figure&nbsp;9 (b)</a>). The resulting system that provides the basis for our simulations can be explored interactively in the Supplementary Materials.</p>
 <p>When simulating only F0F1 over a POPC membrane containing 10% PIP<sub>2</sub>, we noticed that the F1 loop had a clear propensity to establish contact with the membrane. Once the contact had been established, the protein was anchored strongly enough for more contacts to evolve with time, pulling the protein onto the membrane (<a href="#fig-f0f1-snapshots">Figure&nbsp;2 (a)</a>). In order to control for a potential bias towards the loop as a result of the starting position, we performed a rotational sampling of the system, where the starting angle of the loop with respect to the membrane was varied across 60 equally spaced angles. <a href="#fig-f0f1-ri-angle">Figure&nbsp;2 (b)</a> shows that independent of the starting position, the loop is able to find the membrane and bind to it. A residue of the F1 loop is likely to be the first to establish membrane contact even in simulations where the loop starts oriented away from the membrane (<a href="#fig-f0f1-first-to-find">Figure&nbsp;8 (d)</a>). This is due to the large search space it can cover with its high flexibility (see <a href="#fig-loop-rmsf">Figure&nbsp;7 (a)</a>). Expectedly, binding happens earlier in the simulation when the loop starts oriented favorably towards the membrane (<a href="#fig-f0f1-angle-frame">Figure&nbsp;3 (a)</a>, 0&nbsp;°) and the time to first contact is shorter for residues of the F1 loop (<a href="#fig-f0f1-time-to-contact">Figure&nbsp;8 (c)</a>). While <a href="#fig-f0f1-snapshots">Figure&nbsp;2 (a)</a> shows one example of a bound conformation, a conformation for each starting angle can be seen in the <a href="#sec-system">Supplementary Material</a>.</p>
 <div id="fig-loop-importance" class="quarto-layout-panel">
 <figure class="figure">
@@ -642,7 +642,7 @@ Tip
 <h3 class="anchored" data-anchor-id="sec-nmr">NMR Ensemble of F1: 2KC2 <span class="citation" data-cites="goultStructureDoubleUbiquitinlike2010">(<a href="#ref-goultStructureDoubleUbiquitinlike2010" role="doc-biblioref">13</a>)</span></h3>
     <div id="app-2KC2" class="molstar-app"></div>
     <script type="text/javascript">
-    molstar.Viewer.create("app-2KC2", {"viewportShowAnimation":true,"viewportShowExpand":true,"viewportShowSelectionMode":false,"layoutShowControls":false,"layoutIsExpanded":false,"emdbProvider":"rcsb","pdbProvider":"rcsb","layoutShowLeftPanel":true,"layoutShowLog":false,"layoutShowRemoteState":false,"layoutShowSequence":false}).then(viewer => {
+    molstar.Viewer.create("app-2KC2", {"viewportShowSelectionMode":false,"layoutShowSequence":false,"layoutShowLeftPanel":true,"viewportShowExpand":true,"emdbProvider":"rcsb","layoutIsExpanded":false,"pdbProvider":"rcsb","layoutShowControls":false,"viewportShowAnimation":true,"layoutShowLog":false,"layoutShowRemoteState":false}).then(viewer => {
     viewer.loadPdb("2KC2");    });
     </script>
     
@@ -652,7 +652,7 @@ Tip
 <p>Here, we show exemplary final frames of replicate 1 of the rotational sampling simulations with one structure for each starting angle.</p>
     <div id="app-./assets/structures/f0f1-rot-sample-last-frames.gro./assets/structures/f0f1-rot-sample-last-frames.xtc" class="molstar-app"></div>
     <script type="text/javascript">
-    molstar.Viewer.create("app-./assets/structures/f0f1-rot-sample-last-frames.gro./assets/structures/f0f1-rot-sample-last-frames.xtc", {"viewportShowAnimation":true,"viewportShowExpand":true,"viewportShowSelectionMode":false,"layoutShowControls":false,"layoutIsExpanded":false,"emdbProvider":"rcsb","pdbProvider":"rcsb","layoutShowLeftPanel":true,"layoutShowLog":false,"layoutShowRemoteState":false,"layoutShowSequence":false}).then(viewer => {
+    molstar.Viewer.create("app-./assets/structures/f0f1-rot-sample-last-frames.gro./assets/structures/f0f1-rot-sample-last-frames.xtc", {"viewportShowSelectionMode":false,"layoutShowSequence":false,"layoutShowLeftPanel":true,"viewportShowExpand":true,"emdbProvider":"rcsb","layoutIsExpanded":false,"pdbProvider":"rcsb","layoutShowControls":false,"viewportShowAnimation":true,"layoutShowLog":false,"layoutShowRemoteState":false}).then(viewer => {
         viewer.loadTrajectory(
     {
       model: {
@@ -673,7 +673,7 @@ Tip
 <p>Here, we show the final frames of the full-length FERM simulations with one structure for each of the 6 replicates.</p>
     <div id="app-./assets/structures/ferm-last-frames.gro./assets/structures/ferm-last-frames.xtc" class="molstar-app"></div>
     <script type="text/javascript">
-    molstar.Viewer.create("app-./assets/structures/ferm-last-frames.gro./assets/structures/ferm-last-frames.xtc", {"viewportShowAnimation":true,"viewportShowExpand":true,"viewportShowSelectionMode":false,"layoutShowControls":false,"layoutIsExpanded":false,"emdbProvider":"rcsb","pdbProvider":"rcsb","layoutShowLeftPanel":true,"layoutShowLog":false,"layoutShowRemoteState":false,"layoutShowSequence":false}).then(viewer => {
+    molstar.Viewer.create("app-./assets/structures/ferm-last-frames.gro./assets/structures/ferm-last-frames.xtc", {"viewportShowSelectionMode":false,"layoutShowSequence":false,"layoutShowLeftPanel":true,"viewportShowExpand":true,"emdbProvider":"rcsb","layoutIsExpanded":false,"pdbProvider":"rcsb","layoutShowControls":false,"viewportShowAnimation":true,"layoutShowLog":false,"layoutShowRemoteState":false}).then(viewer => {
         viewer.loadTrajectory(
     {
       model: {
@@ -693,7 +693,7 @@ Tip
 <h3 class="anchored" data-anchor-id="sec-ferm-system">FERM domain over a POPC/PIP<sub>2</sub> membrane</h3>
     <div id="app-./www/system-tln-memb.pdb" class="molstar-app"></div>
     <script type="text/javascript">
-    molstar.Viewer.create("app-./www/system-tln-memb.pdb", {"viewportShowAnimation":true,"viewportShowExpand":true,"viewportShowSelectionMode":false,"layoutShowControls":false,"layoutIsExpanded":false,"emdbProvider":"rcsb","pdbProvider":"rcsb","layoutShowLeftPanel":true,"layoutShowLog":false,"layoutShowRemoteState":false,"layoutShowSequence":false}).then(viewer => {
+    molstar.Viewer.create("app-./www/system-tln-memb.pdb", {"viewportShowSelectionMode":false,"layoutShowSequence":false,"layoutShowLeftPanel":true,"viewportShowExpand":true,"emdbProvider":"rcsb","layoutIsExpanded":false,"pdbProvider":"rcsb","layoutShowControls":false,"viewportShowAnimation":true,"layoutShowLog":false,"layoutShowRemoteState":false}).then(viewer => {
     viewer.loadStructureFromUrl("./www/system-tln-memb.pdb", format="pdb");    });
     </script>
     
