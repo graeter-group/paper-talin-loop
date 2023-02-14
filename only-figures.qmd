@@ -1,0 +1,152 @@
+---
+title: "Intrinsically disordered region of talin's FERM domain functions as an initial PIP~2~ recognition site"
+date: today
+date-format: long
+published-title: Last Updated
+author:
+  - name: Jannik Buhr
+    url: https://jmbuhr.de
+    orcid: 0000-0002-9350-2629
+    affiliations:
+      - id: hits
+        name: Heidelberg Institute for Theoretical Studies
+        url: https://www.h-its.org/
+      - id: iwr
+        name: Interdisciplinary Center for Scientific Computing, Heidelberg University
+        url: https://typo.iwr.uni-heidelberg.de/home
+  - name: Florian Franz
+    affiliations:
+      - ref: hits
+      - ref: iwr
+  - name: Frauke Gräter
+    url: https://www.h-its.org/people/prof-dr-frauke-grater/
+    orcid: 0000-0003-2891-3381
+    email: 'Frauke.Graeter@h-its.org'
+    affiliations:
+      - ref: hits
+      - ref: iwr
+repo-url: https://github.com/hits-mbm-dev/paper-talin-loop/
+github: https://github.com/hits-mbm-dev/
+repo: "paper-talin-loop"
+format:
+  bj-pdf:
+    classoption:
+      - twocolumn
+colorlinks: true
+keep-tex: true
+link-citations: true
+# number-sections: true
+citation:
+  type: article
+  citation-key: buhrTalin2022
+  status: draft
+editor_options:
+  markdown:
+    wrap: sentence
+editor: source
+bibliography: references.bib
+crossref:
+  fig-title: ''
+  title-delim: ''
+  fig-labels: ''
+  subref-labels: alpha A
+  ref-hyperlink: false
+---
+
+\newpage
+\clearpage
+
+::::{#fig-structure layout="[[1], [1,1]]"}
+![ ](./assets/blender/render/frame0000-label.png){#fig-tln-schema-long}
+
+![ ](./assets/blender/render/frame0001.png){#fig-tln-schema-autoinhib}
+
+![ ](./assets/blender/render-align/frame0000.png){#fig-tln-align-autoinhib}
+
+  
+::::
+
+
+\newpage
+\clearpage
+
+:::::{#fig-loop-importance layout="[[1],[1]]"}
+:::{#fig-f0f1-snapshots}
+![](./assets/vmd/f0f1/unbround-trim.png){width=30%}
+![](./assets/vmd/f0f1/anchored-trim.png){width=30%}
+![](./assets/vmd/f0f1/bound-trim.png){width=30%}
+
+ 
+:::
+
+![ ](./results/plots/f0f1-ri-angle-npip-1.png){#fig-f0f1-ri-angle}
+
+ 
+:::::
+
+
+\newpage
+\clearpage
+
+
+::::: {#fig-loop-importance-2 layout="[[1],[1]]"}
+![ ](./results/plots/f0f1-angle-frame-npip-1.png){#fig-f0f1-angle-frame}
+
+![ ](./results/plots/f0f1-retention-1.png){#fig-f0f1-retention}
+
+ 
+:::::
+
+
+\newpage
+\clearpage
+
+
+::::: {#fig-f0f1-residues layout="[[1],[1]]"}
+![ ](./results/plots/f0f1-ri-npip-1.png){#fig-f0f1-ri-npip}
+
+![ ](./assets/vmd/f0f1/residues.png){#fig-f1f1-residues width=20%}
+
+ 
+:::::
+
+
+\newpage
+\clearpage
+
+:::: {#fig-f0f1-vert-pull layout="[[1],[1,1]]"}
+:::{#fig-f0f1-pull-run-1}
+::: {.content-hidden when-format="html"}
+![](./assets/vmd/f0f1-pulling/f0f1-pull-start.png){width=35%}
+![](./assets/vmd/f0f1-pulling/f0f1-pull-middle.png){width=20%}
+![](./assets/vmd/f0f1-pulling/f0f1-pull-end.png){width=35%}
+:::
+
+  
+:::
+
+![ ](./results/plots/f0f1-vert-pull-1.png){#fig-f0f1-vert-pull-force}
+
+![ ](./results/plots/f0f1-vert-pull-contacts-time-1.png){#fig-f0f1-vert-pull-contacts}
+
+ 
+::::
+
+
+\newpage
+\clearpage
+
+:::: {#fig-ferm-further layout="[[1],[1]]"}
+![ ](./results/plots/ferm-ri-npip-1.png){#fig-ferm-ri-npip}
+
+![ ](./assets/vmd/ferm/ferm-residues-transparent-arrows.png){#fig-ferm-memb-system}
+
+ 
+::::
+
+
+\newpage
+\clearpage
+
+
+
