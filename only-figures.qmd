@@ -122,14 +122,13 @@ crossref:
 ![](./assets/vmd/f0f1-pulling/f0f1-pull-end.png){width=35%}
 :::
 
-  
+  
 :::
-
 ![ ](./results/plots/f0f1-vert-pull-1.png){#fig-f0f1-vert-pull-force}
 
 ![ ](./results/plots/f0f1-vert-pull-contacts-time-1.png){#fig-f0f1-vert-pull-contacts}
 
- 
+ 
 ::::
 
 
