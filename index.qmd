@@ -572,6 +572,9 @@ The other domains (F0,F2,F3) are not shown, but their steric influence can be se
 
 {{< include ./results/tables/ferm-top-interacting-tbl.md >}}
 
+\newpage
+\clearpage
+
 
 ## Molecular dynamics Parameters
 
