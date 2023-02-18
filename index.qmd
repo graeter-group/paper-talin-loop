@@ -178,7 +178,7 @@ NPT-ensembles were achieved by Nosé-Hoover temperature coupling [@hooverCanonic
 An example `.mdp`-file can be found in the Supplementary Materials.
 
 The initial equilibrium simulation of the completed FERM domain was run for 75 ns.
-Subsequently, the root mean squared fluctuation (RMSF) was calculated with GROMACS tools (see Supplementary Material @fig-loop-rmsf and @fig-loop-rmsf-render).
+Subsequently, the root mean squared fluctuation (RMSF) was calculated with GROMACS tools (see Supplementary Material Figure 7a and 7b).
 
 The F0F1 FERM sub domains (residues 1 to 197) were simulated to evaluate protein-membrane association using a rotational sampling approach.
 This entailed placing the protein 1.5\ nm away from a 1-palmitoyl-2-oleoyl-glycero-3-phosphocholine (POPC) membrane,
@@ -217,16 +217,16 @@ The plotting code and computational graph of `targets` is available in [this doc
 ## The F1 loop can act as a point of first contact
 
 The high flexibility of the F1 loop gave use the confidence to model it from sequence.
-It retained its flexibility in equilibrium simulations, in close agreement with the conformational flexibility reflected in the NMR ensemble of the F1 domain [@goultStructureDoubleUbiquitinlike2010], which confirmed this approach (see Supplementary Material @fig-loop-rmsf, @fig-loop-rmsf-render and @fig-nmr-ensemble with @fig-ferm-ensemble).
+It retained its flexibility in equilibrium simulations, in close agreement with the conformational flexibility reflected in the NMR ensemble of the F1 domain [@goultStructureDoubleUbiquitinlike2010], which confirmed this approach (see Supplementary Material Figure 7a and Figure 9).
 The resulting system that provides the basis for our simulations can be explored interactively in the Supplementary Materials.
 
 When simulating only F0F1 over a POPC membrane containing 10% PIP~2~, we noticed that the F1 loop had a clear propensity to establish contact with the membrane.
 Once the contact had been established, the protein was anchored strongly enough for more contacts to evolve with time, pulling the protein onto the membrane ([@fig-f0f1-snapshots]).
 In order to control for a potential bias towards the loop as a result of the starting position, we performed a rotational sampling of the system, where the starting angle of the loop with respect to the membrane was varied across 60 equally spaced angles.
 @fig-f0f1-ri-angle shows that independent of the starting position, the loop is able to find the membrane and bind to it.
-A residue of the F1 loop is likely to be the first to establish membrane contact even in simulations where the loop starts oriented away from the membrane (@fig-f0f1-first-to-find).
-This is due to the large search space it can cover with its high flexibility (see @fig-loop-rmsf).
-Expectedly, binding happens earlier in the simulation when the loop starts oriented favorably towards the membrane (@fig-f0f1-angle-frame, 0\ °) and the time to first contact is shorter for residues of the F1 loop (@fig-f0f1-time-to-contact).
+A residue of the F1 loop is likely to be the first to establish membrane contact even in simulations where the loop starts oriented away from the membrane (also see Supplementary Material Figure 8).
+This is due to the large search space it can cover with its high flexibility (see Supplementary Material Figure 7a).
+Expectedly, binding happens earlier in the simulation when the loop starts oriented favorably towards the membrane (@fig-f0f1-angle-frame, 0\ °) and the time to first contact is shorter for residues of the F1 loop (see Supplementary Material).
 While @fig-f0f1-snapshots shows one example of a bound conformation, a conformation for each starting angle can be seen in the [Supplementary Material](#sec-system).
 
 :::::{#fig-loop-importance layout="[[1],[1]]"}
@@ -275,7 +275,7 @@ The ensemble of final bound conformations from the simulations can be seen in th
 We observe a number of prominent lysines and arginines, both positively charged residues, across the whole F0F1 fragment to compensate for the negative charge on PIP~2~.
 The loop region, highlighted with a grey backdrop in @fig-f0f1-ri-npip, is particularly dense in positively charged residues, albeit the number of PIP~2~ contacts per basic residue is only marginally higher in this region than elsewhere. Arginines and lysines in regions outside of the disordered loop complement the binding once initial
 contacts have been established with the loop, and further strengthen the interaction.
-F0 at the N-terminus (left) is quite flexible as well (see @fig-loop-rmsf) and can thus reasonably contribute towards membrane binding.
+F0 at the N-terminus (left) is quite flexible as well (see Supplementary Material) and can thus reasonably contribute towards membrane binding.
 The C-terminus of the F1 domain, instead, harbors the interface towards the F2 domain and the two PIP~2~-interacting residues identified here will be more occluded _in vivo_.
 Indeed, simulations of the full-length FERM domain in the later part of this work do not show these interactions anymore (@fig-ferm-ri-npip).
 
@@ -294,7 +294,7 @@ Indeed, simulations of the full-length FERM domain in the later part of this wor
 
 Lysine and arginine residues are crucial for the PIP~2~-interaction of F0F1.
 **a\)**
-The average number of PIP~2~ molecules ($\bar n_{PIP_2}$) interacting (see @fig-r-hist for the interaction distance definition) with the individual residues per frame across all simulations of the rotational sampling that made contact with the membrane.
+The average number of PIP~2~ molecules ($\bar n_{PIP_2}$) interacting (see Supplementary Material for the interaction distance definition) with the individual residues per frame across all simulations of the rotational sampling that made contact with the membrane.
 Color represents the charge of the amino acid at pH 7.4 (blue = positive/basic, magenta = negative/acidic).
 A number of very prominent lysines can be observed, as well as a cluster of residues belonging to the F1 loop, which is highlighted with a grey backdrop.
 The most prominent residues are highlighted in **b)**.
@@ -308,11 +308,11 @@ To examine the strength of the PIP~2~ interactions and the role of the F1 loop i
 An exemplary render of one of the simulations can be seen in @fig-f0f1-pull-run-1.
 Pulling F0F1 off the membrane requires peak forces of 100--120\ pN, during which the interacting residues only very gradually loose contact (@fig-f0f1-vert-pull), as the high flexibility of F1-loop allows the residues to remain in contact even as the distance increases up to a delta of 7\ nm.
 Replicate 4 stands out as the highest curve (dashed lines), as in this run the interactions were so strong that a total of 3 molecules of PIP~2~ were pulled out of the membrane (1 by F0 and 2 by the F1 loop).
-A snapshot of this can be seen in @fig-f0f1-vert-pull-run4.
+A snapshot of this can be seen in the Supplementary Material in Figure 8b.
 This highlights the strong anchoring capabilities of the F1 loop.
 
 As seen in @fig-f0f1-vert-pull-contacts, during pulling residues not belonging to the F1 loop loose contact first, while the loop stays attached.
-The F1 loop works in conjunction with the F0 subdomain (see @fig-f0f1-vert-pull-residues).
+The F1 loop works in conjunction with the F0 subdomain.
 Their high flexibility allows them to remain in contact with the membrane over large distances, which would allow for a spring-like re-establishing of more contacts should the force be alleviated.
 In two cases the last interacting residue was part of the F1 loop, while in three cases the N-terminus of the F0 domain stayed attached for longest.
 
@@ -355,7 +355,7 @@ The non-loop contacts are mostly supplied by the residues of the F0 N-terminus a
 
 Having established the prominent role of the F1-loop in positioning F0F1 at the membrane and establishing PIP~2~ contacts, we next examined this role in the larger context of the full FERM domain.
 6 independent simulations were initiated with the full-length FERM domain oriented in such that the tip of the F1-loop was in contact with at least one molecule of PIP~2~ with varying local environments (see [Simulation Systems and Structures](#sec-system) for one example).
-Individual interaction heatmaps for each run can be found in the Supplementary Material @fig-ferm-time-ri-npip-all.
+Individual interaction heatmaps for each run can be found in the Supplementary Material.
 These simulations highlight the prominent role of the F1-loop in membrane interactions, now in the context of the full-length FERM domain (@fig-ferm-ri-npip, compare to @fig-f0f1-ri-npip).
 They also reproduce the canonical PIP~2~ contacts in F2 and F3 known from previous studies, validating our MD simulations.
 The highlighted residues include K272 of F2 and K316, K324, E342, and K343 of F3, which have been shown to be crucial for the membrane interaction of talin and subsequent integrin activation by Chinthalapudi et al. [@chinthalapudiInteractionTalinCell2018a].
