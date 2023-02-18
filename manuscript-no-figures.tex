@@ -256,12 +256,12 @@ intrinsically disordered regions in protein--membrane interactions.
 \end{sigstatement}
 
 
-\end{frontmatter}\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, boxrule=0pt, breakable, borderline west={3pt}{0pt}{shadecolor}, enhanced, frame hidden, sharp corners]}{\end{tcolorbox}}\fi
+\end{frontmatter}\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[breakable, sharp corners, frame hidden, borderline west={3pt}{0pt}{shadecolor}, interior hidden, enhanced, boxrule=0pt]}{\end{tcolorbox}}\fi
 
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, colback=white, rightrule=.15mm, opacitybacktitle=0.6, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, bottomtitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, coltitle=black, bottomrule=.15mm, leftrule=.75mm, left=2mm, opacityback=0, arc=.35mm, titlerule=0mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, coltitle=black, left=2mm, breakable, leftrule=.75mm, colback=white, toprule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, arc=.35mm, toptitle=1mm, bottomtitle=1mm, titlerule=0mm, rightrule=.15mm, opacityback=0, bottomrule=.15mm]
 
 This is a draft and as such subject to change. The source repository for
 this manuscript lives at
@@ -523,11 +523,12 @@ protein and membrane atoms were gradually relieved in six steps from
 atoms on time scales of 25-100~ps, followed by 5~ns of equilibration
 with only protein atoms subjected to 50 kJ/mol/nm\textsuperscript{2}
 position restraints. The exact Molecular Dynamics Parameter (mdp) files
-are provided in the data (https://doi.org/10.11588/data/BQTQUN) in the
-\texttt{assets} folder of each simulation system. Production runs used a
-timestep of 2 fs, a Verlet cut-off scheme for Van-der-Waals interactions
-and the Particle Mesh Ewald (PME) method for long-range electrostatics.
-NPT-ensembles were achieved by Nosé-Hoover temperature coupling
+are provided in the data (\url{https://doi.org/10.11588/data/BQTQUN}) in
+the \texttt{assets} folder of each simulation system. Production runs
+used a timestep of 2 fs, a Verlet cut-off scheme for Van-der-Waals
+interactions and the Particle Mesh Ewald (PME) method for long-range
+electrostatics. NPT-ensembles were achieved by Nosé-Hoover temperature
+coupling
 (\protect\hyperlink{ref-hooverCanonicalDynamicsEquilibrium1985}{35},
 \protect\hyperlink{ref-noseUnifiedFormulationConstant1984}{36}) and
 Parinello-Rahman pressure coupling
@@ -587,9 +588,9 @@ Interactive structure representations are embedded using Mol*
 (\protect\hyperlink{ref-molstar}{42}). Schematic visualizations were
 rendered with blender (\protect\hyperlink{ref-blender}{43}) and VMD
 (\protect\hyperlink{ref-vmd}{44}). Files relevant to this work that are
-too big to be uploaded to this repository, such as trajectories and
-blender files, will be uploaded to a separate location. This manuscript
-was generated with \href{https://quarto.org/}{quarto}
+too big to be uploaded to this repository are available here:
+\url{https://doi.org/10.11588/data/BQTQUN}. This manuscript was
+generated with \href{https://quarto.org/}{quarto}
 (\protect\hyperlink{ref-quarto}{45}--\protect\hyperlink{ref-rbetterposter}{47}).
 
 \hypertarget{results}{%
