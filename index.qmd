@@ -65,8 +65,20 @@ keywords:
   - IDR
 citation:
   type: article
+  title: Intrinsically disordered region of talin’s FERM domain functions as an initial PIP2 recognition site
   citation-key: buhrTalin2022
-  status: draft
+  publisher: Biophysical Journal
+  status: in press
+  url: https://doi.org/10.1016/j.bpj.2023.02.020
+  abstract: |
+    Focal adhesions (FAs) mediate the interaction of the cytoskeleton with the extracellular matrix (ECM) in a highly dynamic fashion.
+    talin is a central regulator, adaptor protein and mechano-sensor of focal adhesion complexes. For recruitment and firm attachment at FAs, talin’s N-terminal FERM domain binds to phosphatidylinositol 4,5-bisphosphate (PIP2)-enriched membranes.
+    A newly published autoinhibitory structure of talin-1, where the known PIP2 interaction sites are covered up, lead us to hypothesize that a hitherto less examined loop insertion of the FERM domain acts as an additional and initial site of contact.
+    We evaluated direct interactions of talin-1 with a PIP2 membrane by means of atomistic molecular dynamics (MD) simulations.
+    We show that this unstructured, 33-residue-long loop strongly interacts with PIP2 and can facilitate further membrane contacts, including the canonical PIP2 interactions, by serving as a flexible membrane anchor.
+    Under force as present at FAs, the extensible FERM loop ensures talin to maintain membrane contacts when pulled away from the membrane by up to 7 nm.
+    We identify key basic residues of the anchor mediating the highly dynamic talin-membrane interaction.
+    Our results put forward an intrinsically disordered loop as a key and highly adaptable PIP2 recognition site of talin and potentially other PIP2-binding mechano-proteins.
 editor_options:
   markdown:
     wrap: sentence
@@ -77,14 +89,13 @@ bibliography: references.bib
 # Introduction
 
 ::::callout-tip
-This is a draft and as such subject to change.
-The source repository for this manuscript lives at <https://github.com/hits-mbm-dev/paper-talin-loop>.
-The manuscript and poster are available in multiple formats:
+This article has now been published at: <https://doi.org/10.1016/j.bpj.2023.02.020>
 
-- manuscript web/html: <https://hits-mbm-dev.github.io/paper-talin-loop/>
-- manuscript print/pdf: <https://hits-mbm-dev.github.io/paper-talin-loop/index.pdf>
-- poster web/html: <https://hits-mbm-dev.github.io/paper-talin-loop/poster.html>
-- poster print/pdf: <https://hits-mbm-dev.github.io/paper-talin-loop/poster.pdf>
+The source repository for this manuscript lives at <https://github.com/hits-mbm-dev/paper-talin-loop>.
+The manuscript is also available in multiple formats:
+
+- web/html: <https://hits-mbm-dev.github.io/paper-talin-loop/>
+- print/pdf: <https://hits-mbm-dev.github.io/paper-talin-loop/index.pdf>
 ::::
 
 Cells critically sense the mechanics of their environment at cell adhesion sites for a multitude of biological processes.
