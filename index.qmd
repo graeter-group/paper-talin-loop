@@ -456,6 +456,8 @@ This work was supported by the Klaus Tschira Foundation and the European Researc
 \newpage
 \clearpage
 
+\setcounter{figure}{0}
+
 # Supplementary Material
 
 ## Simulation Systems and Structures {#sec-system}
