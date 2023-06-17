@@ -295,7 +295,7 @@ Indeed, simulations of the full-length FERM domain in the later part of this wor
 
 :::{#fig-f1f1-residues}
 ::: {.content-visible when-format="html" }
-{{< video ./assets/vmd/f0f1/residues.mp4 >}}
+![](./assets/vmd/f0f1/residues.mp4)
 :::
 :::{.content-hidden when-format="html" width=20%}
 ![](./assets/vmd/f0f1/residues.png)
@@ -332,7 +332,7 @@ In two cases the last interacting residue was part of the F1 loop, while in thre
 :::{#fig-f0f1-pull-run-1}
 ::: {.content-visible when-format="html"}
 ::: {layout="[2.2,1]" .noborder}
-{{< video ./assets/vmd/f0f1-pulling/f0f1-run1.mp4 >}}
+![](./assets/vmd/f0f1-pulling/f0f1-run1.mp4)
 
 ![](./assets/vmd/f0f1-pulling/f0f1-pull-middle.png)
 :::

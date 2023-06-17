@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.211">
+<meta name="generator" content="quarto-1.3.299">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jannik Buhr">
 <meta name="author" content="Florian Franz">
 <meta name="author" content="Frauke Gräter">
-<meta name="dcterms.date" content="2023-03-01">
+<meta name="dcterms.date" content="2023-06-17">
 <meta name="keywords" content="Molecular Dynamics, Talin, Focal Adhesion, Mechanosensing, Disorder, IDP, IDR">
 
 <title>Intrinsically disordered region of talin’s FERM domain functions as an initial PIP2 recognition site</title>
@@ -22,14 +22,15 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
 }
-.hanging div.csl-entry {
+.hanging-indent div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -43,8 +44,7 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}
-</style>
+}</style>
 
 
 <script src="index_files/libs/clipboard/clipboard.min.js"></script>
@@ -59,8 +59,6 @@ div.csl-indent {
 <link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="index_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="index_files/libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<script src="index_files/libs/quarto-contrib/videojs/video.min.js"></script>
-<link href="index_files/libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
 <script src="index_files/libs/quarto-contrib/molstar-v3.13.0/molstar.js"></script>
 <link href="index_files/libs/quarto-contrib/molstar-v3.13.0/molstar.css" rel="stylesheet">
 <link href="index_files/libs/quarto-contrib/molstar-v3.13.0/app-container.css" rel="stylesheet">
@@ -186,7 +184,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Last Updated</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 1, 2023</p>
+      <p class="date">June 17, 2023</p>
     </div>
   </div>
   
@@ -204,12 +202,12 @@ div.csl-indent {
 
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
-<div class="callout callout-style-default callout-tip callout-captioned">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Tip
 </div>
 </div>
@@ -355,7 +353,7 @@ Tip
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div id="fig-f1f1-residues" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 100.0%;justify-content: center;">
 <figure class="figure">
-<div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="./assets/vmd/f0f1/residues.mp4"></video></div>
+<p><video src="./assets/vmd/f0f1/residues.mp4" class="img-fluid" controls=""><a href="./assets/vmd/f0f1/residues.mp4">Video</a></video></p>
 <p></p><figcaption class="figure-caption">(b) &nbsp;</figcaption><p></p>
 </figure>
 </div>
@@ -376,7 +374,7 @@ Tip
 <div class="noborder quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell" style="flex-basis: 68.8%;justify-content: center;">
-<div class="quarto-video"><video id="video_shortcode_videojs_video2" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="./assets/vmd/f0f1-pulling/f0f1-run1.mp4"></video></div>
+<p><video src="./assets/vmd/f0f1-pulling/f0f1-run1.mp4" class="img-fluid" controls=""><a href="./assets/vmd/f0f1-pulling/f0f1-run1.mp4">Video</a></video></p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 31.3%;justify-content: center;">
 <p><img src="./assets/vmd/f0f1-pulling/f0f1-pull-middle.png" class="img-fluid figure-img"></p>
@@ -462,173 +460,173 @@ Tip
 </section>
 <section id="references" class="level1">
 <h1>References</h1>
-<div id="refs" class="references csl-bib-body" role="doc-bibliography">
-<div id="ref-vogelLocalForceGeometry2006" class="csl-entry" role="doc-biblioentry">
+<div id="refs" class="references csl-bib-body" role="list">
+<div id="ref-vogelLocalForceGeometry2006" class="csl-entry" role="listitem">
 <div class="csl-left-margin">1. </div><div class="csl-right-inline">Vogel, V., and M. Sheetz. 2006. <a href="https://doi.org/10.1038/nrm1890">Local force and geometry sensing regulate cell functions</a>. <em>Nature Reviews Molecular Cell Biology</em>. 7:265–275.</div>
 </div>
-<div id="ref-oakesStressingLimitsFocal2014" class="csl-entry" role="doc-biblioentry">
+<div id="ref-oakesStressingLimitsFocal2014" class="csl-entry" role="listitem">
 <div class="csl-left-margin">2. </div><div class="csl-right-inline">Oakes, P.W., and M.L. Gardel. 2014. <a href="https://doi.org/10.1016/j.ceb.2014.06.003">Stressing the limits of focal adhesion mechanosensitivity</a>. <em>Current Opinion in Cell Biology</em>. 30:68–73.</div>
 </div>
-<div id="ref-schillerMechanosensitivityCompositionalDynamics2013" class="csl-entry" role="doc-biblioentry">
+<div id="ref-schillerMechanosensitivityCompositionalDynamics2013" class="csl-entry" role="listitem">
 <div class="csl-left-margin">3. </div><div class="csl-right-inline">Schiller, H.B., and R. Fässler. 2013. <a href="https://doi.org/10.1038/embor.2013.49">Mechanosensitivity and compositional dynamics of cellmatrix adhesions</a>. <em>EMBO reports</em>. 14:509–519.</div>
 </div>
-<div id="ref-miroshnikovaAdhesionForcesCortical2018" class="csl-entry" role="doc-biblioentry">
+<div id="ref-miroshnikovaAdhesionForcesCortical2018" class="csl-entry" role="listitem">
 <div class="csl-left-margin">4. </div><div class="csl-right-inline">Miroshnikova, Y.A., H.Q. Le, D. Schneider, T. Thalheim, M. Rübsam, N. Bremicker, J. Polleux, N. Kamprad, M. Tarantola, I. Wang, M. Balland, C.M. Niessen, J. Galle, and S.A. Wickström. 2018. <a href="https://doi.org/10.1038/s41556-017-0005-z">Adhesion forces and cortical tension couple cell proliferation and differentiation to drive epidermal stratification</a>. <em>Nature Cell Biology</em>. 20:69–80.</div>
 </div>
-<div id="ref-thamilselvanPressureActivatesColon2004" class="csl-entry" role="doc-biblioentry">
+<div id="ref-thamilselvanPressureActivatesColon2004" class="csl-entry" role="listitem">
 <div class="csl-left-margin">5. </div><div class="csl-right-inline">Thamilselvan, V., and M.D. Basson. 2004. <a href="https://doi.org/10.1053/j.gastro.2003.10.078">Pressure activates colon cancer cell adhesion by inside-out focal adhesion complex and actin cytoskeletal signaling</a>. <em>Gastroenterology</em>. 126:8–18.</div>
 </div>
-<div id="ref-pelletierActivationStateIntegrin1995" class="csl-entry" role="doc-biblioentry">
+<div id="ref-pelletierActivationStateIntegrin1995" class="csl-entry" role="listitem">
 <div class="csl-left-margin">6. </div><div class="csl-right-inline">Pelletier, A.J., T. Kunicki, Z.M. Ruggeri, and V. Quaranta. 1995. <a href="https://doi.org/10.1074/jbc.270.30.18133">The <span>Activation State</span> of the <span class="nocase">Integrin <span class="math inline">\alpha</span>IIb<span class="math inline">\beta</span>3 Affects Outside-in Signals Leading</span> to <span>Cell Spreading</span> and <span>Focal Adhesion Kinase Phosphorylation</span> *</a>. <em>Journal of Biological Chemistry</em>. 270:18133–18140.</div>
 </div>
-<div id="ref-yaoMechanicalResponseTalin2016" class="csl-entry" role="doc-biblioentry">
+<div id="ref-yaoMechanicalResponseTalin2016" class="csl-entry" role="listitem">
 <div class="csl-left-margin">7. </div><div class="csl-right-inline">Yao, M., B.T. Goult, B. Klapholz, X. Hu, C.P. Toseland, Y. Guo, P. Cong, M.P. Sheetz, and J. Yan. 2016. <a href="https://doi.org/10.1038/ncomms11966">The mechanical response of talin</a>. <em>Nature Communications</em>. 7:11966.</div>
 </div>
-<div id="ref-tadokoroTalinBindingIntegrin2003" class="csl-entry" role="doc-biblioentry">
+<div id="ref-tadokoroTalinBindingIntegrin2003" class="csl-entry" role="listitem">
 <div class="csl-left-margin">8. </div><div class="csl-right-inline">Tadokoro, S., S.J. Shattil, K. Eto, V. Tai, R.C. Liddington, J.M. de Pereda, M.H. Ginsberg, and D.A. Calderwood. 2003. <a href="https://doi.org/10.1126/science.1086652">Talin <span>Binding</span> to <span>Integrin</span> ß <span>Tails</span>: <span>A Final Common Step</span> in <span>Integrin Activation</span></a>. <em>Science</em>. 302:103–106.</div>
 </div>
-<div id="ref-chishtiFERMDomainUnique1998" class="csl-entry" role="doc-biblioentry">
+<div id="ref-chishtiFERMDomainUnique1998" class="csl-entry" role="listitem">
 <div class="csl-left-margin">9. </div><div class="csl-right-inline">Chishti, A.H., A.C. Kim, S.M. Marfatia, M. Lutchman, M. Hanspal, H. Jindal, S.-C. Liu, P.S. Low, G.A. Rouleau, N. Mohandas, J.A. Chasis, J.G. Conboy, P. Gascard, Y. Takakuwa, S.-C. Huang, E.J.B. Jr, A. Bretscher, R.G. Fehon, J.F. Gusella, V. Ramesh, F. Solomon, V.T. Marchesi, S. Tsukita, S. Tsukita, M. Arpin, D. Louvard, N.K. Tonks, J.M. Anderson, A.S. Fanning, P.J. Bryant, D.F. Woods, and K.B. Hoover. 1998. <a href="https://doi.org/10.1016/S0968-0004(98)01237-7">The <span>FERM</span> domain: A unique module involved in the linkage of cytoplasmic proteins to the membrane</a>. <em>Trends in Biochemical Sciences</em>. 23:281–282.</div>
 </div>
-<div id="ref-maniFERMDomainPhosphoinositide2011" class="csl-entry" role="doc-biblioentry">
+<div id="ref-maniFERMDomainPhosphoinositide2011" class="csl-entry" role="listitem">
 <div class="csl-left-margin">10. </div><div class="csl-right-inline">Mani, T., R.F. Hennigan, L.A. Foster, D.G. Conrady, A.B. Herr, and W. Ip. 2011. <a href="https://doi.org/10.1128/MCB.00609-10"><span>FERM Domain Phosphoinositide Binding Targets Merlin</span> to the <span>Membrane</span> and <span>Is Essential</span> for <span>Its Growth-Suppressive Function</span></a>. <em>Molecular and Cellular Biology</em>. 31:1983–1996.</div>
 </div>
-<div id="ref-dasMolecularMechanotransductionPathway2015" class="csl-entry" role="doc-biblioentry">
+<div id="ref-dasMolecularMechanotransductionPathway2015" class="csl-entry" role="listitem">
 <div class="csl-left-margin">11. </div><div class="csl-right-inline">Das, T., K. Safferling, S. Rausch, N. Grabe, H. Boehm, and J.P. Spatz. 2015. <a href="https://doi.org/10.1038/ncb3115">A molecular mechanotransduction pathway regulates collective migration of epithelial cells</a>. <em>Nature Cell Biology</em>. 17:276–287.</div>
 </div>
-<div id="ref-songNovelMembranedependentSwitch2012a" class="csl-entry" role="doc-biblioentry">
+<div id="ref-songNovelMembranedependentSwitch2012a" class="csl-entry" role="listitem">
 <div class="csl-left-margin">12. </div><div class="csl-right-inline">Song, X., J. Yang, J. Hirbawi, S. Ye, H.D. Perera, E. Goksoy, P. Dwivedi, E.F. Plow, R. Zhang, and J. Qin. 2012. <a href="https://doi.org/10.1038/cr.2012.97">A novel membrane-dependent on/off switch mechanism of talin <span>FERM</span> domain at sites of cell adhesion</a>. <em>Cell Research</em>. 22:1533–1545.</div>
 </div>
-<div id="ref-goultStructureDoubleUbiquitinlike2010" class="csl-entry" role="doc-biblioentry">
+<div id="ref-goultStructureDoubleUbiquitinlike2010" class="csl-entry" role="listitem">
 <div class="csl-left-margin">13. </div><div class="csl-right-inline">Goult, B.T., M. Bouaouina, P.R. Elliott, N. Bate, B. Patel, A.R. Gingras, J.G. Grossmann, G.C.K. Roberts, D.A. Calderwood, D.R. Critchley, and I.L. Barsukov. 2010. <a href="https://doi.org/10.1038/emboj.2010.4">Structure of a double ubiquitin-like domain in the talin head: A role in integrin activation</a>. <em>The EMBO Journal</em>. 29:1069–1080.</div>
 </div>
-<div id="ref-elliottStructureTalinHead2010" class="csl-entry" role="doc-biblioentry">
+<div id="ref-elliottStructureTalinHead2010" class="csl-entry" role="listitem">
 <div class="csl-left-margin">14. </div><div class="csl-right-inline">Elliott, P.R., B.T. Goult, P.M. Kopp, N. Bate, J.G. Grossmann, G.C.K. Roberts, D.R. Critchley, and I.L. Barsukov. 2010. <a href="https://doi.org/10.1016/j.str.2010.07.011">The <span>Structure</span> of the <span>Talin Head Reveals</span> a <span>Novel&nbsp;Extended Conformation</span> of the <span>FERM Domain</span></a>. <em>Structure(London, England:1993)</em>. 18:1289–1299.</div>
 </div>
-<div id="ref-calderwoodTalinHeadDomain1999" class="csl-entry" role="doc-biblioentry">
+<div id="ref-calderwoodTalinHeadDomain1999" class="csl-entry" role="listitem">
 <div class="csl-left-margin">15. </div><div class="csl-right-inline">Calderwood, D.A., R. Zent, R. Grant, D.J.G. Rees, R.O. Hynes, and M.H. Ginsberg. 1999. <a href="https://doi.org/10.1074/jbc.274.40.28071">The <span>Talin Head Domain Binds</span> to <span>Integrin</span> <span><span class="math inline">\beta</span></span> <span>Subunit Cytoplasmic Tails</span> and <span>Regulates Integrin Activation</span> *</a>. <em>Journal of Biological Chemistry</em>. 274:28071–28074.</div>
 </div>
-<div id="ref-calderwoodTalinsKindlinsPartners2013" class="csl-entry" role="doc-biblioentry">
+<div id="ref-calderwoodTalinsKindlinsPartners2013" class="csl-entry" role="listitem">
 <div class="csl-left-margin">16. </div><div class="csl-right-inline">Calderwood, D.A., I.D. Campbell, and D.R. Critchley. 2013. <a href="https://doi.org/10.1038/nrm3624">Talins and kindlins: Partners in integrin-mediated adhesion</a>. <em>Nature Reviews Molecular Cell Biology</em>. 14:503–517.</div>
 </div>
-<div id="ref-horwitzInteractionPlasmaMembrane1986" class="csl-entry" role="doc-biblioentry">
+<div id="ref-horwitzInteractionPlasmaMembrane1986" class="csl-entry" role="listitem">
 <div class="csl-left-margin">17. </div><div class="csl-right-inline">Horwitz, A., K. Duggan, C. Buck, M.C. Beckerle, and K. Burridge. 1986. <a href="https://doi.org/10.1038/320531a0">Interaction of plasma membrane fibronectin receptor with talina transmembrane linkage</a>. <em>Nature</em>. 320:531–533.</div>
 </div>
-<div id="ref-mccannLWEQModuleConserved1997" class="csl-entry" role="doc-biblioentry">
+<div id="ref-mccannLWEQModuleConserved1997" class="csl-entry" role="listitem">
 <div class="csl-left-margin">18. </div><div class="csl-right-inline">McCann, R.O., and S.W. Craig. 1997. <a href="https://doi.org/10.1073/pnas.94.11.5679">The <span>I</span>/<span>LWEQ</span> module: A conserved sequence that signifies <span class="nocase">F-actin</span> binding in functionally diverse proteins from yeast to mammals</a>. <em>Proceedings of the National Academy of Sciences</em>. 94:5679–5684.</div>
 </div>
-<div id="ref-klapholzTalinMasterIntegrin2017" class="csl-entry" role="doc-biblioentry">
+<div id="ref-klapholzTalinMasterIntegrin2017" class="csl-entry" role="listitem">
 <div class="csl-left-margin">19. </div><div class="csl-right-inline">Klapholz, B., and N.H. Brown. 2017. <a href="https://doi.org/10.1242/jcs.190991">Talin the master of integrin adhesions</a>. <em>Journal of Cell Science</em>. 130:2435–2446.</div>
 </div>
-<div id="ref-chinthalapudiInteractionTalinCell2018a" class="csl-entry" role="doc-biblioentry">
+<div id="ref-chinthalapudiInteractionTalinCell2018a" class="csl-entry" role="listitem">
 <div class="csl-left-margin">20. </div><div class="csl-right-inline">Chinthalapudi, K., E.S. Rangarajan, and T. Izard. 2018. <a href="https://doi.org/10.1073/pnas.1806275115">The interaction of talin with the cell membrane is essential for integrin activation and focal adhesion formation</a>. <em>Proceedings of the National Academy of Sciences of the United States of America</em>. 115:10339–10344.</div>
 </div>
-<div id="ref-saltelNewPIP22009" class="csl-entry" role="doc-biblioentry">
+<div id="ref-saltelNewPIP22009" class="csl-entry" role="listitem">
 <div class="csl-left-margin">21. </div><div class="csl-right-inline">Saltel, F., E. Mortier, V.P. Hytönen, M.-C. Jacquier, P. Zimmermann, V. Vogel, W. Liu, and B. Wehrle-Haller. 2009. <a href="https://doi.org/10.1083/jcb.200908134">New <span>PI</span>(4,5)<span>P2-</span> and membrane proximal integrinbinding motifs in the talin head control <span><span class="math inline">B</span></span>3-integrin clustering</a>. <em>Journal of Cell Biology</em>. 187:715–731.</div>
 </div>
-<div id="ref-bannoSubcellularLocalizationTalin2012" class="csl-entry" role="doc-biblioentry">
+<div id="ref-bannoSubcellularLocalizationTalin2012" class="csl-entry" role="listitem">
 <div class="csl-left-margin">22. </div><div class="csl-right-inline">Banno, A., B.T. Goult, H. Lee, N. Bate, D.R. Critchley, and M.H. Ginsberg. 2012. <a href="https://doi.org/10.1074/jbc.M112.341214">Subcellular <span>Localization</span> of <span>Talin Is Regulated</span> by <span class="nocase">Inter-domain Interactions</span> *</a>. <em>Journal of Biological Chemistry</em>. 287:13799–13812.</div>
 </div>
-<div id="ref-deddenArchitectureTalin1Reveals2019a" class="csl-entry" role="doc-biblioentry">
+<div id="ref-deddenArchitectureTalin1Reveals2019a" class="csl-entry" role="listitem">
 <div class="csl-left-margin">23. </div><div class="csl-right-inline">Dedden, D., S. Schumacher, C.F. Kelley, M. Zacharias, C. Biertümpfel, R. Fässler, and N. Mizuno. 2019. <a href="https://doi.org/10.1016/j.cell.2019.08.034">The <span>Architecture</span> of <span>Talin1 Reveals</span> an <span>Autoinhibition Mechanism</span></a>. <em>Cell</em>. 179:120–131.e13.</div>
 </div>
-<div id="ref-buyanMultiscaleSimulationsSuggest2016" class="csl-entry" role="doc-biblioentry">
+<div id="ref-buyanMultiscaleSimulationsSuggest2016" class="csl-entry" role="listitem">
 <div class="csl-left-margin">24. </div><div class="csl-right-inline">Buyan, A., A.C. Kalli, and M.S.P. Sansom. 2016. <a href="https://doi.org/10.1371/journal.pcbi.1005028">Multiscale <span>Simulations Suggest</span> a <span>Mechanism</span> for the <span>Association</span> of the <span>Dok7 PH Domain</span> with <span>PIP-Containing Membranes</span></a>. <em>PLOS Computational Biology</em>. 12:e1005028.</div>
 </div>
-<div id="ref-zhouMechanismFocalAdhesion2015" class="csl-entry" role="doc-biblioentry">
+<div id="ref-zhouMechanismFocalAdhesion2015" class="csl-entry" role="listitem">
 <div class="csl-left-margin">25. </div><div class="csl-right-inline">Zhou, J., C. Aponte-Santamaría, S. Sturm, J.T. Bullerjahn, A. Bronowska, and F. Gräter. 2015. <a href="https://doi.org/10.1371/journal.pcbi.1004593">Mechanism of <span>Focal Adhesion Kinase Mechanosensing</span></a>. <em>PLOS Computational Biology</em>. 11:e1004593.</div>
 </div>
-<div id="ref-berendsenGROMACSMessagepassingParallel1995" class="csl-entry" role="doc-biblioentry">
+<div id="ref-berendsenGROMACSMessagepassingParallel1995" class="csl-entry" role="listitem">
 <div class="csl-left-margin">26. </div><div class="csl-right-inline">Berendsen, H.J.C., D. van der Spoel, and R. van Drunen. 1995. <a href="https://doi.org/10.1016/0010-4655(95)00042-E"><span>GROMACS</span>: <span>A</span> message-passing parallel molecular dynamics implementation</a>. <em>Computer Physics Communications</em>. 91:43–56.</div>
 </div>
-<div id="ref-abrahamGROMACSHighPerformance2015" class="csl-entry" role="doc-biblioentry">
+<div id="ref-abrahamGROMACSHighPerformance2015" class="csl-entry" role="listitem">
 <div class="csl-left-margin">27. </div><div class="csl-right-inline">Abraham, M.J., T. Murtola, R. Schulz, S. Páll, J.C. Smith, B. Hess, and E. Lindahl. 2015. <a href="https://doi.org/10.1016/j.softx.2015.06.001"><span>GROMACS</span>: <span>High</span> performance molecular simulations through multi-level parallelism from laptops to supercomputers</a>. <em>SoftwareX</em>. 1–2:19–25.</div>
 </div>
-<div id="ref-lindahlGROMACS2020Source2020" class="csl-entry" role="doc-biblioentry">
+<div id="ref-lindahlGROMACS2020Source2020" class="csl-entry" role="listitem">
 <div class="csl-left-margin">28. </div><div class="csl-right-inline">Lindahl, Abraham, Hess, and van der Spoel. 2020-01-01, 2020-01. <a href="https://doi.org/10.5281/zenodo.3562495"><span>GROMACS</span> 2020 source code</a>. <span>Zenodo</span>.</div>
 </div>
-<div id="ref-marti-renomComparativeProteinStructure2000" class="csl-entry" role="doc-biblioentry">
+<div id="ref-marti-renomComparativeProteinStructure2000" class="csl-entry" role="listitem">
 <div class="csl-left-margin">29. </div><div class="csl-right-inline">Martí-Renom, M.A., A.C. Stuart, A. Fiser, R. Sánchez, F. Melo, and A. Sali. 2000. <a href="https://doi.org/10.1146/annurev.biophys.29.1.291">Comparative protein structure modeling of genes and genomes</a>. <em>Annual Review of Biophysics and Biomolecular Structure</em>. 29:291–325.</div>
 </div>
-<div id="ref-webbComparativeProteinStructure2016" class="csl-entry" role="doc-biblioentry">
+<div id="ref-webbComparativeProteinStructure2016" class="csl-entry" role="listitem">
 <div class="csl-left-margin">30. </div><div class="csl-right-inline">Webb, B., and A. Sali. 2016. <a href="https://doi.org/10.1002/cpps.20">Comparative <span>Protein Structure Modeling Using MODELLER</span></a>. <em>Current Protocols in Protein Science</em>. 86:2.9.1–2.9.37.</div>
 </div>
-<div id="ref-pettersenUCSFChimeraVisualization2004" class="csl-entry" role="doc-biblioentry">
+<div id="ref-pettersenUCSFChimeraVisualization2004" class="csl-entry" role="listitem">
 <div class="csl-left-margin">31. </div><div class="csl-right-inline">Pettersen, E.F., T.D. Goddard, C.C. Huang, G.S. Couch, D.M. Greenblatt, E.C. Meng, and T.E. Ferrin. 2004. <a href="https://doi.org/10.1002/jcc.20084"><span class="nocase">UCSF Chimera–a</span> visualization system for exploratory research and analysis</a>. <em>Journal of Computational Chemistry</em>. 25:1605–1612.</div>
 </div>
-<div id="ref-brooksCHARMMBiomolecularSimulation2009" class="csl-entry" role="doc-biblioentry">
+<div id="ref-brooksCHARMMBiomolecularSimulation2009" class="csl-entry" role="listitem">
 <div class="csl-left-margin">32. </div><div class="csl-right-inline">Brooks, B.R., C.L. Brooks, A.D. Mackerell, L. Nilsson, R.J. Petrella, B. Roux, Y. Won, G. Archontis, C. Bartels, S. Boresch, A. Caflisch, L. Caves, Q. Cui, A.R. Dinner, M. Feig, S. Fischer, J. Gao, M. Hodoscek, W. Im, K. Kuczera, T. Lazaridis, J. Ma, V. Ovchinnikov, E. Paci, R.W. Pastor, C.B. Post, J.Z. Pu, M. Schaefer, B. Tidor, R.M. Venable, H.L. Woodcock, X. Wu, W. Yang, D.M. York, and M. Karplus. 2009. <a href="https://doi.org/10.1002/jcc.21287"><span>CHARMM</span>: <span>The</span> biomolecular simulation program</a>. <em>Journal of Computational Chemistry</em>. 30:1545–1614.</div>
 </div>
-<div id="ref-joCHARMMGUIWebbasedGraphical2008" class="csl-entry" role="doc-biblioentry">
+<div id="ref-joCHARMMGUIWebbasedGraphical2008" class="csl-entry" role="listitem">
 <div class="csl-left-margin">33. </div><div class="csl-right-inline">Jo, S., T. Kim, V.G. Iyer, and W. Im. 2008. <a href="https://doi.org/10.1002/jcc.20945"><span>CHARMM-GUI</span>: A web-based graphical user interface for <span>CHARMM</span></a>. <em>Journal of Computational Chemistry</em>. 29:1859–1865.</div>
 </div>
-<div id="ref-leeCHARMMGUIInputGenerator2016" class="csl-entry" role="doc-biblioentry">
+<div id="ref-leeCHARMMGUIInputGenerator2016" class="csl-entry" role="listitem">
 <div class="csl-left-margin">34. </div><div class="csl-right-inline">Lee, J., X. Cheng, J.M. Swails, M.S. Yeom, P.K. Eastman, J.A. Lemkul, S. Wei, J. Buckner, J.C. Jeong, Y. Qi, S. Jo, V.S. Pande, D.A. Case, C.L. Brooks, A.D. MacKerell, J.B. Klauda, and W. Im. 2016. <a href="https://doi.org/10.1021/acs.jctc.5b00935"><span>CHARMM-GUI Input Generator</span> for <span>NAMD</span>, <span>GROMACS</span>, <span>AMBER</span>, <span>OpenMM</span>, and <span>CHARMM</span>/<span>OpenMM Simulations Using</span> the <span>CHARMM36 Additive Force Field</span></a>. <em>Journal of Chemical Theory and Computation</em>. 12:405–413.</div>
 </div>
-<div id="ref-hooverCanonicalDynamicsEquilibrium1985" class="csl-entry" role="doc-biblioentry">
+<div id="ref-hooverCanonicalDynamicsEquilibrium1985" class="csl-entry" role="listitem">
 <div class="csl-left-margin">35. </div><div class="csl-right-inline">Hoover, W.G. 1985. <a href="https://doi.org/10.1103/PhysRevA.31.1695">Canonical dynamics: <span>Equilibrium</span> phase-space distributions</a>. <em>Physical Review A</em>. 31:1695–1697.</div>
 </div>
-<div id="ref-noseUnifiedFormulationConstant1984" class="csl-entry" role="doc-biblioentry">
+<div id="ref-noseUnifiedFormulationConstant1984" class="csl-entry" role="listitem">
 <div class="csl-left-margin">36. </div><div class="csl-right-inline">Nosé, S. 1984. <a href="https://doi.org/10.1063/1.447334">A unified formulation of the constant temperature molecular dynamics methods</a>. <em>The Journal of Chemical Physics</em>. 81:511–519.</div>
 </div>
-<div id="ref-parrinelloPolymorphicTransitionsSingle1981" class="csl-entry" role="doc-biblioentry">
+<div id="ref-parrinelloPolymorphicTransitionsSingle1981" class="csl-entry" role="listitem">
 <div class="csl-left-margin">37. </div><div class="csl-right-inline">Parrinello, M., and A. Rahman. 1981. <a href="https://doi.org/10.1063/1.328693">Polymorphic transitions in single crystals: <span>A</span> new molecular dynamics method</a>. <em>Journal of Applied Physics</em>. 52:7182–7190.</div>
 </div>
-<div id="ref-mclaughlinPIP2ProteinsInteractions2002" class="csl-entry" role="doc-biblioentry">
+<div id="ref-mclaughlinPIP2ProteinsInteractions2002" class="csl-entry" role="listitem">
 <div class="csl-left-margin">38. </div><div class="csl-right-inline">McLaughlin, S., J. Wang, A. Gambhir, and D. Murray. 2002. <a href="https://doi.org/10.1146/annurev.biophys.31.082901.134259"><span>PIP2</span> and <span>Proteins</span>: <span>Interactions</span>, <span>Organization</span>, and <span>Information Flow</span></a>. <em>Annual Review of Biophysics and Biomolecular Structure</em>. 31:151–175.</div>
 </div>
-<div id="ref-mercadanteCONANToolDecode2018" class="csl-entry" role="doc-biblioentry">
+<div id="ref-mercadanteCONANToolDecode2018" class="csl-entry" role="listitem">
 <div class="csl-left-margin">39. </div><div class="csl-right-inline">Mercadante, D., F. Gräter, and C. Daday. 2018. <a href="https://doi.org/10.1016/j.bpj.2018.01.033"><span>CONAN</span>: <span>A Tool</span> to <span>Decode Dynamical Information</span> from <span>Molecular Interaction Maps</span></a>. <em>Biophysical Journal</em>. 114:1267–1273.</div>
 </div>
-<div id="ref-landauTargetsPackageDynamic2021" class="csl-entry" role="doc-biblioentry">
+<div id="ref-landauTargetsPackageDynamic2021" class="csl-entry" role="listitem">
 <div class="csl-left-margin">40. </div><div class="csl-right-inline">Landau, W.M. 2021. The targets <span>R</span> package: A dynamic <span class="nocase">Make-like</span> function-oriented pipeline toolkit for reproducibility and high-performance computing. <em>Journal of Open Source Software</em>. 6:2959.</div>
 </div>
-<div id="ref-ggplot" class="csl-entry" role="doc-biblioentry">
+<div id="ref-ggplot" class="csl-entry" role="listitem">
 <div class="csl-left-margin">41. </div><div class="csl-right-inline">Wickham, H. 2016. Ggplot2: <span>Elegant</span> graphics for data analysis. <span>Springer-Verlag New York</span>.</div>
 </div>
-<div id="ref-molstar" class="csl-entry" role="doc-biblioentry">
+<div id="ref-molstar" class="csl-entry" role="listitem">
 <div class="csl-left-margin">42. </div><div class="csl-right-inline">Sehnal, D., S. Bittrich, M. Deshpande, R. Svobodová, K. Berka, V. Bazgier, S. Velankar, S.K. Burley, J. Koča, and A.S. Rose. 2021. <a href="https://doi.org/10.1093/nar/gkab314">Mol* <span>Viewer</span>: Modern web app for <span>3D</span> visualization and analysis of large biomolecular structures</a>. <em>Nucleic Acids Research</em>. 49:W431–W437.</div>
 </div>
-<div id="ref-blender" class="csl-entry" role="doc-biblioentry">
+<div id="ref-blender" class="csl-entry" role="listitem">
 <div class="csl-left-margin">43. </div><div class="csl-right-inline">Community, B.O. 2018. Blender - a <span>3D</span> modelling and rendering package.</div>
 </div>
-<div id="ref-vmd" class="csl-entry" role="doc-biblioentry">
+<div id="ref-vmd" class="csl-entry" role="listitem">
 <div class="csl-left-margin">44. </div><div class="csl-right-inline">Humphrey, W., A. Dalke, and K. Schulten. 1996. <span>VMD</span> <span>Visual Molecular Dynamics</span>. <em>Journal of Molecular Graphics</em>. 14:33–38.</div>
 </div>
-<div id="ref-quarto" class="csl-entry" role="doc-biblioentry">
+<div id="ref-quarto" class="csl-entry" role="listitem">
 <div class="csl-left-margin">45. </div><div class="csl-right-inline">Allaire, J.J., C. Teague, C. Scheidegger, Y. Xie, and C. Dervieux. 2022. <a href="https://doi.org/10.5281/zenodo.5960048">Quarto</a>.</div>
 </div>
-<div id="ref-knitr" class="csl-entry" role="doc-biblioentry">
+<div id="ref-knitr" class="csl-entry" role="listitem">
 <div class="csl-left-margin">46. </div><div class="csl-right-inline">Xie, Y. 2015. Dynamic documents with <span>R</span> and knitr. Second. <span>Boca Raton, Florida</span>: <span>Chapman and Hall/CRC</span>.</div>
 </div>
-<div id="ref-rbetterposter" class="csl-entry" role="doc-biblioentry">
+<div id="ref-rbetterposter" class="csl-entry" role="listitem">
 <div class="csl-left-margin">47. </div><div class="csl-right-inline">Aden-Buie, G. 2022. Betterposter: <span>A</span> better scientific poster.</div>
 </div>
-<div id="ref-chinthalapudiLipidBindingPromotes2018" class="csl-entry" role="doc-biblioentry">
+<div id="ref-chinthalapudiLipidBindingPromotes2018" class="csl-entry" role="listitem">
 <div class="csl-left-margin">48. </div><div class="csl-right-inline">Chinthalapudi, K., V. Mandati, J. Zheng, A.J. Sharff, G. Bricogne, P.R. Griffin, J. Kissil, and T. Izard. 2018. <a href="https://doi.org/10.1038/s41467-018-03648-4">Lipid binding promotes the open conformation and tumor-suppressive activity of neurofibromin 2</a>. <em>Nature Communications</em>. 9:1338.</div>
 </div>
-<div id="ref-jianMolecularBasisCooperative2015" class="csl-entry" role="doc-biblioentry">
+<div id="ref-jianMolecularBasisCooperative2015" class="csl-entry" role="listitem">
 <div class="csl-left-margin">49. </div><div class="csl-right-inline">Jian, X., W.-K. Tang, P. Zhai, N.S. Roy, R. Luo, J.M. Gruschus, M.E. Yohe, P.-W. Chen, Y. Li, R.A. Byrd, D. Xia, and P.A. Randazzo. 2015. <a href="https://doi.org/10.1016/j.str.2015.08.008">Molecular <span>Basis</span> for <span>Cooperative Binding</span> of <span>Anionic Phospholipids</span> to the <span>PH Domain</span> of the <span>Arf GAP ASAP1</span></a>. <em>Structure</em>. 23:1977–1988.</div>
 </div>
-<div id="ref-naughtonModesInteractionPleckstrin2018" class="csl-entry" role="doc-biblioentry">
+<div id="ref-naughtonModesInteractionPleckstrin2018" class="csl-entry" role="listitem">
 <div class="csl-left-margin">50. </div><div class="csl-right-inline">Naughton, F.B., A.C. Kalli, and M.S.P. Sansom. 2018. <a href="https://doi.org/10.1016/j.jmb.2017.12.011">Modes of <span>Interaction</span> of <span>Pleckstrin Homology Domains</span> with <span>Membranes</span>: <span>Toward</span> a <span>Computational Biochemistry</span> of <span>Membrane Recognition</span></a>. <em>Journal of Molecular Biology</em>. 430:372–388.</div>
 </div>
-<div id="ref-shoemakerSpeedingMolecularRecognition2000" class="csl-entry" role="doc-biblioentry">
+<div id="ref-shoemakerSpeedingMolecularRecognition2000" class="csl-entry" role="listitem">
 <div class="csl-left-margin">51. </div><div class="csl-right-inline">Shoemaker, B.A., J.J. Portman, and P.G. Wolynes. 2000. <a href="https://doi.org/10.1073/pnas.160259697">Speeding molecular recognition by using the folding funnel: The fly-casting mechanism</a>. <em>Proceedings of the National Academy of Sciences of the United States of America</em>. 97:8868–8873.</div>
 </div>
-<div id="ref-huangKineticAdvantageIntrinsically2009" class="csl-entry" role="doc-biblioentry">
+<div id="ref-huangKineticAdvantageIntrinsically2009" class="csl-entry" role="listitem">
 <div class="csl-left-margin">52. </div><div class="csl-right-inline">Huang, Y., and Z. Liu. 2009. <a href="https://doi.org/10.1016/j.jmb.2009.09.010">Kinetic <span>Advantage</span> of <span>Intrinsically Disordered Proteins</span> in <span>Coupled Folding</span>: <span>A Critical Assessment</span> of the <span>“<span>Fly-Casting</span>”</span> <span>Mechanism</span></a>. <em>Journal of Molecular Biology</em>. 393:1143–1159.</div>
 </div>
-<div id="ref-bauerStructuralMechanisticInsights2019" class="csl-entry" role="doc-biblioentry">
+<div id="ref-bauerStructuralMechanisticInsights2019" class="csl-entry" role="listitem">
 <div class="csl-left-margin">53. </div><div class="csl-right-inline">Bauer, M.S., F. Baumann, C. Daday, P. Redondo, E. Durner, M.A. Jobst, L.F. Milles, D. Mercadante, D.A. Pippig, H.E. Gaub, F. Gräter, and D. Lietha. 2019. <a href="https://doi.org/10.1073/pnas.1820567116">Structural and mechanistic insights into mechanoactivation of focal adhesion kinase</a>. <em>Proceedings of the National Academy of Sciences</em>. 116:6766–6774.</div>
 </div>
-<div id="ref-mooreAffinityTalin1V3integrin2012a" class="csl-entry" role="doc-biblioentry">
+<div id="ref-mooreAffinityTalin1V3integrin2012a" class="csl-entry" role="listitem">
 <div class="csl-left-margin">54. </div><div class="csl-right-inline">Moore, D.T., P. Nygren, H. Jo, K. Boesze-Battaglia, J.S. Bennett, and W.F. DeGrado. 2012. <a href="https://doi.org/10.1073/pnas.1117220108">Affinity of talin-1 for the <span><span class="math inline">B</span></span>3-integrin cytosolic domain is modulated by its phospholipid bilayer environment</a>. <em>Proceedings of the National Academy of Sciences</em>. 109:793–798.</div>
 </div>
-<div id="ref-sunMolecularDynamicsAssociation2018" class="csl-entry" role="doc-biblioentry">
+<div id="ref-sunMolecularDynamicsAssociation2018" class="csl-entry" role="listitem">
 <div class="csl-left-margin">55. </div><div class="csl-right-inline">Sun, F., C.F.E. Schroer, L. Xu, H. Yin, S.J. Marrink, and S.-Z. Luo. 2018. <a href="https://doi.org/10.1016/j.bpj.2018.02.034">Molecular <span>Dynamics</span> of the <span>Association</span> of <span>L-Selectin</span> and <span>FERM Regulated</span> by <span>PIP2</span></a>. <em>Biophysical Journal</em>. 114:1858–1868.</div>
 </div>
-<div id="ref-sunMolecularMechanismBidirectional2020" class="csl-entry" role="doc-biblioentry">
+<div id="ref-sunMolecularMechanismBidirectional2020" class="csl-entry" role="listitem">
 <div class="csl-left-margin">56. </div><div class="csl-right-inline">Sun, F., C.F.E. Schroer, C.R. Palacios, L. Xu, S.-Z. Luo, and S.J. Marrink. 2020. <a href="https://doi.org/10.1371/journal.pcbi.1007777">Molecular mechanism for bidirectional regulation of <span>CD44</span> for lipid raft affiliation by palmitoylations and <span>PIP2</span></a>. <em>PLOS Computational Biology</em>. 16:e1007777.</div>
 </div>
 </div>
@@ -641,7 +639,7 @@ Tip
 <h3 class="anchored" data-anchor-id="sec-nmr">NMR Ensemble of F1: 2KC2 <span class="citation" data-cites="goultStructureDoubleUbiquitinlike2010">(<a href="#ref-goultStructureDoubleUbiquitinlike2010" role="doc-biblioref">13</a>)</span></h3>
     <div id="app-2KC2" class="molstar-app"></div>
     <script type="text/javascript">
-    molstar.Viewer.create("app-2KC2", {"layoutShowLog":false,"layoutShowLeftPanel":true,"emdbProvider":"rcsb","layoutShowControls":false,"pdbProvider":"rcsb","viewportShowAnimation":true,"viewportShowSelectionMode":false,"layoutShowSequence":false,"viewportShowExpand":true,"layoutShowRemoteState":false,"layoutIsExpanded":false}).then(viewer => {
+    molstar.Viewer.create("app-2KC2", {"layoutShowRemoteState":false,"pdbProvider":"rcsb","emdbProvider":"rcsb","layoutIsExpanded":false,"viewportShowAnimation":true,"viewportShowSelectionMode":false,"layoutShowLog":false,"viewportShowExpand":true,"layoutShowLeftPanel":true,"layoutShowControls":false,"layoutShowSequence":false}).then(viewer => {
     viewer.loadPdb("2KC2");    });
     </script>
     
@@ -651,7 +649,7 @@ Tip
 <p>Here, we show exemplary final frames of replicate 1 of the rotational sampling simulations with one structure for each starting angle.</p>
     <div id="app-./assets/structures/f0f1-rot-sample-last-frames.gro./assets/structures/f0f1-rot-sample-last-frames.xtc" class="molstar-app"></div>
     <script type="text/javascript">
-    molstar.Viewer.create("app-./assets/structures/f0f1-rot-sample-last-frames.gro./assets/structures/f0f1-rot-sample-last-frames.xtc", {"layoutShowLog":false,"layoutShowLeftPanel":true,"emdbProvider":"rcsb","layoutShowControls":false,"pdbProvider":"rcsb","viewportShowAnimation":true,"viewportShowSelectionMode":false,"layoutShowSequence":false,"viewportShowExpand":true,"layoutShowRemoteState":false,"layoutIsExpanded":false}).then(viewer => {
+    molstar.Viewer.create("app-./assets/structures/f0f1-rot-sample-last-frames.gro./assets/structures/f0f1-rot-sample-last-frames.xtc", {"layoutShowRemoteState":false,"pdbProvider":"rcsb","emdbProvider":"rcsb","layoutIsExpanded":false,"viewportShowAnimation":true,"viewportShowSelectionMode":false,"layoutShowLog":false,"viewportShowExpand":true,"layoutShowLeftPanel":true,"layoutShowControls":false,"layoutShowSequence":false}).then(viewer => {
         viewer.loadTrajectory(
     {
       model: {
@@ -672,7 +670,7 @@ Tip
 <p>Here, we show the final frames of the full-length FERM simulations with one structure for each of the 6 replicates.</p>
     <div id="app-./assets/structures/ferm-last-frames.gro./assets/structures/ferm-last-frames.xtc" class="molstar-app"></div>
     <script type="text/javascript">
-    molstar.Viewer.create("app-./assets/structures/ferm-last-frames.gro./assets/structures/ferm-last-frames.xtc", {"layoutShowLog":false,"layoutShowLeftPanel":true,"emdbProvider":"rcsb","layoutShowControls":false,"pdbProvider":"rcsb","viewportShowAnimation":true,"viewportShowSelectionMode":false,"layoutShowSequence":false,"viewportShowExpand":true,"layoutShowRemoteState":false,"layoutIsExpanded":false}).then(viewer => {
+    molstar.Viewer.create("app-./assets/structures/ferm-last-frames.gro./assets/structures/ferm-last-frames.xtc", {"layoutShowRemoteState":false,"pdbProvider":"rcsb","emdbProvider":"rcsb","layoutIsExpanded":false,"viewportShowAnimation":true,"viewportShowSelectionMode":false,"layoutShowLog":false,"viewportShowExpand":true,"layoutShowLeftPanel":true,"layoutShowControls":false,"layoutShowSequence":false}).then(viewer => {
         viewer.loadTrajectory(
     {
       model: {
@@ -692,7 +690,7 @@ Tip
 <h3 class="anchored" data-anchor-id="sec-ferm-system">FERM domain over a POPC/PIP<sub>2</sub> membrane</h3>
     <div id="app-./www/system-tln-memb.pdb" class="molstar-app"></div>
     <script type="text/javascript">
-    molstar.Viewer.create("app-./www/system-tln-memb.pdb", {"layoutShowLog":false,"layoutShowLeftPanel":true,"emdbProvider":"rcsb","layoutShowControls":false,"pdbProvider":"rcsb","viewportShowAnimation":true,"viewportShowSelectionMode":false,"layoutShowSequence":false,"viewportShowExpand":true,"layoutShowRemoteState":false,"layoutIsExpanded":false}).then(viewer => {
+    molstar.Viewer.create("app-./www/system-tln-memb.pdb", {"layoutShowRemoteState":false,"pdbProvider":"rcsb","emdbProvider":"rcsb","layoutIsExpanded":false,"viewportShowAnimation":true,"viewportShowSelectionMode":false,"layoutShowLog":false,"viewportShowExpand":true,"layoutShowLeftPanel":true,"layoutShowControls":false,"layoutShowSequence":false}).then(viewer => {
     viewer.loadStructureFromUrl("./www/system-tln-memb.pdb", format="pdb");    });
     </script>
     
@@ -1046,11 +1044,11 @@ refcoord_scaling        = com</code></pre>
 <li id="fn1"><p>6 replicas each for 60 angles minus 2 runs lost to a storage failure<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@misc{buhr2023,
-  author = {Jannik Buhr and Florian Franz and Frauke Gräter},
+  author = {Buhr, Jannik and Franz, Florian and Gräter, Frauke},
   publisher = {Biophysical Journal},
   title = {Intrinsically Disordered Region of Talin’s {FERM} Domain
     Functions as an Initial {PIP2} Recognition Site},
-  date = {23-03-01},
+  date = {2023-06-17},
   url = {https://doi.org/10.1016/j.bpj.2023.02.020},
   langid = {en},
   abstract = {Focal adhesions (FAs) mediate the interaction of the
@@ -1076,9 +1074,8 @@ refcoord_scaling        = com</code></pre>
     recognition site of talin and potentially other PIP2-binding
     mechano-proteins.}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-buhr2023" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
-<div class="">Jannik Buhr, Florian Franz, and Frauke Gräter.
-23AD. <a href="https://doi.org/10.1016/j.bpj.2023.02.020">Intrinsically
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-buhr2023" class="csl-entry quarto-appendix-citeas" role="listitem">
+<div class="">Buhr, J., F. Franz, and F. Gräter. 2023. <a href="https://doi.org/10.1016/j.bpj.2023.02.020">Intrinsically
 disordered region of talin’s FERM domain functions as an initial PIP2
 recognition site</a>.</div>
 </div></div></section></div></main>
@@ -1225,9 +1222,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -1418,8 +1429,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>videojs(video_shortcode_videojs_video1);</script>
-<script>videojs(video_shortcode_videojs_video2);</script>
 
 
 
